@@ -1,0 +1,7 @@
+﻿[*.cs]
+
+# IDE0290: 使用主构造函数
+dotnet_diagnostic.IDE0290.severity = silent
+
+# CA1069: 不应复制枚举值
+dotnet_diagnostic.CA1069.severity = silent

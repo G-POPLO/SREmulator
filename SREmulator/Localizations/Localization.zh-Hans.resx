@@ -1,0 +1,558 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acheron" xml:space="preserve">
+    <value>黄泉</value>
+  </data>
+  <data name="Argenti" xml:space="preserve">
+    <value>银枝</value>
+  </data>
+  <data name="Arlan" xml:space="preserve">
+    <value>阿兰</value>
+  </data>
+  <data name="Asta" xml:space="preserve">
+    <value>艾丝妲</value>
+  </data>
+  <data name="Aventurine" xml:space="preserve">
+    <value>砂金</value>
+  </data>
+  <data name="Bailu" xml:space="preserve">
+    <value>白露</value>
+  </data>
+  <data name="BlackSwan" xml:space="preserve">
+    <value>黑天鹅</value>
+  </data>
+  <data name="Blade" xml:space="preserve">
+    <value>刃</value>
+  </data>
+  <data name="Boothill" xml:space="preserve">
+    <value>波提欧</value>
+  </data>
+  <data name="Bronya" xml:space="preserve">
+    <value>布洛妮娅</value>
+  </data>
+  <data name="Clara" xml:space="preserve">
+    <value>克拉拉</value>
+  </data>
+  <data name="DanHeng" xml:space="preserve">
+    <value>丹恒</value>
+  </data>
+  <data name="DanHengImbibitorLunae" xml:space="preserve">
+    <value>丹恒•饮月</value>
+  </data>
+  <data name="DrRatio" xml:space="preserve">
+    <value>真理医生</value>
+  </data>
+  <data name="Feixiao" xml:space="preserve">
+    <value>飞霄</value>
+  </data>
+  <data name="Firefly" xml:space="preserve">
+    <value>流萤</value>
+  </data>
+  <data name="FuXuan" xml:space="preserve">
+    <value>符玄</value>
+  </data>
+  <data name="Gallagher" xml:space="preserve">
+    <value>加拉赫</value>
+  </data>
+  <data name="Gepard" xml:space="preserve">
+    <value>杰帕德</value>
+  </data>
+  <data name="Guinaifen" xml:space="preserve">
+    <value>桂乃芬</value>
+  </data>
+  <data name="Hanya" xml:space="preserve">
+    <value>寒鸦</value>
+  </data>
+  <data name="Herta" xml:space="preserve">
+    <value>黑塔</value>
+  </data>
+  <data name="Himeko" xml:space="preserve">
+    <value>姬子</value>
+  </data>
+  <data name="Hook" xml:space="preserve">
+    <value>虎克</value>
+  </data>
+  <data name="Huohuo" xml:space="preserve">
+    <value>藿藿</value>
+  </data>
+  <data name="Jade" xml:space="preserve">
+    <value>翡翠</value>
+  </data>
+  <data name="Jiaoqiu" xml:space="preserve">
+    <value>椒丘</value>
+  </data>
+  <data name="Jingliu" xml:space="preserve">
+    <value>镜流</value>
+  </data>
+  <data name="JingYuan" xml:space="preserve">
+    <value>景元</value>
+  </data>
+  <data name="Kafka" xml:space="preserve">
+    <value>卡芙卡</value>
+  </data>
+  <data name="Lingsha" xml:space="preserve">
+    <value>灵砂</value>
+  </data>
+  <data name="Luka" xml:space="preserve">
+    <value>卢卡</value>
+  </data>
+  <data name="Luocha" xml:space="preserve">
+    <value>罗刹</value>
+  </data>
+  <data name="Lynx" xml:space="preserve">
+    <value>玲可</value>
+  </data>
+  <data name="March7th" xml:space="preserve">
+    <value>三月七</value>
+  </data>
+  <data name="Misha" xml:space="preserve">
+    <value>米沙</value>
+  </data>
+  <data name="Moze" xml:space="preserve">
+    <value>貊泽</value>
+  </data>
+  <data name="Natasha" xml:space="preserve">
+    <value>娜塔莎</value>
+  </data>
+  <data name="Pela" xml:space="preserve">
+    <value>佩拉</value>
+  </data>
+  <data name="Qingque" xml:space="preserve">
+    <value>青雀</value>
+  </data>
+  <data name="Rappa" xml:space="preserve">
+    <value>乱破</value>
+  </data>
+  <data name="Robin" xml:space="preserve">
+    <value>知更鸟</value>
+  </data>
+  <data name="RuanMei" xml:space="preserve">
+    <value>阮•梅</value>
+  </data>
+  <data name="Sampo" xml:space="preserve">
+    <value>桑博</value>
+  </data>
+  <data name="Seele" xml:space="preserve">
+    <value>希儿</value>
+  </data>
+  <data name="Serval" xml:space="preserve">
+    <value>希露瓦</value>
+  </data>
+  <data name="SilverWolf" xml:space="preserve">
+    <value>银狼</value>
+  </data>
+  <data name="Sparkle" xml:space="preserve">
+    <value>花火</value>
+  </data>
+  <data name="Sushang" xml:space="preserve">
+    <value>素裳</value>
+  </data>
+  <data name="Tingyun" xml:space="preserve">
+    <value>停云</value>
+  </data>
+  <data name="TopazNumby" xml:space="preserve">
+    <value>托帕&amp;账账</value>
+  </data>
+  <data name="Welt" xml:space="preserve">
+    <value>瓦尔特</value>
+  </data>
+  <data name="Xueyi" xml:space="preserve">
+    <value>雪衣</value>
+  </data>
+  <data name="Yanqing" xml:space="preserve">
+    <value>彦卿</value>
+  </data>
+  <data name="Yukong" xml:space="preserve">
+    <value>驭空</value>
+  </data>
+  <data name="Yunli" xml:space="preserve">
+    <value>云璃</value>
+  </data>
+  <data name="BoundlessChoreo" xml:space="preserve">
+    <value>无边曼舞</value>
+  </data>
+  <data name="DayOneOfMyNewLife" xml:space="preserve">
+    <value>余生的第一天</value>
+  </data>
+  <data name="MakeTheWorldClamor" xml:space="preserve">
+    <value>别让世界静下来</value>
+  </data>
+  <data name="Swordplay" xml:space="preserve">
+    <value>论剑</value>
+  </data>
+  <data name="MemoriesOfThePast" xml:space="preserve">
+    <value>记忆中的模样</value>
+  </data>
+  <data name="AfterTheCharmonyFall" xml:space="preserve">
+    <value>谐乐静默之后</value>
+  </data>
+  <data name="ShadowedByNight" xml:space="preserve">
+    <value>黑夜如影随行</value>
+  </data>
+  <data name="OnlySilenceRemains" xml:space="preserve">
+    <value>唯有沉默</value>
+  </data>
+  <data name="TheMolesWelcomeYou" xml:space="preserve">
+    <value>鼹鼠党欢迎你</value>
+  </data>
+  <data name="PostOpConversation" xml:space="preserve">
+    <value>一场术后对话</value>
+  </data>
+  <data name="ASecretVow" xml:space="preserve">
+    <value>秘密誓心</value>
+  </data>
+  <data name="DanceDanceDance" xml:space="preserve">
+    <value>舞！舞！舞！</value>
+  </data>
+  <data name="ConcertForTwo" xml:space="preserve">
+    <value>同一种心情</value>
+  </data>
+  <data name="SharedFeeling" xml:space="preserve">
+    <value>猎物的视线</value>
+  </data>
+  <data name="EyesOfThePrey" xml:space="preserve">
+    <value>宇宙市场趋势</value>
+  </data>
+  <data name="ResolutionShinesAsPearlsOfSweat" xml:space="preserve">
+    <value>两个人的演唱会</value>
+  </data>
+  <data name="TrendOfTheUniversalMarket" xml:space="preserve">
+    <value>此时恰好</value>
+  </data>
+  <data name="TheBirthOfTheSelf" xml:space="preserve">
+    <value>「我」的诞生</value>
+  </data>
+  <data name="LandausChoice" xml:space="preserve">
+    <value>朗道的选择</value>
+  </data>
+  <data name="PerfectTiming" xml:space="preserve">
+    <value>决心如汗珠般闪耀</value>
+  </data>
+  <data name="UnderTheBlueSky" xml:space="preserve">
+    <value>在蓝天下</value>
+  </data>
+  <data name="GoodNightAndSleepWell" xml:space="preserve">
+    <value>晚安与睡颜</value>
+  </data>
+  <data name="PlanetaryRendezvous" xml:space="preserve">
+    <value>与行星相会</value>
+  </data>
+  <data name="SubscribeForMore" xml:space="preserve">
+    <value>点个关注吧！</value>
+  </data>
+  <data name="IndeliblePromise" xml:space="preserve">
+    <value>铭记于心的约定</value>
+  </data>
+  <data name="PoisedToBloom" xml:space="preserve">
+    <value>天才们的休憩</value>
+  </data>
+  <data name="GeniusesRepose" xml:space="preserve">
+    <value>芳华待灼</value>
+  </data>
+  <data name="DreamsMontage" xml:space="preserve">
+    <value>梦的蒙太奇</value>
+  </data>
+  <data name="DartingArrow" xml:space="preserve">
+    <value>离弦</value>
+  </data>
+  <data name="DataBank" xml:space="preserve">
+    <value>智库</value>
+  </data>
+  <data name="Defense" xml:space="preserve">
+    <value>戍御</value>
+  </data>
+  <data name="FineFruit" xml:space="preserve">
+    <value>嘉果</value>
+  </data>
+  <data name="HiddenShadow" xml:space="preserve">
+    <value>匿影</value>
+  </data>
+  <data name="Loop" xml:space="preserve">
+    <value>渊环</value>
+  </data>
+  <data name="Mediation" xml:space="preserve">
+    <value>调和</value>
+  </data>
+  <data name="MeshingCogs" xml:space="preserve">
+    <value>轮契</value>
+  </data>
+  <data name="Multiplication" xml:space="preserve">
+    <value>蕃息</value>
+  </data>
+  <data name="MutualDemise" xml:space="preserve">
+    <value>俱殁</value>
+  </data>
+  <data name="Passkey" xml:space="preserve">
+    <value>灵钥</value>
+  </data>
+  <data name="Pioneering" xml:space="preserve">
+    <value>开疆</value>
+  </data>
+  <data name="Sagacity" xml:space="preserve">
+    <value>睿见</value>
+  </data>
+  <data name="ShatteredHome" xml:space="preserve">
+    <value>乐圮</value>
+  </data>
+  <data name="Void" xml:space="preserve">
+    <value>幽邃</value>
+  </data>
+  <data name="Adversarial" xml:space="preserve">
+    <value>相抗</value>
+  </data>
+  <data name="Amber" xml:space="preserve">
+    <value>琥珀</value>
+  </data>
+  <data name="Arrows" xml:space="preserve">
+    <value>锋镝</value>
+  </data>
+  <data name="Chorus" xml:space="preserve">
+    <value>齐颂</value>
+  </data>
+  <data name="CollapsingSky" xml:space="preserve">
+    <value>天倾</value>
+  </data>
+  <data name="Cornucopia" xml:space="preserve">
+    <value>物穰</value>
+  </data>
+  <data name="SomethingIrreplaceable" xml:space="preserve">
+    <value>无可取代的东西</value>
+  </data>
+  <data name="ButTheBattleIsntOver" xml:space="preserve">
+    <value>但战斗还未结束</value>
+  </data>
+  <data name="SleepLikeTheDead" xml:space="preserve">
+    <value>如泥酣眠</value>
+  </data>
+  <data name="InTheNameOfTheWorld" xml:space="preserve">
+    <value>以世界之名</value>
+  </data>
+  <data name="NightOnTheMilkyWay" xml:space="preserve">
+    <value>银河铁道之夜</value>
+  </data>
+  <data name="TimeWaitsForNoOne" xml:space="preserve">
+    <value>时节不居</value>
+  </data>
+  <data name="AGroundedAscent" xml:space="preserve">
+    <value>回到大地的飞行</value>
+  </data>
+  <data name="AlongThePassingShore" xml:space="preserve">
+    <value>行于流逝的岸</value>
+  </data>
+  <data name="AnInstantBeforeAGaze" xml:space="preserve">
+    <value>片刻，留在眼底</value>
+  </data>
+  <data name="BaptismOfPureThought" xml:space="preserve">
+    <value>纯粹思维的洗礼</value>
+  </data>
+  <data name="BeforeDawn" xml:space="preserve">
+    <value>拂晓之前</value>
+  </data>
+  <data name="BrighterThanTheSun" xml:space="preserve">
+    <value>比阳光更明亮的</value>
+  </data>
+  <data name="CruisingInTheStellarSea" xml:space="preserve">
+    <value>星海巡航</value>
+  </data>
+  <data name="DanceAtSunset" xml:space="preserve">
+    <value>落日时起舞</value>
+  </data>
+  <data name="EarthlyEscapade" xml:space="preserve">
+    <value>游戏尘寰</value>
+  </data>
+  <data name="EchoesOfTheCoffin" xml:space="preserve">
+    <value>棺的回响</value>
+  </data>
+  <data name="EternalCalculus" xml:space="preserve">
+    <value>不息的演算</value>
+  </data>
+  <data name="FlowingNightglow" xml:space="preserve">
+    <value>夜色流光溢彩</value>
+  </data>
+  <data name="IShallBeMyOwnSword" xml:space="preserve">
+    <value>此身为剑</value>
+  </data>
+  <data name="IVentureForthToHunt" xml:space="preserve">
+    <value>我将，巡征追猎</value>
+  </data>
+  <data name="InTheNight" xml:space="preserve">
+    <value>于夜色中</value>
+  </data>
+  <data name="IncessantRain" xml:space="preserve">
+    <value>雨一直下</value>
+  </data>
+  <data name="InherentlyUnjustDestiny" xml:space="preserve">
+    <value>命运从未公平</value>
+  </data>
+  <data name="LongRoadLeadsHome" xml:space="preserve">
+    <value>长路终有归途</value>
+  </data>
+  <data name="MomentOfVictory" xml:space="preserve">
+    <value>制胜的瞬间</value>
+  </data>
+  <data name="NightOfFright" xml:space="preserve">
+    <value>惊魂夜</value>
+  </data>
+  <data name="NinjutsuInscriptionDazzlingEvilbreaker" xml:space="preserve">
+    <value>忍法帖•缭乱破魔</value>
+  </data>
+  <data name="OnTheFallOfAnAeon" xml:space="preserve">
+    <value>记一位星神的陨落</value>
+  </data>
+  <data name="PastSelfInMirror" xml:space="preserve">
+    <value>镜中故我</value>
+  </data>
+  <data name="PatienceIsAllYouNeed" xml:space="preserve">
+    <value>只需等待</value>
+  </data>
+  <data name="ReforgedRemembrance" xml:space="preserve">
+    <value>重塑时光之忆</value>
+  </data>
+  <data name="SailingTowardsASecondLife" xml:space="preserve">
+    <value>驶向第二次生命</value>
+  </data>
+  <data name="ScentAloneStaysTrue" xml:space="preserve">
+    <value>唯有香如故</value>
+  </data>
+  <data name="SheAlreadyShutHerEyes" xml:space="preserve">
+    <value>她已闭上双眼</value>
+  </data>
+  <data name="SolitaryHealing" xml:space="preserve">
+    <value>孤独的疗愈</value>
+  </data>
+  <data name="TextureOfMemories" xml:space="preserve">
+    <value>记忆的质料</value>
+  </data>
+  <data name="TheUnreachableSide" xml:space="preserve">
+    <value>到不了的彼岸</value>
+  </data>
+  <data name="ThoseManySprings" xml:space="preserve">
+    <value>那无数个春天</value>
+  </data>
+  <data name="WhereaboutsShouldDreamsRest" xml:space="preserve">
+    <value>梦应归于何处</value>
+  </data>
+  <data name="WorrisomeBlissful" xml:space="preserve">
+    <value>烦恼着，幸福着</value>
+  </data>
+  <data name="YetHopeIsPriceless" xml:space="preserve">
+    <value>偏偏希望无价</value>
+  </data>
+</root>
