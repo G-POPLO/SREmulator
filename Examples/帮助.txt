@@ -1,0 +1,65 @@
+USAGE:
+    sremulator.exe <COMMAND> [OPTIONS]
+
+COMMANDS:
+    result-statistics                   统计所有抽取结果
+    achieve-average-warps               计算实现目标所需抽数
+    achieve-chance                      计算实现目标的可能性
+
+OPTIONS:
+    --pause                             每次抽取后暂停（按任意键继续）
+    --return                            前一次的抽取结果显示将被后一次的抽取结果覆盖
+    --silent                            不显示每抽获取的物品
+
+    --star-rail-pass <count>            设置星轨通票数量
+    --star-rail-special-pass <count>    设置星轨专票数量
+    --undying-starlight <count>         设置未熄的星芒数量
+    --stellar-jade <count>              设置星琼数量
+    --oneiric-shard <count>             设置古老梦华数量
+
+    --counter5 <count>                  设置已多少抽未出5星
+    --guarantee5                        设置为有大保底
+
+    --warp-name <name>                  设置要抽取的卡池（参见 WARP-NAMES）
+    --warp-version <major> <minor>      设置卡池所在的版本（影响可抽取到的四星对象）
+
+    --character-event-warp              设置卡池类型为角色活动跃迁（UP角色池）
+    --light-cone-event-warp             设置卡池类型为光锥活动跃迁（UP光锥池）
+    --stellar-warp                      设置卡池类型为群星跃迁（常驻池）
+    --departure-warp                    设置卡池类型为始发跃迁（新手池）
+
+    --target-count5 <count>             设置目标5星数量（限定池中表示UP5星角色，普池中表示特定5星角色）
+    --target-count4 <count>             设置目标4星数量（限定池中表示特定UP4星角色，普池中表示特定4星角色）
+    --attempts <count>                  设置计算抽数或可能性时的尝试次数
+
+    --help                              显示该帮助
+    --language <name>                   更改语言（目前仅支持 zh-Hans, en-US）
+
+WARP-NAMES:
+    希儿: seele, xier
+    景元: jing-yuan, jingyuan
+    银狼: silver-wolf, silverwolf, yinlang
+    罗刹: luocha
+    刃: blade, ren
+    卡芙卡: kafka, kafuka
+    丹恒•饮月: dan-heng-imbibitor-lunae, dan-heng, danhengyinyue, yinyue, danheng
+    符玄: fu-xuan, fuxuan
+    镜流: jingliu
+    托帕&账账: topaz-numby, topaz, tuopa-zhangzhang, tuopa
+    藿藿: huohuo
+    银枝: argenti, yinzhi
+    阮•梅: ruan-mei, ruanmei
+    真理医生: dr-ratio, ratio, zhenliyisheng
+    黑天鹅: black-swan, heitiane
+    花火: sparkle, huahuo
+    黄泉: acheron, huangquan
+    砂金: aventurine, shajin
+    知更鸟: robin, zhigengniao
+    波提欧: boothill, botiou
+    流萤: firefly, liuying
+    翡翠: jade, feicui
+    云璃: yunli
+    椒丘: jiaoqiu
+    飞霄: feixiao
+    灵砂: lingsha
+    乱破: rappa, luanpo

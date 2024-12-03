@@ -259,7 +259,7 @@ namespace SREmulator
                 star4s = warp.Common4Characters;
             }
             ISRWarpResultItem star5 = star5s[0], star4 = star4s[0];
-            
+
             for (int i = 0; i < total; i++)
             {
                 SRPlayer player = args.Player;

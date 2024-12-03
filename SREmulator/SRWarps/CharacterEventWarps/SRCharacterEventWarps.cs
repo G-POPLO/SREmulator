@@ -1,5 +1,4 @@
 ﻿using SREmulator.SRItems;
-using System.Runtime.InteropServices;
 
 namespace SREmulator.SRWarps.CharacterEventWarps
 {

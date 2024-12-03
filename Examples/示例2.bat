@@ -1,0 +1,2 @@
+@echo off
+sremulator.exe achieve-chance --warp-name seele --warp-version 1 0 --star-rail-special-pass 20 --stellar-jade 20000 --undying-starlight 30 --character-event-warp --counter5 50 --target-count5 3 --guarantee5

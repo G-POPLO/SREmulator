@@ -1,0 +1,57 @@
+示例1：
+我想在 v1.0 版本中将希儿从无抽取到2魂（抽 3 只希儿）
+我现在 50 抽未出5星角色，有大保底。
+我想知道我大概还需要多少抽才能实现目标
+
+命令：
+sremulator.exe achieve-average-warps --warp-name seele --warp-version 1 0 --character-event-warp --counter5 50 --target-count5 3 --guarantee5
+
+结果（所有模拟结果均不准确，仅供参考）：
+204.5
+
+--------------------
+
+示例2：
+我想在 v1.0 版本中将希儿从无抽取到2魂（抽 3 只希儿）
+我现在 50 抽未出5星角色，有大保底，有 20 星轨专票，20000 星琼，30 未熄的星芒
+我想知道以现在的情况，我有多大的概率实现目标
+
+命令：
+sremulator.exe achieve-chance --warp-name seele --warp-version 1 0 --star-rail-special-pass 20 --stellar-jade 20000 --undying-starlight 30 --character-event-warp --counter5 50 --target-count5 3 --guarantee5
+
+结果（所有模拟结果均不准确，仅供参考）：
+19% (注意，该结果已经考虑了将获得的星芒兑换成星轨专票)
+
+--------------------
+
+示例3：
+我想 v2.6 的黄泉复刻池中抽 1 张黄泉专武和 5 张无边曼舞
+我现在 5 抽未出5星光锥，无大保底，有 100 星轨专票
+我想知道以现在的情况，我有多大的概率实现目标
+
+命令：
+sremulator.exe achieve-chance --warp-name huangquan --warp-version 2 6 --star-rail-special-pass 100 --light-cone-event-warp --counter5 5 --target-count5 1 --target-count4 5
+
+结果（所有模拟结果均不准确，仅供参考）：
+32.73%
+
+--------------------
+
+示例4：
+我想在 v2.1 的常驻池中将克拉拉从二魂抽到满魂（抽 4 只克拉拉）
+我现在 0 抽未出5星光锥，无大保底
+我想知道我大概还需要多少抽才能实现目标
+
+命令：
+sremulator.exe achieve-average-warps --warp-version 2 1 --stellar-warp --target-count5 4
+
+结果（所有模拟结果均不准确，仅供参考）：
+3490.46
+
+--------------------
+
+示例5：
+我想尝试从0开始抽完新手池
+
+命令：
+sremulator.exe result-statistics --departure-warp --star-rail-pass 40
