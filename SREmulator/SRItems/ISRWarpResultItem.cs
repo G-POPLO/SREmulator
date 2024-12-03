@@ -8,9 +8,6 @@
 
         public static bool Equals(ISRWarpResultItem item1, ISRWarpResultItem item2)
         {
-            //Console.WriteLine(item1);
-            //Console.WriteLine(item2);
-            //Console.WriteLine(item1.Name == item2.Name);
             return item1.Name == item2.Name;
         }
         public static bool Contains(ReadOnlySpan<ISRWarpResultItem> items, ISRWarpResultItem item)

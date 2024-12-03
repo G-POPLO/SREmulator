@@ -36,7 +36,6 @@ namespace SREmulator.SRItems
             SRLightCones.NightOnTheMilkyWay,
             SRLightCones.TimeWaitsForNoOne,
             ];
-        //public static readonly SRStar4LightCone[] AllStar4LightCones = Enumerable.Repeat(new SRTempStar4LightCone(), 27).ToArray();
 
         public static SRNonLimitedStar5LightCone SomethingIrreplaceable => new SomethingIrreplaceable();
         public static SRNonLimitedStar5LightCone ButTheBattleIsntOver => new ButTheBattleIsntOver();

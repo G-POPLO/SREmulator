@@ -5,6 +5,8 @@ namespace SREmulator.SRPlayers
 {
     internal sealed class SRPlayerWarpCurrencyStats
     {
+        // TODO
+        //public bool NoReward;
         public int StarRailPass;
         public int StarRailSpecialPass;
         public int UndyingEmbers;
@@ -107,6 +109,8 @@ namespace SREmulator.SRPlayers
         }
         public void GetWarpReward(ISRWarpResultItem item, SRPlayerCharacterStats characterStats)
         {
+            // TODO: const number
+
             if (item is SRLightCone)
             {
                 if (item is SRStar5LightCone) UndyingStarlight += 40;

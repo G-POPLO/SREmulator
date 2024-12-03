@@ -4,12 +4,6 @@ using SREmulator.SRWarps;
 using SREmulator.SRWarps.CharacterEventWarps;
 using SREmulator.SRWarps.CommonWarps;
 using SREmulator.SRWarps.LightConeEventWarps;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SREmulator
 {
@@ -39,7 +33,7 @@ namespace SREmulator
                 --counter5 <count>                  设置已多少抽未出5星
                 --guarantee5                        设置为有大保底
 
-                --warp-name <name>                  设置要抽取的卡池
+                --warp-name <name>                  设置要抽取的卡池（参见 WARP-NAMES）
                 --warp-version <major> <minor>      设置卡池所在的版本（影响可抽取到的四星对象）
 
                 --character-event-warp              设置卡池类型为角色活动跃迁（UP角色池）
@@ -50,6 +44,57 @@ namespace SREmulator
                 --target-count5 <count>             设置目标Up5星数量
                 --target-count4 <count>             设置目标Up4星数量
                 --attempts <count>                  设置计算抽数或可能性时的尝试次数
+
+                --help                              显示该帮助
+
+            WARP-NAMES:
+                希儿: seele, xier
+                景元: jing-yuan, jingyuan
+                银狼: silver-wolf, silverwolf, yinlang
+                罗刹: luocha
+                刃: blade, ren
+                卡芙卡: kafka, kafuka
+                丹恒•饮月: dan-heng-imbibitor-lunae, dan-heng, danhengyinyue, yinyue, danheng
+                符玄: fu-xuan, fuxuan
+                镜流: jingliu
+                托帕&账账: topaz-numby, topaz, tuopa-zhangzhang, tuopa
+                藿藿: huohuo
+                银枝: argenti, yinzhi
+                阮•梅: ruan-mei, ruanmei
+                真理医生: dr-ratio, ratio, zhenliyisheng
+                黑天鹅: black-swan, heitiane
+                花火: sparkle, huahuo
+                黄泉: acheron, huangquan
+                砂金: aventurine, shajin
+                知更鸟: robin, zhigengniao
+                波提欧: boothill, botiou
+                流萤: firefly, liuying
+                翡翠: jade, feicui
+                云璃: yunli
+                椒丘: jiaoqiu
+                飞霄: feixiao
+                灵砂: lingsha
+                乱破: rappa, luanpo
+
+            EXAMPLE:
+                目标：在 v1.0 版本中将希儿从无抽取到2魂（抽 3 只希儿）
+                我现在 50 抽未出5星角色，有大保底。
+                我想知道我大概还需要多少抽才能实现目标
+
+                命令：
+                sremulator.exe achieve-average-warps --warp-name seele --warp-version 1 0 --character-event-warp --counter5 50 --target-count5 3 --guarantee5
+
+                结果（所有模拟结果均不准确，仅供参考）：
+                204.5
+
+                如果我现有 20 星轨专票，20000 星琼，30 未熄的星芒
+                我还想知道以现在的情况，我有多大的概率实现目标
+
+                命令：
+                sremulator.exe achieve-chance --warp-name seele --warp-version 1 0 --star-rail-special-pass 20 --stellar-jade 20000 --undying-starlight 30 --character-event-warp --counter5 50 --target-count5 3 --guarantee5
+
+                结果（所有模拟结果均不准确，仅供参考）：
+                19% (注意，该结果已经考虑了将获得的星芒兑换成星轨专票)
             """;
 
         public static void Execute(CLIArgs args)
@@ -450,7 +495,7 @@ namespace SREmulator
                         SRVersion.Ver2p6 => SRCharacterEventWarps.WordsOfYore2,
                         _ => SRCharacterEventWarps.WordsOfYore1
                     },
-                    
+
                     "aventurine" or "shajin"
                     => version switch
                     {

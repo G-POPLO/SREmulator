@@ -1,11 +1,5 @@
 ﻿using SREmulator.SRItems;
 using SREmulator.SRPlayers;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics.CodeAnalysis;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SREmulator.SRWarps.CommonWarps
 {
@@ -25,7 +19,7 @@ namespace SREmulator.SRWarps.CommonWarps
 
         public override bool PreWarp(SRPlayer player, int count)
         {
-            
+
             int total = (int?)player.DepartureStats.ExtraInfo ?? 0;
             player.DepartureStats.ExtraInfo = total;
             return count is 10 && total < 50 && player.WarpCurrencyStats.TryConsumeStarRailPass(8);
@@ -42,23 +36,5 @@ namespace SREmulator.SRWarps.CommonWarps
             int total = (int?)player.DepartureStats.ExtraInfo ?? 0;
             player.DepartureStats.ExtraInfo = total + 10;
         }
-
-        //public bool Try10Warp(SRPlayer player, [NotNullWhen(true)] out ISRWarpResultItem[]? result)
-        //{
-        //    if (!PreWarp(player))
-        //    {
-        //        result = null;
-        //        return false;
-        //    }
-
-        //    result = new ISRWarpResultItem[10];
-        //    for (int i = 0; i < 10; i++)
-        //    {
-        //        result[i] = OnWarp(player);
-        //        PostWarp(player, result[i]);
-        //    }
-            
-        //    return true;
-        //}
     }
 }

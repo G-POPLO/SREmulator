@@ -1,6 +1,4 @@
 ﻿using SREmulator.SRItems;
-using System.Collections.Generic;
-using System.Diagnostics.Metrics;
 
 namespace SREmulator.SRWarps.CharacterEventWarps
 {
@@ -460,7 +458,7 @@ namespace SREmulator.SRWarps.CharacterEventWarps
         public override SRStar4Character UpStar4Character2 => SRCharacters.Asta;
         public override SRStar4Character UpStar4Character3 => SRCharacters.Luka;
     }
-    
+
     public sealed class DustyTrailsLoneStar1 : SRCharacterEventWarp
     {
         public override SRVersion Version => SRVersion.Ver2p2;
