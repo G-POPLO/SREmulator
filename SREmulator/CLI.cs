@@ -1,4 +1,5 @@
-﻿using SREmulator.SRItems;
+﻿using SREmulator.Localizations;
+using SREmulator.SRItems;
 using SREmulator.SRPlayers;
 using SREmulator.SRWarps;
 using SREmulator.SRWarps.CharacterEventWarps;
@@ -41,11 +42,12 @@ namespace SREmulator
                 --stellar-warp                      设置卡池类型为群星跃迁（常驻池）
                 --departure-warp                    设置卡池类型为始发跃迁（新手池）
 
-                --target-count5 <count>             设置目标Up5星数量
-                --target-count4 <count>             设置目标Up4星数量
+                --target-count5 <count>             设置目标5星数量（限定池中表示UP5星角色，普池中表示特定5星角色）
+                --target-count4 <count>             设置目标4星数量（限定池中表示特定UP4星角色，普池中表示特定4星角色）
                 --attempts <count>                  设置计算抽数或可能性时的尝试次数
 
                 --help                              显示该帮助
+                --language <name>                   更改语言（目前仅支持 zh-Hans, en-US）
 
             WARP-NAMES:
                 希儿: seele, xier
@@ -75,30 +77,21 @@ namespace SREmulator
                 飞霄: feixiao
                 灵砂: lingsha
                 乱破: rappa, luanpo
-
-            EXAMPLE:
-                目标：在 v1.0 版本中将希儿从无抽取到2魂（抽 3 只希儿）
-                我现在 50 抽未出5星角色，有大保底。
-                我想知道我大概还需要多少抽才能实现目标
-
-                命令：
-                sremulator.exe achieve-average-warps --warp-name seele --warp-version 1 0 --character-event-warp --counter5 50 --target-count5 3 --guarantee5
-
-                结果（所有模拟结果均不准确，仅供参考）：
-                204.5
-
-                如果我现有 20 星轨专票，20000 星琼，30 未熄的星芒
-                我还想知道以现在的情况，我有多大的概率实现目标
-
-                命令：
-                sremulator.exe achieve-chance --warp-name seele --warp-version 1 0 --star-rail-special-pass 20 --stellar-jade 20000 --undying-starlight 30 --character-event-warp --counter5 50 --target-count5 3 --guarantee5
-
-                结果（所有模拟结果均不准确，仅供参考）：
-                19% (注意，该结果已经考虑了将获得的星芒兑换成星轨专票)
             """;
 
         public static void Execute(CLIArgs args)
         {
+            if (args.Help)
+            {
+                Console.WriteLine(Help);
+                return;
+            }
+
+            if (args.Language is not null)
+            {
+                Localization.Culture = new(args.Language);
+            }
+
             if (args.Command is "achieve-average-warps")
             {
                 AchieveAverageWarps(args);
@@ -107,9 +100,13 @@ namespace SREmulator
             {
                 AchieveChance(args);
             }
-            else
+            else if (args.Command is "result-statistics")
             {
                 ResultStatistics(args);
+            }
+            else
+            {
+                Console.WriteLine(Help);
             }
         }
 
@@ -183,8 +180,19 @@ namespace SREmulator
             int warps = 0;
             var warp = args.Warp;
 
-            var star5 = warp.Up5 ?? warp.Common5Characters[0];
-            var star4 = warp.Up4?[0] ?? warp.Common4Characters[0];
+            ISRWarpResultItem[] star5s, star4s;
+            if (args.WarpType is SRWarpType.CharacterEventWarp or SRWarpType.LightConeEventWarp)
+            {
+                star5s = [warp.Up5];
+                star4s = warp.Up4;
+            }
+            else
+            {
+                star5s = warp.Common5Characters;
+                star4s = warp.Common4Characters;
+            }
+            ISRWarpResultItem star5 = star5s[0], star4 = star4s[0];
+
 
             for (int i = 0; i < total; i++)
             {
@@ -215,7 +223,7 @@ namespace SREmulator
             if (args.TargetCount5 > 0)
             {
                 var origColor = SetColor(star5);
-                Console.Write(star5.Name);
+                Console.Write(string.Join(" / ", star5s.Select(item => item.Name)));
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine($": {args.TargetCount5}");
                 Console.ForegroundColor = origColor;
@@ -223,7 +231,7 @@ namespace SREmulator
             if (args.TargetCount4 > 0)
             {
                 var origColor = SetColor(star4);
-                Console.Write(string.Join(" / ", warp.Up4.Select(item => item.Name)));
+                Console.Write(string.Join(" / ", star4s.Select(item => item.Name)));
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine($": {args.TargetCount4}");
                 Console.ForegroundColor = origColor;
@@ -237,6 +245,19 @@ namespace SREmulator
             int successful = 0;
             var warp = args.Warp;
 
+            ISRWarpResultItem[] star5s, star4s;
+            if (args.WarpType is SRWarpType.CharacterEventWarp or SRWarpType.LightConeEventWarp)
+            {
+                star5s = [warp.Up5];
+                star4s = warp.Up4;
+            }
+            else
+            {
+                star5s = warp.Common5Characters;
+                star4s = warp.Common4Characters;
+            }
+            ISRWarpResultItem star5 = star5s[0], star4 = star4s[0];
+            
             for (int i = 0; i < total; i++)
             {
                 SRPlayer player = args.Player;
@@ -245,11 +266,11 @@ namespace SREmulator
                 while (warp.TryWarp(player, out var item))
                 {
                     counter++;
-                    if (count5 > 0 && ISRWarpResultItem.Equals(warp.Up5, item))
+                    if (count5 > 0 && ISRWarpResultItem.Equals(star5, item))
                     {
                         count5--;
                     }
-                    if (count4 > 0 && ISRWarpResultItem.Equals(warp.Up4[0], item))
+                    if (count4 > 0 && ISRWarpResultItem.Equals(star4, item))
                     {
                         count4--;
                     }
@@ -263,16 +284,16 @@ namespace SREmulator
 
             if (args.TargetCount5 > 0)
             {
-                var origColor = SetColor(warp.Up5);
-                Console.Write(warp.Up5.Name);
+                var origColor = SetColor(star5);
+                Console.Write(string.Join(" / ", star5s.Select(item => item.Name)));
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine($": {args.TargetCount5}");
                 Console.ForegroundColor = origColor;
             }
             if (args.TargetCount4 > 0)
             {
-                var origColor = SetColor(warp.Up4[0]);
-                Console.Write(string.Join(" / ", warp.Up4.Select(item => item.Name)));
+                var origColor = SetColor(star4);
+                Console.Write(string.Join(" / ", star4s.Select(item => item.Name)));
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine($": {args.TargetCount4}");
                 Console.ForegroundColor = origColor;
@@ -315,6 +336,9 @@ namespace SREmulator
         public int Attempts = 10000;
 
         public string Command = "result-statistics";
+
+        public bool Help = false;
+        public string? Language = null;
 
         internal SRPlayerWarpCurrencyStats WarpCurrencyStats
         {
@@ -898,6 +922,14 @@ namespace SREmulator
                             }
                             break;
 
+                        case "help":
+                            result.Help = true;
+                            break;
+
+                        case "language":
+                            result.Language = args[++i];
+                            break;
+
                         default:
                             break;
                     }
@@ -910,6 +942,4 @@ namespace SREmulator
             return result;
         }
     }
-
-
 }
