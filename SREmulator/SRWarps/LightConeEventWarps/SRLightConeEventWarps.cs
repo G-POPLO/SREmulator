@@ -78,6 +78,11 @@ namespace SREmulator.SRWarps.LightConeEventWarps
         public static readonly SRLightConeEventWarp LetScentSinkIn1 = new LetScentSinkIn1();
 
         public static readonly SRLightConeEventWarp EyesOfANinja1 = new EyesOfANinja1();
+
+        public static readonly SRLightConeEventWarp EyesToTheStars1 = new EyesToTheStars1();
+
+        public static readonly SRLightConeEventWarp TheLongVoyageHome1 = new TheLongVoyageHome1();
+
     }
 
     public sealed class ButterflyOnSwordtip1 : SRLightConeEventWarp
@@ -539,4 +544,23 @@ namespace SREmulator.SRWarps.LightConeEventWarps
         public override SRStar4LightCone UpStar4LightCone3 => SRLightCones.UnderTheBlueSky;
     }
 
+    public sealed class EyesToTheStars1 : SRLightConeEventWarp
+    {
+        public override SRVersion Version => SRVersion.Ver2p7;
+
+        public override SRStar5LightCone UpStar5LightCone => SRLightCones.AGroundedAscent;
+        public override SRStar4LightCone UpStar4LightCone1 => SRLightCones.PoisedToBloom;
+        public override SRStar4LightCone UpStar4LightCone2 => SRLightCones.TheBirthOfTheSelf;
+        public override SRStar4LightCone UpStar4LightCone3 => SRLightCones.Swordplay;
+    }
+
+    public sealed class TheLongVoyageHome1 : SRLightConeEventWarp
+    {
+        public override SRVersion Version => SRVersion.Ver2p7;
+
+        public override SRStar5LightCone UpStar5LightCone => SRLightCones.LongRoadLeadsHome;
+        public override SRStar4LightCone UpStar4LightCone1 => SRLightCones.IndeliblePromise;
+        public override SRStar4LightCone UpStar4LightCone2 => SRLightCones.ResolutionShinesAsPearlsOfSweat;
+        public override SRStar4LightCone UpStar4LightCone3 => SRLightCones.ConcertForTwo;
+    }
 }

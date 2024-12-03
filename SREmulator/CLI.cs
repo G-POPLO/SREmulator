@@ -77,6 +77,8 @@ namespace SREmulator
                 飞霄: feixiao
                 灵砂: lingsha
                 乱破: rappa, luanpo
+                星期日: sunday, xingqiri
+                忘归人: fugue, wangguiren
             """;
 
         public static void Execute(CLIArgs args)
@@ -582,7 +584,19 @@ namespace SREmulator
                         _ => SRCharacterEventWarps.EyesOfANinja1
                     },
 
-                    _ => SRCharacterEventWarps.EyesOfANinja1
+                    "sunday" or "xingqiri"
+                    => version switch
+                    {
+                        _ => SRCharacterEventWarps.EyesToTheStars1
+                    },
+
+                    "fugue" or "wangguiren"
+                    => version switch
+                    {
+                        _ => SRCharacterEventWarps.TheLongVoyageHome1
+                    },
+
+                    _ => SRCharacterEventWarps.TheLongVoyageHome1
                 };
             }
         }
@@ -776,7 +790,19 @@ namespace SREmulator
                         _ => SRLightConeEventWarps.EyesOfANinja1
                     },
 
-                    _ => SRLightConeEventWarps.EyesOfANinja1
+                    "sunday" or "xingqiri"
+                    => version switch
+                    {
+                        _ => SRLightConeEventWarps.EyesToTheStars1
+                    },
+
+                    "fugue" or "wangguiren"
+                    => version switch
+                    {
+                        _ => SRLightConeEventWarps.TheLongVoyageHome1
+                    },
+
+                    _ => SRLightConeEventWarps.TheLongVoyageHome1
                 };
             }
         }

@@ -40,7 +40,8 @@ namespace SREmulator.SRItems
         public static SRLimitedStar5Character Sparkle => new Sparkle();
         public static SRLimitedStar5Character TopazNumby => new TopazNumby();
         public static SRLimitedStar5Character Yunli => new Yunli();
-
+        public static SRLimitedStar5Character Sunday => new Sunday();
+        public static SRLimitedStar5Character Fugue => new Fugue();
 
         public static SRStar4Character Arlan => new Arlan();
         public static SRStar4Character Asta => new Asta();
@@ -240,6 +241,16 @@ namespace SREmulator.SRItems
     public sealed record class Yunli : SRLimitedStar5Character
     {
         public override string Name => Localization.Yunli;
+    }
+
+    public sealed record class Sunday : SRLimitedStar5Character
+    {
+        public override string Name => Localization.Sunday;
+    }
+
+    public sealed record class Fugue : SRLimitedStar5Character
+    {
+        public override string Name => Localization.Fugue;
     }
 
     #endregion

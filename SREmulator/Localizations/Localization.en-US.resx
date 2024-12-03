@@ -432,11 +432,14 @@
   <data name="Cornucopia" xml:space="preserve">
     <value>Cornucopia</value>
   </data>
+  <data name="SomethingIrreplaceable" xml:space="preserve">
+    <value>Something Irreplaceable</value>
+  </data>
   <data name="ButTheBattleIsntOver" xml:space="preserve">
     <value>But the Battle Isn't Over</value>
   </data>
-  <data name="MomentOfVictory" xml:space="preserve">
-    <value>Moment of Victory</value>
+  <data name="SleepLikeTheDead" xml:space="preserve">
+    <value>Sleep Like the Dead</value>
   </data>
   <data name="InTheNameOfTheWorld" xml:space="preserve">
     <value>In the Name of the World</value>
@@ -501,6 +504,9 @@
   <data name="LongRoadLeadsHome" xml:space="preserve">
     <value>Long Road Leads Home</value>
   </data>
+  <data name="MomentOfVictory" xml:space="preserve">
+    <value>Moment of Victory</value>
+  </data>
   <data name="NightOfFright" xml:space="preserve">
     <value>Night of Fright</value>
   </data>
@@ -528,14 +534,8 @@
   <data name="SheAlreadyShutHerEyes" xml:space="preserve">
     <value>She Already Shut Her Eyes</value>
   </data>
-  <data name="SleepLikeTheDead" xml:space="preserve">
-    <value>Sleep Like the Dead</value>
-  </data>
   <data name="SolitaryHealing" xml:space="preserve">
     <value>Solitary Healing</value>
-  </data>
-  <data name="SomethingIrreplaceable" xml:space="preserve">
-    <value>Something Irreplaceable</value>
   </data>
   <data name="TextureOfMemories" xml:space="preserve">
     <value>Texture of Memories</value>
@@ -554,5 +554,17 @@
   </data>
   <data name="YetHopeIsPriceless" xml:space="preserve">
     <value>Yet Hope Is Priceless</value>
+  </data>
+  <data name="Aglaea" xml:space="preserve">
+    <value>Aglaea</value>
+  </data>
+  <data name="Fugue" xml:space="preserve">
+    <value>Fugue</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Sunday</value>
+  </data>
+  <data name="TheHerta" xml:space="preserve">
+    <value>The Herta</value>
   </data>
 </root>

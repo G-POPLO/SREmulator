@@ -1,4 +1,5 @@
 ﻿using SREmulator.SRItems;
+using System.Runtime.InteropServices;
 
 namespace SREmulator.SRWarps.CharacterEventWarps
 {
@@ -78,6 +79,10 @@ namespace SREmulator.SRWarps.CharacterEventWarps
         public static readonly SRCharacterEventWarp LetScentSinkIn1 = new LetScentSinkIn1();
 
         public static readonly SRCharacterEventWarp EyesOfANinja1 = new EyesOfANinja1();
+
+        public static readonly SRCharacterEventWarp EyesToTheStars1 = new EyesToTheStars1();
+
+        public static readonly SRCharacterEventWarp TheLongVoyageHome1 = new TheLongVoyageHome1();
     }
 
     public sealed class ButterflyOnSwordtip1 : SRCharacterEventWarp
@@ -537,5 +542,25 @@ namespace SREmulator.SRWarps.CharacterEventWarps
         public override SRStar4Character UpStar4Character1 => SRCharacters.Yukong;
         public override SRStar4Character UpStar4Character2 => SRCharacters.Lynx;
         public override SRStar4Character UpStar4Character3 => SRCharacters.Xueyi;
+    }
+
+    public sealed class EyesToTheStars1 : SRCharacterEventWarp
+    {
+        public override SRVersion Version => SRVersion.Ver2p7;
+
+        public override SRStar5Character UpStar5Character => SRCharacters.Sunday;
+        public override SRStar4Character UpStar4Character1 => SRCharacters.Qingque;
+        public override SRStar4Character UpStar4Character2 => SRCharacters.Arlan;
+        public override SRStar4Character UpStar4Character3 => SRCharacters.Tingyun;
+    }
+
+    public sealed class TheLongVoyageHome1 : SRCharacterEventWarp
+    {
+        public override SRVersion Version => SRVersion.Ver2p7;
+
+        public override SRStar5Character UpStar5Character => SRCharacters.Fugue;
+        public override SRStar4Character UpStar4Character1 => SRCharacters.Gallagher;
+        public override SRStar4Character UpStar4Character2 => SRCharacters.Yukong;
+        public override SRStar4Character UpStar4Character3 => SRCharacters.Misha;
     }
 }

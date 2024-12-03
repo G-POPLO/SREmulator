@@ -88,6 +88,15 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 Aglaea 的本地化字符串。
+        /// </summary>
+        internal static string Aglaea {
+            get {
+                return ResourceManager.GetString("Aglaea", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 AGroundedAscent 的本地化字符串。
         /// </summary>
         internal static string AGroundedAscent {
@@ -480,6 +489,15 @@ namespace SREmulator.Localizations {
         internal static string FlowingNightglow {
             get {
                 return ResourceManager.GetString("FlowingNightglow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Fugue 的本地化字符串。
+        /// </summary>
+        internal static string Fugue {
+            get {
+                return ResourceManager.GetString("Fugue", resourceCulture);
             }
         }
         
@@ -1186,6 +1204,15 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 Sunday 的本地化字符串。
+        /// </summary>
+        internal static string Sunday {
+            get {
+                return ResourceManager.GetString("Sunday", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Sushang 的本地化字符串。
         /// </summary>
         internal static string Sushang {
@@ -1218,6 +1245,15 @@ namespace SREmulator.Localizations {
         internal static string TheBirthOfTheSelf {
             get {
                 return ResourceManager.GetString("TheBirthOfTheSelf", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 TheHerta 的本地化字符串。
+        /// </summary>
+        internal static string TheHerta {
+            get {
+                return ResourceManager.GetString("TheHerta", resourceCulture);
             }
         }
         

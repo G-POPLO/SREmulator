@@ -537,7 +537,7 @@
     <value>Cornucopia</value>
     <comment>LightCones</comment>
   </data>
-    <data name="SomethingIrreplaceable" xml:space="preserve">
+  <data name="SomethingIrreplaceable" xml:space="preserve">
     <value>SomethingIrreplaceable</value>
     <comment>LightCones</comment>
   </data>
@@ -700,5 +700,21 @@
   <data name="YetHopeIsPriceless" xml:space="preserve">
     <value>YetHopeIsPriceless</value>
     <comment>LightCones</comment>
+  </data>
+  <data name="Aglaea" xml:space="preserve">
+    <value>Aglaea</value>
+    <comment>Characters</comment>
+  </data>
+  <data name="Fugue" xml:space="preserve">
+    <value>Fugue</value>
+    <comment>Characters</comment>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Sunday</value>
+    <comment>Characters</comment>
+  </data>
+  <data name="TheHerta" xml:space="preserve">
+    <value>TheHerta</value>
+    <comment>Characters</comment>
   </data>
 </root>

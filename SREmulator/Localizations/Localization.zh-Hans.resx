@@ -555,4 +555,16 @@
   <data name="YetHopeIsPriceless" xml:space="preserve">
     <value>偏偏希望无价</value>
   </data>
+  <data name="Aglaea" xml:space="preserve">
+    <value>阿格莱雅</value>
+  </data>
+  <data name="Fugue" xml:space="preserve">
+    <value>忘归人</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>星期日</value>
+  </data>
+  <data name="TheHerta" xml:space="preserve">
+    <value>大黑塔</value>
+  </data>
 </root>
