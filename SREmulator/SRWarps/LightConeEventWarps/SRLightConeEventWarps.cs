@@ -9,6 +9,7 @@ namespace SREmulator.SRWarps.LightConeEventWarps
 
         public static readonly SRLightConeEventWarp SwirlOfHeavenlySpear1 = new SwirlOfHeavenlySpear1();
         public static readonly SRLightConeEventWarp SwirlOfHeavenlySpear2 = new SwirlOfHeavenlySpear2();
+        public static readonly SRLightConeEventWarp SwirlOfHeavenlySpear3 = new SwirlOfHeavenlySpear3();
 
         public static readonly SRLightConeEventWarp ContractZero1 = new ContractZero1();
         public static readonly SRLightConeEventWarp ContractZero2 = new ContractZero2();
@@ -66,6 +67,7 @@ namespace SREmulator.SRWarps.LightConeEventWarps
         public static readonly SRLightConeEventWarp DustyTrailsLoneStar1 = new DustyTrailsLoneStar1();
 
         public static readonly SRLightConeEventWarp FirefullFlyshine1 = new FirefullFlyshine1();
+        public static readonly SRLightConeEventWarp FirefullFlyshine2 = new FirefullFlyshine2();
 
         public static readonly SRLightConeEventWarp LienOnLifeLeaseOnFate1 = new LienOnLifeLeaseOnFate1();
 
@@ -122,6 +124,16 @@ namespace SREmulator.SRWarps.LightConeEventWarps
         public override SRStar4LightCone UpStar4LightCone2 => SRLightCones.GeniusesRepose;
         public override SRStar4LightCone UpStar4LightCone3 => SRLightCones.UnderTheBlueSky;
     }
+    public sealed class SwirlOfHeavenlySpear3 : SRLightConeEventWarp
+    {
+        public override SRVersion Version => SRVersion.Ver2p7;
+
+        public override SRStar5LightCone UpStar5LightCone => SRLightCones.BeforeDawn;
+        public override SRStar4LightCone UpStar4LightCone1 => SRLightCones.PoisedToBloom;
+        public override SRStar4LightCone UpStar4LightCone2 => SRLightCones.TheBirthOfTheSelf;
+        public override SRStar4LightCone UpStar4LightCone3 => SRLightCones.Swordplay;
+    }
+
 
     public sealed class ContractZero1 : SRLightConeEventWarp
     {
@@ -482,6 +494,15 @@ namespace SREmulator.SRWarps.LightConeEventWarps
         public override SRStar4LightCone UpStar4LightCone1 => SRLightCones.MemoriesOfThePast;
         public override SRStar4LightCone UpStar4LightCone2 => SRLightCones.DayOneOfMyNewLife;
         public override SRStar4LightCone UpStar4LightCone3 => SRLightCones.EyesOfThePrey;
+    }
+    public sealed class FirefullFlyshine2 : SRLightConeEventWarp
+    {
+        public override SRVersion Version => SRVersion.Ver2p7;
+
+        public override SRStar5LightCone UpStar5LightCone => SRLightCones.WhereaboutsShouldDreamsRest;
+        public override SRStar4LightCone UpStar4LightCone1 => SRLightCones.IndeliblePromise;
+        public override SRStar4LightCone UpStar4LightCone2 => SRLightCones.ResolutionShinesAsPearlsOfSweat;
+        public override SRStar4LightCone UpStar4LightCone3 => SRLightCones.ConcertForTwo;
     }
 
     public sealed class LienOnLifeLeaseOnFate1 : SRLightConeEventWarp

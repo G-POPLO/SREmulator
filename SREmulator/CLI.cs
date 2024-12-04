@@ -411,6 +411,7 @@ namespace SREmulator
                     "jing-yuan" or "jingyuan"
                     => version switch
                     {
+                        SRVersion.Ver2p7 => SRCharacterEventWarps.SwirlOfHeavenlySpear3,
                         SRVersion.Ver2p0 => SRCharacterEventWarps.SwirlOfHeavenlySpear2,
                         _ => SRCharacterEventWarps.SwirlOfHeavenlySpear1
                     },
@@ -545,6 +546,7 @@ namespace SREmulator
                     "firefly" or "liuying"
                     => version switch
                     {
+                        SRVersion.Ver2p7 => SRCharacterEventWarps.FirefullFlyshine2,
                         _ => SRCharacterEventWarps.FirefullFlyshine1
                     },
 
@@ -617,6 +619,7 @@ namespace SREmulator
                     "jing-yuan" or "jingyuan"
                     => version switch
                     {
+                        SRVersion.Ver2p7 => SRLightConeEventWarps.SwirlOfHeavenlySpear2,
                         SRVersion.Ver2p0 => SRLightConeEventWarps.SwirlOfHeavenlySpear2,
                         _ => SRLightConeEventWarps.SwirlOfHeavenlySpear1
                     },
@@ -751,6 +754,7 @@ namespace SREmulator
                     "firefly" or "liuying"
                     => version switch
                     {
+                        SRVersion.Ver2p7 => SRLightConeEventWarps.FirefullFlyshine2,
                         _ => SRLightConeEventWarps.FirefullFlyshine1
                     },
 

@@ -9,6 +9,7 @@ namespace SREmulator.SRWarps.CharacterEventWarps
 
         public static readonly SRCharacterEventWarp SwirlOfHeavenlySpear1 = new SwirlOfHeavenlySpear1();
         public static readonly SRCharacterEventWarp SwirlOfHeavenlySpear2 = new SwirlOfHeavenlySpear2();
+        public static readonly SRCharacterEventWarp SwirlOfHeavenlySpear3 = new SwirlOfHeavenlySpear3();
 
         public static readonly SRCharacterEventWarp ContractZero1 = new ContractZero1();
         public static readonly SRCharacterEventWarp ContractZero2 = new ContractZero2();
@@ -66,6 +67,7 @@ namespace SREmulator.SRWarps.CharacterEventWarps
         public static readonly SRCharacterEventWarp DustyTrailsLoneStar1 = new DustyTrailsLoneStar1();
 
         public static readonly SRCharacterEventWarp FirefullFlyshine1 = new FirefullFlyshine1();
+        public static readonly SRCharacterEventWarp FirefullFlyshine2 = new FirefullFlyshine2();
 
         public static readonly SRCharacterEventWarp LienOnLifeLeaseOnFate1 = new LienOnLifeLeaseOnFate1();
 
@@ -120,6 +122,15 @@ namespace SREmulator.SRWarps.CharacterEventWarps
         public override SRStar4Character UpStar4Character1 => SRCharacters.Sampo;
         public override SRStar4Character UpStar4Character2 => SRCharacters.Hanya;
         public override SRStar4Character UpStar4Character3 => SRCharacters.Qingque;
+    }
+    public sealed class SwirlOfHeavenlySpear3 : SRCharacterEventWarp
+    {
+        public override SRVersion Version => SRVersion.Ver2p7;
+
+        public override SRStar5Character UpStar5Character => SRCharacters.JingYuan;
+        public override SRStar4Character UpStar4Character1 => SRCharacters.Qingque;
+        public override SRStar4Character UpStar4Character2 => SRCharacters.Arlan;
+        public override SRStar4Character UpStar4Character3 => SRCharacters.Tingyun;
     }
 
     public sealed class ContractZero1 : SRCharacterEventWarp
@@ -482,6 +493,16 @@ namespace SREmulator.SRWarps.CharacterEventWarps
         public override SRStar4Character UpStar4Character2 => SRCharacters.Misha;
         public override SRStar4Character UpStar4Character3 => SRCharacters.Gallagher;
     }
+    public sealed class FirefullFlyshine2 : SRCharacterEventWarp
+    {
+        public override SRVersion Version => SRVersion.Ver2p7;
+
+        public override SRStar5Character UpStar5Character => SRCharacters.Firefly;
+        public override SRStar4Character UpStar4Character1 => SRCharacters.Gallagher;
+        public override SRStar4Character UpStar4Character2 => SRCharacters.Yukong;
+        public override SRStar4Character UpStar4Character3 => SRCharacters.Misha;
+    }
+
 
     public sealed class LienOnLifeLeaseOnFate1 : SRCharacterEventWarp
     {
