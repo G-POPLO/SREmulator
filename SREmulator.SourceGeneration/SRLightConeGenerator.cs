@@ -1,5 +1,4 @@
 ﻿using Microsoft.CodeAnalysis;
-using SREmulator.SourceGeneration.Receivers;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,19 +9,19 @@ namespace SREmulator.SourceGeneration
     {
         public void Initialize(GeneratorInitializationContext context)
         {
-            context.RegisterForSyntaxNotifications(() => new SRLightConeKeysClassReceiver());
+            context.RegisterForSyntaxNotifications(SRKeysClassReceiver.Creator(SRKeys.SRLightConeKeys));
         }
 
         public void Execute(GeneratorExecutionContext context)
         {
-            var receiver = (SRLightConeKeysClassReceiver)context.SyntaxContextReceiver;
+            var receiver = (SRKeysClassReceiver)context.SyntaxContextReceiver;
             var semanticModel = context.Compilation.GetSemanticModel(receiver.Keys.SyntaxTree);
             var keys = Microsoft.CodeAnalysis.CSharp.CSharpExtensions.GetDeclaredSymbol(semanticModel, receiver.Keys);
             List<(string Key, int Rarity, bool Limited, string Type)> lightCones = new List<(string Key, int Rarity, bool Limited, string Type)>();
 
             foreach (var member in keys.GetMembers())
             {
-                var attributeData = member.GetAttribute(receiver.Attribute);
+                var attributeData = member.GetAttribute(SRAttributes.SRLightConeAttribute);
                 string key = (string)attributeData.ConstructorArguments[0].Value;
                 int rarity = (int)attributeData.ConstructorArguments[1].Value;
                 bool limited = (bool)attributeData.ConstructorArguments[2].Value;
