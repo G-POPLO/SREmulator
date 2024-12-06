@@ -1,4 +1,4 @@
-﻿namespace SREmulator.SourceGeneration
+﻿namespace SREmulator.SourceGeneration.Constants
 {
     public static class SRKeys
     {

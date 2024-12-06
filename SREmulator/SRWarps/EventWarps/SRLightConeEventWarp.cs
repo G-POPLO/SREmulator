@@ -1,7 +1,7 @@
 ﻿using SREmulator.SRItems;
 using SREmulator.SRPlayers;
 
-namespace SREmulator.SRWarps.LightConeEventWarps
+namespace SREmulator.SRWarps.EventWarps
 {
     public abstract class SRLightConeEventWarp : SRWarp
     {

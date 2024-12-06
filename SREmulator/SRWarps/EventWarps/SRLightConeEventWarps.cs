@@ -1,4 +1,4 @@
-﻿namespace SREmulator.SRWarps.LightConeEventWarps
+﻿namespace SREmulator.SRWarps.EventWarps
 {
     public static partial class SRLightConeEventWarps
     {

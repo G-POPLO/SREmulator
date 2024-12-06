@@ -12,6 +12,7 @@
 
         Major1 = 0x1000 | Specified,
         Major2 = 0x2000 | Specified,
+        Major3 = 0x3000 | Specified,
 
         Minor0 = 0x0000 | Specified,
         Minor1 = 0x0100 | Specified,
@@ -41,5 +42,7 @@
         Ver2p5 = Major2 | Minor5,
         Ver2p6 = Major2 | Minor6,
         Ver2p7 = Major2 | Minor7,
+
+        Ver3p0 = Major3 | Minor0,
     }
 }

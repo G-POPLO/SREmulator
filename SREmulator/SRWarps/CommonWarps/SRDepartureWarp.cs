@@ -19,11 +19,7 @@ namespace SREmulator.SRWarps.CommonWarps
 
         public override bool PreWarp(SRPlayer player, int count)
         {
-            if (player.DepartureStats.ExtraInfo is not DepartureStats stats)
-            {
-                stats = new DepartureStats();
-                player.DepartureStats.ExtraInfo = stats;
-            }
+            var stats = DepartureStats.GetStats(player);
             if (stats.Counter >= 50) return false;
             if (count is not 1 or 10) return false;
             if (stats.NoCost >= count)
@@ -41,11 +37,7 @@ namespace SREmulator.SRWarps.CommonWarps
 
         public override ISRWarpResultItem OnWarp(SRPlayer player)
         {
-            if (player.DepartureStats.ExtraInfo is not DepartureStats stats)
-            {
-                stats = new DepartureStats();
-                player.DepartureStats.ExtraInfo = stats;
-            }
+            var stats = DepartureStats.GetStats(player);
             if (stats.Counter is 49) return SRWarpCore.OneOf(Common5Characters);
             return SRWarpCore.CommonWarp(WarpStats, player.DepartureStats);
         }
@@ -53,11 +45,7 @@ namespace SREmulator.SRWarps.CommonWarps
         public override void PostWarp(SRPlayer player, ISRWarpResultItem item)
         {
             player.WarpCurrencyStats.GetWarpReward(item, player.CharacterStats);
-            if (player.DepartureStats.ExtraInfo is not DepartureStats stats)
-            {
-                stats = new DepartureStats();
-                player.DepartureStats.ExtraInfo = stats;
-            }
+            var stats = DepartureStats.GetStats(player);
             stats.Counter++;
         }
 
@@ -65,6 +53,16 @@ namespace SREmulator.SRWarps.CommonWarps
         {
             public int Counter;
             public int NoCost;
+
+            public static DepartureStats GetStats(SRPlayer player)
+            {
+                if (player.DepartureStats.ExtraInfo is not DepartureStats stats)
+                {
+                    stats = new DepartureStats();
+                    player.DepartureStats.ExtraInfo = stats;
+                }
+                return stats;
+            }
         }
     }
 }

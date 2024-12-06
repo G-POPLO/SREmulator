@@ -2,9 +2,8 @@
 using SREmulator.SRItems;
 using SREmulator.SRPlayers;
 using SREmulator.SRWarps;
-using SREmulator.SRWarps.CharacterEventWarps;
 using SREmulator.SRWarps.CommonWarps;
-using SREmulator.SRWarps.LightConeEventWarps;
+using SREmulator.SRWarps.EventWarps;
 
 namespace SREmulator
 {

@@ -1,7 +1,7 @@
 ﻿using SREmulator.SRItems;
 using SREmulator.SRPlayers;
 
-namespace SREmulator.SRWarps.CharacterEventWarps
+namespace SREmulator.SRWarps.EventWarps
 {
     public abstract class SRCharacterEventWarp : SRWarp
     {

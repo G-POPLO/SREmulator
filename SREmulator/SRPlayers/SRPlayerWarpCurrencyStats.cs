@@ -126,7 +126,7 @@ namespace SREmulator.SRPlayers
                 else UndyingEmbers += Star3LightCone;
             }
             else if (item is SRCharacter character)
-            {            
+            {
                 // TODO: 新角色 -> 三张通票
 
                 characterStats.TryAdd(character, out int eidolons);
