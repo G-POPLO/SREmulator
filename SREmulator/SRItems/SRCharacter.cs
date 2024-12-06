@@ -1,5 +1,10 @@
 ﻿namespace SREmulator.SRItems
 {
+    public static partial class SRCharacters
+    {
+
+    }
+
     public abstract record class SRCharacter : SRItem, ISRWarpResultItem
     {
         public abstract bool Limited { get; }

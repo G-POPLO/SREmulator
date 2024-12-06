@@ -2,7 +2,7 @@
 
 namespace SREmulator.SRPlayers
 {
-    internal class SRPlayerCharacterStats
+    internal sealed class SRPlayerCharacterStats
     {
         internal Dictionary<SRCharacter, int> CharacterEidolons { get; set; } = [];
 

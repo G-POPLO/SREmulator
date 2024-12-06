@@ -1,5 +1,9 @@
 ﻿namespace SREmulator
 {
+    // +------------+------------+---------------------+---+
+    // | 1  1  1  1 | 1  1  1  1 | 0  0  0  0  0  0  0 | 1 |
+    // +------------+------------+---------------------+---+
+    //     Major        Minor           Reserved      Specified
     [Flags]
     public enum SRVersion : ushort
     {
@@ -8,7 +12,7 @@
 
         MajorMask = 0xF000,
         MinorMask = 0x0F00,
-        VersionForWarps = 0xFF01,
+        VersionForWarps = MajorMask | MinorMask | Specified,
 
         Major1 = 0x1000 | Specified,
         Major2 = 0x2000 | Specified,

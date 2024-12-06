@@ -3,6 +3,11 @@ using SREmulator.SRPlayers;
 
 namespace SREmulator.SRWarps.EventWarps
 {
+    public static partial class SRCharacterEventWarps
+    {
+
+    }
+
     public abstract class SRCharacterEventWarp : SRWarp
     {
         public sealed override SRWarpType WarpType => SRWarpType.CharacterEventWarp;

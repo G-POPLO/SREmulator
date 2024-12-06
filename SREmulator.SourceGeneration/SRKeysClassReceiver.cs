@@ -3,7 +3,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace SREmulator.SourceGeneration
 {
-    public class SRKeysClassReceiver : ISyntaxContextReceiver
+    public sealed class SRKeysClassReceiver : ISyntaxContextReceiver
     {
         private TypeDeclarationSyntax _keys;
         private readonly string _className;
