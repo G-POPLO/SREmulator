@@ -7,12 +7,12 @@ namespace SREmulator.SRWarps.CharacterEventWarps
     {
         public sealed override SRWarpType WarpType => SRWarpType.CharacterEventWarp;
         public override ISRWarpResultItem Up5 => UpStar5Character;
-        public override ISRWarpResultItem[] Common5Characters => [UpStar5Character, .. SRCharacters.AllNonLimitedStar5Characters];
+        public override ISRWarpResultItem[] Common5Characters => [UpStar5Character, .. SRWarpItemPoolFactory.CreateStar5Characters(Version)];
         public override ISRWarpResultItem[] Common5LightCones => null!;
         public override ISRWarpResultItem[] Up4 => UpStar4Characters;
         public override ISRWarpResultItem[] Common4Characters => SRWarpItemPoolFactory.CreateStar4Characters(Version).Except(UpStar4Characters).ToArray();
         public override ISRWarpResultItem[] Common4LightCones => SRWarpItemPoolFactory.CreateStar4LightCones(Version);
-        public override ISRWarpResultItem[] Common3 => SRLightCones.AllStar3LightCones;
+        public override ISRWarpResultItem[] Common3 => SRWarpItemPoolFactory.CreateStar3LightCones(Version);
 
         public abstract SRStar5Character UpStar5Character { get; }
         public abstract SRStar4Character UpStar4Character1 { get; }

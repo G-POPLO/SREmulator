@@ -4,6 +4,82 @@ namespace SREmulator.SRWarps
 {
     public static class SRWarpItemPoolFactory
     {
+        internal static int VersionToStar5CharacterCount(SRVersion version)
+        {
+            return (version & SRVersion.VersionForWarps) switch
+            {
+                SRVersion.Ver1p0 or
+                SRVersion.Ver1p1 or
+                SRVersion.Ver1p2 or
+                SRVersion.Ver1p3 or
+                SRVersion.Ver1p4 or
+                SRVersion.Ver1p5 or
+                SRVersion.Ver1p6 or
+                SRVersion.Ver2p0 or
+                SRVersion.Ver2p1 or
+                SRVersion.Ver2p2 or
+                SRVersion.Ver2p3 or
+                SRVersion.Ver2p4 or
+                SRVersion.Ver2p5 or
+                SRVersion.Ver2p6 or
+                SRVersion.Ver2p7 => 7,
+
+                _ => throw new ArgumentOutOfRangeException(nameof(version)),
+            };
+        }
+        internal static readonly SRStar5Character[] Star5CharactersOrderedByVersion = [
+            // 1.0
+            SRCharacters.Bailu,
+            SRCharacters.Bronya,
+            SRCharacters.Clara,
+            SRCharacters.Gepard,
+            SRCharacters.Himeko,
+            SRCharacters.Welt,
+            SRCharacters.Yanqing
+            ];
+        public static SRStar5Character[] CreateStar5Characters(SRVersion version)
+        {
+            return Star5CharactersOrderedByVersion.Take(VersionToStar5CharacterCount(version)).ToArray();
+        }
+
+        internal static readonly SRStar5LightCone[] Star5LightConesOrderedByVersion = [
+            // 1.0
+            SRLightCones.SomethingIrreplaceable,
+            SRLightCones.ButTheBattleIsntOver,
+            SRLightCones.MomentOfVictory,
+            SRLightCones.SleepLikeTheDead,
+            SRLightCones.InTheNameOfTheWorld,
+            SRLightCones.NightOnTheMilkyWay,
+            SRLightCones.TimeWaitsForNoOne
+            ];
+        internal static int VersionToStar5LightConeCount(SRVersion version)
+        {
+            return (version & SRVersion.VersionForWarps) switch
+            {
+                SRVersion.Ver1p0 or
+                SRVersion.Ver1p1 or
+                SRVersion.Ver1p2 or
+                SRVersion.Ver1p3 or
+                SRVersion.Ver1p4 or
+                SRVersion.Ver1p5 or
+                SRVersion.Ver1p6 or
+                SRVersion.Ver2p0 or
+                SRVersion.Ver2p1 or
+                SRVersion.Ver2p2 or
+                SRVersion.Ver2p3 or
+                SRVersion.Ver2p4 or
+                SRVersion.Ver2p5 or
+                SRVersion.Ver2p6 or
+                SRVersion.Ver2p7 => 7,
+
+                _ => throw new ArgumentOutOfRangeException(nameof(version)),
+            };
+        }
+        public static SRStar5LightCone[] CreateStar5LightCones(SRVersion version)
+        {
+            return Star5LightConesOrderedByVersion.Take(VersionToStar5LightConeCount(version)).ToArray();
+        }
+
         internal static int VersionToStar4CharacterCount(SRVersion version)
         {
             // 1.1及之后版本新增的4星角色在当时版本只会以Up形式出现
@@ -150,6 +226,58 @@ namespace SREmulator.SRWarps
         public static SRStar4LightCone[] CreateStar4LightCones(SRVersion version)
         {
             return Star4LightConesOrderedByVersion.Take(VersionToStar4LightConeCount(version)).ToArray();
+        }
+
+        internal static readonly SRStar3LightCone[] Star3LightConesOrderedByVersion = [
+            // 1.0
+            SRLightCones.DartingArrow,
+            SRLightCones.DataBank,
+            SRLightCones.Defense,
+            SRLightCones.FineFruit,
+            SRLightCones.HiddenShadow,
+            SRLightCones.Loop,
+            SRLightCones.Mediation,
+            SRLightCones.MeshingCogs,
+            SRLightCones.Multiplication,
+            SRLightCones.MutualDemise,
+            SRLightCones.Passkey,
+            SRLightCones.Pioneering,
+            SRLightCones.Sagacity,
+            SRLightCones.ShatteredHome,
+            SRLightCones.Void,
+            SRLightCones.Adversarial,
+            SRLightCones.Amber,
+            SRLightCones.Arrows,
+            SRLightCones.Chorus,
+            SRLightCones.CollapsingSky,
+            SRLightCones.Cornucopia
+            ];
+        internal static int VersionToStar3LightConeCount(SRVersion version)
+        {
+            return (version & SRVersion.VersionForWarps) switch
+            {
+                SRVersion.Ver1p0 or
+                SRVersion.Ver1p1 or
+                SRVersion.Ver1p2 or
+                SRVersion.Ver1p3 or
+                SRVersion.Ver1p4 or
+                SRVersion.Ver1p5 or
+                SRVersion.Ver1p6 or
+                SRVersion.Ver2p0 or
+                SRVersion.Ver2p1 or
+                SRVersion.Ver2p2 or
+                SRVersion.Ver2p3 or
+                SRVersion.Ver2p4 or
+                SRVersion.Ver2p5 or
+                SRVersion.Ver2p6 or
+                SRVersion.Ver2p7 => 21,
+
+                _ => throw new ArgumentOutOfRangeException(nameof(version)),
+            };
+        }
+        public static SRStar3LightCone[] CreateStar3LightCones(SRVersion version)
+        {
+            return Star3LightConesOrderedByVersion.Take(VersionToStar3LightConeCount(version)).ToArray();
         }
     }
 }

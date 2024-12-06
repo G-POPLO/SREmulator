@@ -58,6 +58,8 @@ namespace SREmulator.SRPlayers
                 return true;
             }
 
+            // TODO: 通票 -> 星芒 —> 专票
+
             return TryConsumeOneStarRailPassIndirectly();
         }
         public bool TryConsumeStarRailPassIndirectly(int count)
@@ -109,21 +111,29 @@ namespace SREmulator.SRPlayers
         }
         public void GetWarpReward(ISRWarpResultItem item, SRPlayerCharacterStats characterStats)
         {
-            // TODO: const number
+            const int DuplicateStar5CharacterEidolonsMaxed = 100;
+            const int DuplicateStar5Character = 40;
+            const int DuplicateStar4CharacterEidolonsMaxed = 20;
+            const int DuplicateStar4Character = 8;
+            const int Star5LightCone = 40;
+            const int Star4LightCone = 8;
+            const int Star3LightCone = 20;
 
             if (item is SRLightCone)
             {
-                if (item is SRStar5LightCone) UndyingStarlight += 40;
-                else if (item is SRStar5LightCone) UndyingStarlight += 8;
-                else UndyingEmbers += 20;
+                if (item is SRStar5LightCone) UndyingStarlight += Star5LightCone;
+                else if (item is SRStar4LightCone) UndyingStarlight += Star4LightCone;
+                else UndyingEmbers += Star3LightCone;
             }
             else if (item is SRCharacter character)
-            {
+            {            
+                // TODO: 新角色 -> 三张通票
+
                 characterStats.TryAdd(character, out int eidolons);
                 bool maxed = eidolons >= 6;
                 if (eidolons is 0) return;
-                else if (character is SRStar5Character) UndyingStarlight += maxed ? 100 : 40;
-                else if (character is SRStar4Character) UndyingStarlight += maxed ? 20 : 8;
+                else if (character is SRStar5Character) UndyingStarlight += maxed ? DuplicateStar5CharacterEidolonsMaxed : DuplicateStar5Character;
+                else if (character is SRStar4Character) UndyingStarlight += maxed ? DuplicateStar4CharacterEidolonsMaxed : DuplicateStar4Character;
             }
         }
     }

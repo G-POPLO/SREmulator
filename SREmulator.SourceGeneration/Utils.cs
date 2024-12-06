@@ -7,29 +7,29 @@ namespace SREmulator.SourceGeneration
 {
     internal static class Utils
     {
-        public static INamedTypeSymbol GetAttribute(this GeneratorSyntaxContext context, string fullyQualifiedMetadataName)
-        {
-            return context.SemanticModel.Compilation.GetTypeByMetadataName(fullyQualifiedMetadataName);
-        }
-        public static INamedTypeSymbol GetAttribute(this GeneratorExecutionContext context, string fullyQualifiedMetadataName)
-        {
-            return context.Compilation.GetTypeByMetadataName(fullyQualifiedMetadataName);
-        }
-        public static INamedTypeSymbol GetAttribute(this SemanticModel semanticModel, string fullyQualifiedMetadataName)
-        {
-            return semanticModel.Compilation.GetTypeByMetadataName(fullyQualifiedMetadataName);
-        }
+        //public static INamedTypeSymbol GetAttribute(this GeneratorSyntaxContext context, string fullyQualifiedMetadataName)
+        //{
+        //    return context.SemanticModel.Compilation.GetTypeByMetadataName(fullyQualifiedMetadataName);
+        //}
+        //public static INamedTypeSymbol GetAttribute(this GeneratorExecutionContext context, string fullyQualifiedMetadataName)
+        //{
+        //    return context.Compilation.GetTypeByMetadataName(fullyQualifiedMetadataName);
+        //}
+        //public static INamedTypeSymbol GetAttribute(this SemanticModel semanticModel, string fullyQualifiedMetadataName)
+        //{
+        //    return semanticModel.Compilation.GetTypeByMetadataName(fullyQualifiedMetadataName);
+        //}
 
-        public static AttributeData GetAttribute(this ISymbol symbol, INamedTypeSymbol attributeClass)
-        {
-            return GetAttributes(symbol, attributeClass).First();
-        }
-        public static IEnumerable<AttributeData> GetAttributes(this ISymbol symbol, INamedTypeSymbol attributeClass)
-        {
-            return symbol
-                .GetAttributes()
-                .Where(attr => SymbolEqualityComparer.Default.Equals(attr.AttributeClass, attributeClass));
-        }
+        //public static AttributeData GetAttribute(this ISymbol symbol, INamedTypeSymbol attributeClass)
+        //{
+        //    return GetAttributes(symbol, attributeClass).First();
+        //}
+        //public static IEnumerable<AttributeData> GetAttributes(this ISymbol symbol, INamedTypeSymbol attributeClass)
+        //{
+        //    return symbol
+        //        .GetAttributes()
+        //        .Where(attr => SymbolEqualityComparer.Default.Equals(attr.AttributeClass, attributeClass));
+        //}
         public static AttributeData GetAttribute(this ISymbol symbol, string name)
         {
             return GetAttributes(symbol, name).First();

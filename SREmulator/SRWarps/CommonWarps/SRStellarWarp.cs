@@ -8,12 +8,12 @@ namespace SREmulator.SRWarps.CommonWarps
         public override SRWarpType WarpType => SRWarpType.StellarWarp;
         public override SRVersion Version => version;
         public override ISRWarpResultItem Up5 => null!;
-        public override ISRWarpResultItem[] Common5Characters => SRCharacters.AllNonLimitedStar5Characters;
-        public override ISRWarpResultItem[] Common5LightCones => SRLightCones.AllNonLimitedStar5LightCones;
+        public override ISRWarpResultItem[] Common5Characters => SRWarpItemPoolFactory.CreateStar5LightCones(Version);
+        public override ISRWarpResultItem[] Common5LightCones => SRWarpItemPoolFactory.CreateStar5LightCones(Version);
         public override ISRWarpResultItem[] Up4 => null!;
         public override ISRWarpResultItem[] Common4Characters => SRWarpItemPoolFactory.CreateStar4Characters(Version);
         public override ISRWarpResultItem[] Common4LightCones => SRWarpItemPoolFactory.CreateStar4LightCones(Version);
-        public override ISRWarpResultItem[] Common3 => SRLightCones.AllStar3LightCones;
+        public override ISRWarpResultItem[] Common3 => SRWarpItemPoolFactory.CreateStar3LightCones(Version);
 
         public override bool PreWarp(SRPlayer player, int count)
         {

@@ -8,11 +8,11 @@ namespace SREmulator.SRWarps.LightConeEventWarps
         public sealed override SRWarpType WarpType => SRWarpType.LightConeEventWarp;
         public override ISRWarpResultItem Up5 => UpStar5LightCone;
         public override ISRWarpResultItem[] Common5Characters => null!;
-        public override ISRWarpResultItem[] Common5LightCones => [UpStar5LightCone, .. SRLightCones.AllNonLimitedStar5LightCones];
+        public override ISRWarpResultItem[] Common5LightCones => [UpStar5LightCone, .. SRWarpItemPoolFactory.CreateStar5LightCones(Version)];
         public override ISRWarpResultItem[] Up4 => UpStar4LightCones;
         public override ISRWarpResultItem[] Common4Characters => SRWarpItemPoolFactory.CreateStar4Characters(Version);
         public override ISRWarpResultItem[] Common4LightCones => SRWarpItemPoolFactory.CreateStar4LightCones(Version).Except(UpStar4LightCones).ToArray();
-        public override ISRWarpResultItem[] Common3 => SRLightCones.AllStar3LightCones;
+        public override ISRWarpResultItem[] Common3 => SRWarpItemPoolFactory.CreateStar3LightCones(Version);
 
         public abstract SRStar5LightCone UpStar5LightCone { get; }
         public abstract SRStar4LightCone UpStar4LightCone1 { get; }
