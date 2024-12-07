@@ -60,13 +60,16 @@ namespace SREmulator.SourceGeneration
             foreach (var member in keys.GetMembers())
             {
                 var attributeData = member.GetAttribute(Attribute);
-                string key = (string)attributeData.ConstructorArguments[0].Value;
-                int rarity = (int)attributeData.ConstructorArguments[1].Value;
-                bool limited = (bool)attributeData.ConstructorArguments[2].Value;
 
-                string type = GetClassType(rarity, limited);
+                (string Key, int Rarity, bool Limited, string Type) item = default;
+                attributeData.Deconstruct(
+                    out item.Key,
+                    out item.Rarity,
+                    out item.Limited
+                    );
+                item.Type = GetClassType(item.Rarity, item.Limited);
 
-                items.Add((key, rarity, limited, type));
+                items.Add(item);
             }
 
             StringBuilder builder = new StringBuilder();

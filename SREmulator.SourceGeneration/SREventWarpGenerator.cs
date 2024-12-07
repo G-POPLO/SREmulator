@@ -74,26 +74,17 @@ namespace SREmulator.SourceGeneration
 
                 foreach (var attributeData in attributeDatas)
                 {
-                    string key = (string)attributeData.ConstructorArguments[0].Value;
-                    int index = (int)attributeData.ConstructorArguments[1].Value;
-                    int major = (int)attributeData.ConstructorArguments[2].Value;
-                    int minor = (int)attributeData.ConstructorArguments[3].Value;
-                    string up5 = (string)attributeData.ConstructorArguments[4].Value;
-                    string up41 = (string)attributeData.ConstructorArguments[5].Value;
-                    string up42 = (string)attributeData.ConstructorArguments[6].Value;
-                    string up43 = (string)attributeData.ConstructorArguments[7].Value;
-
-                    WarpData data = new WarpData()
-                    {
-                        Key = key,
-                        Index = index,
-                        Major = major,
-                        Minor = minor,
-                        Up5 = up5,
-                        Up41 = up41,
-                        Up42 = up42,
-                        Up43 = up43,
-                    };
+                    WarpData data = default;
+                    attributeData.Deconstruct(
+                        out data.Key,
+                        out data.Index,
+                        out data.Major,
+                        out data.Minor,
+                        out data.Up5,
+                        out data.Up41,
+                        out data.Up42,
+                        out data.Up43
+                        );
 
                     warps.Add(data);
                 }

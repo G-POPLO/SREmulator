@@ -123,31 +123,31 @@ namespace SREmulator.SRWarps
             SRCharacters.Sushang,
             SRCharacters.Tingyun,
 
-            // 1.1 2
+            // 1.1
             SRCharacters.Yukong,
 
-            // 1.2 2
+            // 1.2
             SRCharacters.Luka,
 
-            // 1.3 2
+            // 1.3
             SRCharacters.Lynx,
 
-            // 1.4 2
+            // 1.4
             SRCharacters.Guinaifen,
 
-            // 1.5 2
+            // 1.5
             SRCharacters.Hanya,
 
-            // 1.6 1
+            // 1.6
             SRCharacters.Xueyi,
 
-            // 2.0 1
+            // 2.0
             SRCharacters.Misha,
 
-            // 2.1 1
+            // 2.1
             SRCharacters.Gallagher, 
             
-            // 2.5 1
+            // 2.5
             SRCharacters.Moze,
             ];
         public static SRStar4Character[] CreateStar4Characters(SRVersion version)
