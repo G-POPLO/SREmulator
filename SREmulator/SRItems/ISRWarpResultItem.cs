@@ -1,22 +1,15 @@
 ﻿namespace SREmulator.SRItems
 {
-    public interface ISRWarpResultItem
+    public interface ISRWarpResultItem : IEquatable<ISRWarpResultItem>
     {
         public SRItemRarity Rarity { get; }
         public string Name { get; }
         public bool Limited { get; }
+        public int Id { get; }
 
-        public static bool Equals(ISRWarpResultItem item1, ISRWarpResultItem item2)
+        bool IEquatable<ISRWarpResultItem>.Equals(ISRWarpResultItem? other)
         {
-            return item1.Name == item2.Name;
-        }
-        public static bool Contains(ReadOnlySpan<ISRWarpResultItem> items, ISRWarpResultItem item)
-        {
-            foreach (var item2 in items)
-            {
-                if (Equals(item, item2)) return true;
-            }
-            return false;
+            return Id == other?.Id;
         }
     }
 }

@@ -182,13 +182,13 @@ namespace SREmulator.SRWarps
             if (roll < chance5)
             {
                 var result = GetEventWarpStar5(playerStats.Guarantee5, warpStats, 1, 2);
-                playerStats.GetStar5(ISRWarpResultItem.Equals(warpStats.Up5, result), result is SRCharacter);
+                playerStats.GetStar5(warpStats.Up5.Equals(result), result is SRCharacter);
                 return result;
             }
             else if (roll < chance5 + chance4)
             {
                 var result = GetEventWarpStar4(playerStats.Guarantee4, playerStats.Counter4Character, playerStats.Counter4LightCone, warpStats, 1, 2);
-                playerStats.GetStar4(ISRWarpResultItem.Contains(warpStats.Up4, result), result is SRCharacter);
+                playerStats.GetStar4(warpStats.Up4.Contains(result), result is SRCharacter);
                 return result;
             }
             else
@@ -205,13 +205,13 @@ namespace SREmulator.SRWarps
             if (roll < chance5)
             {
                 var result = GetEventWarpStar5(playerStats.Guarantee5, warpStats, 3, 4);
-                playerStats.GetStar5(ISRWarpResultItem.Equals(warpStats.Up5, result), result is SRCharacter);
+                playerStats.GetStar5(warpStats.Up5.Equals(result), result is SRCharacter);
                 return result;
             }
             else if (roll < chance5 + chance4)
             {
                 var result = GetEventWarpStar4(playerStats.Guarantee4, playerStats.Counter4Character, playerStats.Counter4LightCone, warpStats, 3, 4);
-                playerStats.GetStar4(ISRWarpResultItem.Contains(warpStats.Up4, result), result is SRCharacter);
+                playerStats.GetStar4(warpStats.Up4.Contains(result), result is SRCharacter);
                 return result;
             }
             else
@@ -234,7 +234,7 @@ namespace SREmulator.SRWarps
             else if (roll < chance5 + chance4)
             {
                 var result = GetCommonStar4(playerStats.Counter4Character, playerStats.Counter4LightCone, warpStats);
-                playerStats.GetStar4(ISRWarpResultItem.Contains(warpStats.Up4, result), result is SRCharacter);
+                playerStats.GetStar4(default, result is SRCharacter);
                 return result;
             }
             else

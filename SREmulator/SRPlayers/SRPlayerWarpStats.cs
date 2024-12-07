@@ -57,20 +57,5 @@
             Counter4Character++;
             Counter4LightCone++;
         }
-
-        //public SRPlayerWarpStats Clone()
-        //{
-        //    return new SRPlayerWarpStats()
-        //    {
-        //        Guarantee5 = Guarantee5,
-        //        Guarantee4 = Guarantee4,
-        //        Counter5 = Counter5,
-        //        Counter4 = Counter4,
-        //        Counter5Character = Counter5Character,
-        //        Counter5LightCone = Counter5LightCone,
-        //        Counter4Character = Counter4Character,
-        //        Counter4LightCone = Counter4LightCone,
-        //    };
-        //}
     }
 }

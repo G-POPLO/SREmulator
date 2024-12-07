@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.Diagnostics;
+using System.Text;
 
 namespace SREmulator
 {
@@ -17,7 +18,9 @@ namespace SREmulator
                     return;
                 }
 
+                Stopwatch sw = Stopwatch.StartNew();
                 CLI.Execute(CLIArgs.Parse(args));
+                Console.WriteLine(sw.Elapsed.ToString());
             }
             catch (Exception e)
             {

@@ -11,6 +11,7 @@ namespace SREmulator.SourceGeneration
         public override string Keys => SRKeys.SRCharacterKeys;
         public override string Type => SRItemTypes.Character;
         public override string Attribute => SRAttributes.SRCharacterAttribute;
+        public override int ID => SRIDs.CharacterID;
 
         public override string GetClassType(int rarity, bool limited)
         {
@@ -25,6 +26,7 @@ namespace SREmulator.SourceGeneration
         public override string Keys => SRKeys.SRLightConeKeys;
         public override string Type => SRItemTypes.LightCone;
         public override string Attribute => SRAttributes.SRLightConeAttribute;
+        public override int ID => SRIDs.LightConeID;
 
         public override string GetClassType(int rarity, bool limited)
         {
@@ -39,6 +41,7 @@ namespace SREmulator.SourceGeneration
         public abstract string Keys { get; }
         public abstract string Type { get; }
         public abstract string Attribute { get; }
+        public abstract int ID { get; }
 
         public abstract string GetClassType(int rarity, bool limited);
 
@@ -80,11 +83,13 @@ namespace SREmulator.SourceGeneration
             builder.AppendLine(1, "}");
             builder.AppendLine();
 
-            foreach (var item in items)
+            for (int i = 0; i < items.Count; i++)
             {
-                builder.AppendLine(1, $"public sealed record class {item.Key} : {item.Type}");
+                var item = items[i];
+                builder.AppendLine(1, $"public sealed class {item.Key} : {item.Type}");
                 builder.AppendLine(1, "{");
                 builder.AppendLine(2, $"public override string Name => Localizations.Localization.{item.Key};");
+                builder.AppendLine(2, $"public override int Id => {ID + i + 1};");
                 builder.AppendLine(1, "}");
                 builder.AppendLine();
             }
