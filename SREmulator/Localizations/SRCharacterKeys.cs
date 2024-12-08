@@ -227,7 +227,7 @@ namespace SREmulator.Localizations
         public const string Sushang = nameof(Sushang);
 
         [SRCharacter(Tingyun, 4)]
-        [SRAliases("yingyun")]
+        [SRAliases("tingyun")]
         public const string Tingyun = nameof(Tingyun);
 
         [SRCharacter(Xueyi, 4)]

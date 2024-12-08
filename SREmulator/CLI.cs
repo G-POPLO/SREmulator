@@ -30,6 +30,7 @@ namespace SREmulator
                 --undying-starlight <count>         设置未熄的星芒数量
                 --stellar-jade <count>              设置星琼数量
                 --oneiric-shard <count>             设置古老梦华数量
+                --eidolon <name> <count>            设置角色星魂（上限为6，下限为-1）
 
                 --counter5 <count>                  设置已多少抽未出5星
                 --guarantee5                        设置为有大保底
@@ -262,6 +263,7 @@ namespace SREmulator
         public int UndyingStarlight = 0;
         public int StellarJade = 0;
         public int OneiricShard = 0;
+        public Dictionary<SRCharacter, int> Eidolons = [];
 
         public int Counter5 = 0;
         public bool Guarantee5 = false;
@@ -317,6 +319,13 @@ namespace SREmulator
                 };
             }
         }
+        internal SRPlayerEidolonsStats EidolonsStats
+        {
+            get
+            {
+                return new SRPlayerEidolonsStats(Eidolons);
+            }
+        }
         internal SRPlayer Player
         {
             get
@@ -341,6 +350,7 @@ namespace SREmulator
                 {
                     player.DepartureStats = WarpStats;
                 }
+                player.EidolonsStats = EidolonsStats;
                 return player;
             }
         }
@@ -431,6 +441,16 @@ namespace SREmulator
                             }
                             break;
 
+                        case "eidolon":
+                            var name = args[++i];
+                            if (int.TryParse(args[++i], out count))
+                            {
+                                count = Math.Clamp(count, -1, 6);
+                                var character = SRCharacters.GetItemByName(name);
+                                if (character is not null) result.Eidolons[character] = count;
+                            }
+                            break;
+
                         case "counter5":
                             if (int.TryParse(args[++i], out count))
                             {
@@ -474,7 +494,7 @@ namespace SREmulator
                             break;
 
                         case "target":
-                            var name = args[++i];
+                            name = args[++i];
                             if (int.TryParse(args[++i], out count))
                             {
                                 result.Target[ISRWarpResultItem.GetItemByName(name)] = count;

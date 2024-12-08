@@ -6,6 +6,15 @@ namespace SREmulator.SRPlayers
     {
         internal Dictionary<SRCharacter, int> CharacterEidolons { get; set; } = [];
 
+        public SRPlayerEidolonsStats()
+        {
+
+        }
+        internal SRPlayerEidolonsStats(Dictionary<SRCharacter, int> eidolons)
+        {
+            CharacterEidolons = new(eidolons);
+        }
+
         public bool TryAdd(SRCharacter character, out int eidolons)
         {
             if (!CharacterEidolons.TryGetValue(character, out eidolons)) eidolons = -1;
