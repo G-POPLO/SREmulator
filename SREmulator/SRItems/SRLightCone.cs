@@ -2,7 +2,7 @@
 {
     public static partial class SRLightCones
     {
-
+        public static partial SRLightCone? GetItemByName(string name);
     }
 
     public abstract class SRLightCone : SRItem, ISRWarpResultItem

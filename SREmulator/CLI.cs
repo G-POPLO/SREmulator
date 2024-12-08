@@ -4,6 +4,7 @@ using SREmulator.SRPlayers;
 using SREmulator.SRWarps;
 using SREmulator.SRWarps.CommonWarps;
 using SREmulator.SRWarps.EventWarps;
+using System.Collections.ObjectModel;
 
 namespace SREmulator
 {
@@ -41,8 +42,9 @@ namespace SREmulator
                 --stellar-warp                      设置卡池类型为群星跃迁（常驻池）
                 --departure-warp                    设置卡池类型为始发跃迁（新手池）
 
-                --target-count5 <count>             设置目标5星数量（限定池中表示UP5星角色，普池中表示特定5星角色）
-                --target-count4 <count>             设置目标4星数量（限定池中表示特定UP4星角色，普池中表示特定4星角色）
+                --target <name> <count>             设置目标极其数量（参见 TARGET-NAMES）
+                --target-count5 <count>             【已过时】设置目标5星数量（限定池中表示UP5星角色，普池中表示特定5星角色）
+                --target-count4 <count>             【已过时】设置目标4星数量（限定池中表示特定UP4星角色，普池中表示特定4星角色）
                 --attempts <count>                  设置计算抽数或可能性时的尝试次数
 
                 --help                              显示该帮助
@@ -78,6 +80,9 @@ namespace SREmulator
                 乱破池: rappa, luanpo
                 星期日池: sunday, xingqiri
                 忘归人池: fugue, wangguiren
+
+            TARGET-NAMES:
+                TODO (参见 SRCharacterKeys.cs 与 SRLightConeKeys.cs 中的 SRAliasesAttribute)
             """;
 
         public static void Execute(CLIArgs args)
@@ -124,6 +129,15 @@ namespace SREmulator
             return origColor;
         }
 
+        private static void Print(ISRWarpResultItem item, string? info = null)
+        {
+            var origColor = SetColor(item);
+            Console.Write(item.Name);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.WriteLine(info ?? string.Empty);
+            Console.ForegroundColor = origColor;
+        }
+
         internal static void ResultStatistics(CLIArgs args)
         {
             Dictionary<ISRWarpResultItem, int> result = [];
@@ -168,11 +182,7 @@ namespace SREmulator
             Console.WriteLine(counter);
             foreach (var pair in result.OrderByDescending(pair => pair.Key.Rarity).ThenByDescending(pair => pair.Value))
             {
-                var origColor = SetColor(pair.Key);
-                Console.WriteLine(pair.Key.Name);
-                Console.ForegroundColor = origColor;
-                Console.WriteLine($"{pair.Value}\t({(double)pair.Value / counter:0.00%})");
-                Console.WriteLine();
+                Print(pair.Key, $"{pair.Value}\t({(double)pair.Value / counter:0.00%})");
             }
         }
 
@@ -199,22 +209,16 @@ namespace SREmulator
             for (int i = 0; i < total; i++)
             {
                 SRPlayer player = args.Player;
-                int counter = 0, count5 = args.TargetCount5, count4 = args.TargetCount4;
+                CLIWarpTarget target = args.Target.Clone();
+                int counter = 0;
                 player.WarpCurrencyStats.StarRailPass = int.MaxValue;
                 player.WarpCurrencyStats.StarRailSpecialPass = int.MaxValue;
 
                 while (warp.TryWarp(player, out var item))
                 {
                     counter++;
-                    if (count5 > 0 && star5.Equals(item))
-                    {
-                        count5--;
-                    }
-                    if (count4 > 0 && star4.Equals(item))
-                    {
-                        count4--;
-                    }
-                    if (count5 <= 0 && count4 <= 0)
+                    target.Check(item);
+                    if (target.IsAchieved())
                     {
                         warps += counter;
                         break;
@@ -222,21 +226,9 @@ namespace SREmulator
                 }
             }
 
-            if (args.TargetCount5 > 0)
+            foreach (var pair in args.Target.Target)
             {
-                var origColor = SetColor(star5);
-                Console.Write(string.Join(" / ", star5s.Select(item => item.Name)));
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine($": {args.TargetCount5}");
-                Console.ForegroundColor = origColor;
-            }
-            if (args.TargetCount4 > 0)
-            {
-                var origColor = SetColor(star4);
-                Console.Write(string.Join(" / ", star4s.Select(item => item.Name)));
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine($": {args.TargetCount4}");
-                Console.ForegroundColor = origColor;
+                Print(pair.Key, $": {pair.Value}");
             }
             Console.WriteLine(((double)warps / total).ToString("0.##"));
         }
@@ -247,36 +239,17 @@ namespace SREmulator
             int successful = 0;
             var warp = args.Warp;
 
-            ISRWarpResultItem[] star5s, star4s;
-            if (args.WarpType is SRWarpType.CharacterEventWarp or SRWarpType.LightConeEventWarp)
-            {
-                star5s = [warp.Up5];
-                star4s = warp.Up4;
-            }
-            else
-            {
-                star5s = warp.Common5Characters;
-                star4s = warp.Common4Characters;
-            }
-            ISRWarpResultItem star5 = star5s[0], star4 = star4s[0];
-
             for (int i = 0; i < total; i++)
             {
                 SRPlayer player = args.Player;
-                int counter = 0, count5 = args.TargetCount5, count4 = args.TargetCount4;
+                CLIWarpTarget target = args.Target.Clone();
+                int counter = 0;
 
                 while (warp.TryWarp(player, out var item))
                 {
                     counter++;
-                    if (count5 > 0 && star5.Equals(item))
-                    {
-                        count5--;
-                    }
-                    if (count4 > 0 && star4.Equals(item))
-                    {
-                        count4--;
-                    }
-                    if (count5 <= 0 && count4 <= 0)
+                    target.Check(item);
+                    if (target.IsAchieved())
                     {
                         successful++;
                         break;
@@ -284,27 +257,15 @@ namespace SREmulator
                 }
             }
 
-            if (args.TargetCount5 > 0)
+            foreach (var pair in args.Target.Target)
             {
-                var origColor = SetColor(star5);
-                Console.Write(string.Join(" / ", star5s.Select(item => item.Name)));
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine($": {args.TargetCount5}");
-                Console.ForegroundColor = origColor;
-            }
-            if (args.TargetCount4 > 0)
-            {
-                var origColor = SetColor(star4);
-                Console.Write(string.Join(" / ", star4s.Select(item => item.Name)));
-                Console.ForegroundColor = ConsoleColor.White;
-                Console.WriteLine($": {args.TargetCount4}");
-                Console.ForegroundColor = origColor;
+                Print(pair.Key, $": {pair.Value}");
             }
             Console.WriteLine(((double)successful / total).ToString("0.00%"));
         }
     }
 
-    public record class CLIArgs
+    public class CLIArgs
     {
         public bool Pause = false;
         public bool Silent = false;
@@ -333,7 +294,10 @@ namespace SREmulator
         }
         public SRWarpType WarpType = SRWarpType.CharacterEventWarp;
 
+        public CLIWarpTarget Target = new();
+        [Obsolete("Use CLIArgs.Target")]
         public int TargetCount5 = 0;
+        [Obsolete("Use CLIArgs.Target")]
         public int TargetCount4 = 0;
         public int Attempts = 10000;
 
@@ -523,17 +487,25 @@ namespace SREmulator
                             result.WarpType = SRWarpType.DepartureWarp;
                             break;
 
+                        case "target":
+                            var name = args[++i];
+                            if (int.TryParse(args[++i], out count))
+                            {
+                                result.Target[ISRWarpResultItem.GetItemByName(name)] = count;
+                            }
+                            break;
+
                         case "target-count5":
                             if (int.TryParse(args[++i], out count))
                             {
-                                result.TargetCount5 = count;
+                                result.Target[result.Warp.Up5] = count;
                             }
                             break;
 
                         case "target-count4":
                             if (int.TryParse(args[++i], out count))
                             {
-                                result.TargetCount4 = count;
+                                result.Target[result.Warp.Up4[0]] = count;
                             }
                             break;
 
@@ -562,6 +534,48 @@ namespace SREmulator
                 }
             }
             return result;
+        }
+    }
+
+    public class CLIWarpTarget
+    {
+        private Dictionary<ISRWarpResultItem, int>? _targetCount = null;
+
+        public int this[ISRWarpResultItem item]
+        {
+            get
+            {
+                _targetCount ??= [];
+                _targetCount.TryGetValue(item, out var count);
+                return count;
+            }
+            set
+            {
+                _targetCount ??= [];
+                _targetCount[item] = value;
+            }
+        }
+
+        public ReadOnlyDictionary<ISRWarpResultItem, int> Target => new(_targetCount ?? []);
+
+        public void Check(ISRWarpResultItem item)
+        {
+            if (_targetCount is null) return;
+            if (!_targetCount.TryGetValue(item, out var count)) return;
+            if (count <= 0) return;
+            _targetCount[item] = count - 1;
+        }
+
+        public bool IsAchieved()
+        {
+            return _targetCount?.All(pair => pair.Value <= 0) ?? true;
+        }
+
+        public CLIWarpTarget Clone()
+        {
+            var target = new CLIWarpTarget();
+            if (_targetCount is not null) target._targetCount = new Dictionary<ISRWarpResultItem, int>(_targetCount);
+            return target;
         }
     }
 }

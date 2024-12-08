@@ -11,5 +11,10 @@
         {
             return Id == other?.Id;
         }
+
+        public static ISRWarpResultItem GetItemByName(string name)
+        {
+            return (ISRWarpResultItem?)SRCharacters.GetItemByName(name) ?? SRLightCones.GetItemByName(name)!;
+        }
     }
 }
