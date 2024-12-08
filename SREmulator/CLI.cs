@@ -49,35 +49,35 @@ namespace SREmulator
                 --language <name>                   更改语言（目前仅支持 zh-Hans, en-US）
 
             WARP-NAMES:
-                希儿: seele, xier
-                景元: jing-yuan, jingyuan
-                银狼: silver-wolf, silverwolf, yinlang
-                罗刹: luocha
-                刃: blade, ren
-                卡芙卡: kafka, kafuka
-                丹恒•饮月: dan-heng-imbibitor-lunae, dan-heng, danhengyinyue, yinyue, danheng
-                符玄: fu-xuan, fuxuan
-                镜流: jingliu
-                托帕&账账: topaz-numby, topaz, tuopa-zhangzhang, tuopa
-                藿藿: huohuo
-                银枝: argenti, yinzhi
-                阮•梅: ruan-mei, ruanmei
-                真理医生: dr-ratio, ratio, zhenliyisheng
-                黑天鹅: black-swan, heitiane
-                花火: sparkle, huahuo
-                黄泉: acheron, huangquan
-                砂金: aventurine, shajin
-                知更鸟: robin, zhigengniao
-                波提欧: boothill, botiou
-                流萤: firefly, liuying
-                翡翠: jade, feicui
-                云璃: yunli
-                椒丘: jiaoqiu
-                飞霄: feixiao
-                灵砂: lingsha
-                乱破: rappa, luanpo
-                星期日: sunday, xingqiri
-                忘归人: fugue, wangguiren
+                希儿池: seele, xier
+                景元池: jing-yuan, jingyuan
+                银狼池: silver-wolf, silverwolf, yinlang
+                罗刹池: luocha
+                刃池: blade, ren
+                卡芙卡池: kafka, kafuka
+                丹恒•饮月池: dan-heng-imbibitor-lunae, dan-heng, danhengyinyue, yinyue, danheng
+                符玄池: fu-xuan, fuxuan
+                镜流池: jingliu
+                托帕&账账池: topaz-numby, topaz, tuopa-zhangzhang, tuopa
+                藿藿池: huohuo
+                银枝池: argenti, yinzhi
+                阮•梅池: ruan-mei, ruanmei
+                真理医生池: dr-ratio, ratio, zhenliyisheng
+                黑天鹅池: black-swan, heitiane
+                花火池: sparkle, huahuo
+                黄泉池: acheron, huangquan
+                砂金池: aventurine, shajin
+                知更鸟池: robin, zhigengniao
+                波提欧池: boothill, botiou
+                流萤池: firefly, liuying
+                翡翠池: jade, feicui
+                云璃池: yunli
+                椒丘池: jiaoqiu
+                飞霄池: feixiao
+                灵砂池: lingsha
+                乱破池: rappa, luanpo
+                星期日池: sunday, xingqiri
+                忘归人池: fugue, wangguiren
             """;
 
         public static void Execute(CLIArgs args)
@@ -165,12 +165,13 @@ namespace SREmulator
             }
 
             Console.WriteLine("----------");
+            Console.WriteLine(counter);
             foreach (var pair in result.OrderByDescending(pair => pair.Key.Rarity).ThenByDescending(pair => pair.Value))
             {
                 var origColor = SetColor(pair.Key);
                 Console.WriteLine(pair.Key.Name);
                 Console.ForegroundColor = origColor;
-                Console.WriteLine($"{pair.Value}\t({((double)pair.Value / counter):0.00%})");
+                Console.WriteLine($"{pair.Value}\t({(double)pair.Value / counter:0.00%})");
                 Console.WriteLine();
             }
         }
@@ -205,11 +206,11 @@ namespace SREmulator
                 while (warp.TryWarp(player, out var item))
                 {
                     counter++;
-                    if (count5 > 0 && ISRWarpResultItem.Equals(star5, item))
+                    if (count5 > 0 && star5.Equals(item))
                     {
                         count5--;
                     }
-                    if (count4 > 0 && ISRWarpResultItem.Equals(star4, item))
+                    if (count4 > 0 && star4.Equals(item))
                     {
                         count4--;
                     }
@@ -267,11 +268,11 @@ namespace SREmulator
                 while (warp.TryWarp(player, out var item))
                 {
                     counter++;
-                    if (count5 > 0 && ISRWarpResultItem.Equals(star5, item))
+                    if (count5 > 0 && star5.Equals(item))
                     {
                         count5--;
                     }
-                    if (count4 > 0 && ISRWarpResultItem.Equals(star4, item))
+                    if (count4 > 0 && star4.Equals(item))
                     {
                         count4--;
                     }

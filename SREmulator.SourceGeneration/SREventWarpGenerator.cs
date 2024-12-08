@@ -65,30 +65,27 @@ namespace SREmulator.SourceGeneration
             foreach (var member in keys.GetMembers())
             {
                 if (!member.ContainsAttribute(SRAttributes.SRAliasesAttribute)) continue;
-                WarpsData warpsData = new WarpsData();
-                var aliases = member.GetAttribute(SRAttributes.SRAliasesAttribute).ConstructorArguments[0].Values;
-                warpsData.Names = aliases.Select(item => (string)item.Value).ToArray();
+
+                WarpsData warpsData = default;
+                member.GetAttribute(SRAttributes.SRAliasesAttribute).Deconstruct(0, out warpsData.Names);
+
                 List<WarpData> warps = new List<WarpData>();
-
-                var attributeDatas = member.GetAttributes(Attribute);
-
-                foreach (var attributeData in attributeDatas)
+                foreach (var attributeData in member.GetAttributes(Attribute))
                 {
                     WarpData data = default;
-                    attributeData.Deconstruct(
-                        out data.Key,
-                        out data.Index,
-                        out data.Major,
-                        out data.Minor,
-                        out data.Up5,
-                        out data.Up41,
-                        out data.Up42,
-                        out data.Up43
-                        );
+                    attributeData.Deconstruct(0, out data.Key);
+                    attributeData.Deconstruct(1, out data.Index);
+                    attributeData.Deconstruct(2, out data.Major);
+                    attributeData.Deconstruct(3, out data.Minor);
+                    attributeData.Deconstruct(4, out data.Up5);
+                    attributeData.Deconstruct(5, out data.Up41);
+                    attributeData.Deconstruct(6, out data.Up42);
+                    attributeData.Deconstruct(7, out data.Up43);
 
                     warps.Add(data);
                 }
                 warpsData.WarpDatas = warps.ToArray();
+
                 warpsDatas.Add(warpsData);
             }
 

@@ -6,7 +6,7 @@ using System.Text;
 namespace SREmulator.SourceGeneration
 {
     [Generator(LanguageNames.CSharp)]
-    public sealed class SRCharacterGenerator : SRWarpItemGenerator
+    public sealed class SRCharacterGenerator : SRItemGenerator
     {
         public override string Keys => SRKeys.SRCharacterKeys;
         public override string Type => SRItemTypes.Character;
@@ -21,7 +21,7 @@ namespace SREmulator.SourceGeneration
     }
 
     [Generator(LanguageNames.CSharp)]
-    public sealed class SRLightConeGenerator : SRWarpItemGenerator
+    public sealed class SRLightConeGenerator : SRItemGenerator
     {
         public override string Keys => SRKeys.SRLightConeKeys;
         public override string Type => SRItemTypes.LightCone;
@@ -36,12 +36,21 @@ namespace SREmulator.SourceGeneration
         }
     }
 
-    public abstract class SRWarpItemGenerator : ISourceGenerator
+    public abstract class SRItemGenerator : ISourceGenerator
     {
         public abstract string Keys { get; }
         public abstract string Type { get; }
         public abstract string Attribute { get; }
         public abstract int ID { get; }
+
+        private struct ItemData
+        {
+            public string Key;
+            public int Rarity;
+            public bool Limited;
+            public string Type;
+            public string[] Names;
+        }
 
         public abstract string GetClassType(int rarity, bool limited);
 
@@ -55,18 +64,19 @@ namespace SREmulator.SourceGeneration
             var receiver = (SRKeysClassReceiver)context.SyntaxContextReceiver;
             var semanticModel = context.Compilation.GetSemanticModel(receiver.Keys.SyntaxTree);
             var keys = Microsoft.CodeAnalysis.CSharp.CSharpExtensions.GetDeclaredSymbol(semanticModel, receiver.Keys);
-            List<(string Key, int Rarity, bool Limited, string Type)> items = new List<(string Key, int Rarity, bool Limited, string Type)>();
+            List<ItemData> items = new List<ItemData>();
 
             foreach (var member in keys.GetMembers())
             {
-                var attributeData = member.GetAttribute(Attribute);
+                ItemData item = default;
 
-                (string Key, int Rarity, bool Limited, string Type) item = default;
-                attributeData.Deconstruct(
-                    out item.Key,
-                    out item.Rarity,
-                    out item.Limited
-                    );
+                var attributeData = member.GetAttribute(SRAttributes.SRAliasesAttribute);
+                attributeData.Deconstruct(0, out item.Names);
+
+                attributeData = member.GetAttribute(Attribute);
+                attributeData.Deconstruct(0, out item.Key);
+                attributeData.Deconstruct(1, out item.Rarity);
+                attributeData.Deconstruct(2, out item.Limited);
                 item.Type = GetClassType(item.Rarity, item.Limited);
 
                 items.Add(item);
@@ -83,6 +93,17 @@ namespace SREmulator.SourceGeneration
                 builder.AppendLine(2, $"private static {item.Type} _{item.Key} = null;");
                 builder.AppendLine(2, $"public static {item.Type} {item.Key} => _{item.Key} ??= new {item.Key}();");
             }
+            builder.AppendLine(2, $"public static SR{Type} GetItemByName(string name)");
+            builder.AppendLine(2, "{");
+            builder.AppendLine(3, "return name.ToLower() switch");
+            builder.AppendLine(3, "{");
+            foreach (var item in items)
+            {
+                builder.AppendLine(4, $"\"{string.Join("\" or \"", item.Names)}\" => SR{Type}s.{item.Key},");
+            }
+            builder.AppendLine(4, $"_ => throw new System.ArgumentException(nameof(name))");
+            builder.AppendLine(3, "};");
+            builder.AppendLine(2, "}");
             builder.AppendLine(1, "}");
             builder.AppendLine();
 
