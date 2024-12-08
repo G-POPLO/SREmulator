@@ -7,7 +7,7 @@
         internal SRPlayerWarpStats LightConeEventStats { get; set; } = new();
         internal SRPlayerWarpStats StellarStats { get; set; } = new();
         internal SRPlayerWarpStats DepartureStats { get; set; } = new();
-        internal SRPlayerCharacterStats CharacterStats { get; set; } = new();
+        internal SRPlayerEidolonsStats CharacterStats { get; set; } = new();
 
         internal SRPlayer() { }
     }

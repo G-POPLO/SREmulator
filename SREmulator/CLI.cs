@@ -182,7 +182,7 @@ namespace SREmulator
             Console.WriteLine(counter);
             foreach (var pair in result.OrderByDescending(pair => pair.Key.Rarity).ThenByDescending(pair => pair.Value))
             {
-                Print(pair.Key, $"{pair.Value}\t({(double)pair.Value / counter:0.00%})");
+                Print(pair.Key, $"\n{pair.Value}\t({(double)pair.Value / counter:0.00%})");
             }
         }
 
@@ -191,20 +191,6 @@ namespace SREmulator
             int total = args.Attempts;
             int warps = 0;
             var warp = args.Warp;
-
-            ISRWarpResultItem[] star5s, star4s;
-            if (args.WarpType is SRWarpType.CharacterEventWarp or SRWarpType.LightConeEventWarp)
-            {
-                star5s = [warp.Up5];
-                star4s = warp.Up4;
-            }
-            else
-            {
-                star5s = warp.Common5Characters;
-                star4s = warp.Common4Characters;
-            }
-            ISRWarpResultItem star5 = star5s[0], star4 = star4s[0];
-
 
             for (int i = 0; i < total; i++)
             {

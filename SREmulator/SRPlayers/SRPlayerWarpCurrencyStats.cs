@@ -109,7 +109,7 @@ namespace SREmulator.SRPlayers
 
             return false;
         }
-        public void GetWarpReward(ISRWarpResultItem item, SRPlayerCharacterStats characterStats)
+        public void GetWarpReward(ISRWarpResultItem item, SRPlayerEidolonsStats characterStats)
         {
             const int DuplicateStar5CharacterEidolonsMaxed = 100;
             const int DuplicateStar5Character = 40;
