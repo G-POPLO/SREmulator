@@ -5,6 +5,7 @@ using SREmulator.SRWarps;
 using SREmulator.SRWarps.CommonWarps;
 using SREmulator.SRWarps.EventWarps;
 using System.Collections.ObjectModel;
+using System.Text;
 
 namespace SREmulator
 {
@@ -24,6 +25,7 @@ namespace SREmulator
                 --pause                             每次抽取后暂停（按任意键继续）
                 --return                            前一次的抽取结果显示将被后一次的抽取结果覆盖
                 --silent                            不显示每抽获取的物品
+                --export                            导出抽卡结果（对 result-statistics 有效）
 
                 --star-rail-pass <count>            设置星轨通票数量
                 --star-rail-special-pass <count>    设置星轨专票数量
@@ -96,6 +98,7 @@ namespace SREmulator
 
             if (args.Language is not null)
             {
+                if (args.Language.ToLower() is "null") args.Language = string.Empty;
                 Localization.Culture = new(args.Language);
             }
 
@@ -147,12 +150,34 @@ namespace SREmulator
 
             var warp = args.Warp;
             var player = args.Player;
+            StringBuilder builder = args.Export ? new StringBuilder() : null!;
+            if (args.Export)
+            {
+                builder.AppendLine("对象类型,对象名称,对象星级,跃迁类型");
+            }
+            string warpTypeName = warp.WarpType switch
+            {
+                SRWarpType.DepartureWarp => "始发跃迁",
+                SRWarpType.StellarWarp => "群星跃迁",
+                SRWarpType.CharacterEventWarp => "角色活动跃迁",
+                SRWarpType.LightConeEventWarp => "光锥活动跃迁",
+                _ => string.Empty
+            };
 
             while (warp.TryWarp(player, out var item))
             {
                 result.TryGetValue(item, out var count);
                 result[item] = count + 1;
                 counter++;
+
+                if (args.Export)
+                {
+                    builder.AppendLine($"{(item is SRCharacter ? "角色" : "光锥")}," +
+                        $"{item.Name}," +
+                        $"{(int)item.Rarity}," +
+                        $"{warpTypeName}"
+                        );
+                }
 
                 if (args.Silent) continue;
 
@@ -177,6 +202,11 @@ namespace SREmulator
                 Console.ForegroundColor = origColor;
 
                 if (args.Pause) _ = Console.ReadKey(true);
+            }
+
+            if (args.Export)
+            {
+                File.WriteAllText(DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss-fffffff") + ".csv", builder.ToString());
             }
 
             Console.WriteLine("----------");
@@ -257,6 +287,7 @@ namespace SREmulator
         public bool Pause = false;
         public bool Silent = false;
         public bool Return = false;
+        public bool Export = false;
 
         public int StarRailPass = 180;
         public int StarRailSpecialPass = 180;
@@ -404,6 +435,10 @@ namespace SREmulator
 
                         case "return":
                             result.Return = true;
+                            break;
+
+                        case "export":
+                            result.Export = true;
                             break;
 
                         case "star-rail-pass":
