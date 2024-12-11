@@ -26,6 +26,7 @@ namespace SREmulator
                 --return                            前一次的抽取结果显示将被后一次的抽取结果覆盖
                 --silent                            不显示每抽获取的物品
                 --export                            导出抽卡结果（对 result-statistics 有效）
+                --output                            导出命令结果
 
                 --star-rail-pass <count>            设置星轨通票数量
                 --star-rail-special-pass <count>    设置星轨专票数量
@@ -142,6 +143,11 @@ namespace SREmulator
             Console.ForegroundColor = origColor;
         }
 
+        private static string GetFileName(string name, string extension)
+        {
+            return $"{name}.{DateTime.Now:yyyy-MM-dd-HH-mm-ss-fffffff}.{extension}";
+        }
+
         internal static void ResultStatistics(CLIArgs args)
         {
             Dictionary<ISRWarpResultItem, int> result = [];
@@ -151,10 +157,8 @@ namespace SREmulator
             var warp = args.Warp;
             var player = args.Player;
             StringBuilder builder = args.Export ? new StringBuilder() : null!;
-            if (args.Export)
-            {
-                builder.AppendLine("对象类型,对象名称,对象星级,跃迁类型");
-            }
+            if (args.Export) builder.AppendLine("对象类型,对象名称,对象星级,跃迁类型");
+
             string warpTypeName = warp.WarpType switch
             {
                 SRWarpType.DepartureWarp => "始发跃迁",
@@ -204,17 +208,20 @@ namespace SREmulator
                 if (args.Pause) _ = Console.ReadKey(true);
             }
 
-            if (args.Export)
-            {
-                File.WriteAllText(DateTime.Now.ToString("yyyy-MM-dd-HH-mm-ss-fffffff") + ".csv", builder.ToString());
-            }
+            if (args.Export) File.WriteAllText(GetFileName("warps", "csv"), builder.ToString());
+
+            builder = args.Output ? new StringBuilder() : null!;
+            if (args.Output) builder.AppendLine("名称,数量,占比");
 
             Console.WriteLine("----------");
             Console.WriteLine(counter);
             foreach (var pair in result.OrderByDescending(pair => pair.Key.Rarity).ThenByDescending(pair => pair.Value))
             {
                 Print(pair.Key, $"\n{pair.Value}\t({(double)pair.Value / counter:0.00%})");
+                if (args.Output) builder.AppendLine($"{pair.Key},{pair.Value},{(double)pair.Value / counter:0.00%}");
             }
+
+            if (args.Output) File.WriteAllText(GetFileName("result-statistics", "csv"), builder.ToString());
         }
 
         internal static void AchieveAverageWarps(CLIArgs args)
@@ -247,7 +254,9 @@ namespace SREmulator
             {
                 Print(pair.Key, $": {pair.Value}");
             }
-            Console.WriteLine(((double)warps / total).ToString("0.##"));
+            var result = ((double)warps / total).ToString("0.##");
+            Console.WriteLine(result);
+            if (args.Output) File.WriteAllText(GetFileName("achieve-average-warps", "txt"), result);
         }
 
         internal static void AchieveChance(CLIArgs args)
@@ -278,7 +287,9 @@ namespace SREmulator
             {
                 Print(pair.Key, $": {pair.Value}");
             }
-            Console.WriteLine(((double)successful / total).ToString("0.00%"));
+            var result = ((double)successful / total).ToString("0.00%");
+            Console.WriteLine(result);
+            if (args.Output) File.WriteAllText(GetFileName("achieve-chance", "txt"), result);
         }
     }
 
@@ -288,6 +299,7 @@ namespace SREmulator
         public bool Silent = false;
         public bool Return = false;
         public bool Export = false;
+        public bool Output = false;
 
         public int StarRailPass = 180;
         public int StarRailSpecialPass = 180;
@@ -439,6 +451,10 @@ namespace SREmulator
 
                         case "export":
                             result.Export = true;
+                            break;
+
+                        case "output":
+                            result.Output = true;
                             break;
 
                         case "star-rail-pass":
