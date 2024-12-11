@@ -2,13 +2,13 @@
 {
     public sealed class SRPlayer
     {
-        internal SRPlayerWarpCurrencyStats WarpCurrencyStats { get; set; } = new();
-        internal SRPlayerWarpStats CharacterEventStats { get; set; } = new();
-        internal SRPlayerWarpStats LightConeEventStats { get; set; } = new();
-        internal SRPlayerWarpStats StellarStats { get; set; } = new();
-        internal SRPlayerWarpStats DepartureStats { get; set; } = new();
-        internal SRPlayerEidolonsStats EidolonsStats { get; set; } = new();
+        public SRPlayerWarpCurrencyStats WarpCurrencyStats { get; set; } = new();
+        public SRPlayerWarpStats CharacterEventStats { get; set; } = new();
+        public SRPlayerWarpStats LightConeEventStats { get; set; } = new();
+        public SRPlayerWarpStats StellarStats { get; set; } = new();
+        public SRPlayerWarpStats DepartureStats { get; set; } = new();
+        public SRPlayerEidolonsStats EidolonsStats { get; set; } = new();
 
-        internal SRPlayer() { }
+        public SRPlayer() { }
     }
 }

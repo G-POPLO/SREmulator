@@ -1,6 +1,6 @@
 ﻿namespace SREmulator.SRPlayers
 {
-    internal sealed class SRPlayerWarpStats
+    public sealed class SRPlayerWarpStats
     {
         public bool Guarantee5;
         public bool Guarantee4;

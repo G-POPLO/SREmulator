@@ -3,7 +3,7 @@ using System.Diagnostics;
 
 namespace SREmulator.SRPlayers
 {
-    internal sealed class SRPlayerWarpCurrencyStats
+    public sealed class SRPlayerWarpCurrencyStats
     {
         // TODO
         //public bool NoReward;
