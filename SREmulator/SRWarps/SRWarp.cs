@@ -1,5 +1,7 @@
 ﻿using SREmulator.SRItems;
 using SREmulator.SRPlayers;
+using SREmulator.SRWarps.CommonWarps;
+using SREmulator.SRWarps.EventWarps;
 using System.Diagnostics.CodeAnalysis;
 
 namespace SREmulator.SRWarps
@@ -108,6 +110,31 @@ namespace SREmulator.SRWarps
             {
                 PostWarp(player, item);
             }
+        }
+
+        public static SRWarp? GetWarp(string name, SRWarpType type, SRVersion version)
+        {
+            if (type is SRWarpType.DepartureWarp || name.ToLower() is "departure" or "departure-warp")
+            {
+                return SRDepartureWarp.DepartureWarp;
+            }
+
+            if (type is SRWarpType.StellarWarp || name.ToLower() is "stellar" or "stellar-warp")
+            {
+                return SRStellarWarps.GetStellarWarpByVersion(version);
+            }
+
+            if (type is SRWarpType.CharacterEventWarp)
+            {
+                return SRCharacterEventWarps.GetWarpByNameAndVersion(name, version);
+            }
+
+            if (type is SRWarpType.LightConeEventWarp)
+            {
+                return SRLightConeEventWarps.GetWarpByNameAndVersion(name, version);
+            }
+
+            return null;
         }
     }
 }

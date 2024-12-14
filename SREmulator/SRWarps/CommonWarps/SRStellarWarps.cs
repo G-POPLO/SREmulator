@@ -17,5 +17,10 @@
         public static readonly SRStellarWarp Ver2p5 = new(SRVersion.Ver2p5);
         public static readonly SRStellarWarp Ver2p6 = new(SRVersion.Ver2p6);
         public static readonly SRStellarWarp Ver2p7 = new(SRVersion.Ver2p7);
+
+        public static SRStellarWarp GetStellarWarpByVersion(SRVersion version)
+        {
+            return new SRStellarWarp(version);
+        }
     }
 }
