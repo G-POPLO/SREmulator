@@ -5,7 +5,7 @@ namespace SREmulator.SRWarps.EventWarps
 {
     public static partial class SRCharacterEventWarps
     {
-
+        public static partial SRCharacterEventWarp? GetWarpByNameAndVersion(string name, SRVersion version);
     }
 
     public abstract class SRCharacterEventWarp : SRWarp

@@ -14,6 +14,7 @@ namespace SREmulator.SRPlayers
         public int StellarJade;
         public int OneiricShard;
 
+        // TODO: 无限抽卡资源
         public bool TryConsumeOneStarRailPassIndirectly()
         {
             if (StellarJade >= 160)

@@ -5,7 +5,7 @@ namespace SREmulator.SRWarps.EventWarps
 {
     public static partial class SRLightConeEventWarps
     {
-
+        public static partial SRLightConeEventWarp? GetWarpByNameAndVersion(string name, SRVersion version);
     }
 
     public abstract class SRLightConeEventWarp : SRWarp
