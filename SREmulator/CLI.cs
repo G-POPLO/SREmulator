@@ -36,8 +36,14 @@ namespace SREmulator
                 --eidolon <name> <count>            设置角色星魂（上限为6，下限为-1）
 
                 --counter5 <count>                  设置已多少抽未出5星
-                --guarantee5                        设置为有大保底
-
+                --guarantee5                        设置为有5星大保底
+                --counter4 <count>                  设置已多少抽未出4星
+                --guarantee4                        设置为有4星大保底
+                --counter5character <count>         设置已多少抽未出5星角色
+                --counter5lightcone <count>         设置已多少抽未出5星光锥
+                --counter4character <count>         设置已多少抽未出4星角色
+                --counter4lightcone <count>         设置已多少抽未出4星光锥
+            
                 --warp-name <name>                  设置要抽取的卡池（参见 WARP-NAMES）
                 --warp-version <major> <minor>      设置卡池所在的版本（影响可抽取到的四星对象）
 
@@ -313,6 +319,12 @@ namespace SREmulator
 
         public int Counter5 = 0;
         public bool Guarantee5 = false;
+        public int Counter4 = 0;
+        public bool Guarantee4 = false;
+        public int Counter5Character = 0;
+        public int Counter5LightCone = 0;
+        public int Counter4Character = 0;
+        public int Counter4LightCone = 0;
 
         public string WarpName = string.Empty;
         public int WarpVersionMajor = 1;
@@ -366,6 +378,12 @@ namespace SREmulator
                 {
                     Counter5 = Counter5,
                     Guarantee5 = Guarantee5,
+                    Counter4 = Counter4,
+                    Guarantee4 = Guarantee4,
+                    Counter5Character = Counter5Character,
+                    Counter5LightCone = Counter5LightCone,
+                    Counter4Character = Counter4Character,
+                    Counter4LightCone = Counter4LightCone,
                 };
             }
         }
@@ -523,6 +541,45 @@ namespace SREmulator
 
                         case "guarantee5":
                             result.Guarantee5 = true;
+                            break;
+
+                        case "counter4":
+                            if (int.TryParse(args[++i], out count))
+                            {
+                                result.Counter4 = count;
+                            }
+                            break;
+
+                        case "guarantee4":
+                            result.Guarantee4 = true;
+                            break;
+
+                        case "counter5character":
+                            if (int.TryParse(args[++i], out count))
+                            {
+                                result.Counter5Character = count;
+                            }
+                            break;
+
+                        case "counter5lightcone":
+                            if (int.TryParse(args[++i], out count))
+                            {
+                                result.Counter5LightCone = count;
+                            }
+                            break;
+
+                        case "counter4character":
+                            if (int.TryParse(args[++i], out count))
+                            {
+                                result.Counter4Character = count;
+                            }
+                            break;
+
+                        case "counter4lightcone":
+                            if (int.TryParse(args[++i], out count))
+                            {
+                                result.Counter4LightCone = count;
+                            }
                             break;
 
                         case "warp-name":
