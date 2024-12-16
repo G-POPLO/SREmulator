@@ -51,6 +51,9 @@ namespace SREmulator
                 --target-count4 <count>             【已过时】设置目标4星数量（限定池中表示特定UP4星角色，普池中表示特定4星角色）
                 --attempts <count>                  设置计算抽数或可能性时的尝试次数
 
+                --days <count>                      将抽卡时间设置在多少天后（计算日常周常星琼，不计算活动星琼）
+                --express-supply-pass               设置有小月卡（影响日常星琼计算）
+
                 --help                              显示该帮助
                 --language <name>                   更改语言（目前仅支持 zh-Hans, en-US）
 
@@ -332,11 +335,15 @@ namespace SREmulator
         public int TargetCount4 = 0;
         public int Attempts = 10000;
 
+        public int Days = 0;
+        public bool ExpressSupplyPassDays = false;
+
         public string Command = "result-statistics";
 
         public bool Help = false;
         public string? Language = null;
 
+        // TODO: 优化 只计算一次 之后Clone
         internal SRPlayerWarpCurrencyStats WarpCurrencyStats
         {
             get
@@ -394,16 +401,21 @@ namespace SREmulator
                     player.DepartureStats = WarpStats;
                 }
                 player.EidolonsStats = EidolonsStats;
+                if (Days > 0)
+                {
+                    player.LevelStats.EquilibriumLevel = 6;
+                    player.WarpCurrencyStats.DaysLater(Days, ExpressSupplyPassDays, player.LevelStats);
+                }
                 return player;
             }
         }
         internal SRCharacterEventWarp CharacterEventWarp
         {
-            get => SRCharacterEventWarps.GetWarpByNameAndVersion(WarpName, WarpVersion);
+            get => SRCharacterEventWarps.GetWarpByNameAndVersion(WarpName, WarpVersion) ?? SRCharacterEventWarps.TheLongVoyageHome1;
         }
         internal SRLightConeEventWarp LightConeEventWarp
         {
-            get => SRLightConeEventWarps.GetWarpByNameAndVersion(WarpName, WarpVersion);
+            get => SRLightConeEventWarps.GetWarpByNameAndVersion(WarpName, WarpVersion) ?? SRLightConeEventWarps.TheLongVoyageHome1;
         }
         internal SRStellarWarp StellarWarp
         {
@@ -571,6 +583,17 @@ namespace SREmulator
                             {
                                 result.Attempts = count;
                             }
+                            break;
+
+                        case "days":
+                            if (int.TryParse(args[++i], out count))
+                            {
+                                result.Days = count;
+                            }
+                            break;
+
+                        case "express-supply-pass":
+                            result.ExpressSupplyPassDays = true;
                             break;
 
                         case "help":

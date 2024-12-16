@@ -8,6 +8,7 @@
         public SRPlayerWarpStats StellarStats { get; set; } = new();
         public SRPlayerWarpStats DepartureStats { get; set; } = new();
         public SRPlayerEidolonsStats EidolonsStats { get; set; } = new();
+        public SRPlayerLevelStats LevelStats { get; set; } = new();
 
         public SRPlayer() { }
     }

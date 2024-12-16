@@ -1,4 +1,5 @@
 ﻿using SREmulator.SRItems;
+using System;
 using System.Diagnostics;
 
 namespace SREmulator.SRPlayers
@@ -135,6 +136,31 @@ namespace SREmulator.SRPlayers
                 if (eidolons is 0) return;
                 else if (character is SRStar5Character) UndyingStarlight += maxed ? DuplicateStar5CharacterEidolonsMaxed : DuplicateStar5Character;
                 else if (character is SRStar4Character) UndyingStarlight += maxed ? DuplicateStar4CharacterEidolonsMaxed : DuplicateStar4Character;
+            }
+        }
+
+        public void DaysLater(int days, bool expressSupplyPass, SRPlayerLevelStats levelStats)
+        {
+            const int StellarJadeExpressSupplyPassEveryDay = 90 + 300 / 30;
+            const int StellarJadeForgottenHallLikeEveryTwoWeeks = 800;
+            DateTime _2024_12_16 = new(2024, 12, 16);
+
+            DateTime now = DateTime.Now;
+            while (days-- > 0)
+            {
+                now = now.AddDays(1);
+                if (now.DayOfWeek is DayOfWeek.Monday)
+                {
+                    if ((now - _2024_12_16).Days / 7 % 2 is 1)
+                    {
+                        StellarJade += StellarJadeForgottenHallLikeEveryTwoWeeks;
+                    }
+
+                    levelStats.GetSimulatedUniverseMaxPointRewards(this);
+                }
+
+                levelStats.GetDailyTrainingRewards(this);
+                if (expressSupplyPass) StellarJade += StellarJadeExpressSupplyPassEveryDay;
             }
         }
     }
