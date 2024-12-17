@@ -10,7 +10,7 @@ namespace SREmulator.SRPlayers
         {
 
         }
-        internal SRPlayerEidolonsStats(Dictionary<SRCharacter, int> eidolons)
+        public SRPlayerEidolonsStats(Dictionary<SRCharacter, int> eidolons)
         {
             CharacterEidolons = new(eidolons);
         }

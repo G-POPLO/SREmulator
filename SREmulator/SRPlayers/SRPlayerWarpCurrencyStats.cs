@@ -1,5 +1,4 @@
 ﻿using SREmulator.SRItems;
-using System;
 using System.Diagnostics;
 
 namespace SREmulator.SRPlayers

@@ -1,6 +1,6 @@
 ﻿using System.Text;
 
-namespace SREmulator
+namespace SREmulator.CLI
 {
     internal class Program
     {

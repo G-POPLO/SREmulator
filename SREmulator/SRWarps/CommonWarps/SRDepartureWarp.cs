@@ -1,6 +1,5 @@
 ﻿using SREmulator.SRItems;
 using SREmulator.SRPlayers;
-using System.Runtime.CompilerServices;
 
 namespace SREmulator.SRWarps.CommonWarps
 {
