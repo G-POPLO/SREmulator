@@ -2,7 +2,7 @@
 
 namespace SREmulator.SRPlayers
 {
-    public sealed class SRPlayerEidolonsStats
+    public sealed class SRPlayerEidolonsStats : ISRPlayerStats<SRPlayerEidolonsStats>
     {
         internal Dictionary<SRCharacter, int> CharacterEidolons { get; set; } = [];
 
@@ -21,6 +21,11 @@ namespace SREmulator.SRPlayers
             if (eidolons >= 6) return false;
             CharacterEidolons[character] = eidolons += 1;
             return true;
+        }
+
+        public SRPlayerEidolonsStats Clone()
+        {
+            return new SRPlayerEidolonsStats(CharacterEidolons);
         }
     }
 }

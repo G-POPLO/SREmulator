@@ -1,5 +1,6 @@
 ﻿using SREmulator.SRItems;
 using SREmulator.SRPlayers;
+using System.Runtime.CompilerServices;
 
 namespace SREmulator.SRWarps.CommonWarps
 {
@@ -19,17 +20,17 @@ namespace SREmulator.SRWarps.CommonWarps
 
         public override bool PreWarp(SRPlayer player, int count)
         {
-            var stats = DepartureStats.GetStats(player);
+            var stats = new DepartureStats(player);
             if (stats.Counter >= 50) return false;
             if (count is not 1 or 10) return false;
             if (stats.NoCost >= count)
             {
-                stats.NoCost -= count;
+                stats.NoCost -= (uint)count;
                 return true;
             }
             if (player.WarpCurrencyStats.TryConsumeStarRailPass(8))
             {
-                stats.NoCost += 10 - count;
+                stats.NoCost += 10 - (uint)count;
                 return true;
             }
             return false;
@@ -37,7 +38,7 @@ namespace SREmulator.SRWarps.CommonWarps
 
         public override ISRWarpResultItem OnWarp(SRPlayer player)
         {
-            var stats = DepartureStats.GetStats(player);
+            var stats = new DepartureStats(player);
             if (stats.Counter is 49) return SRWarpCore.OneOf(Common5Characters);
             return SRWarpCore.CommonWarp(WarpStats, player.DepartureStats);
         }
@@ -45,23 +46,33 @@ namespace SREmulator.SRWarps.CommonWarps
         public override void PostWarp(SRPlayer player, ISRWarpResultItem item)
         {
             player.WarpCurrencyStats.GetWarpReward(item, player.EidolonsStats);
-            var stats = DepartureStats.GetStats(player);
+            var stats = new DepartureStats(player);
             stats.Counter++;
         }
 
         private class DepartureStats
         {
-            public int Counter;
-            public int NoCost;
+            private readonly SRPlayer _player;
 
-            public static DepartureStats GetStats(SRPlayer player)
+            public DepartureStats(SRPlayer player)
             {
-                if (player.DepartureStats.ExtraInfo is not DepartureStats stats)
-                {
-                    stats = new DepartureStats();
-                    player.DepartureStats.ExtraInfo = stats;
-                }
-                return stats;
+                _player = player;
+            }
+
+            public ulong ExtraInfo
+            {
+                get => _player.DepartureStats.ExtraInfo ??= 0;
+                set => _player.DepartureStats.ExtraInfo = value;
+            }
+            public uint Counter
+            {
+                get => (uint)(ExtraInfo >> 32);
+                set => ExtraInfo = (ExtraInfo & uint.MaxValue) | (ulong)value << 32;
+            }
+            public uint NoCost
+            {
+                get => (uint)ExtraInfo;
+                set => ExtraInfo = (ExtraInfo & (ulong)uint.MaxValue << 32) | value;
             }
         }
     }

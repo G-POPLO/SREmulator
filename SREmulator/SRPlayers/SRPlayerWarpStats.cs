@@ -1,6 +1,6 @@
 ﻿namespace SREmulator.SRPlayers
 {
-    public sealed class SRPlayerWarpStats
+    public sealed class SRPlayerWarpStats : ISRPlayerStats<SRPlayerWarpStats>
     {
         public bool Guarantee5;
         public bool Guarantee4;
@@ -10,7 +10,8 @@
         public int Counter5LightCone;
         public int Counter4Character;
         public int Counter4LightCone;
-        public object? ExtraInfo;
+        //public object? ExtraInfo;
+        public ulong? ExtraInfo;
 
         public void GetStar5(bool isUp, bool isCharacter)
         {
@@ -56,6 +57,11 @@
             Counter5LightCone++;
             Counter4Character++;
             Counter4LightCone++;
+        }
+
+        public SRPlayerWarpStats Clone()
+        {
+            return (SRPlayerWarpStats)MemberwiseClone();
         }
     }
 }

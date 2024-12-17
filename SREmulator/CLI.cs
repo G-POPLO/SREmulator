@@ -394,37 +394,42 @@ namespace SREmulator
                 return new SRPlayerEidolonsStats(Eidolons);
             }
         }
+        private SRPlayer? _player = null;
         internal SRPlayer Player
         {
             get
             {
-                var player = new SRPlayer()
+                if (_player is null)
                 {
-                    WarpCurrencyStats = WarpCurrencyStats,
-                };
-                if (WarpType is SRWarpType.CharacterEventWarp)
-                {
-                    player.CharacterEventStats = WarpStats;
+                    var player = new SRPlayer()
+                    {
+                        WarpCurrencyStats = WarpCurrencyStats,
+                    };
+                    if (WarpType is SRWarpType.CharacterEventWarp)
+                    {
+                        player.CharacterEventStats = WarpStats;
+                    }
+                    else if (WarpType is SRWarpType.LightConeEventWarp)
+                    {
+                        player.LightConeEventStats = WarpStats;
+                    }
+                    else if (WarpType is SRWarpType.StellarWarp)
+                    {
+                        player.StellarStats = WarpStats;
+                    }
+                    else if (WarpType is SRWarpType.DepartureWarp)
+                    {
+                        player.DepartureStats = WarpStats;
+                    }
+                    player.EidolonsStats = EidolonsStats;
+                    if (Days > 0)
+                    {
+                        player.LevelStats.EquilibriumLevel = 6;
+                        player.WarpCurrencyStats.DaysLater(Days, ExpressSupplyPassDays, player.LevelStats);
+                    }
+                    _player = player;
                 }
-                else if (WarpType is SRWarpType.LightConeEventWarp)
-                {
-                    player.LightConeEventStats = WarpStats;
-                }
-                else if (WarpType is SRWarpType.StellarWarp)
-                {
-                    player.StellarStats = WarpStats;
-                }
-                else if (WarpType is SRWarpType.DepartureWarp)
-                {
-                    player.DepartureStats = WarpStats;
-                }
-                player.EidolonsStats = EidolonsStats;
-                if (Days > 0)
-                {
-                    player.LevelStats.EquilibriumLevel = 6;
-                    player.WarpCurrencyStats.DaysLater(Days, ExpressSupplyPassDays, player.LevelStats);
-                }
-                return player;
+                return _player.Clone();
             }
         }
         internal SRCharacterEventWarp CharacterEventWarp

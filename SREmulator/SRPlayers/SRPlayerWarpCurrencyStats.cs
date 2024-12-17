@@ -4,7 +4,7 @@ using System.Diagnostics;
 
 namespace SREmulator.SRPlayers
 {
-    public sealed class SRPlayerWarpCurrencyStats
+    public sealed class SRPlayerWarpCurrencyStats : ISRPlayerStats<SRPlayerWarpCurrencyStats>
     {
         // TODO
         //public bool NoReward;
@@ -162,6 +162,11 @@ namespace SREmulator.SRPlayers
                 levelStats.GetDailyTrainingRewards(this);
                 if (expressSupplyPass) StellarJade += StellarJadeExpressSupplyPassEveryDay;
             }
+        }
+
+        public SRPlayerWarpCurrencyStats Clone()
+        {
+            return (SRPlayerWarpCurrencyStats)MemberwiseClone();
         }
     }
 }

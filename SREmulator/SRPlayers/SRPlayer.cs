@@ -11,5 +11,29 @@
         public SRPlayerLevelStats LevelStats { get; set; } = new();
 
         public SRPlayer() { }
+
+        public SRPlayer Clone()
+        {
+            return new SRPlayer()
+            {
+                WarpCurrencyStats = WarpCurrencyStats.Clone(),
+                CharacterEventStats = CharacterEventStats.Clone(),
+                LightConeEventStats = LightConeEventStats.Clone(),
+                StellarStats = StellarStats.Clone(),
+                DepartureStats = DepartureStats.Clone(),
+                EidolonsStats = EidolonsStats.Clone(),
+                LevelStats = LevelStats.Clone(),
+            };
+        }
+    }
+
+    public interface ISRPlayerStats<TSelf> : ICloneable where TSelf : ISRPlayerStats<TSelf>, new()
+    {
+        object ICloneable.Clone()
+        {
+            return Clone();
+        }
+
+        public new TSelf Clone();
     }
 }

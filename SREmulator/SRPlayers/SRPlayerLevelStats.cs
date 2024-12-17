@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SREmulator.SRPlayers
 {
-    public sealed class SRPlayerLevelStats
+    public sealed class SRPlayerLevelStats : ISRPlayerStats<SRPlayerLevelStats>
     {
         /// <summary>
         /// 0 - 6
@@ -74,6 +74,11 @@ namespace SREmulator.SRPlayers
         public void GetDailyTrainingRewards(SRPlayerWarpCurrencyStats currencyStats)
         {
             currencyStats.StellarJade += 10 + 10 + 10 + 15 + 15;
+        }
+
+        public SRPlayerLevelStats Clone()
+        {
+            return (SRPlayerLevelStats)MemberwiseClone();
         }
     }
 }
