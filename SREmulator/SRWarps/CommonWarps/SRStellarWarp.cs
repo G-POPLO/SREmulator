@@ -27,7 +27,7 @@ namespace SREmulator.SRWarps.CommonWarps
 
         public override void PostWarp(SRPlayer player, ISRWarpResultItem item)
         {
-            player.WarpCurrencyStats.GetWarpReward(item, player.EidolonsStats);
+            player.WarpCurrencyStats.GetWarpRewards(item, player.EidolonsStats);
         }
     }
 }

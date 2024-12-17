@@ -49,4 +49,27 @@
 
         Ver3p0 = Major3 | Minor0,
     }
+
+    public static class SRVersions
+    {
+        internal static SRVersion InternalCreate(int major, int minor)
+        {
+            SRVersion majorEnum = (SRVersion)(major << 12);
+            SRVersion minorEnum = (SRVersion)(minor << 8);
+            return majorEnum | minorEnum | SRVersion.Specified;
+        }
+
+        public static SRVersion Create(int major, int minor)
+        {
+            major &= 0xF;
+            minor &= 0xF;
+            return InternalCreate(major, minor);
+        }
+        public static SRVersion CreateAvailable(int major, int minor)
+        {
+            major = Math.Clamp(major, 1, 3);
+            minor = Math.Clamp(minor, 0, 7);
+            return InternalCreate(major, minor);
+        }
+    }
 }

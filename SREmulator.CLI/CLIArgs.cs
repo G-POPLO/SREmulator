@@ -37,18 +37,12 @@ namespace SREmulator.CLI
         {
             get
             {
-                SRVersion major = (SRVersion)(WarpVersionMajor << 12);
-                SRVersion minor = (SRVersion)(WarpVersionMinor << 8);
-                return major | minor | SRVersion.Specified;
+                return SRVersions.CreateAvailable(WarpVersionMajor, WarpVersionMinor);
             }
         }
         public SRWarpType WarpType = SRWarpType.CharacterEventWarp;
 
         public CLIWarpTarget Target = new();
-        [Obsolete("Use CLIArgs.Target")]
-        public int TargetCount5 = 0;
-        [Obsolete("Use CLIArgs.Target")]
-        public int TargetCount4 = 0;
         public int Attempts = 10000;
 
         public int Days = 0;
@@ -59,7 +53,6 @@ namespace SREmulator.CLI
         public bool Help = false;
         public string? Language = null;
 
-        // TODO: 优化 只计算一次 之后Clone
         internal SRPlayerWarpCurrencyStats WarpCurrencyStats
         {
             get

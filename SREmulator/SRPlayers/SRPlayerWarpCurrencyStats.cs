@@ -110,7 +110,8 @@ namespace SREmulator.SRPlayers
 
             return false;
         }
-        public void GetWarpReward(ISRWarpResultItem item, SRPlayerEidolonsStats characterStats)
+
+        public void GetWarpRewards(ISRWarpResultItem item, SRPlayerEidolonsStats characterStats)
         {
             const int DuplicateStar5CharacterEidolonsMaxed = 100;
             const int DuplicateStar5Character = 40;
@@ -137,29 +138,75 @@ namespace SREmulator.SRPlayers
                 else if (character is SRStar4Character) UndyingStarlight += maxed ? DuplicateStar4CharacterEidolonsMaxed : DuplicateStar4Character;
             }
         }
+        public void GetSimulatedUniverseMaxPointRewards(SRPlayerLevelStats levelStats)
+        {
+            StarRailPass += 1;
+            StellarJade += levelStats.EquilibriumLevel switch
+            {
+                0 or 1 => 40 + 35,
+                2 => 55 + 50,
+                3 => 70 + 65,
+                4 => 85 + 80,
+                5 => 100 + 95,
+                6 => 115 + 110,
 
+                _ => throw new InvalidOperationException(nameof(levelStats.EquilibriumLevel))
+            };
+        }
+        public void GetDailyTrainingRewards() // 每日训练
+        {
+            StellarJade += 10 + 10 + 10 + 15 + 15;
+        }
+        public void GetExpressSupplyPassRewards() // 小月卡
+        {
+            StellarJade += 90 + 300 / 30;
+        }
+        public void GetTreasuresLightwardRewards() // 深渊
+        {
+            StellarJade += 800;
+        }
+        public void GetStoreEmbersExchangeRewards(bool starRailPassFirst = false) // 商店
+        {
+            // TODO
+            //if (starRailPassFirst)
+            //{
+            //    int count = UndyingEmbers / 90;
+            //    StarRailPass += Math.Min(5, count);
+            //    count = Math.Max(0, count - 5);
+            //    StarRailSpecialPass += Math.Min(5, count);
+            //}
+            //else
+            //{
+            //    int count = UndyingEmbers / 90;
+            //    StarRailSpecialPass += Math.Min(5, count);
+            //    count = Math.Max(0, count - 5);
+            //    StarRailPass += Math.Min(5, count);
+            //}
+
+            StarRailPass += 5;
+            StarRailSpecialPass += 5;
+        }
         public void DaysLater(int days, bool expressSupplyPass, SRPlayerLevelStats levelStats)
         {
-            const int StellarJadeExpressSupplyPassEveryDay = 90 + 300 / 30;
-            const int StellarJadeForgottenHallLikeEveryTwoWeeks = 800;
             DateTime _2024_12_16 = new(2024, 12, 16);
 
             DateTime now = DateTime.Now;
             while (days-- > 0)
             {
                 now = now.AddDays(1);
+                if (now.Day is 1) GetStoreEmbersExchangeRewards();
                 if (now.DayOfWeek is DayOfWeek.Monday)
                 {
                     if ((now - _2024_12_16).Days / 7 % 2 is 1)
                     {
-                        StellarJade += StellarJadeForgottenHallLikeEveryTwoWeeks;
+                        GetTreasuresLightwardRewards();
                     }
 
-                    levelStats.GetSimulatedUniverseMaxPointRewards(this);
+                    GetSimulatedUniverseMaxPointRewards(levelStats);
                 }
 
-                levelStats.GetDailyTrainingRewards(this);
-                if (expressSupplyPass) StellarJade += StellarJadeExpressSupplyPassEveryDay;
+                GetDailyTrainingRewards();
+                if (expressSupplyPass) GetExpressSupplyPassRewards();
             }
         }
 

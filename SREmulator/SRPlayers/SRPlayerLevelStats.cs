@@ -49,27 +49,6 @@
         /// </summary>
         public int TrailblazeLevel;
 
-        public void GetSimulatedUniverseMaxPointRewards(SRPlayerWarpCurrencyStats currencyStats)
-        {
-            currencyStats.StarRailPass += 1;
-            currencyStats.StellarJade += EquilibriumLevel switch
-            {
-                0 or 1 => 40 + 35,
-                2 => 55 + 50,
-                3 => 70 + 65,
-                4 => 85 + 80,
-                5 => 100 + 95,
-                6 => 115 + 110,
-
-                _ => throw new InvalidOperationException(nameof(EquilibriumLevel))
-            };
-        }
-
-        public void GetDailyTrainingRewards(SRPlayerWarpCurrencyStats currencyStats)
-        {
-            currencyStats.StellarJade += 10 + 10 + 10 + 15 + 15;
-        }
-
         public SRPlayerLevelStats Clone()
         {
             return (SRPlayerLevelStats)MemberwiseClone();
