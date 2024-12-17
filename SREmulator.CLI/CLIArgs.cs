@@ -48,7 +48,7 @@ namespace SREmulator.CLI
         public int Days = 0;
         public bool ExpressSupplyPass = false;
 
-        public string Command = "result-statistics";
+        public string Command = "help";
 
         public bool Help = false;
         public string? Language = null;
@@ -173,12 +173,19 @@ namespace SREmulator.CLI
 
                     if (!CLIOptions.TryApplyOption(option, result, source))
                     {
-                        Console.WriteLine($"警告：错误的选项或参数在 --{arg}");
+                        Console.WriteLine($"警告：错误的选项或参数在 '--{arg}'");
                     }
                 }
                 else
                 {
-                    result.Command = arg;
+                    if (CLICommands.Commands.ContainsKey(arg))
+                    {
+                        result.Command = arg;
+                    }
+                    else
+                    {
+                        Console.WriteLine($"警告：错误的命令 '{arg}'");
+                    }
                 }
             }
             return result;
