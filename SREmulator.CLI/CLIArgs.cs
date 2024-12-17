@@ -52,7 +52,7 @@ namespace SREmulator.CLI
         public int Attempts = 10000;
 
         public int Days = 0;
-        public bool ExpressSupplyPassDays = false;
+        public bool ExpressSupplyPass = false;
 
         public string Command = "result-statistics";
 
@@ -129,7 +129,7 @@ namespace SREmulator.CLI
                     if (Days > 0)
                     {
                         player.LevelStats.EquilibriumLevel = 6;
-                        player.WarpCurrencyStats.DaysLater(Days, ExpressSupplyPassDays, player.LevelStats);
+                        player.WarpCurrencyStats.DaysLater(Days, ExpressSupplyPass, player.LevelStats);
                     }
                     _player = player;
                 }
@@ -168,210 +168,19 @@ namespace SREmulator.CLI
         public static CLIArgs Parse(string[] args)
         {
             CLIArgs result = new();
-            for (int i = 0; i < args.Length; i++)
+            CLIArgsSource source = new(args);
+
+            while (true)
             {
-                string arg = args[i].ToLower();
+                string arg = source.Next().ToLower();
+                if (arg == string.Empty) break;
                 if (arg.StartsWith("--"))
                 {
                     string option = arg[2..];
-                    switch (option)
+
+                    if (!CLIOptions.TryApplyOption(option, result, source))
                     {
-                        case "pause":
-                            result.Pause = true;
-                            break;
-
-                        case "silent":
-                            result.Silent = true;
-                            break;
-
-                        case "return":
-                            result.Return = true;
-                            break;
-
-                        case "export":
-                            result.Export = true;
-                            break;
-
-                        case "output":
-                            result.Output = true;
-                            break;
-
-                        case "star-rail-pass":
-                            if (int.TryParse(args[++i], out int count))
-                            {
-                                result.StarRailPass = count;
-                            }
-                            break;
-
-                        case "star-rail-special-pass":
-                            if (int.TryParse(args[++i], out count))
-                            {
-                                result.StarRailSpecialPass = count;
-                            }
-                            break;
-
-                        case "undying-starlight":
-                            if (int.TryParse(args[++i], out count))
-                            {
-                                result.UndyingStarlight = count;
-                            }
-                            break;
-
-                        case "stellar-jade":
-                            if (int.TryParse(args[++i], out count))
-                            {
-                                result.StellarJade = count;
-                            }
-                            break;
-
-                        case "oneiric-shard":
-                            if (int.TryParse(args[++i], out count))
-                            {
-                                result.OneiricShard = count;
-                            }
-                            break;
-
-                        case "eidolon":
-                            var name = args[++i];
-                            if (int.TryParse(args[++i], out count))
-                            {
-                                count = Math.Clamp(count, -1, 6);
-                                var character = SRCharacters.GetItemByName(name);
-                                if (character is not null) result.Eidolons[character] = count;
-                            }
-                            break;
-
-                        case "counter5":
-                            if (int.TryParse(args[++i], out count))
-                            {
-                                result.Counter5 = count;
-                            }
-                            break;
-
-                        case "guarantee5":
-                            result.Guarantee5 = true;
-                            break;
-
-                        case "counter4":
-                            if (int.TryParse(args[++i], out count))
-                            {
-                                result.Counter4 = count;
-                            }
-                            break;
-
-                        case "guarantee4":
-                            result.Guarantee4 = true;
-                            break;
-
-                        case "counter5character":
-                            if (int.TryParse(args[++i], out count))
-                            {
-                                result.Counter5Character = count;
-                            }
-                            break;
-
-                        case "counter5lightcone":
-                            if (int.TryParse(args[++i], out count))
-                            {
-                                result.Counter5LightCone = count;
-                            }
-                            break;
-
-                        case "counter4character":
-                            if (int.TryParse(args[++i], out count))
-                            {
-                                result.Counter4Character = count;
-                            }
-                            break;
-
-                        case "counter4lightcone":
-                            if (int.TryParse(args[++i], out count))
-                            {
-                                result.Counter4LightCone = count;
-                            }
-                            break;
-
-                        case "warp-name":
-                            result.WarpName = args[++i];
-                            break;
-
-                        case "warp-version":
-                            if (int.TryParse(args[++i], out int major))
-                            {
-                                result.WarpVersionMajor = major;
-                            }
-                            if (int.TryParse(args[++i], out int minor))
-                            {
-                                result.WarpVersionMinor = minor;
-                            }
-                            break;
-
-                        case "character-event-warp":
-                            result.WarpType = SRWarpType.CharacterEventWarp;
-                            break;
-
-                        case "light-cone-event-warp":
-                            result.WarpType = SRWarpType.LightConeEventWarp;
-                            break;
-
-                        case "stellar-warp":
-                            result.WarpType = SRWarpType.StellarWarp;
-                            break;
-
-                        case "departure-warp":
-                            result.WarpType = SRWarpType.DepartureWarp;
-                            break;
-
-                        case "target":
-                            name = args[++i];
-                            if (int.TryParse(args[++i], out count))
-                            {
-                                result.Target[ISRWarpResultItem.GetItemByName(name)] = count;
-                            }
-                            break;
-
-                        case "target-count5":
-                            if (int.TryParse(args[++i], out count))
-                            {
-                                result.Target[result.Warp.Up5] = count;
-                            }
-                            break;
-
-                        case "target-count4":
-                            if (int.TryParse(args[++i], out count))
-                            {
-                                result.Target[result.Warp.Up4[0]] = count;
-                            }
-                            break;
-
-                        case "attempts":
-                            if (int.TryParse(args[++i], out count))
-                            {
-                                result.Attempts = count;
-                            }
-                            break;
-
-                        case "days":
-                            if (int.TryParse(args[++i], out count))
-                            {
-                                result.Days = count;
-                            }
-                            break;
-
-                        case "express-supply-pass":
-                            result.ExpressSupplyPassDays = true;
-                            break;
-
-                        case "help":
-                            result.Help = true;
-                            break;
-
-                        case "language":
-                            result.Language = args[++i];
-                            break;
-
-                        default:
-                            break;
+                        Console.WriteLine($"警告：错误的选项或参数在 --{arg}");
                     }
                 }
                 else

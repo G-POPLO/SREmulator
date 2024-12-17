@@ -44,8 +44,8 @@
                 --departure-warp                    设置卡池类型为始发跃迁（新手池）
 
                 --target <name> <count>             设置目标极其数量（参见 TARGET-NAMES）
-                --target-count5 <count>             【已过时】设置目标5星数量（限定池中表示UP5星角色，普池中表示特定5星角色）
-                --target-count4 <count>             【已过时】设置目标4星数量（限定池中表示特定UP4星角色，普池中表示特定4星角色）
+                --target-count5 <count>             【已移除】设置目标5星数量（限定池中表示UP5星角色，普池中表示特定5星角色）
+                --target-count4 <count>             【已移除】设置目标4星数量（限定池中表示特定UP4星角色，普池中表示特定4星角色）
                 --attempts <count>                  设置计算抽数或可能性时的尝试次数
 
                 --days <count>                      将抽卡时间设置在多少天后（计算日常周常星琼，不计算活动星琼）
