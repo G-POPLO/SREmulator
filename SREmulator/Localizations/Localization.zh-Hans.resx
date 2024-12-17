@@ -322,19 +322,19 @@
     <value>舞！舞！舞！</value>
   </data>
   <data name="ConcertForTwo" xml:space="preserve">
-    <value>同一种心情</value>
-  </data>
-  <data name="SharedFeeling" xml:space="preserve">
-    <value>猎物的视线</value>
-  </data>
-  <data name="EyesOfThePrey" xml:space="preserve">
-    <value>宇宙市场趋势</value>
-  </data>
-  <data name="ResolutionShinesAsPearlsOfSweat" xml:space="preserve">
     <value>两个人的演唱会</value>
   </data>
+  <data name="SharedFeeling" xml:space="preserve">
+    <value>同一种心情</value>
+  </data>
+  <data name="EyesOfThePrey" xml:space="preserve">
+    <value>猎物的视线</value>
+  </data>
+  <data name="ResolutionShinesAsPearlsOfSweat" xml:space="preserve">
+    <value>决心如汗珠般闪耀</value>
+  </data>
   <data name="TrendOfTheUniversalMarket" xml:space="preserve">
-    <value>此时恰好</value>
+    <value>宇宙市场趋势</value>
   </data>
   <data name="TheBirthOfTheSelf" xml:space="preserve">
     <value>「我」的诞生</value>
@@ -343,7 +343,7 @@
     <value>朗道的选择</value>
   </data>
   <data name="PerfectTiming" xml:space="preserve">
-    <value>决心如汗珠般闪耀</value>
+    <value>此时恰好</value>
   </data>
   <data name="UnderTheBlueSky" xml:space="preserve">
     <value>在蓝天下</value>
