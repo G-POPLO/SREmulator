@@ -1,6 +1,6 @@
 ﻿namespace SREmulator.SRPlayers
 {
-    public sealed class SRPlayer
+    public sealed class SRPlayer : ICloneable
     {
         public SRPlayerWarpCurrencyStats WarpCurrencyStats { get; set; } = new();
         public SRPlayerWarpStats CharacterEventStats { get; set; } = new();
@@ -24,6 +24,11 @@
                 EidolonsStats = EidolonsStats.Clone(),
                 LevelStats = LevelStats.Clone(),
             };
+        }
+
+        object ICloneable.Clone()
+        {
+            return Clone();
         }
     }
 

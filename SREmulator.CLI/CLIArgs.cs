@@ -165,28 +165,46 @@ namespace SREmulator.CLI
 
             while (true)
             {
-                string arg = source.Next().ToLower();
-                if (arg == string.Empty) break;
-                if (arg.StartsWith("--"))
+                try
                 {
-                    string option = arg[2..];
+                    string arg = source.Next().ToLower();
+                    if (arg == string.Empty) break;
+                    if (arg.StartsWith("--"))
+                    {
+                        string option = arg[2..];
 
-                    if (!CLIOptions.TryApplyOption(option, result, source))
-                    {
-                        Console.WriteLine($"警告：错误的选项或参数在 '--{arg}'");
-                    }
-                }
-                else
-                {
-                    if (CLICommands.Commands.ContainsKey(arg))
-                    {
-                        result.Command = arg;
+                        if (CLIOptions.Options.ContainsKey(option))
+                        {
+                            if (!CLIOptions.TryApplyOption(option, result, source))
+                            {
+                                source.Warning($"错误的选项或参数在 '--{arg}'");
+                            }
+                        }
+                        else
+                        {
+                            source.Warning($"未找到选项 '{arg}'");
+                        }
                     }
                     else
                     {
-                        Console.WriteLine($"警告：错误的命令 '{arg}'");
+                        if (CLICommands.Commands.ContainsKey(arg))
+                        {
+                            result.Command = arg;
+                        }
+                        else
+                        {
+                            source.Warning($"未找到命令 '{arg}'");
+                        }
                     }
                 }
+                catch (Exception e)
+                {
+                    source.Warning(e.Message);
+                }
+            }
+            foreach (var warning in source.Warnings)
+            {
+                Console.WriteLine(warning);
             }
             return result;
         }

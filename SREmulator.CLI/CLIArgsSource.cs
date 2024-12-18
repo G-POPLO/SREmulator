@@ -3,11 +3,20 @@
     public sealed class CLIArgsSource
     {
         private readonly string[] _args;
+        private List<string>? _warnings;
         private int _current = -1;
+
+        public List<string> Warnings => _warnings ??= [];
 
         public CLIArgsSource(string[] args)
         {
             _args = args;
+        }
+
+        public void Warning(string? message)
+        {
+            if (string.IsNullOrWhiteSpace(message)) return;
+            Warnings.Add(message);
         }
 
         public string Next()
@@ -16,11 +25,19 @@
             return _args[++_current];
         }
 
-        public int NextInt32(int minValue, int maxValue = int.MaxValue)
+        public int NextInt32(int minValue = int.MinValue, int maxValue = int.MaxValue)
         {
             string s = Next();
-            if (int.TryParse(s, out int value)) return Math.Clamp(value, minValue, maxValue);
-            return Math.Clamp(0, minValue, maxValue);
+            if (!int.TryParse(s, out int value))
+            {
+                Warning($"错误的参数 '{s}'，参数应为整数");
+                value = default;
+            }
+            int ret = Math.Clamp(value, minValue, maxValue);
+            if (ret != value) Warning($"错误的参数 '{s}'，参数范围为 [{minValue}, {maxValue}]");
+            return ret;
+            //if () return Math.Clamp(value, minValue, maxValue);
+            //return Math.Clamp(0, minValue, maxValue);
         }
     }
 }

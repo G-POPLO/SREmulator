@@ -11,7 +11,7 @@ namespace SREmulator.SourceGeneration
         public override string Keys => SRKeys.SRCharacterKeys;
         public override string Type => SRItemTypes.Character;
         public override string Attribute => SRAttributes.SRCharacterAttribute;
-        public override int ID => SRIDs.CharacterID;
+        public override int Id => SRIds.CharacterID;
 
         public override string GetClassType(int rarity, bool limited)
         {
@@ -26,7 +26,7 @@ namespace SREmulator.SourceGeneration
         public override string Keys => SRKeys.SRLightConeKeys;
         public override string Type => SRItemTypes.LightCone;
         public override string Attribute => SRAttributes.SRLightConeAttribute;
-        public override int ID => SRIDs.LightConeID;
+        public override int Id => SRIds.LightConeId;
 
         public override string GetClassType(int rarity, bool limited)
         {
@@ -41,7 +41,7 @@ namespace SREmulator.SourceGeneration
         public abstract string Keys { get; }
         public abstract string Type { get; }
         public abstract string Attribute { get; }
-        public abstract int ID { get; }
+        public abstract int Id { get; }
 
         private struct ItemData
         {
@@ -100,7 +100,7 @@ namespace SREmulator.SourceGeneration
             builder.AppendLine(3, "{");
             foreach (var item in items)
             {
-                builder.AppendLine(4, $"\"{string.Join("\" or \"", item.Names)}\" => SR{Type}s.{item.Key},");
+                builder.AppendLine(4, $"\"{string.Join("\" or \"", item.Names)}\" => {item.Key},");
             }
             builder.AppendLine(4, $"_ => null");
             builder.AppendLine(3, "};");
@@ -114,7 +114,7 @@ namespace SREmulator.SourceGeneration
                 builder.AppendLine(1, $"public sealed class {item.Key} : {item.Type}");
                 builder.AppendLine(1, "{");
                 builder.AppendLine(2, $"public override string Name => Localizations.Localization.{item.Key};");
-                builder.AppendLine(2, $"public override int Id => {ID + i + 1};");
+                builder.AppendLine(2, $"public override int Id => {Id + i + 1};");
                 builder.AppendLine(1, "}");
                 builder.AppendLine();
             }
