@@ -26,7 +26,8 @@
                 --stellar-jade <count>              设置星琼数量（下限为 0）
                 --oneiric-shard <count>             设置古老梦华数量（下限为 0）
                 --eidolon <name> <count>            设置角色星魂（上限为 6，下限为 -1）
-
+                --unlimited-resources               设置为拥有无限抽卡资源
+            
                 --counter5 <count>                  设置已多少抽未出5星
                 --guarantee5                        设置为有5星大保底
                 --counter4 <count>                  设置已多少抽未出4星

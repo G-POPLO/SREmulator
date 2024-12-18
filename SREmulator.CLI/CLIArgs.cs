@@ -13,6 +13,7 @@ namespace SREmulator.CLI
         public bool Return = false;
         public bool Export = false;
         public bool Output = false;
+        public bool UnlimitedResources = false;
 
         public int StarRailPass = 180;
         public int StarRailSpecialPass = 180;
@@ -64,6 +65,7 @@ namespace SREmulator.CLI
                     UndyingStarlight = UndyingStarlight,
                     StellarJade = StellarJade,
                     OneiricShard = OneiricShard,
+                    UnlimitedResources = UnlimitedResources,
                 };
             }
         }

@@ -7,6 +7,7 @@ namespace SREmulator.SRPlayers
     {
         // TODO
         //public bool NoReward;
+        public bool UnlimitedResources;
         public int StarRailPass;
         public int StarRailSpecialPass;
         public int UndyingEmbers;
@@ -17,6 +18,11 @@ namespace SREmulator.SRPlayers
         // TODO: 无限抽卡资源
         public bool TryConsumeOneStarRailPassIndirectly()
         {
+            if (UnlimitedResources)
+            {
+                return true;
+            }
+
             if (StellarJade >= 160)
             {
                 StellarJade -= 160;
@@ -65,6 +71,11 @@ namespace SREmulator.SRPlayers
         }
         public bool TryConsumeStarRailPassIndirectly(int count)
         {
+            if (UnlimitedResources)
+            {
+                return true;
+            }
+
             int total = (StellarJade + OneiricShard) / 160 + UndyingStarlight / 20;
             if (total >= count)
             {

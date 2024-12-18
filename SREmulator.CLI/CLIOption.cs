@@ -161,6 +161,18 @@ namespace SREmulator.CLI
         }
     }
 
+    public sealed class UnlimitedResourcesOption : CLIOption
+    {
+        public override string Name => "unlimited-resources";
+
+        public override bool TryApplyToCLIArgs(CLIArgs args, CLIArgsSource source)
+        {
+            args.UnlimitedResources = true;
+            return true;
+        }
+    }
+
+
     public sealed class Counter5Option : CLIOption
     {
         public override string Name => "counter5";
