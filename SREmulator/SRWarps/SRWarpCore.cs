@@ -29,17 +29,21 @@ namespace SREmulator.SRWarps
 
     internal static class SRWarpCore
     {
-        public static T OneOf<T>(T[] choices)
+        internal static T OneOf<T>(T[] choices)
         {
             return choices[Random.Shared.Next(0, choices.Length)];
         }
-        public static bool NextBool(int numerator, int denominator)
+        internal static bool NextBool(int numerator, int denominator)
         {
             return Random.Shared.Next(denominator) < numerator;
         }
-        public static int RollChance()
+        internal static int RollChance()
         {
             return Random.Shared.Next(1000);
+        }
+        internal static bool ContainsUp4(ISRWarpResultItem[] up4, ISRWarpResultItem item)
+        {
+            return up4[0].Equals(item) || up4[1].Equals(item) || up4[2].Equals(item);
         }
 
         public static int GetStellarWarpStar5TypeWeight(int counter5Type)
@@ -173,22 +177,19 @@ namespace SREmulator.SRWarps
             };
         }
 
-
-        public static ISRWarpResultItem CharacterEventWarp(SRWarpStats warpStats, SRPlayerWarpStats playerStats)
+        public static ISRWarpResultItem EventWarp(SRWarpStats warpStats, SRPlayerWarpStats playerStats, int chance5, int chance4, int numerator, int denominator)
         {
-            int chance5 = GetCharacterWarpStar5Chance(playerStats.Counter5);
-            int chance4 = GetCharacterWarpStar4Chance(playerStats.Counter4);
             int roll = RollChance();
             if (roll < chance5)
             {
-                var result = GetEventWarpStar5(playerStats.Guarantee5, warpStats, 1, 2);
+                var result = GetEventWarpStar5(playerStats.Guarantee5, warpStats, numerator, denominator);
                 playerStats.GetStar5(warpStats.Up5.Equals(result), result is SRCharacter);
                 return result;
             }
             else if (roll < chance5 + chance4)
             {
-                var result = GetEventWarpStar4(playerStats.Guarantee4, playerStats.Counter4Character, playerStats.Counter4LightCone, warpStats, 1, 2);
-                playerStats.GetStar4(warpStats.Up4.Contains(result), result is SRCharacter);
+                var result = GetEventWarpStar4(playerStats.Guarantee4, playerStats.Counter4Character, playerStats.Counter4LightCone, warpStats, numerator, denominator);
+                playerStats.GetStar4(ContainsUp4(warpStats.Up4, result), result is SRCharacter);
                 return result;
             }
             else
@@ -197,28 +198,17 @@ namespace SREmulator.SRWarps
                 return OneOf(warpStats.Common3);
             }
         }
+        public static ISRWarpResultItem CharacterEventWarp(SRWarpStats warpStats, SRPlayerWarpStats playerStats)
+        {
+            int chance5 = GetCharacterWarpStar5Chance(playerStats.Counter5);
+            int chance4 = GetCharacterWarpStar4Chance(playerStats.Counter4);
+            return EventWarp(warpStats, playerStats, chance5, chance4, 1, 2);
+        }
         public static ISRWarpResultItem LightConeEventWarp(SRWarpStats warpStats, SRPlayerWarpStats playerStats)
         {
             int chance5 = GetLightConeWarpStar5Chance(playerStats.Counter5);
             int chance4 = GetLightConeWarpStar4Chance(playerStats.Counter4);
-            int roll = RollChance();
-            if (roll < chance5)
-            {
-                var result = GetEventWarpStar5(playerStats.Guarantee5, warpStats, 3, 4);
-                playerStats.GetStar5(warpStats.Up5.Equals(result), result is SRCharacter);
-                return result;
-            }
-            else if (roll < chance5 + chance4)
-            {
-                var result = GetEventWarpStar4(playerStats.Guarantee4, playerStats.Counter4Character, playerStats.Counter4LightCone, warpStats, 3, 4);
-                playerStats.GetStar4(warpStats.Up4.Contains(result), result is SRCharacter);
-                return result;
-            }
-            else
-            {
-                playerStats.GetStar3();
-                return OneOf(warpStats.Common3);
-            }
+            return EventWarp(warpStats, playerStats, chance5, chance4, 3, 4);
         }
         public static ISRWarpResultItem CommonWarp(SRWarpStats warpStats, SRPlayerWarpStats playerStats)
         {

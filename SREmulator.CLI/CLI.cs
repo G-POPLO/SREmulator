@@ -1,8 +1,4 @@
 ﻿using SREmulator.Localizations;
-using SREmulator.SRItems;
-using SREmulator.SRPlayers;
-using SREmulator.SRWarps;
-using System.Text;
 
 namespace SREmulator.CLI
 {

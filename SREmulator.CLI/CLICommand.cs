@@ -1,11 +1,7 @@
 ﻿using SREmulator.SRItems;
 using SREmulator.SRPlayers;
 using SREmulator.SRWarps;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace SREmulator.CLI
 {
@@ -170,25 +166,21 @@ namespace SREmulator.CLI
             int warps = 0;
             var warp = args.Warp;
 
-            for (int i = 0; i < total; i++)
+            Parallel.For(0, total, (_) =>
             {
                 SRPlayer player = args.Player;
                 CLIWarpTarget target = args.Target.Clone();
                 int counter = 0;
-                player.WarpCurrencyStats.StarRailPass = int.MaxValue;
-                player.WarpCurrencyStats.StarRailSpecialPass = int.MaxValue;
 
-                while (warp.TryWarp(player, out var item))
+                while (!target.IsAchieved())
                 {
                     counter++;
+                    var item = warp.OnWarp(player);
                     target.Check(item);
-                    if (target.IsAchieved())
-                    {
-                        warps += counter;
-                        break;
-                    }
                 }
-            }
+
+                Interlocked.Add(ref warps, counter);
+            });
 
             foreach (var pair in args.Target.Target)
             {
@@ -210,23 +202,19 @@ namespace SREmulator.CLI
             int successful = 0;
             var warp = args.Warp;
 
-            for (int i = 0; i < total; i++)
+            Parallel.For(0, total, (_) =>
             {
                 SRPlayer player = args.Player;
                 CLIWarpTarget target = args.Target.Clone();
                 int counter = 0;
 
-                while (warp.TryWarp(player, out var item))
+                while (!target.IsAchieved() && warp.TryWarp(player, out var item))
                 {
                     counter++;
                     target.Check(item);
-                    if (target.IsAchieved())
-                    {
-                        successful++;
-                        break;
-                    }
                 }
-            }
+                if (target.IsAchieved()) Interlocked.Increment(ref successful);
+            });
 
             foreach (var pair in args.Target.Target)
             {

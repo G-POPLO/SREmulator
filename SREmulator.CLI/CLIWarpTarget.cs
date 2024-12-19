@@ -5,42 +5,46 @@ namespace SREmulator.CLI
 {
     public class CLIWarpTarget
     {
-        private Dictionary<ISRWarpResultItem, int>? _targetCount = null;
+        private Dictionary<ISRWarpResultItem, int>? _targetCounter = null;
+        private bool _noStar3 = true;
+        private bool _noStar4 = true;
 
-        public int this[ISRWarpResultItem item]
+        public ReadOnlyDictionary<ISRWarpResultItem, int> Target => new(_targetCounter ?? []);
+
+        public void AppendTarget(ISRWarpResultItem target, int count)
         {
-            get
-            {
-                _targetCount ??= [];
-                _targetCount.TryGetValue(item, out var count);
-                return count;
-            }
-            set
-            {
-                _targetCount ??= [];
-                _targetCount[item] = value;
-            }
+            if (count <= 0) return;
+            _targetCounter ??= [];
+            _targetCounter[target] = count;
+            if (target.Rarity is SRItemRarity.Star3) _noStar3 = true;
+            else if (target.Rarity is SRItemRarity.Star4) _noStar4 = true;
         }
-
-        public ReadOnlyDictionary<ISRWarpResultItem, int> Target => new(_targetCount ?? []);
 
         public void Check(ISRWarpResultItem item)
         {
-            if (_targetCount is null) return;
-            if (!_targetCount.TryGetValue(item, out var count)) return;
-            if (count <= 0) return;
-            _targetCount[item] = count - 1;
+            if (_targetCounter is null) return;
+            if (_noStar3 && item.Rarity is SRItemRarity.Star3) return;
+            if (_noStar4 && item.Rarity is SRItemRarity.Star4) return;
+            if (!_targetCounter.TryGetValue(item, out var count)) return;
+            if (--count <= 0)
+            {
+                _targetCounter.Remove(item);
+                if (_targetCounter.Count is 0) _targetCounter = null;
+                return;
+            }
+            _targetCounter[item] = count;
         }
 
         public bool IsAchieved()
         {
-            return _targetCount?.All(pair => pair.Value <= 0) ?? true;
+            return _targetCounter is null;
+            //return _targetCounter?.All(pair => pair.Value <= 0) ?? true;
         }
 
         public CLIWarpTarget Clone()
         {
             var target = new CLIWarpTarget();
-            if (_targetCount is not null) target._targetCount = new Dictionary<ISRWarpResultItem, int>(_targetCount);
+            if (_targetCounter is not null) target._targetCounter = new Dictionary<ISRWarpResultItem, int>(_targetCounter);
             return target;
         }
     }
