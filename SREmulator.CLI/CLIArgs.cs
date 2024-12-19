@@ -14,6 +14,7 @@ namespace SREmulator.CLI
         public bool Export = false;
         public bool Output = false;
         public bool UnlimitedResources = false;
+        public bool NoRewards = false;
 
         public int StarRailPass = 0;
         public int StarRailSpecialPass = 0;
@@ -66,6 +67,7 @@ namespace SREmulator.CLI
                     StellarJade = StellarJade,
                     OneiricShard = OneiricShard,
                     UnlimitedResources = UnlimitedResources,
+                    NoWarpRewards = NoRewards,
                 };
             }
         }

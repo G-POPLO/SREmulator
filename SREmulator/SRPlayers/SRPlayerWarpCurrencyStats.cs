@@ -5,8 +5,7 @@ namespace SREmulator.SRPlayers
 {
     public sealed class SRPlayerWarpCurrencyStats : ISRPlayerStats<SRPlayerWarpCurrencyStats>
     {
-        // TODO
-        //public bool NoReward;
+        public bool NoWarpRewards;
         public bool UnlimitedResources;
         public int StarRailPass;
         public int StarRailSpecialPass;
@@ -131,6 +130,8 @@ namespace SREmulator.SRPlayers
             const int Star5LightCone = 40;
             const int Star4LightCone = 8;
             const int Star3LightCone = 20;
+
+            if (NoWarpRewards) return;
 
             if (item is SRLightCone)
             {

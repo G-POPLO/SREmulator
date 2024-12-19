@@ -396,4 +396,15 @@ namespace SREmulator.CLI
             return true;
         }
     }
+
+    public sealed class NoRewardsOption : CLIOption
+    {
+        public override string Name => "no-rewards";
+
+        public override bool TryApplyToCLIArgs(CLIArgs args, CLIArgsSource source)
+        {
+            args.NoRewards = true;
+            return true;
+        }
+    }
 }

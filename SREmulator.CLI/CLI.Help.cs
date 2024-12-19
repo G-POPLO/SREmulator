@@ -19,6 +19,7 @@
                 --silent                            不显示每抽获取的物品（对 result-statistics 有效）
                 --export                            导出抽卡结果
                 --output                            导出命令结果（.csv 或 .txt）
+                --no-rewards                        不计算抽卡副产物
 
                 --star-rail-pass <count>            设置星轨通票数量（下限为 0）
                 --star-rail-special-pass <count>    设置星轨专票数量（下限为 0）
