@@ -163,14 +163,14 @@ namespace SREmulator.CLI
         public override void Execute(CLIArgs args)
         {
             int total = args.Attempts;
-            int warps = 0;
+            ulong warps = 0;
             var warp = args.Warp;
 
             Parallel.For(0, total, (_) =>
             {
                 SRPlayer player = args.Player;
                 CLIWarpTarget target = args.Target.Clone();
-                int counter = 0;
+                ulong counter = 0;
 
                 while (!target.IsAchieved())
                 {
@@ -206,11 +206,9 @@ namespace SREmulator.CLI
             {
                 SRPlayer player = args.Player;
                 CLIWarpTarget target = args.Target.Clone();
-                int counter = 0;
 
                 while (!target.IsAchieved() && warp.TryWarp(player, out var item))
                 {
-                    counter++;
                     target.Check(item);
                 }
                 if (target.IsAchieved()) Interlocked.Increment(ref successful);
