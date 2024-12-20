@@ -14,7 +14,7 @@ namespace SREmulator.SRWarps.EventWarps
 
         private sealed class SRCustomCharacterEventWarp(SRStar5Character up5, SRStar4Character up41, SRStar4Character up42, SRStar4Character up43, SRVersion version) : SRCharacterEventWarp
         {
-            public override SRVersion Version => version; 
+            public override SRVersion Version => version;
             public override SRStar5Character UpStar5Character => up5;
             public override SRStar4Character UpStar4Character1 => up41;
             public override SRStar4Character UpStar4Character2 => up42;

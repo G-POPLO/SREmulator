@@ -165,7 +165,7 @@ namespace SREmulator.CLI
             int total = args.Attempts;
             ulong warps = 0;
 
-            Parallel.For(0, total, (_) =>
+            Parallel.For(0, total, _ =>
             {
                 SRPlayer player = args.Player;
                 var target = args.Targets.Create();
@@ -202,21 +202,8 @@ namespace SREmulator.CLI
         {
             int total = args.Attempts;
             int successful = 0;
-            //var warp = args.Warp;
 
-            //Parallel.For(0, total, (_) =>
-            //{
-            //    SRPlayer player = args.Player;
-            //    var target = args.Targets.Create();
-
-            //    while (!target.Achieved && warp.TryWarp(player, out var item))
-            //    {
-            //        target.Check(item);
-            //    }
-            //    if (target.Achieved) Interlocked.Increment(ref successful);
-            //});
-
-            Parallel.For(0, total, (_) =>
+            Parallel.For(0, total, _ =>
             {
                 SRPlayer player = args.Player;
                 var target = args.Targets.Create();
@@ -227,8 +214,8 @@ namespace SREmulator.CLI
                     {
                         target.Check(item);
                     }
-                    if (target.Achieved) Interlocked.Increment(ref successful);
                 }
+                if (target.Achieved) Interlocked.Increment(ref successful);
             });
 
             foreach (var pair in args.Targets.Target)

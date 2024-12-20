@@ -17,7 +17,7 @@ namespace SREmulator.CLI
         private readonly Dictionary<ISRWarpResultItem, int> _targets = [];
         private readonly List<ISRWarpResultItem> _invalidTargets = [];
         private readonly CLIArgs _args;
-        private ICLIWarpTarget? _target;
+        private CLIMultipleWarpTarget? _target;
 
         public ReadOnlyDictionary<ISRWarpResultItem, int> Target => new(_targets);
         public List<ISRWarpResultItem> InvalidTargets => _invalidTargets;
@@ -54,7 +54,8 @@ namespace SREmulator.CLI
 
         public ICLIWarpTarget Create()
         {
-            return (_target ??= new CLIMultipleWarpTarget(_targets, BuildBestWarp())).Clone();
+            _target ??= new CLIMultipleWarpTarget(_targets, BuildBestWarp());
+            return _target.Clone();
         }
     }
 
@@ -74,7 +75,7 @@ namespace SREmulator.CLI
             _bestWarp = new(bestWarp);
             _noStar3 = _targetCounter.Keys.All(item => item.Rarity is not SRItemRarity.Star3);
             _noStar4 = _targetCounter.Keys.All(item => item.Rarity is not SRItemRarity.Star4);
-            _achieved = false;
+            _achieved = targetCounter.Count is 0;
         }
 
         public void Check(ISRWarpResultItem item)
@@ -100,7 +101,7 @@ namespace SREmulator.CLI
 
         public bool CanChangeWarp(SRWarp warp)
         {
-            return !_bestWarp.Values.Any(w => w.GetType() == warp.GetType());
+            return !_bestWarp.ContainsValue(warp);
         }
     }
 }
