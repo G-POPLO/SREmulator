@@ -44,6 +44,27 @@ namespace SREmulator.SRWarps
         public abstract ISRWarpResultItem[] Common4LightCones { get; }
         public abstract ISRWarpResultItem[] Common3 { get; }
 
+        private ISRWarpResultItem[]? _availableItems = null;
+        public ISRWarpResultItem[] AvailableItems
+        {
+            get
+            {
+                if (_availableItems is null)
+                {
+                    List<ISRWarpResultItem> items = [];
+                    if (Up5 is not null) items.Add(Up5);
+                    if (Common5Characters is not null) items.AddRange(Common5Characters);
+                    if (Common5LightCones is not null) items.AddRange(Common5LightCones);
+                    if (Up4 is not null) items.AddRange(Up4);
+                    if (Common4Characters is not null) items.AddRange(Common4Characters);
+                    if (Common4LightCones is not null) items.AddRange(Common4LightCones);
+                    if (Common3 is not null) items.AddRange(Common3);
+                    _availableItems = [.. items];
+                }
+                return _availableItems;
+            }
+        }
+
         private SRWarpStats? _warpStats = null;
         private protected SRWarpStats WarpStats
         {

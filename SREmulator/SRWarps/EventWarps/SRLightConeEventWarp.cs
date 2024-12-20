@@ -6,6 +6,20 @@ namespace SREmulator.SRWarps.EventWarps
     public static partial class SRLightConeEventWarps
     {
         public static partial SRLightConeEventWarp? GetWarpByNameAndVersion(string name, SRVersion version);
+
+        public static SRLightConeEventWarp Create(SRStar5LightCone up5, SRStar4LightCone up41, SRStar4LightCone up42, SRStar4LightCone up43, SRVersion version = SRVersion.Ver2p7)
+        {
+            return new SRCustomLightConeEventWarp(up5, up41, up42, up43, version);
+        }
+
+        private sealed class SRCustomLightConeEventWarp(SRStar5LightCone up5, SRStar4LightCone up41, SRStar4LightCone up42, SRStar4LightCone up43, SRVersion version) : SRLightConeEventWarp
+        {
+            public override SRVersion Version => version;
+            public override SRStar5LightCone UpStar5LightCone => up5;
+            public override SRStar4LightCone UpStar4LightCone1 => up41;
+            public override SRStar4LightCone UpStar4LightCone2 => up42;
+            public override SRStar4LightCone UpStar4LightCone3 => up43;
+        }
     }
 
     public abstract class SRLightConeEventWarp : SRWarp

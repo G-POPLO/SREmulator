@@ -10,7 +10,6 @@
         public int Counter5LightCone;
         public int Counter4Character;
         public int Counter4LightCone;
-        //public object? ExtraInfo;
         public ulong? ExtraInfo;
 
         public void GetStar5(bool isUp, bool isCharacter)

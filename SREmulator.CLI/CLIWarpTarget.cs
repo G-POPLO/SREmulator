@@ -3,7 +3,50 @@ using System.Collections.ObjectModel;
 
 namespace SREmulator.CLI
 {
-    public class CLIWarpTarget
+    public interface ICLIWarpTarget
+    {
+        public void Check(ISRWarpResultItem item);
+        public bool IsAchieved();
+        public ICLIWarpTarget Clone();
+    }
+
+    public class CLIWarpTargetFactory
+    {
+        private readonly Dictionary<ISRWarpResultItem, int> _targets = [];
+        private readonly CLIArgs _args;
+        private ICLIWarpTarget? _target;
+
+        public ReadOnlyDictionary<ISRWarpResultItem, int> Target => new(_targets);
+
+        public CLIWarpTargetFactory(CLIArgs args)
+        {
+            _args = args;
+        }
+
+        public void AppendTarget(ISRWarpResultItem item, int count)
+        {
+            if (count <= 0) return;
+            _targets[item] = count;
+        }
+
+        public ICLIWarpTarget Recreate()
+        {
+            CLIWarpTarget result = new();
+            foreach (var target in _targets)
+            {
+                result.AppendTarget(target.Key, target.Value);
+            }
+            _target = result;
+            return _target;
+        }
+
+        public ICLIWarpTarget Create()
+        {
+            return _target ?? Recreate();
+        }
+    }
+
+    public sealed class CLIWarpTarget : ICLIWarpTarget
     {
         private Dictionary<ISRWarpResultItem, int>? _targetCounter = null;
         private bool _noStar3 = true;
@@ -38,12 +81,15 @@ namespace SREmulator.CLI
         public bool IsAchieved()
         {
             return _targetCounter is null;
-            //return _targetCounter?.All(pair => pair.Value <= 0) ?? true;
         }
 
-        public CLIWarpTarget Clone()
+        public ICLIWarpTarget Clone()
         {
-            var target = new CLIWarpTarget();
+            var target = new CLIWarpTarget
+            {
+                _noStar3 = _noStar3,
+                _noStar4 = _noStar4
+            };
             if (_targetCounter is not null) target._targetCounter = new Dictionary<ISRWarpResultItem, int>(_targetCounter);
             return target;
         }

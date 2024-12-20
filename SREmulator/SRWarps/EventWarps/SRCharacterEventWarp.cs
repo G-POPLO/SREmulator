@@ -6,6 +6,20 @@ namespace SREmulator.SRWarps.EventWarps
     public static partial class SRCharacterEventWarps
     {
         public static partial SRCharacterEventWarp? GetWarpByNameAndVersion(string name, SRVersion version);
+
+        public static SRCharacterEventWarp Create(SRStar5Character up5, SRStar4Character up41, SRStar4Character up42, SRStar4Character up43, SRVersion version = SRVersion.Ver2p7)
+        {
+            return new SRCustomCharacterEventWarp(up5, up41, up42, up43, version);
+        }
+
+        private sealed class SRCustomCharacterEventWarp(SRStar5Character up5, SRStar4Character up41, SRStar4Character up42, SRStar4Character up43, SRVersion version) : SRCharacterEventWarp
+        {
+            public override SRVersion Version => version; 
+            public override SRStar5Character UpStar5Character => up5;
+            public override SRStar4Character UpStar4Character1 => up41;
+            public override SRStar4Character UpStar4Character2 => up42;
+            public override SRStar4Character UpStar4Character3 => up43;
+        }
     }
 
     public abstract class SRCharacterEventWarp : SRWarp

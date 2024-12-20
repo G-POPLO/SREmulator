@@ -29,7 +29,7 @@ namespace SREmulator.SRWarps
 
     internal static class SRWarpCore
     {
-        internal static T OneOf<T>(T[] choices)
+        internal static ISRWarpResultItem OneOf(ReadOnlySpan<ISRWarpResultItem> choices)
         {
             return choices[Random.Shared.Next(0, choices.Length)];
         }
@@ -41,7 +41,7 @@ namespace SREmulator.SRWarps
         {
             return Random.Shared.Next(1000);
         }
-        internal static bool ContainsUp4(ISRWarpResultItem[] up4, ISRWarpResultItem item)
+        internal static bool ContainsUp4(ReadOnlySpan<ISRWarpResultItem> up4, ISRWarpResultItem item)
         {
             return up4[0].Equals(item) || up4[1].Equals(item) || up4[2].Equals(item);
         }

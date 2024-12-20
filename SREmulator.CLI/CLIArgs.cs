@@ -44,7 +44,8 @@ namespace SREmulator.CLI
         }
         public SRWarpType WarpType = SRWarpType.CharacterEventWarp;
 
-        public CLIWarpTarget Target = new();
+        private CLIWarpTargetFactory? _targets = null;
+        public CLIWarpTargetFactory Targets => _targets ??= new(this);
         public int Attempts = 10000;
 
         public int Days = 0;

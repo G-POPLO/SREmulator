@@ -337,7 +337,7 @@ namespace SREmulator.CLI
             int count = source.NextInt32(0);
             var item = ISRWarpResultItem.GetItemByName(name);
             if (item is null) return false;
-            args.Target.AppendTarget(item, count);
+            args.Targets.AppendTarget(item, count);
             return true;
         }
     }

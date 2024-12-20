@@ -46,7 +46,7 @@
                 --stellar-warp                      设置卡池类型为群星跃迁（常驻池）
                 --departure-warp                    设置卡池类型为始发跃迁（新手池）
 
-                --target <name> <count>             设置目标极其数量（参见 TARGET-NAMES）
+                --target <name> <count>             设置目标及其数量（参见 TARGET-NAMES）
                 --target-count5 <count>             【已移除】设置目标5星数量（限定池中表示UP5星角色，普池中表示特定5星角色）
                 --target-count4 <count>             【已移除】设置目标4星数量（限定池中表示特定UP4星角色，普池中表示特定4星角色）
                 --attempts <count>                  设置计算抽数或可能性时的尝试次数
