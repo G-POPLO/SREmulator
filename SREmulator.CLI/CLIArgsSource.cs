@@ -30,11 +30,11 @@
             string s = Next();
             if (!int.TryParse(s, out int value))
             {
-                Warning($"错误的参数 '{s}'，参数应为整数");
+                Warning($"参数错误 '{s}' （参数应为整数）");
                 value = default;
             }
             int ret = Math.Clamp(value, minValue, maxValue);
-            if (ret != value) Warning($"错误的参数 '{s}'，参数范围为 [{minValue}, {maxValue}]");
+            if (ret != value) Warning($"参数错误 '{s}'（参数范围为 [{minValue}, {maxValue}]）");
             return ret;
             //if () return Math.Clamp(value, minValue, maxValue);
             //return Math.Clamp(0, minValue, maxValue);

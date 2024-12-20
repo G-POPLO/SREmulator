@@ -32,7 +32,7 @@ namespace SREmulator.CLI
         public int Counter4Character = 0;
         public int Counter4LightCone = 0;
 
-        public string WarpName = string.Empty;
+        public string WarpName = "wangguiren";
         public int WarpVersionMajor = 1;
         public int WarpVersionMinor = 0;
         public SRVersion WarpVersion
@@ -162,6 +162,7 @@ namespace SREmulator.CLI
                 };
             }
         }
+        internal List<SRWarp> Warps = [];
 
         public static CLIArgs Parse(string[] args)
         {
@@ -182,12 +183,12 @@ namespace SREmulator.CLI
                         {
                             if (!CLIOptions.TryApplyOption(option, result, source))
                             {
-                                source.Warning($"错误的选项或参数在 '--{arg}'");
+                                source.Warning($"参数错误 （在 '{arg}' 选项中）");
                             }
                         }
                         else
                         {
-                            source.Warning($"未找到选项 '{arg}'");
+                            source.Warning($"无法识别的选项 '{arg}'");
                         }
                     }
                     else
@@ -198,7 +199,7 @@ namespace SREmulator.CLI
                         }
                         else
                         {
-                            source.Warning($"未找到命令 '{arg}'");
+                            source.Warning($"无法识别的命令 '{arg}'");
                         }
                     }
                 }
@@ -207,10 +208,25 @@ namespace SREmulator.CLI
                     source.Warning(e.Message);
                 }
             }
+
+            result.Warps.Add(result.Warp);
+            _ = result.Targets.Create();
+
+            foreach (var invalidTarget in result.Targets.InvalidTargets)
+            {
+                source.Warning($"无法实现的目标 '{invalidTarget.Name}' （该目标已被忽略）");
+            }
+
             foreach (var warning in source.Warnings)
             {
-                Console.WriteLine(warning);
+                Console.WriteLine($"【警告】{warning}");
             }
+            if (source.Warnings.Count > 0)
+            {
+                Console.WriteLine("----------");
+            }
+
+
             return result;
         }
     }

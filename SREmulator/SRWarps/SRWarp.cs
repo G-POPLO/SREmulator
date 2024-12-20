@@ -65,6 +65,22 @@ namespace SREmulator.SRWarps
             }
         }
 
+        private ISRWarpResultItem[]? _availableUpItems = null;
+        public ISRWarpResultItem[] AvailableUpItems
+        {
+            get
+            {
+                if (_availableUpItems is null)
+                {
+                    List<ISRWarpResultItem> items = [];
+                    if (Up5 is not null) items.Add(Up5);
+                    if (Up4 is not null) items.AddRange(Up4);
+                    _availableUpItems = [.. items];
+                }
+                return _availableUpItems;
+            }
+        }
+
         private SRWarpStats? _warpStats = null;
         private protected SRWarpStats WarpStats
         {

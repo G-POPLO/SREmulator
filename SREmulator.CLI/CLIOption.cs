@@ -407,4 +407,27 @@ namespace SREmulator.CLI
             return true;
         }
     }
+
+    public sealed class NewWarpOption : CLIOption
+    {
+        public override string Name => "new-warp";
+
+        public override bool TryApplyToCLIArgs(CLIArgs args, CLIArgsSource source)
+        {
+            args.Warps.Add(args.Warp);
+            args.Counter5 = 0;
+            args.Guarantee5 = false;
+            args.Counter4 = 0;
+            args.Guarantee4 = false;
+            args.Counter5Character = 0;
+            args.Counter5LightCone = 0;
+            args.Counter4Character = 0;
+            args.Counter4LightCone = 0;
+            args.WarpName = string.Empty;
+            args.WarpVersionMajor = 0;
+            args.WarpVersionMinor = 0;
+            args.WarpType = SRWarpType.CharacterEventWarp;
+            return true;
+        }
+    }
 }
