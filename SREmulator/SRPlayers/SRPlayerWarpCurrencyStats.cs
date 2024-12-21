@@ -14,28 +14,21 @@ namespace SREmulator.SRPlayers
         public int StellarJade;
         public int OneiricShard;
 
-        // TODO: 无限抽卡资源
         public bool TryConsumeOneStarRailPassIndirectly()
         {
-            if (UnlimitedResources)
-            {
-                return true;
-            }
+            if (UnlimitedResources) return true;
 
             if (StellarJade >= 160)
             {
                 StellarJade -= 160;
                 return true;
             }
-            else if (OneiricShard > 0)
+
+            if (StellarJade + OneiricShard >= 160)
             {
-                int need = 160 - StellarJade;
-                if (OneiricShard >= need)
-                {
-                    OneiricShard -= need;
-                    StellarJade = 0;
-                    return true;
-                }
+                OneiricShard -= 160 - StellarJade;
+                StellarJade = 0;
+                return true;
             }
 
             if (UndyingStarlight >= 20)
@@ -46,34 +39,9 @@ namespace SREmulator.SRPlayers
 
             return false;
         }
-        public bool TryConsumeOneStarRailPass()
-        {
-            if (StarRailPass > 0)
-            {
-                StarRailPass--;
-                return true;
-            }
-
-            return TryConsumeOneStarRailPassIndirectly();
-        }
-        public bool TryConsumeOneStarRailSpecialPass()
-        {
-            if (StarRailSpecialPass > 0)
-            {
-                StarRailSpecialPass--;
-                return true;
-            }
-
-            // TODO: 通票 -> 星芒 —> 专票
-
-            return TryConsumeOneStarRailPassIndirectly();
-        }
         public bool TryConsumeStarRailPassIndirectly(int count)
         {
-            if (UnlimitedResources)
-            {
-                return true;
-            }
+            if (UnlimitedResources) return true;
 
             int total = (StellarJade + OneiricShard) / 160 + UndyingStarlight / 20;
             if (total >= count)
@@ -90,6 +58,8 @@ namespace SREmulator.SRPlayers
         }
         public bool TryConsumeStarRailPass(int count)
         {
+            if (UnlimitedResources) return true;
+
             if (StarRailPass >= count)
             {
                 StarRailPass -= count;
@@ -106,6 +76,8 @@ namespace SREmulator.SRPlayers
         }
         public bool TryConsumeStarRailSpecialPass(int count)
         {
+            if (UnlimitedResources) return true;
+
             if (StarRailSpecialPass >= count)
             {
                 StarRailSpecialPass -= count;
@@ -141,11 +113,9 @@ namespace SREmulator.SRPlayers
             }
             else if (item is SRCharacter character)
             {
-                // TODO: 新角色 -> 三张通票
-
                 characterStats.TryAdd(character, out int eidolons);
                 bool maxed = eidolons >= 6;
-                if (eidolons is 0) return;
+                if (eidolons is 0) StarRailPass += 3;
                 else if (character is SRStar5Character) UndyingStarlight += maxed ? DuplicateStar5CharacterEidolonsMaxed : DuplicateStar5Character;
                 else if (character is SRStar4Character) UndyingStarlight += maxed ? DuplicateStar4CharacterEidolonsMaxed : DuplicateStar4Character;
             }
