@@ -102,9 +102,9 @@ namespace SREmulator.SourceGeneration
                 builder.AppendLine(2, $"private static SR{Type}EventWarp _{warp.WarpName} = null;");
                 builder.AppendLine(2, $"public static SR{Type}EventWarp {warp.WarpName} => _{warp.WarpName} ??= new {GetClassName(warp)}();");
             }
-            builder.AppendLine(2, $"public static partial SR{Type}EventWarp? GetWarpByNameAndVersion(string name, SRVersion version)");
+            builder.AppendLine(2, $"public static partial SR{Type}EventWarp? GetWarpByNameAndVersion(string? name, SRVersion version)");
             builder.AppendLine(2, "{");
-            builder.AppendLine(3, "return name.ToLower() switch");
+            builder.AppendLine(3, "return name?.ToLower() switch");
             builder.AppendLine(3, "{");
             foreach (var warpsData in warpsDatas)
             {

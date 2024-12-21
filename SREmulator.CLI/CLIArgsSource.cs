@@ -1,4 +1,6 @@
-﻿namespace SREmulator.CLI
+﻿using SREmulator.SRItems;
+
+namespace SREmulator.CLI
 {
     public sealed class CLIArgsSource
     {
@@ -30,14 +32,25 @@
             string s = Next();
             if (!int.TryParse(s, out int value))
             {
-                Warning($"参数错误 '{s}' （参数应为整数）");
                 value = default;
+                Warning($"参数错误 '{s}' （参数应为整数）（已自动设置为 '{value}'）");
             }
             int ret = Math.Clamp(value, minValue, maxValue);
-            if (ret != value) Warning($"参数错误 '{s}'（参数范围为 [{minValue}, {maxValue}]）");
+            if (ret != value) Warning($"参数错误 '{s}'（参数范围为 [{minValue}, {maxValue}]）（已自动设置为 '{ret}'）");
             return ret;
-            //if () return Math.Clamp(value, minValue, maxValue);
-            //return Math.Clamp(0, minValue, maxValue);
+        }
+
+        public ISRWarpResultItem? NextWarpResultItem()
+        {
+            return NextWarpResultItem<ISRWarpResultItem>();
+        }
+
+        public T? NextWarpResultItem<T>() where T : class, ISRWarpResultItem
+        {
+            string name = Next();
+            var item = ISRWarpResultItem.GetItemByName(name) as T;
+            if (item is null) Warning($"参数错误 '{name}' （无法识别的对象）");
+            return item;
         }
     }
 }

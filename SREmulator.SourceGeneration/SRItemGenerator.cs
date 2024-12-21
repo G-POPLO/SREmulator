@@ -94,9 +94,9 @@ namespace SREmulator.SourceGeneration
                 builder.AppendLine(2, $"private static {item.Type} _{item.Key} = null;");
                 builder.AppendLine(2, $"public static {item.Type} {item.Key} => _{item.Key} ??= new {item.Key}();");
             }
-            builder.AppendLine(2, $"public static partial SR{Type}? GetItemByName(string name)");
+            builder.AppendLine(2, $"public static partial SR{Type}? GetItemByName(string? name)");
             builder.AppendLine(2, "{");
-            builder.AppendLine(3, "return name.ToLower() switch");
+            builder.AppendLine(3, "return name?.ToLower() switch");
             builder.AppendLine(3, "{");
             foreach (var item in items)
             {

@@ -152,10 +152,9 @@ namespace SREmulator.CLI
 
         public override bool TryApplyToCLIArgs(CLIArgs args, CLIArgsSource source)
         {
-            string name = source.Next();
-            int count = source.NextInt32(-1, 6);
-            var character = SRCharacters.GetItemByName(name);
+            var character = source.NextWarpResultItem<SRCharacter>();
             if (character is null) return false;
+            int count = source.NextInt32(-1, 6);
             args.Eidolons[character] = count;
             return true;
         }
@@ -179,7 +178,7 @@ namespace SREmulator.CLI
 
         public override bool TryApplyToCLIArgs(CLIArgs args, CLIArgsSource source)
         {
-            args.Counter5 = source.NextInt32(0);
+            args.Counter5 = source.NextInt32(0, 89);
             return true;
         }
     }
@@ -284,59 +283,15 @@ namespace SREmulator.CLI
         }
     }
 
-    public sealed class CharacterEventWarpOption : CLIOption
-    {
-        public override string Name => "character-event-warp";
-
-        public override bool TryApplyToCLIArgs(CLIArgs args, CLIArgsSource source)
-        {
-            args.WarpType = SRWarpType.CharacterEventWarp;
-            return true;
-        }
-    }
-
-    public sealed class LightConeEventWarpOption : CLIOption
-    {
-        public override string Name => "light-cone-event-warp";
-
-        public override bool TryApplyToCLIArgs(CLIArgs args, CLIArgsSource source)
-        {
-            args.WarpType = SRWarpType.LightConeEventWarp;
-            return true;
-        }
-    }
-    public sealed class StellarWarpOption : CLIOption
-    {
-        public override string Name => "stellar-warp";
-
-        public override bool TryApplyToCLIArgs(CLIArgs args, CLIArgsSource source)
-        {
-            args.WarpType = SRWarpType.StellarWarp;
-            return true;
-        }
-    }
-
-    public sealed class DepartureWarpOption : CLIOption
-    {
-        public override string Name => "departure-warp";
-
-        public override bool TryApplyToCLIArgs(CLIArgs args, CLIArgsSource source)
-        {
-            args.WarpType = SRWarpType.DepartureWarp;
-            return true;
-        }
-    }
-
     public sealed class TargetOption : CLIOption
     {
         public override string Name => "target";
 
         public override bool TryApplyToCLIArgs(CLIArgs args, CLIArgsSource source)
         {
-            string name = source.Next();
-            int count = source.NextInt32(0);
-            var item = ISRWarpResultItem.GetItemByName(name);
+            var item = source.NextWarpResultItem();
             if (item is null) return false;
+            int count = source.NextInt32(0);
             args.Targets.AppendTarget(item, count);
             return true;
         }
@@ -414,20 +369,46 @@ namespace SREmulator.CLI
 
         public override bool TryApplyToCLIArgs(CLIArgs args, CLIArgsSource source)
         {
-            args.Warps.Add(args.Warp);
-            args.Counter5 = 0;
-            args.Guarantee5 = false;
-            args.Counter4 = 0;
-            args.Guarantee4 = false;
-            args.Counter5Character = 0;
-            args.Counter5LightCone = 0;
-            args.Counter4Character = 0;
-            args.Counter4LightCone = 0;
-            args.WarpName = string.Empty;
-            args.WarpVersionMajor = 0;
-            args.WarpVersionMinor = 0;
-            args.WarpType = SRWarpType.CharacterEventWarp;
-            return true;
+            args.TryAddAndResetWarp();
+            args.WarpTypeName = source.Next();
+            return args.WarpType is not SRWarpType.None;
+        }
+    }
+
+    public sealed class CustomWarpOption : CLIOption
+    {
+        public override string Name => "custom-warp";
+
+        public override bool TryApplyToCLIArgs(CLIArgs args, CLIArgsSource source)
+        {
+            args.WarpName = "__custom";
+            if (args.WarpType is SRWarpType.CharacterEventWarp)
+            {
+                args.Up5 = source.NextWarpResultItem<SRStar5Character>();
+                if (args.Up5 is null) return false;
+                args.Up41 = source.NextWarpResultItem<SRStar4Character>();
+                if (args.Up41 is null) return false;
+                args.Up42 = source.NextWarpResultItem<SRStar4Character>();
+                if (args.Up42 is null) return false;
+                args.Up43 = source.NextWarpResultItem<SRStar4Character>();
+                if (args.Up43 is null) return false;
+            }
+            else if (args.WarpType is SRWarpType.LightConeEventWarp)
+            {
+                args.Up5 = source.NextWarpResultItem<SRStar5LightCone>();
+                if (args.Up5 is null) return false;
+                args.Up41 = source.NextWarpResultItem<SRStar4LightCone>();
+                if (args.Up41 is null) return false;
+                args.Up42 = source.NextWarpResultItem<SRStar4LightCone>();
+                if (args.Up42 is null) return false;
+                args.Up43 = source.NextWarpResultItem<SRStar4LightCone>();
+                if (args.Up43 is null) return false;
+            }
+            else
+            {
+                return false;
+            }
+            return !args.Up41.Equals(args.Up42) && !args.Up41.Equals(args.Up43) && !args.Up42.Equals(args.Up43);
         }
     }
 }

@@ -32,8 +32,13 @@ namespace SREmulator.CLI
         public int Counter4Character = 0;
         public int Counter4LightCone = 0;
 
-        public string WarpName = "wangguiren";
-        public int WarpVersionMajor = 1;
+        public ISRWarpResultItem? Up5;
+        public ISRWarpResultItem? Up41;
+        public ISRWarpResultItem? Up42;
+        public ISRWarpResultItem? Up43;
+
+        public string WarpName = string.Empty;
+        public int WarpVersionMajor = 0;
         public int WarpVersionMinor = 0;
         public SRVersion WarpVersion
         {
@@ -42,7 +47,8 @@ namespace SREmulator.CLI
                 return SRVersions.CreateAvailable(WarpVersionMajor, WarpVersionMinor);
             }
         }
-        public SRWarpType WarpType = SRWarpType.CharacterEventWarp;
+        public string? WarpTypeName = null;
+        public SRWarpType WarpType => SRWarpTypes.FromeName(WarpTypeName);
 
         private CLIWarpTargetFactory? _targets = null;
         public CLIWarpTargetFactory Targets => _targets ??= new(this);
@@ -56,6 +62,7 @@ namespace SREmulator.CLI
         public bool Help = false;
         public string? Language = null;
 
+        internal bool FirstWarp = true;
         internal SRPlayerWarpCurrencyStats WarpCurrencyStats
         {
             get
@@ -72,6 +79,10 @@ namespace SREmulator.CLI
                 };
             }
         }
+        private SRPlayerWarpStats? _characterEventStats;
+        private SRPlayerWarpStats? _lightConeEventStats;
+        private SRPlayerWarpStats? _stellarStats;
+        private SRPlayerWarpStats? _departureStats;
         internal SRPlayerWarpStats WarpStats
         {
             get
@@ -107,22 +118,10 @@ namespace SREmulator.CLI
                     {
                         WarpCurrencyStats = WarpCurrencyStats,
                     };
-                    if (WarpType is SRWarpType.CharacterEventWarp)
-                    {
-                        player.CharacterEventStats = WarpStats;
-                    }
-                    else if (WarpType is SRWarpType.LightConeEventWarp)
-                    {
-                        player.LightConeEventStats = WarpStats;
-                    }
-                    else if (WarpType is SRWarpType.StellarWarp)
-                    {
-                        player.StellarStats = WarpStats;
-                    }
-                    else if (WarpType is SRWarpType.DepartureWarp)
-                    {
-                        player.DepartureStats = WarpStats;
-                    }
+                    if (_characterEventStats is not null) player.CharacterEventStats = _characterEventStats.Clone();
+                    if (_lightConeEventStats is not null) player.LightConeEventStats = _lightConeEventStats.Clone();
+                    if (_stellarStats is not null) player.StellarStats = _stellarStats.Clone();
+                    if (_departureStats is not null) player.DepartureStats = _departureStats.Clone();
                     player.EidolonsStats = EidolonsStats;
                     if (Days > 0)
                     {
@@ -149,20 +148,87 @@ namespace SREmulator.CLI
                 return new SRStellarWarp(WarpVersion);
             }
         }
+        internal SRCharacterEventWarp CustomCharacterEventWarp
+        {
+            get => SRCharacterEventWarps.Create(
+                (SRStar5Character)Up5!,
+                (SRStar4Character)Up41!,
+                (SRStar4Character)Up42!,
+                (SRStar4Character)Up43!,
+                WarpVersion
+                );
+        }
+        internal SRLightConeEventWarp CustomLightConeEventWarp
+        {
+            get => SRLightConeEventWarps.Create(
+                (SRStar5LightCone)Up5!,
+                (SRStar4LightCone)Up41!,
+                (SRStar4LightCone)Up42!,
+                (SRStar4LightCone)Up43!,
+                WarpVersion
+                );
+        }
         internal SRWarp Warp
         {
             get
             {
+                if (WarpName is "__custom")
+                {
+                    return WarpType switch
+                    {
+                        SRWarpType.CharacterEventWarp => CustomCharacterEventWarp,
+                        SRWarpType.LightConeEventWarp => CustomLightConeEventWarp,
+                        _ => throw new InvalidOperationException()
+                    };
+                }
+
                 return WarpType switch
                 {
+                    SRWarpType.CharacterEventWarp => CharacterEventWarp,
                     SRWarpType.LightConeEventWarp => LightConeEventWarp,
                     SRWarpType.StellarWarp => StellarWarp,
                     SRWarpType.DepartureWarp => SRDepartureWarp.DepartureWarp,
-                    _ => CharacterEventWarp,
+                    _ => throw new InvalidOperationException()
                 };
             }
         }
         internal List<SRWarp> Warps = [];
+
+        internal void TryAddAndResetWarp()
+        {
+            if (WarpType is not SRWarpType.None)
+            {
+                Warps.Add(Warp);
+                if (WarpType is SRWarpType.CharacterEventWarp)
+                {
+                    _characterEventStats ??= WarpStats;
+                }
+                else if (WarpType is SRWarpType.LightConeEventWarp)
+                {
+                    _lightConeEventStats ??= WarpStats;
+                }
+                else if (WarpType is SRWarpType.StellarWarp)
+                {
+                    _stellarStats ??= WarpStats;
+                }
+                else if (WarpType is SRWarpType.DepartureWarp)
+                {
+                    _departureStats ??= WarpStats;
+                }
+            }
+            Counter5 = 0;
+            Guarantee5 = false;
+            Counter4 = 0;
+            Guarantee4 = false;
+            Counter5Character = 0;
+            Counter5LightCone = 0;
+            Counter4Character = 0;
+            Counter4LightCone = 0;
+            WarpName = string.Empty;
+            WarpVersionMajor = 0;
+            WarpVersionMinor = 0;
+            WarpTypeName = null;
+        }
 
         public static CLIArgs Parse(string[] args)
         {
@@ -209,7 +275,7 @@ namespace SREmulator.CLI
                 }
             }
 
-            result.Warps.Add(result.Warp);
+            result.TryAddAndResetWarp();
             _ = result.Targets.Create();
 
             foreach (var invalidTarget in result.Targets.InvalidTargets)

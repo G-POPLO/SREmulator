@@ -29,8 +29,12 @@
                 --eidolon <name> <count>            设置角色星魂（上限为 6，下限为 -1）
                 --unlimited-resources               设置为拥有无限抽卡资源
             
-                --new-warp                          保存现在设置的卡池，并添加新的目标卡池
-
+                --new-warp <type>                   添加新的目标卡池（参见 WARP-TYPES）
+            
+                --warp-name <name>                  设置要抽取的卡池（参见 WARP-NAMES）（对UP角色/光锥池有效）
+                --custom-warp <5> <41> <42> <43>    设置自定义卡池的UP对象
+                --warp-version <major> <minor>      设置卡池所在的版本（影响可抽取到的四星对象）
+            
                 --counter5 <count>                  设置已多少抽未出5星
                 --guarantee5                        设置为有5星大保底
                 --counter4 <count>                  设置已多少抽未出4星
@@ -39,14 +43,11 @@
                 --counter5lightcone <count>         设置已多少抽未出5星光锥
                 --counter4character <count>         设置已多少抽未出4星角色
                 --counter4lightcone <count>         设置已多少抽未出4星光锥
-            
-                --warp-name <name>                  设置要抽取的卡池（参见 WARP-NAMES）（对UP角色/光锥池有效）
-                --warp-version <major> <minor>      设置卡池所在的版本（影响可抽取到的四星对象）
 
-                --character-event-warp              设置卡池类型为角色活动跃迁（UP角色池）
-                --light-cone-event-warp             设置卡池类型为光锥活动跃迁（UP光锥池）
-                --stellar-warp                      设置卡池类型为群星跃迁（常驻池）
-                --departure-warp                    设置卡池类型为始发跃迁（新手池）
+                --character-event-warp              【已移除】设置卡池类型为角色活动跃迁（UP角色池）
+                --light-cone-event-warp             【已移除】设置卡池类型为光锥活动跃迁（UP光锥池）
+                --stellar-warp                      【已移除】设置卡池类型为群星跃迁（常驻池）
+                --departure-warp                    【已移除】设置卡池类型为始发跃迁（新手池）
 
                 --target <name> <count>             设置目标及其数量（参见 TARGET-NAMES）
                 --target-count5 <count>             【已移除】设置目标5星数量（限定池中表示UP5星角色，普池中表示特定5星角色）
@@ -58,6 +59,12 @@
 
                 --help                              显示该帮助
                 --language <name>                   更改语言（目前仅支持 zh-Hans, en-US）
+
+            WARP-TYPES:
+                角色活动跃迁（UP角色池）：character-event-warp, character
+                光锥活动跃迁（UP光锥池）：light-cone-event-warp, light-cone, lightcone
+                群星跃迁（常驻池）: stellar-warp, stellar
+                始发跃迁（新手池）: departure-warp, departure
 
             WARP-NAMES:
                 （可直接使用对应角色的拼音，无论是角色池还是光锥池）

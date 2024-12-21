@@ -28,7 +28,22 @@ namespace SREmulator.SRWarps
         /// <summary>
         /// 光锥活动跃迁
         /// </summary>
-        LightConeEventWarp
+        LightConeEventWarp,
+    }
+
+    public static class SRWarpTypes
+    {
+        public static SRWarpType FromeName(string? name)
+        {
+            return name switch
+            {
+                "character-event-warp" or "character" => SRWarpType.CharacterEventWarp,
+                "light-cone-event-warp" or "light-cone" or "lightcone" => SRWarpType.LightConeEventWarp,
+                "stellar-warp" or "stellar" => SRWarpType.StellarWarp,
+                "departure-warp" or "departure" => SRWarpType.DepartureWarp,
+                _ => SRWarpType.None,
+            };
+        }
     }
 
     public abstract class SRWarp

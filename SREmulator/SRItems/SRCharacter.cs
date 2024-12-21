@@ -2,7 +2,7 @@
 {
     public static partial class SRCharacters
     {
-        public static partial SRCharacter? GetItemByName(string name);
+        public static partial SRCharacter? GetItemByName(string? name);
     }
 
     public abstract class SRCharacter : SRItem, ISRWarpResultItem

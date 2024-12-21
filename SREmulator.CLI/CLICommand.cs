@@ -168,6 +168,7 @@ namespace SREmulator.CLI
             Parallel.For(0, total, _ =>
             {
                 SRPlayer player = args.Player;
+                player.WarpCurrencyStats.NoWarpRewards = true;
                 var target = args.Targets.Create();
                 ulong counter = 0;
 
