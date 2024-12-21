@@ -86,7 +86,8 @@ namespace SREmulator.CLI
             int maxNameLength = 0;
             int counter = 0;
 
-            var warp = args.Warp;
+            if (args.Warps.Count is 0) return;
+            var warp = args.Warps[0];
             var player = args.Player;
             StringBuilder builder = args.Export ? new StringBuilder() : null!;
             if (args.Export) builder.AppendLine("对象类型,对象名称,对象星级,跃迁类型");

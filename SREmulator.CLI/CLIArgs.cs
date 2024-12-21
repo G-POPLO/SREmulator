@@ -262,6 +262,7 @@ namespace SREmulator.CLI
                         if (CLICommands.Commands.ContainsKey(arg))
                         {
                             result.Command = arg;
+                            if (result.Command is "help") return result;
                         }
                         else
                         {
@@ -276,6 +277,11 @@ namespace SREmulator.CLI
             }
 
             result.TryAddAndResetWarp();
+            if (result.Warps.Count is 0)
+            {
+                source.Warning("未选择任何卡池，请使用 --new-warp 指定卡池");
+            }
+
             _ = result.Targets.Create();
 
             foreach (var invalidTarget in result.Targets.InvalidTargets)
