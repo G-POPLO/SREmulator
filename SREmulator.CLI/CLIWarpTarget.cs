@@ -9,7 +9,7 @@ namespace SREmulator.CLI
         public bool Achieved { get; }
         public void Check(ISRWarpResultItem item);
         public ICLIWarpTarget Clone();
-        public bool CanChangeWarp(SRWarp warp);
+        public bool CanChangeWarp(SRWarp warp, bool checkOnly = true);
     }
 
     public sealed class CLIWarpTargetFactory
@@ -34,27 +34,71 @@ namespace SREmulator.CLI
             _targets[item] = count;
         }
 
-        private Dictionary<ISRWarpResultItem, SRWarp> BuildBestWarp()
+        private IEnumerable<(SRWarp Warp, int Weight)> GetWarpWithWeight(ISRWarpResultItem item)
         {
-            Dictionary<ISRWarpResultItem, SRWarp> bestWarp = [];
+            return _args.Warps.Select(warp =>
+            {
+                int weight;
+                if (warp.AvailableUpItems.Contains(item))
+                {
+                    weight = 100;
+                }
+                else if (warp.AvailableItems.Contains(item))
+                {
+                    if (item.Rarity is SRItemRarity.Star3)
+                    {
+                        weight = 1;
+                    }
+                    else if (warp.WarpType is SRWarpType.StellarWarp or SRWarpType.DepartureWarp)
+                    {
+                        weight = 60;
+                    }
+                    else if (item is SRCharacter && warp.WarpType is SRWarpType.LightConeEventWarp)
+                    {
+                        weight = 50 - warp.Common4Characters.Length;
+                    }
+                    else if (item is SRLightCone && warp.WarpType is SRWarpType.CharacterEventWarp)
+                    {
+                        weight = 50 - warp.Common4LightCones.Length;
+                    }
+                    else
+                    {
+                        weight = 10;
+                    }
+                }
+                else
+                {
+                    weight = 0;
+                }
+                return (warp, weight);
+            });
+        }
+
+        private Dictionary<ISRWarpResultItem, HashSet<SRWarp>> BuildBestWarps()
+        {
+            Dictionary<ISRWarpResultItem, HashSet<SRWarp>> bestWarps = [];
             foreach (var item in _targets.Keys)
             {
-                var best = _args.Warps.FirstOrDefault(warp => warp.AvailableUpItems.Contains(item));
-                best ??= _args.Warps.FirstOrDefault(warp => warp.AvailableItems.Contains(item));
+                var best = GetWarpWithWeight(item)
+                    .ToLookup(warpWithWeight => warpWithWeight.Weight)
+                    .OrderByDescending(group => group.Key)
+                    .FirstOrDefault(group => group.Key > 0)?
+                    .Select(tuple => tuple.Warp)
+                    .ToHashSet();
                 if (best is null)
                 {
                     _invalidTargets.Add(item);
                     _targets.Remove(item);
                     continue;
                 }
-                bestWarp[item] = best;
+                bestWarps[item] = best;
             }
-            return bestWarp;
+            return bestWarps;
         }
 
         public ICLIWarpTarget Create()
         {
-            _target ??= new CLIMultipleWarpTarget(_targets, BuildBestWarp());
+            _target ??= new CLIMultipleWarpTarget(_targets, BuildBestWarps());
             return _target.Clone();
         }
     }
@@ -62,14 +106,14 @@ namespace SREmulator.CLI
     public sealed class CLIMultipleWarpTarget : ICLIWarpTarget
     {
         private readonly Dictionary<ISRWarpResultItem, int> _targetCounter;
-        private readonly Dictionary<ISRWarpResultItem, SRWarp> _bestWarp;
+        private readonly Dictionary<ISRWarpResultItem, HashSet<SRWarp>> _bestWarp;
         private readonly bool _noStar3;
         private readonly bool _noStar4;
         private bool _achieved;
 
         public bool Achieved => _achieved;
 
-        public CLIMultipleWarpTarget(Dictionary<ISRWarpResultItem, int> targetCounter, Dictionary<ISRWarpResultItem, SRWarp> bestWarp)
+        public CLIMultipleWarpTarget(Dictionary<ISRWarpResultItem, int> targetCounter, Dictionary<ISRWarpResultItem, HashSet<SRWarp>> bestWarp)
         {
             _targetCounter = new(targetCounter);
             _bestWarp = new(bestWarp);
@@ -99,9 +143,17 @@ namespace SREmulator.CLI
             return new CLIMultipleWarpTarget(_targetCounter, _bestWarp);
         }
 
-        public bool CanChangeWarp(SRWarp warp)
+        public bool CanChangeWarp(SRWarp warp, bool checkOnly = true)
         {
-            return !_bestWarp.ContainsValue(warp);
+            bool ret = _bestWarp.Values.All(warps => warps.Count > 1 || !warps.Contains(warp));
+            if (ret && checkOnly)
+            {
+                foreach (var warps in _bestWarp.Values)
+                {
+                    warps.Remove(warp);
+                }
+            }
+            return ret;
         }
     }
 }
