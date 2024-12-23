@@ -32,7 +32,7 @@ namespace SREmulator.CLI
             string s = Next();
             if (!int.TryParse(s, out int value))
             {
-                value = default;
+                value = Math.Clamp(default, minValue, maxValue);
                 Warning($"参数错误 '{s}' （参数应为整数）（已自动设置为 '{value}'）");
             }
             int ret = Math.Clamp(value, minValue, maxValue);

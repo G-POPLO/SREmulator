@@ -411,4 +411,15 @@ namespace SREmulator.CLI
             return !args.Up41.Equals(args.Up42) && !args.Up41.Equals(args.Up43) && !args.Up42.Equals(args.Up43);
         }
     }
+
+    public sealed class EquilibriumLevelOption : CLIOption
+    {
+        public override string Name => "equilibrium-level";
+
+        public override bool TryApplyToCLIArgs(CLIArgs args, CLIArgsSource source)
+        {
+            args.EquilibriumLevel = source.NextInt32(0, 6);
+            return true;
+        }
+    }
 }

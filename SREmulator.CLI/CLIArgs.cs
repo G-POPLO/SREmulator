@@ -56,6 +56,7 @@ namespace SREmulator.CLI
 
         public int Days = 0;
         public bool ExpressSupplyPass = false;
+        public int EquilibriumLevel = 6;
 
         public string Command = "help";
 
@@ -125,7 +126,7 @@ namespace SREmulator.CLI
                     player.EidolonsStats = EidolonsStats;
                     if (Days > 0)
                     {
-                        player.LevelStats.EquilibriumLevel = 6;
+                        player.LevelStats.EquilibriumLevel = EquilibriumLevel;
                         player.WarpCurrencyStats.DaysLater(Days, ExpressSupplyPass, player.LevelStats);
                     }
                     _player = player;

@@ -26,11 +26,12 @@
                 --undying-starlight <count>         设置未熄的星芒数量（下限为 0）
                 --stellar-jade <count>              设置星琼数量（下限为 0）
                 --oneiric-shard <count>             设置古老梦华数量（下限为 0）
-                --eidolon <name> <count>            设置角色星魂（上限为 6，下限为 -1）
                 --unlimited-resources               设置为拥有无限抽卡资源
 
+                --eidolon <name> <count>            设置角色星魂（上限为 6，下限为 -1）
                 --days <count>                      设置在多少天后抽卡（计算通过每日任务、小月卡、深渊、每月商店获得的抽卡资源）
                 --express-supply-pass               设置有小月卡（影响日常星琼计算）
+                --equilibrium-level                 设置均衡等级
 
                 --new-warp <type>                   添加新的目标卡池类型（参见 WARP-TYPES）
             
