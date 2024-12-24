@@ -149,6 +149,14 @@ namespace SREmulator.Localizations
         [SRAliases("fugue", "wangguiren")]
         public const string Fugue = nameof(Fugue);
 
+        [SRCharacter(TheHerta, 5, true)]
+        [SRAliases("the-herta", "daheita")]
+        public const string TheHerta = nameof(TheHerta);
+
+        [SRCharacter(Aglaea, 5, true)]
+        [SRAliases("aglaea", "agelaiya")]
+        public const string Aglaea = nameof(Aglaea);
+
 
         [SRCharacter(Arlan, 4)]
         [SRAliases("arlan", "alan")]
