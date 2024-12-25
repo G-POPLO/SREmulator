@@ -15,7 +15,6 @@
 
             OPTIONS:
                 # 通用
-                --export                            导出抽卡结果
                 --output                            导出命令结果（.csv 或 .txt）
                 --no-rewards                        不计算抽卡副产物
                 --help                              显示该帮助
@@ -50,6 +49,7 @@
 
 
                 # result-statistics
+                --export                            导出抽卡结果
                 --pause                             每次抽取后暂停（按任意键继续）
                 --return                            前一次的抽取结果显示将被后一次的抽取结果覆盖
                 --silent                            不显示每抽获取的物品

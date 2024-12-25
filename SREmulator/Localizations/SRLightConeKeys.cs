@@ -90,7 +90,7 @@ namespace SREmulator.Localizations
         public const string IVentureForthToHunt = nameof(IVentureForthToHunt);
 
         [SRLightCone(InTheNight, 5, true)]
-        [SRAliases("in-the-night", "yuyexezhong")]
+        [SRAliases("in-the-night", "yuyesezhong")]
         public const string InTheNight = nameof(InTheNight);
 
         [SRLightCone(IncessantRain, 5, true)]
