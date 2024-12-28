@@ -11,6 +11,7 @@
                 result-statistics                   统计所有抽取结果
                 achieve-average-warps               计算实现目标所需抽数
                 achieve-chance                      计算实现目标的可能性
+                achieve-distribution                计算实现目标的各种可能的结果与概率
                 help                                显示该帮助
 
             OPTIONS:

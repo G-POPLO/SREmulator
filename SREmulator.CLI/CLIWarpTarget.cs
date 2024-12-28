@@ -7,9 +7,11 @@ namespace SREmulator.CLI
     public interface ICLIWarpTarget
     {
         public bool Achieved { get; }
+        public Dictionary<ISRWarpResultItem, int> Counter { get; }
         public void Check(ISRWarpResultItem item);
+        public void CheckAllowExcess(ISRWarpResultItem item);
         public ICLIWarpTarget Clone();
-        public bool CanChangeWarp(SRWarp warp, bool checkOnly = true);
+        public bool CanChangeWarp(SRWarp warp, bool checkOnly = false);
     }
 
     public sealed class CLIWarpTargetFactory
@@ -113,6 +115,8 @@ namespace SREmulator.CLI
 
         public bool Achieved => _achieved;
 
+        public Dictionary<ISRWarpResultItem, int> Counter => _targetCounter;
+
         public CLIMultipleWarpTarget(Dictionary<ISRWarpResultItem, int> targetCounter, Dictionary<ISRWarpResultItem, HashSet<SRWarp>> bestWarp)
         {
             _targetCounter = new(targetCounter);
@@ -137,16 +141,28 @@ namespace SREmulator.CLI
             }
             _targetCounter[item] = count;
         }
+        public void CheckAllowExcess(ISRWarpResultItem item)
+        {
+            if (_noStar3 && item.Rarity is SRItemRarity.Star3) return;
+            if (_noStar4 && item.Rarity is SRItemRarity.Star4) return;
+            if (!_targetCounter.TryGetValue(item, out var count)) return;
+            if (--count <= 0)
+            {
+                _bestWarp.Remove(item);
+                if (_bestWarp.Count is 0) _achieved = true;
+            }
+            _targetCounter[item] = count;
+        }
 
         public ICLIWarpTarget Clone()
         {
             return new CLIMultipleWarpTarget(_targetCounter, _bestWarp);
         }
 
-        public bool CanChangeWarp(SRWarp warp, bool checkOnly = true)
+        public bool CanChangeWarp(SRWarp warp, bool checkOnly = false)
         {
             bool ret = _bestWarp.Values.All(warps => warps.Count > 1 || !warps.Contains(warp));
-            if (ret && checkOnly)
+            if (ret && !checkOnly)
             {
                 foreach (var warps in _bestWarp.Values)
                 {

@@ -1,6 +1,7 @@
 ﻿using SREmulator.SRItems;
 using SREmulator.SRPlayers;
 using SREmulator.SRWarps;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace SREmulator.CLI
@@ -154,9 +155,10 @@ namespace SREmulator.CLI
                 if (args.Output) builder.AppendLine($"{pair.Key},{pair.Value},{(double)pair.Value / counter:0.00%}");
             }
 
-            if (args.Output) File.WriteAllText(GetFileName("result-statistics", "csv"), builder.ToString());
+            if (args.Output) File.WriteAllText(GetFileName(Name, "csv"), builder.ToString());
         }
     }
+
     public sealed class AchieveAverageWarpsCommand : CLICommand
     {
         public override string Name => "achieve-average-warps";
@@ -192,7 +194,7 @@ namespace SREmulator.CLI
             }
             var result = ((double)warps / total).ToString("0.##");
             Console.WriteLine(result);
-            if (args.Output) File.WriteAllText(GetFileName("achieve-average-warps", "txt"), result);
+            if (args.Output) File.WriteAllText(GetFileName(Name, "txt"), result);
         }
     }
 
@@ -226,8 +228,86 @@ namespace SREmulator.CLI
             }
             var result = ((double)successful / total).ToString("0.00%");
             Console.WriteLine(result);
-            if (args.Output) File.WriteAllText(GetFileName("achieve-chance", "txt"), result);
+            if (args.Output) File.WriteAllText(GetFileName(Name, "txt"), result);
         }
     }
 
+    public sealed class AchieveDistributionCommand : CLICommand
+    {
+        public override string Name => "achieve-distribution";
+        
+        private static readonly object _lock = new();
+        public override void Execute(CLIArgs args)
+        {
+            int total = args.Attempts;
+            Dictionary<Dictionary<ISRWarpResultItem, int>, int> distribution = new(DictComparer.Instance);
+
+            Parallel.For(0, total, _ =>
+            {
+                SRPlayer player = args.Player;
+                var target = args.Targets.Create();
+
+                foreach (var warp in args.Warps)
+                {
+                    while (!target.CanChangeWarp(warp) && warp.TryWarp(player, out var item))
+                    {
+                        target.CheckAllowExcess(item);
+                    }
+                }
+                lock (_lock)
+                {
+                    distribution.TryGetValue(target.Counter, out int count);
+                    distribution[target.Counter] = count + 1;
+                }
+            });
+
+            var src = args.Targets.Target;
+            int sum = distribution.Values.Sum();
+            StringBuilder builder = args.Output ? new() : null!;
+
+            foreach (var result in distribution.OrderByDescending(pair => pair.Value))
+            {
+                foreach (var pair in result.Key)
+                {
+                    int count = src[pair.Key] - pair.Value;
+                    Print(pair.Key, $": {count}");
+                    if (args.Output) builder.Append($"\"{pair.Key.Name}\",{count},");
+                }
+                var ratio = ((double)result.Value / sum).ToString("0.00%");
+                Console.WriteLine(ratio);
+                Console.WriteLine();
+                if (args.Output) builder.AppendLine($"{ratio}");
+            }
+
+            if (args.Output) File.WriteAllText(GetFileName(Name, "csv"), builder.ToString());
+        }
+
+        private sealed class DictComparer : IEqualityComparer<Dictionary<ISRWarpResultItem, int>>
+        {
+            public static IEqualityComparer<Dictionary<ISRWarpResultItem, int>> Instance { get; } = new DictComparer();
+
+            bool IEqualityComparer<Dictionary<ISRWarpResultItem, int>>.Equals(Dictionary<ISRWarpResultItem, int>? x, Dictionary<ISRWarpResultItem, int>? y)
+            {
+                if (x is null) return y is null;
+                if (y is null) return false;
+                if (x.Count != y.Count) return false;
+                foreach (var pair in x)
+                {
+                    if (!y.TryGetValue(pair.Key, out var value)) return false;
+                    if (pair.Value != value) return false;
+                }
+                return true;
+            }
+
+            int IEqualityComparer<Dictionary<ISRWarpResultItem, int>>.GetHashCode([DisallowNull] Dictionary<ISRWarpResultItem, int> obj)
+            {
+                int hash = 0;
+                foreach (var pair in obj)
+                {
+                    hash = HashCode.Combine(hash, pair);
+                }
+                return hash;
+            }
+        }
+    }
 }
