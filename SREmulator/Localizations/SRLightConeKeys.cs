@@ -169,6 +169,14 @@ namespace SREmulator.Localizations
         [SRAliases("yet-hope-is-priceless", "pianpianxiwangwujia")]
         public const string YetHopeIsPriceless = nameof(YetHopeIsPriceless);
 
+        [SRLightCone(IntoTheUnreachableVeil, 5, true)]
+        [SRAliases("into-the-unreachable-veil", "xiangzhebukezhuiwenchu")]
+        public const string IntoTheUnreachableVeil = nameof(IntoTheUnreachableVeil);
+
+        [SRLightCone(TimeWovenIntoGold, 5, true)]
+        [SRAliases("time-woven-into-gold", "jiangguangyinzhichenghuangjin")]
+        public const string TimeWovenIntoGold = nameof(TimeWovenIntoGold);
+
 
         [SRLightCone(BoundlessChoreo, 4)]
         [SRAliases("boundless-choreo", "wubianmanwu")]
@@ -282,6 +290,10 @@ namespace SREmulator.Localizations
         [SRAliases("dreams-montage", "mengdemengtaiqi")]
         public const string DreamsMontage = nameof(DreamsMontage);
 
+        [SRLightCone(GeniusesGreetings, 4)]
+        [SRAliases("geniuses-greetings", "tiancaimendewenhou")]
+        public const string GeniusesGreetings = nameof(GeniusesGreetings);
+
 
         [SRLightCone(DartingArrow, 3)]
         [SRAliases("darting-arrow")]
@@ -366,5 +378,13 @@ namespace SREmulator.Localizations
         [SRLightCone(Cornucopia, 3)]
         [SRAliases("cornucopia", "wurang")]
         public const string Cornucopia = nameof(Cornucopia);
+
+        [SRLightCone(Shadowburn, 3)]
+        [SRAliases("shadowburn", "fenying")]
+        public const string Shadowburn = nameof(Shadowburn);
+
+        [SRLightCone(Reminiscence, 3)]
+        [SRAliases("reminiscence", "suyi")]
+        public const string Reminiscence = nameof(Reminiscence);
     }
 }

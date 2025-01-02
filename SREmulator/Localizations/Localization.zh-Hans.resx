@@ -567,4 +567,25 @@
   <data name="TheHerta" xml:space="preserve">
     <value>大黑塔</value>
   </data>
+  <data name="Tribbie" xml:space="preserve">
+    <value>缇宝</value>
+  </data>
+  <data name="Mydei" xml:space="preserve">
+    <value>万敌</value>
+  </data>
+  <data name="IntoTheUnreachableVeil" xml:space="preserve">
+    <value>向着不可追问处</value>
+  </data>
+  <data name="TimeWovenIntoGold" xml:space="preserve">
+    <value>将光阴织成黄金</value>
+  </data>
+  <data name="GeniusesGreetings" xml:space="preserve">
+    <value>天才们的问候</value>
+  </data>
+  <data name="Shadowburn" xml:space="preserve">
+    <value>焚影</value>
+  </data>
+  <data name="Reminiscence" xml:space="preserve">
+    <value>溯忆</value>
+  </data>
 </root>

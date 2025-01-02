@@ -48,6 +48,13 @@
         Ver2p7 = Major2 | Minor7,
 
         Ver3p0 = Major3 | Minor0,
+        Ver3p1 = Major3 | Minor1,
+        Ver3p2 = Major3 | Minor2,
+        Ver3p3 = Major3 | Minor3,
+        Ver3p4 = Major3 | Minor4,
+        Ver3p5 = Major3 | Minor5,
+        Ver3p6 = Major3 | Minor6,
+        Ver3p7 = Major3 | Minor7,
     }
 
     public static class SRVersions
