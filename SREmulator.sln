@@ -14,8 +14,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SREmulator.SourceGeneration
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SREmulator.CLI", "SREmulator.CLI\SREmulator.CLI.csproj", "{83974670-1826-49B4-B498-57477EE4AA0C}"
 EndProject
+<<<<<<< HEAD
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SREmulator.GUI", "SREmulator.GUI\SREmulator.GUI.csproj", "{E121603E-5A86-4A0D-930D-BF0619028146}"
 EndProject
+=======
+>>>>>>> c2c403bd3581f46716332845dceefa430401e2a0
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -34,15 +37,21 @@ Global
 		{83974670-1826-49B4-B498-57477EE4AA0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{83974670-1826-49B4-B498-57477EE4AA0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{83974670-1826-49B4-B498-57477EE4AA0C}.Release|Any CPU.Build.0 = Release|Any CPU
+<<<<<<< HEAD
 		{E121603E-5A86-4A0D-930D-BF0619028146}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{E121603E-5A86-4A0D-930D-BF0619028146}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E121603E-5A86-4A0D-930D-BF0619028146}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E121603E-5A86-4A0D-930D-BF0619028146}.Release|Any CPU.Build.0 = Release|Any CPU
+=======
+>>>>>>> c2c403bd3581f46716332845dceefa430401e2a0
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
+<<<<<<< HEAD
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {23AA0E4E-CC95-4530-B9D8-7BFF8E8A696B}
 	EndGlobalSection
+=======
+>>>>>>> c2c403bd3581f46716332845dceefa430401e2a0
 EndGlobal
