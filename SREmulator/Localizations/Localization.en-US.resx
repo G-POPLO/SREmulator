@@ -1,0 +1,591 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="Acheron" xml:space="preserve">
+    <value>Acheron</value>
+  </data>
+  <data name="Argenti" xml:space="preserve">
+    <value>Argenti</value>
+  </data>
+  <data name="Arlan" xml:space="preserve">
+    <value>Arlan</value>
+  </data>
+  <data name="Asta" xml:space="preserve">
+    <value>Asta</value>
+  </data>
+  <data name="Aventurine" xml:space="preserve">
+    <value>Aventurine</value>
+  </data>
+  <data name="Bailu" xml:space="preserve">
+    <value>Bailu</value>
+  </data>
+  <data name="BlackSwan" xml:space="preserve">
+    <value>Black Swan</value>
+  </data>
+  <data name="Blade" xml:space="preserve">
+    <value>Blade</value>
+  </data>
+  <data name="Boothill" xml:space="preserve">
+    <value>Boothill</value>
+  </data>
+  <data name="Bronya" xml:space="preserve">
+    <value>Bronya</value>
+  </data>
+  <data name="Clara" xml:space="preserve">
+    <value>Clara</value>
+  </data>
+  <data name="DanHeng" xml:space="preserve">
+    <value>Dan Heng</value>
+  </data>
+  <data name="DanHengImbibitorLunae" xml:space="preserve">
+    <value>Dan Heng • Imbibitor Lunae</value>
+  </data>
+  <data name="DrRatio" xml:space="preserve">
+    <value>Dr. Ratio</value>
+  </data>
+  <data name="Feixiao" xml:space="preserve">
+    <value>Feixiao</value>
+  </data>
+  <data name="Firefly" xml:space="preserve">
+    <value>Firefly</value>
+  </data>
+  <data name="FuXuan" xml:space="preserve">
+    <value>Fu Xuan</value>
+  </data>
+  <data name="Gallagher" xml:space="preserve">
+    <value>Gallagher</value>
+  </data>
+  <data name="Gepard" xml:space="preserve">
+    <value>Gepard</value>
+  </data>
+  <data name="Guinaifen" xml:space="preserve">
+    <value>Guinaifen</value>
+  </data>
+  <data name="Hanya" xml:space="preserve">
+    <value>Hanya</value>
+  </data>
+  <data name="Herta" xml:space="preserve">
+    <value>Herta</value>
+  </data>
+  <data name="Himeko" xml:space="preserve">
+    <value>Himeko</value>
+  </data>
+  <data name="Hook" xml:space="preserve">
+    <value>Hook</value>
+  </data>
+  <data name="Huohuo" xml:space="preserve">
+    <value>Huohuo</value>
+  </data>
+  <data name="Jade" xml:space="preserve">
+    <value>Jade</value>
+  </data>
+  <data name="Jiaoqiu" xml:space="preserve">
+    <value>Jiaoqiu</value>
+  </data>
+  <data name="Jingliu" xml:space="preserve">
+    <value>Jingliu</value>
+  </data>
+  <data name="JingYuan" xml:space="preserve">
+    <value>Jing Yuan</value>
+  </data>
+  <data name="Kafka" xml:space="preserve">
+    <value>Kafka</value>
+  </data>
+  <data name="Lingsha" xml:space="preserve">
+    <value>Lingsha</value>
+  </data>
+  <data name="Luka" xml:space="preserve">
+    <value>Luka</value>
+  </data>
+  <data name="Luocha" xml:space="preserve">
+    <value>Luocha</value>
+  </data>
+  <data name="Lynx" xml:space="preserve">
+    <value>Lynx</value>
+  </data>
+  <data name="March7th" xml:space="preserve">
+    <value>March 7th</value>
+  </data>
+  <data name="Misha" xml:space="preserve">
+    <value>Misha</value>
+  </data>
+  <data name="Moze" xml:space="preserve">
+    <value>Moze</value>
+  </data>
+  <data name="Natasha" xml:space="preserve">
+    <value>Natasha</value>
+  </data>
+  <data name="Pela" xml:space="preserve">
+    <value>Pela</value>
+  </data>
+  <data name="Qingque" xml:space="preserve">
+    <value>Qingque</value>
+  </data>
+  <data name="Rappa" xml:space="preserve">
+    <value>Rappa</value>
+  </data>
+  <data name="Robin" xml:space="preserve">
+    <value>Robin</value>
+  </data>
+  <data name="RuanMei" xml:space="preserve">
+    <value>Ruan Mei</value>
+  </data>
+  <data name="Sampo" xml:space="preserve">
+    <value>Sampo</value>
+  </data>
+  <data name="Seele" xml:space="preserve">
+    <value>Seele</value>
+  </data>
+  <data name="Serval" xml:space="preserve">
+    <value>Serval</value>
+  </data>
+  <data name="SilverWolf" xml:space="preserve">
+    <value>Silver Wolf</value>
+  </data>
+  <data name="Sparkle" xml:space="preserve">
+    <value>Sparkle</value>
+  </data>
+  <data name="Sushang" xml:space="preserve">
+    <value>Sushang</value>
+  </data>
+  <data name="Tingyun" xml:space="preserve">
+    <value>Tingyun</value>
+  </data>
+  <data name="TopazNumby" xml:space="preserve">
+    <value>Topaz &amp; Numby</value>
+  </data>
+  <data name="Welt" xml:space="preserve">
+    <value>Welt</value>
+  </data>
+  <data name="Xueyi" xml:space="preserve">
+    <value>Xueyi</value>
+  </data>
+  <data name="Yanqing" xml:space="preserve">
+    <value>Yanqing</value>
+  </data>
+  <data name="Yukong" xml:space="preserve">
+    <value>Yukong</value>
+  </data>
+  <data name="Yunli" xml:space="preserve">
+    <value>Yunli</value>
+  </data>
+  <data name="BoundlessChoreo" xml:space="preserve">
+    <value>Boundless Choreo</value>
+  </data>
+  <data name="DayOneOfMyNewLife" xml:space="preserve">
+    <value>Day One of My New Life</value>
+  </data>
+  <data name="MakeTheWorldClamor" xml:space="preserve">
+    <value>Make the World Clamor</value>
+  </data>
+  <data name="Swordplay" xml:space="preserve">
+    <value>Swordplay</value>
+  </data>
+  <data name="MemoriesOfThePast" xml:space="preserve">
+    <value>Memories of the Past</value>
+  </data>
+  <data name="AfterTheCharmonyFall" xml:space="preserve">
+    <value>After the Charmony Fall</value>
+  </data>
+  <data name="ShadowedByNight" xml:space="preserve">
+    <value>Shadowed by Night</value>
+  </data>
+  <data name="OnlySilenceRemains" xml:space="preserve">
+    <value>Only Silence Remains</value>
+  </data>
+  <data name="TheMolesWelcomeYou" xml:space="preserve">
+    <value>The Moles Welcome You</value>
+  </data>
+  <data name="PostOpConversation" xml:space="preserve">
+    <value>Post-Op Conversation</value>
+  </data>
+  <data name="ASecretVow" xml:space="preserve">
+    <value>A Secret Vow</value>
+  </data>
+  <data name="DanceDanceDance" xml:space="preserve">
+    <value>Dance! Dance! Dance!</value>
+  </data>
+  <data name="ConcertForTwo" xml:space="preserve">
+    <value>Concert for Two</value>
+  </data>
+  <data name="SharedFeeling" xml:space="preserve">
+    <value>Shared Feeling</value>
+  </data>
+  <data name="EyesOfThePrey" xml:space="preserve">
+    <value>Eyes of the Prey</value>
+  </data>
+  <data name="ResolutionShinesAsPearlsOfSweat" xml:space="preserve">
+    <value>Resolution Shines As Pearls of Sweat</value>
+  </data>
+  <data name="TrendOfTheUniversalMarket" xml:space="preserve">
+    <value>Trend of the Universal Market</value>
+  </data>
+  <data name="TheBirthOfTheSelf" xml:space="preserve">
+    <value>The Birth of the Self</value>
+  </data>
+  <data name="LandausChoice" xml:space="preserve">
+    <value>Landau's Choice</value>
+  </data>
+  <data name="PerfectTiming" xml:space="preserve">
+    <value>Perfect Timing</value>
+  </data>
+  <data name="UnderTheBlueSky" xml:space="preserve">
+    <value>Under the Blue Sky</value>
+  </data>
+  <data name="GoodNightAndSleepWell" xml:space="preserve">
+    <value>Good Night and Sleep Well</value>
+  </data>
+  <data name="PlanetaryRendezvous" xml:space="preserve">
+    <value>Planetary Rendezvous</value>
+  </data>
+  <data name="SubscribeForMore" xml:space="preserve">
+    <value>Subscribe for More!</value>
+  </data>
+  <data name="IndeliblePromise" xml:space="preserve">
+    <value>Indelible Promise</value>
+  </data>
+  <data name="PoisedToBloom" xml:space="preserve">
+    <value>Poised to Bloom</value>
+  </data>
+  <data name="GeniusesRepose" xml:space="preserve">
+    <value>Geniuses' Repose</value>
+  </data>
+  <data name="DreamsMontage" xml:space="preserve">
+    <value>Dream's Montage</value>
+  </data>
+  <data name="DartingArrow" xml:space="preserve">
+    <value>Darting Arrow</value>
+  </data>
+  <data name="DataBank" xml:space="preserve">
+    <value>Data Bank</value>
+  </data>
+  <data name="Defense" xml:space="preserve">
+    <value>Defense</value>
+  </data>
+  <data name="FineFruit" xml:space="preserve">
+    <value>Fine Fruit</value>
+  </data>
+  <data name="HiddenShadow" xml:space="preserve">
+    <value>Hidden Shadow</value>
+  </data>
+  <data name="Loop" xml:space="preserve">
+    <value>Loop</value>
+  </data>
+  <data name="Mediation" xml:space="preserve">
+    <value>Mediation</value>
+  </data>
+  <data name="MeshingCogs" xml:space="preserve">
+    <value>Meshing Cogs</value>
+  </data>
+  <data name="Multiplication" xml:space="preserve">
+    <value>Multiplication</value>
+  </data>
+  <data name="MutualDemise" xml:space="preserve">
+    <value>Mutual Demise</value>
+  </data>
+  <data name="Passkey" xml:space="preserve">
+    <value>Passkey</value>
+  </data>
+  <data name="Pioneering" xml:space="preserve">
+    <value>Pioneering</value>
+  </data>
+  <data name="Sagacity" xml:space="preserve">
+    <value>Sagacity</value>
+  </data>
+  <data name="ShatteredHome" xml:space="preserve">
+    <value>Shattered Home</value>
+  </data>
+  <data name="Void" xml:space="preserve">
+    <value>Void</value>
+  </data>
+  <data name="Adversarial" xml:space="preserve">
+    <value>Adversarial</value>
+  </data>
+  <data name="Amber" xml:space="preserve">
+    <value>Amber</value>
+  </data>
+  <data name="Arrows" xml:space="preserve">
+    <value>Arrows</value>
+  </data>
+  <data name="Chorus" xml:space="preserve">
+    <value>Chorus</value>
+  </data>
+  <data name="CollapsingSky" xml:space="preserve">
+    <value>Collapsing Sky</value>
+  </data>
+  <data name="Cornucopia" xml:space="preserve">
+    <value>Cornucopia</value>
+  </data>
+  <data name="SomethingIrreplaceable" xml:space="preserve">
+    <value>Something Irreplaceable</value>
+  </data>
+  <data name="ButTheBattleIsntOver" xml:space="preserve">
+    <value>But the Battle Isn't Over</value>
+  </data>
+  <data name="SleepLikeTheDead" xml:space="preserve">
+    <value>Sleep Like the Dead</value>
+  </data>
+  <data name="InTheNameOfTheWorld" xml:space="preserve">
+    <value>In the Name of the World</value>
+  </data>
+  <data name="NightOnTheMilkyWay" xml:space="preserve">
+    <value>Night on the Milky Way</value>
+  </data>
+  <data name="TimeWaitsForNoOne" xml:space="preserve">
+    <value>Time Waits for No One</value>
+  </data>
+  <data name="AGroundedAscent" xml:space="preserve">
+    <value>A Grounded Ascent</value>
+  </data>
+  <data name="AlongThePassingShore" xml:space="preserve">
+    <value>Along the Passing Shore</value>
+  </data>
+  <data name="AnInstantBeforeAGaze" xml:space="preserve">
+    <value>An Instant Before A Gaze</value>
+  </data>
+  <data name="BaptismOfPureThought" xml:space="preserve">
+    <value>Baptism of Pure Thought</value>
+  </data>
+  <data name="BeforeDawn" xml:space="preserve">
+    <value>Before Dawn</value>
+  </data>
+  <data name="BrighterThanTheSun" xml:space="preserve">
+    <value>Brighter Than the Sun</value>
+  </data>
+  <data name="CruisingInTheStellarSea" xml:space="preserve">
+    <value>Cruising in the Stellar Sea</value>
+  </data>
+  <data name="DanceAtSunset" xml:space="preserve">
+    <value>Dance at Sunset</value>
+  </data>
+  <data name="EarthlyEscapade" xml:space="preserve">
+    <value>Earthly Escapade</value>
+  </data>
+  <data name="EchoesOfTheCoffin" xml:space="preserve">
+    <value>Echoes of the Coffin</value>
+  </data>
+  <data name="EternalCalculus" xml:space="preserve">
+    <value>Eternal Calculus</value>
+  </data>
+  <data name="FlowingNightglow" xml:space="preserve">
+    <value>Flowing Nightglow</value>
+  </data>
+  <data name="IShallBeMyOwnSword" xml:space="preserve">
+    <value>I Shall Be My Own Sword</value>
+  </data>
+  <data name="IVentureForthToHunt" xml:space="preserve">
+    <value>I Venture Forth to Hunt</value>
+  </data>
+  <data name="InTheNight" xml:space="preserve">
+    <value>In the Night</value>
+  </data>
+  <data name="IncessantRain" xml:space="preserve">
+    <value>Incessant Rain</value>
+  </data>
+  <data name="InherentlyUnjustDestiny" xml:space="preserve">
+    <value>Inherently Unjust Destiny</value>
+  </data>
+  <data name="LongRoadLeadsHome" xml:space="preserve">
+    <value>Long Road Leads Home</value>
+  </data>
+  <data name="MomentOfVictory" xml:space="preserve">
+    <value>Moment of Victory</value>
+  </data>
+  <data name="NightOfFright" xml:space="preserve">
+    <value>Night of Fright</value>
+  </data>
+  <data name="NinjutsuInscriptionDazzlingEvilbreaker" xml:space="preserve">
+    <value>Ninjutsu Inscription: Dazzling Evilbreaker</value>
+  </data>
+  <data name="OnTheFallOfAnAeon" xml:space="preserve">
+    <value>On the Fall of an Aeon</value>
+  </data>
+  <data name="PastSelfInMirror" xml:space="preserve">
+    <value>Past Self in Mirror</value>
+  </data>
+  <data name="PatienceIsAllYouNeed" xml:space="preserve">
+    <value>Patience Is All You Need</value>
+  </data>
+  <data name="ReforgedRemembrance" xml:space="preserve">
+    <value>Reforged Remembrance</value>
+  </data>
+  <data name="SailingTowardsASecondLife" xml:space="preserve">
+    <value>Sailing Towards a Second Life</value>
+  </data>
+  <data name="ScentAloneStaysTrue" xml:space="preserve">
+    <value>Scent Alone Stays True</value>
+  </data>
+  <data name="SheAlreadyShutHerEyes" xml:space="preserve">
+    <value>She Already Shut Her Eyes</value>
+  </data>
+  <data name="SolitaryHealing" xml:space="preserve">
+    <value>Solitary Healing</value>
+  </data>
+  <data name="TextureOfMemories" xml:space="preserve">
+    <value>Texture of Memories</value>
+  </data>
+  <data name="TheUnreachableSide" xml:space="preserve">
+    <value>The Unreachable Side</value>
+  </data>
+  <data name="ThoseManySprings" xml:space="preserve">
+    <value>Those Many Springs</value>
+  </data>
+  <data name="WhereaboutsShouldDreamsRest" xml:space="preserve">
+    <value>Whereabouts Should Dreams Rest</value>
+  </data>
+  <data name="WorrisomeBlissful" xml:space="preserve">
+    <value>Worrisome, Blissful</value>
+  </data>
+  <data name="YetHopeIsPriceless" xml:space="preserve">
+    <value>Yet Hope Is Priceless</value>
+  </data>
+  <data name="Aglaea" xml:space="preserve">
+    <value>Aglaea</value>
+  </data>
+  <data name="Fugue" xml:space="preserve">
+    <value>Fugue</value>
+  </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Sunday</value>
+  </data>
+  <data name="TheHerta" xml:space="preserve">
+    <value>The Herta</value>
+  </data>
+  <data name="Tribbie" xml:space="preserve">
+    <value>Tribbie</value>
+  </data>
+  <data name="Mydei" xml:space="preserve">
+    <value>Mydei</value>
+  </data>
+  <data name="IntoTheUnreachableVeil" xml:space="preserve">
+    <value>Into the Unreachable Veil</value>
+  </data>
+  <data name="TimeWovenIntoGold" xml:space="preserve">
+    <value>Time Woven into Gold</value>
+  </data>
+  <data name="GeniusesGreetings" xml:space="preserve">
+    <value>Geniuses' Greetings</value>
+  </data>
+  <data name="Shadowburn" xml:space="preserve">
+    <value>Shadowburn</value>
+  </data>
+  <data name="Reminiscence" xml:space="preserve">
+    <value>Reminiscence</value>
+  </data>
+</root>
