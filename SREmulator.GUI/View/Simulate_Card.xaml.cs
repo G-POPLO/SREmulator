@@ -17,6 +17,7 @@ using System.Windows.Shapes;
 using SREmulator.Localizations;
 using System.Reflection;
 using SREmulator.Attributes;
+using SREmulator.SRItems;
 
 namespace SREmulator.GUI.View
 {
@@ -140,19 +141,19 @@ namespace SREmulator.GUI.View
         }
 
         /// <summary>
-        /// 初始化角色数据
+        /// 初始化光锥数据
         /// </summary>
         private void InitializeCharacters()
         {
-            // 创建角色列表，添加默认选项
-            var characterItems = new List<string> ();
+            // 创建光锥列表
+            var lightConeItems = new List<string>();
 
-            // 使用反射获取SRCharacterKeys类中的所有字符常量
-            var characterKeysType = typeof(SRCharacterKeys);
-            var constFields = characterKeysType.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy)
+            // 使用反射获取SRLightConeKeys类中的所有光锥常量
+            var lightConeKeysType = typeof(SRLightConeKeys);
+            var constFields = lightConeKeysType.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy)
                 .Where(f => f.IsLiteral && !f.IsInitOnly && f.FieldType == typeof(string));
 
-            // 获取每个字符的别名并添加到列表中
+            // 获取每个光锥的别名并添加到列表中
             foreach (var field in constFields)
             {
                 // 获取SRAliases属性
@@ -160,14 +161,18 @@ namespace SREmulator.GUI.View
                 if (aliasesAttr != null)
                 {
                     // 使用字段名作为显示文本
-                    string characterName = field.Name;
-                    characterItems.Add(characterName);
+                    string lightConeName = field.Name;
+                    lightConeItems.Add(lightConeName);
                 }
             }
 
             // 绑定数据到ComboBox
-            cmbTarget.ItemsSource = characterItems;
-            cmbTarget.SelectedIndex = 0;
+            cmbTarget.ItemsSource = lightConeItems;
+            // 只有当列表不为空时才设置选中索引
+            if (lightConeItems.Count > 0)
+            {
+                cmbTarget.SelectedIndex = 0;
+            }
         }
     }
 }

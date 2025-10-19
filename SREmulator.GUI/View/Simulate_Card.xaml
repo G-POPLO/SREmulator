@@ -172,19 +172,6 @@ SelectedValuePath="VersionKey"/>
 
                         <!-- 操作按钮 -->
                         <StackPanel Orientation="Horizontal">
-                            <!--<Button x:Name="btnStatistics" 
-                                    Content="统计抽卡结果" 
-                                    Width="120" 
-                                    Height="40" 
-                                    FontSize="14"
-                                    Background="#0078d4"
-                                    Foreground="White"
-                                    BorderThickness="0"
-                                    HorizontalAlignment="Left"
-                                    FontWeight="SemiBold"
-                                    Margin="0,0,10,0">
-                            </Button>-->
-
                             <Button x:Name="btnExportCSV" 
                                     Content="导出CSV" 
                                     Width="120" 
