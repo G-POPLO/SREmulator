@@ -35,8 +35,8 @@ namespace SREmulator.GUI.View
         private void SimulateCard_Loaded(object sender, RoutedEventArgs e)
         {
             // 初始化时设置事件处理程序
-            chkInfiniteResources.Checked += ChkInfiniteResources_Checked;
-            chkInfiniteResources.Unchecked += ChkInfiniteResources_Unchecked;
+            //chkInfiniteResources.Checked += ChkInfiniteResources_Checked;
+            //chkInfiniteResources.Unchecked += ChkInfiniteResources_Unchecked;
             // 初始化卡池版本数据
             InitializeWarpVersions();
             // 初始化角色数据
@@ -98,9 +98,9 @@ namespace SREmulator.GUI.View
         private void UpdateResourceInputState()
         {
             // 当"拥有无限抽卡资源"选中时，禁用星轨通票和星琼数量输入框
-            bool isInfinite = chkInfiniteResources.IsChecked == true;
-            txtStarRailPassCount.IsEnabled = !isInfinite;
-            txtStellarJadeCount.IsEnabled = !isInfinite;
+            //bool isInfinite = chkInfiniteResources.IsChecked == true;
+            //txtStarRailPassCount.IsEnabled = !isInfinite;
+            //txtStellarJadeCount.IsEnabled = !isInfinite;
         }
 
         /// <summary>
