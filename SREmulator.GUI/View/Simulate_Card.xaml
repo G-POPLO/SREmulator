@@ -129,10 +129,7 @@ SelectedValuePath="VersionKey"/>
                                       FontSize="14"
                                       Margin="10,0"
                                       MinWidth="200"
-                                      SelectedIndex="0">
-                                <ComboBoxItem Content="指定光锥"/>
-
-                            </ComboBox>
+                                      SelectedIndex="0"/>
                         </StackPanel>
 
                         <!-- 预期抽取光锥叠影 -->

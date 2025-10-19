@@ -1,7 +1,11 @@
+using SREmulator; // 添加对SREmulator命名空间的引用
+using SREmulator.Attributes;
 using SREmulator.GUI.Model;
+using SREmulator.Localizations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection; // 添加反射命名空间
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -14,8 +18,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using SREmulator; // 添加对SREmulator命名空间的引用
-using System.Reflection; // 添加反射命名空间
 
 namespace SREmulator.GUI.View
 {
@@ -38,7 +40,8 @@ namespace SREmulator.GUI.View
 
             // 初始化卡池版本数据
             InitializeWarpVersions();
-
+            // 初始化角色数据
+            InitializeCharacters();
             // 初始化资源输入状态
             UpdateResourceInputState();
         }
@@ -78,6 +81,37 @@ namespace SREmulator.GUI.View
             // 绑定数据到ComboBox
             cmbCardPoolVersion.ItemsSource = versions;
             cmbCardPoolVersion.SelectedIndex = 0;
+        }
+
+        /// <summary>
+        /// 初始化角色数据
+        /// </summary>
+        private void InitializeCharacters()
+        {
+            // 创建角色列表，添加默认选项
+            var characterItems = new List<string> ();
+
+            // 使用反射获取SRCharacterKeys类中的所有字符常量
+            var characterKeysType = typeof(SRCharacterKeys);
+            var constFields = characterKeysType.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy)
+                .Where(f => f.IsLiteral && !f.IsInitOnly && f.FieldType == typeof(string));
+
+            // 获取每个字符的别名并添加到列表中
+            foreach (var field in constFields)
+            {
+                // 获取SRAliases属性
+                var aliasesAttr = field.GetCustomAttribute<SRAliasesAttribute>();
+                if (aliasesAttr != null)
+                {
+                    // 使用字段名作为显示文本
+                    string characterName = field.Name;
+                    characterItems.Add(characterName);
+                }
+            }
+
+            // 绑定数据到ComboBox
+            cmbTarget.ItemsSource = characterItems;
+            cmbTarget.SelectedIndex = 0;
         }
 
         private void ChkInfiniteResources_Checked(object sender, RoutedEventArgs e)
