@@ -520,15 +520,6 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
-        ///   查找类似 GeniusesGreetings 的本地化字符串。
-        /// </summary>
-        internal static string GeniusesGreetings {
-            get {
-                return ResourceManager.GetString("GeniusesGreetings", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查找类似 GeniusesRepose 的本地化字符串。
         /// </summary>
         internal static string GeniusesRepose {
@@ -660,15 +651,6 @@ namespace SREmulator.Localizations {
         internal static string InTheNight {
             get {
                 return ResourceManager.GetString("InTheNight", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 IntoTheUnreachableVeil 的本地化字符串。
-        /// </summary>
-        internal static string IntoTheUnreachableVeil {
-            get {
-                return ResourceManager.GetString("IntoTheUnreachableVeil", resourceCulture);
             }
         }
         
@@ -889,15 +871,6 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
-        ///   查找类似 Mydei 的本地化字符串。
-        /// </summary>
-        internal static string Mydei {
-            get {
-                return ResourceManager.GetString("Mydei", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查找类似 Natasha 的本地化字符串。
         /// </summary>
         internal static string Natasha {
@@ -1060,15 +1033,6 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
-        ///   查找类似 Reminiscence 的本地化字符串。
-        /// </summary>
-        internal static string Reminiscence {
-            get {
-                return ResourceManager.GetString("Reminiscence", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查找类似 ResolutionShinesAsPearlsOfSweat 的本地化字符串。
         /// </summary>
         internal static string ResolutionShinesAsPearlsOfSweat {
@@ -1146,15 +1110,6 @@ namespace SREmulator.Localizations {
         internal static string Serval {
             get {
                 return ResourceManager.GetString("Serval", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Shadowburn 的本地化字符串。
-        /// </summary>
-        internal static string Shadowburn {
-            get {
-                return ResourceManager.GetString("Shadowburn", resourceCulture);
             }
         }
         
@@ -1339,15 +1294,6 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
-        ///   查找类似 TimeWovenIntoGold 的本地化字符串。
-        /// </summary>
-        internal static string TimeWovenIntoGold {
-            get {
-                return ResourceManager.GetString("TimeWovenIntoGold", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查找类似 Tingyun 的本地化字符串。
         /// </summary>
         internal static string Tingyun {
@@ -1371,15 +1317,6 @@ namespace SREmulator.Localizations {
         internal static string TrendOfTheUniversalMarket {
             get {
                 return ResourceManager.GetString("TrendOfTheUniversalMarket", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Tribbie 的本地化字符串。
-        /// </summary>
-        internal static string Tribbie {
-            get {
-                return ResourceManager.GetString("Tribbie", resourceCulture);
             }
         }
         

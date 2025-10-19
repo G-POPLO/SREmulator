@@ -26,11 +26,8 @@ namespace SREmulator.Localizations
         [SRLightConeEventWarp(ContractZero, 1, 1, 1, IncessantRain, SubscribeForMore, MemoriesOfThePast, MakeTheWorldClamor)]
         [SRCharacterEventWarp(ContractZero, 2, 1, 5, SilverWolf, Asta, Lynx, Hanya)]
         [SRLightConeEventWarp(ContractZero, 2, 1, 5, IncessantRain, UnderTheBlueSky, PostOpConversation, TheBirthOfTheSelf)]
-        [SRCharacterEventWarp(IndelibleCoterieSilverWolf, 1, 3, 0, SilverWolf, Tingyun, Hanya, Sushang)]
-        [SRLightConeEventWarp(IndelibleCoterieSilverWolf, 1, 3, 0, IncessantRain, GeniusesGreetings, SubscribeForMore, DanceDanceDance)]
         [SRAliases("silver-wolf", "silverwolf", "yinlang")]
         public const string ContractZero = nameof(ContractZero);
-        public const string IndelibleCoterieSilverWolf = nameof(IndelibleCoterieSilverWolf);
 
         [SRCharacterEventWarp(LaicPursuit, 1, 1, 1, Luocha, Pela, Qingque, Yukong)]
         [SRLightConeEventWarp(LaicPursuit, 1, 1, 1, EchoesOfTheCoffin, GoodNightAndSleepWell, DanceDanceDance, GeniusesRepose)]
@@ -147,19 +144,14 @@ namespace SREmulator.Localizations
         [SRLightConeEventWarp(JustIntonation, 1, 2, 2, FlowingNightglow, Swordplay, BoundlessChoreo, PerfectTiming)]
         [SRCharacterEventWarp(IndelibleCoterieRobin, 1, 2, 5, Robin, Moze, Asta, Luka)]
         [SRLightConeEventWarp(IndelibleCoterieRobin, 1, 2, 5, FlowingNightglow, Swordplay, ResolutionShinesAsPearlsOfSweat, TheBirthOfTheSelf)]
-        [SRCharacterEventWarp(IndelibleCoterieRobin, 2, 3, 0, Robin, Tingyun, Hanya, Sushang)]
-        [SRLightConeEventWarp(IndelibleCoterieRobin, 2, 3, 0, FlowingNightglow, GeniusesGreetings, SubscribeForMore, DanceDanceDance)]
         [SRAliases("robin", "zhigengniao")]
         public const string JustIntonation = nameof(JustIntonation);
         public const string IndelibleCoterieRobin = nameof(IndelibleCoterieRobin);
 
         [SRCharacterEventWarp(DustyTrailsLoneStar, 1, 2, 2, Boothill, Pela, Luka, Hook)]
         [SRLightConeEventWarp(DustyTrailsLoneStar, 1, 2, 2, SailingTowardsASecondLife, GeniusesRepose, ASecretVow, LandausChoice)]
-        [SRCharacterEventWarp(IndelibleCoterieBoothill, 1, 3, 0, Boothill, Tingyun, Hanya, Sushang)]
-        [SRLightConeEventWarp(IndelibleCoterieBoothill, 1, 3, 0, SailingTowardsASecondLife, GeniusesGreetings, SubscribeForMore, DanceDanceDance)]
         [SRAliases("boothill", "botiou")]
         public const string DustyTrailsLoneStar = nameof(DustyTrailsLoneStar);
-        public const string IndelibleCoterieBoothill = nameof(IndelibleCoterieBoothill);
 
         [SRCharacterEventWarp(FirefullFlyshine, 1, 2, 3, Firefly, Xueyi, Misha, Gallagher)]
         [SRLightConeEventWarp(FirefullFlyshine, 1, 2, 3, WhereaboutsShouldDreamsRest, MemoriesOfThePast, DayOneOfMyNewLife, EyesOfThePrey)]
@@ -170,11 +162,8 @@ namespace SREmulator.Localizations
 
         [SRCharacterEventWarp(LienOnLifeLeaseOnFate, 1, 2, 3, Jade, Serval, Natasha, Asta)]
         [SRLightConeEventWarp(LienOnLifeLeaseOnFate, 1, 2, 3, YetHopeIsPriceless, SharedFeeling, TrendOfTheUniversalMarket, AfterTheCharmonyFall)]
-        [SRCharacterEventWarp(IndelibleCoterieJade, 1, 3, 0, Jade, Natasha, Asta, Moze)]
-        [SRLightConeEventWarp(IndelibleCoterieJade, 1, 3, 0, YetHopeIsPriceless, OnlySilenceRemains, LandausChoice, PoisedToBloom)]
         [SRAliases("jade", "feicui")]
         public const string LienOnLifeLeaseOnFate = nameof(LienOnLifeLeaseOnFate);
-        public const string IndelibleCoterieJade = nameof(IndelibleCoterieJade);
 
         [SRCharacterEventWarp(EarthHurledEtherCurled, 1, 2, 4, Yunli, Hanya, Yukong, Lynx)]
         [SRLightConeEventWarp(EarthHurledEtherCurled, 1, 2, 4, DanceAtSunset, TheMolesWelcomeYou, PerfectTiming, TheBirthOfTheSelf)]
@@ -188,19 +177,13 @@ namespace SREmulator.Localizations
 
         [SRCharacterEventWarp(StormridersBolt, 1, 2, 5, Feixiao, Moze, Asta, Luka)]
         [SRLightConeEventWarp(StormridersBolt, 1, 2, 5, IVentureForthToHunt, Swordplay, ResolutionShinesAsPearlsOfSweat, TheBirthOfTheSelf)]
-        [SRCharacterEventWarp(IndelibleCoterieFeixiao, 1, 3, 0, Feixiao, Natasha, Asta, Moze)]
-        [SRLightConeEventWarp(IndelibleCoterieFeixiao, 1, 3, 0, IVentureForthToHunt, OnlySilenceRemains, LandausChoice, PoisedToBloom)]
         [SRAliases("feixiao")]
         public const string StormridersBolt = nameof(StormridersBolt);
-        public const string IndelibleCoterieFeixiao = nameof(IndelibleCoterieFeixiao);
 
         [SRCharacterEventWarp(LetScentSinkIn, 1, 2, 5, Lingsha, Natasha, Guinaifen, Misha)]
         [SRLightConeEventWarp(LetScentSinkIn, 1, 2, 5, ScentAloneStaysTrue, ShadowedByNight, SharedFeeling, PlanetaryRendezvous)]
-        [SRCharacterEventWarp(IndelibleCoterieLingsha, 1, 3, 0, Lingsha, Natasha, Asta, Moze)]
-        [SRLightConeEventWarp(IndelibleCoterieLingsha, 1, 3, 0, ScentAloneStaysTrue, OnlySilenceRemains, LandausChoice, PoisedToBloom)]
         [SRAliases("lingsha")]
         public const string LetScentSinkIn = nameof(LetScentSinkIn);
-        public const string IndelibleCoterieLingsha = nameof(IndelibleCoterieLingsha);
 
         [SRCharacterEventWarp(EyesOfANinja, 1, 2, 6, Rappa, Yukong, Lynx, Xueyi)]
         [SRLightConeEventWarp(EyesOfANinja, 1, 2, 6, NinjutsuInscriptionDazzlingEvilbreaker, DreamsMontage, AfterTheCharmonyFall, UnderTheBlueSky)]
@@ -216,16 +199,5 @@ namespace SREmulator.Localizations
         [SRLightConeEventWarp(TheLongVoyageHome, 1, 2, 7, LongRoadLeadsHome, IndeliblePromise, ResolutionShinesAsPearlsOfSweat, ConcertForTwo)]
         [SRAliases("fugue", "wangguiren")]
         public const string TheLongVoyageHome = nameof(TheLongVoyageHome);
-
-        [SRCharacterEventWarp(MessageFromBeyond, 1, 3, 0, TheHerta, Natasha, Asta, Moze)]
-        [SRLightConeEventWarp(MessageFromBeyond, 1, 3, 0, IntoTheUnreachableVeil, OnlySilenceRemains, LandausChoice, PoisedToBloom)]
-        [SRAliases("the-herta", "daheita")]
-        public const string MessageFromBeyond = nameof(MessageFromBeyond);
-
-        [SRCharacterEventWarp(TailoredFate, 1, 3, 0, Aglaea, Tingyun, Hanya, Sushang)]
-        [SRLightConeEventWarp(TailoredFate, 1, 3, 0, TimeWovenIntoGold, GeniusesGreetings, SubscribeForMore, DanceDanceDance)]
-        [SRAliases("aglaea", "agelaiya")]
-        public const string TailoredFate = nameof(TailoredFate);
-
     }
 }

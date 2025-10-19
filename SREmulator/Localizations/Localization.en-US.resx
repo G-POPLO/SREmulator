@@ -567,25 +567,4 @@
   <data name="TheHerta" xml:space="preserve">
     <value>The Herta</value>
   </data>
-  <data name="Tribbie" xml:space="preserve">
-    <value>Tribbie</value>
-  </data>
-  <data name="Mydei" xml:space="preserve">
-    <value>Mydei</value>
-  </data>
-  <data name="IntoTheUnreachableVeil" xml:space="preserve">
-    <value>Into the Unreachable Veil</value>
-  </data>
-  <data name="TimeWovenIntoGold" xml:space="preserve">
-    <value>Time Woven into Gold</value>
-  </data>
-  <data name="GeniusesGreetings" xml:space="preserve">
-    <value>Geniuses' Greetings</value>
-  </data>
-  <data name="Shadowburn" xml:space="preserve">
-    <value>Shadowburn</value>
-  </data>
-  <data name="Reminiscence" xml:space="preserve">
-    <value>Reminiscence</value>
-  </data>
 </root>

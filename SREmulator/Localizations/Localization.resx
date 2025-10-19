@@ -717,32 +717,4 @@
     <value>TheHerta</value>
     <comment>Characters</comment>
   </data>
-  <data name="Tribbie" xml:space="preserve">
-    <value>Tribbie</value>
-    <comment>Characters</comment>
-  </data>
-  <data name="Mydei" xml:space="preserve">
-    <value>Mydei</value>
-    <comment>Characters</comment>
-  </data>
-  <data name="IntoTheUnreachableVeil" xml:space="preserve">
-    <value>IntoTheUnreachableVeil</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="TimeWovenIntoGold" xml:space="preserve">
-    <value>TimeWovenIntoGold</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="GeniusesGreetings" xml:space="preserve">
-    <value>GeniusesGreetings</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="Shadowburn" xml:space="preserve">
-    <value>Shadowburn</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="Reminiscence" xml:space="preserve">
-    <value>Reminiscence</value>
-    <comment>LightCones</comment>
-  </data>
 </root>

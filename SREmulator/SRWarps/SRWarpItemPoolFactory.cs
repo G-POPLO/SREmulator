@@ -22,9 +22,7 @@ namespace SREmulator.SRWarps
                 SRVersion.Ver2p4 or
                 SRVersion.Ver2p5 or
                 SRVersion.Ver2p6 or
-                SRVersion.Ver2p7 or
-                SRVersion.Ver3p0 or
-                SRVersion.Ver3p1 => 7,
+                SRVersion.Ver2p7 => 7,
 
                 _ => throw new ArgumentOutOfRangeException(nameof(version)),
             };
@@ -72,9 +70,7 @@ namespace SREmulator.SRWarps
                 SRVersion.Ver2p4 or
                 SRVersion.Ver2p5 or
                 SRVersion.Ver2p6 or
-                SRVersion.Ver2p7 or
-                SRVersion.Ver3p0 or
-                SRVersion.Ver3p1 => 7,
+                SRVersion.Ver2p7 => 7,
 
                 _ => throw new ArgumentOutOfRangeException(nameof(version)),
             };
@@ -106,9 +102,7 @@ namespace SREmulator.SRWarps
                 SRVersion.Ver2p4 or
                 SRVersion.Ver2p5 => 21,
                 SRVersion.Ver2p6 or
-                SRVersion.Ver2p7 or
-                SRVersion.Ver3p0 or
-                SRVersion.Ver3p1 => 23,
+                SRVersion.Ver2p7 => 22,
 
                 _ => throw new ArgumentOutOfRangeException(nameof(version)),
             };
@@ -179,9 +173,7 @@ namespace SREmulator.SRWarps
                 SRVersion.Ver2p4 => 25,
                 SRVersion.Ver2p5 => 26,
                 SRVersion.Ver2p6 => 27,
-                SRVersion.Ver2p7 or
-                SRVersion.Ver3p0 => 28,
-                SRVersion.Ver3p1 => 29,
+                SRVersion.Ver2p7 => 28,
 
                 _ => throw new ArgumentOutOfRangeException(nameof(version)),
             };
@@ -229,10 +221,7 @@ namespace SREmulator.SRWarps
             SRLightCones.ShadowedByNight,
 
             // 2.6
-            SRLightCones.DreamsMontage,
-
-            // 3.0
-            SRLightCones.GeniusesGreetings
+            SRLightCones.DreamsMontage
             ];
         public static SRStar4LightCone[] CreateStar4LightCones(SRVersion version)
         {
@@ -261,11 +250,7 @@ namespace SREmulator.SRWarps
             SRLightCones.Arrows,
             SRLightCones.Chorus,
             SRLightCones.CollapsingSky,
-            SRLightCones.Cornucopia,
-
-            // 3.0
-            SRLightCones.Shadowburn,
-            SRLightCones.Reminiscence
+            SRLightCones.Cornucopia
             ];
         internal static int VersionToStar3LightConeCount(SRVersion version)
         {
@@ -286,7 +271,6 @@ namespace SREmulator.SRWarps
                 SRVersion.Ver2p5 or
                 SRVersion.Ver2p6 or
                 SRVersion.Ver2p7 => 21,
-                SRVersion.Ver3p0 => 22,
 
                 _ => throw new ArgumentOutOfRangeException(nameof(version)),
             };

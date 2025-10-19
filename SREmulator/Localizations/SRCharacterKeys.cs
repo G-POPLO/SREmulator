@@ -157,14 +157,6 @@ namespace SREmulator.Localizations
         [SRAliases("aglaea", "agelaiya")]
         public const string Aglaea = nameof(Aglaea);
 
-        [SRCharacter(Tribbie, 5, true)]
-        [SRAliases("tribbie", "tibao")]
-        public const string Tribbie = nameof(Tribbie);
-
-        [SRCharacter(Mydei, 5, true)]
-        [SRAliases("mydei", "wandi")]
-        public const string Mydei = nameof(Mydei);
-
 
         [SRCharacter(Arlan, 4)]
         [SRAliases("arlan", "alan")]
