@@ -103,6 +103,14 @@
                                   VerticalContentAlignment="Center" 
                                   HorizontalAlignment="Left">
                         </CheckBox>
+                        <!-- 不计算副产物 -->
+                        <CheckBox x:Name="chknoreward" 
+            Content="不计算抽卡副产物" 
+            FontSize="15"
+            Margin="0,0,0,15"
+            VerticalContentAlignment="Center" 
+            HorizontalAlignment="Left">
+                        </CheckBox>
                     </StackPanel>
                 </Border>
 
@@ -176,45 +184,58 @@
                                    FontWeight="Light"
                                    Margin="0,0,0,5"/>
                         <!-- 操作按钮 -->
-                        <StackPanel Orientation="Horizontal">
-                            
-
+                        <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
                             <Button x:Name="btnCalculateChance" 
                                     Content="计算配置抽取可能性" 
                                     Width="150" 
                                     Height="40" 
                                     FontSize="14"
                                     Style="{DynamicResource AccentButtonStyle}"
-                      
+                                    Click="BtnCalculateChance_Click"
                                     HorizontalAlignment="Left"
                                     FontWeight="SemiBold"
                                     Margin="0,0,10,0" >
                             </Button>
 
-                            <Button x:Name="btnCalculate" 
+                            <!--<Button x:Name="btnCalculate" 
                                     Content="计算所需抽数" 
                                     Width="140" 
                                     Height="40" 
                                     FontSize="14"
                                     Style="{DynamicResource AccentButtonStyle}"
-                      
+                                    Click="BtnCalculate_Click"
                                     HorizontalAlignment="Left"
                                     FontWeight="SemiBold"
                                     Margin="0,0,10,0" >
-                            </Button>
+                            </Button>-->
 
                             <Button x:Name="btnExportCSV" 
                                     Content="导出CSV" 
                                     Width="120" 
- Height="40" 
- FontSize="14"
- Style="{DynamicResource AccentButtonStyle}"
-
- HorizontalAlignment="Left"
- FontWeight="SemiBold"
- Margin="0,0,10,0"/>
-
+                                    Height="40" 
+                                    FontSize="14"
+                                    Style="{DynamicResource AccentButtonStyle}"
+                                    Click="BtnExportCSV_Click"
+                                    HorizontalAlignment="Left"
+                                    FontWeight="SemiBold"
+                                    Margin="0,0,10,0"/>
                         </StackPanel>
+                        
+                        <!-- 结果显示区域 -->
+                        <Grid Margin="0,10,0,0">
+                            <Border Background="{DynamicResource SystemControlBackgroundChromeHighBrush}" 
+                                    BorderThickness="1" 
+                                    BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}"
+                                    CornerRadius="5">
+                                <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="5">
+                                    <TextBlock x:Name="txtResult" 
+                                               FontSize="14" 
+                                               TextWrapping="Wrap" 
+                                               Foreground="{DynamicResource SystemControlForegroundBaseHighBrush}" 
+                                               Margin="5"/>
+                                </ScrollViewer>
+                            </Border>
+                        </Grid>
                     </StackPanel>
                 </Border>
             </StackPanel>

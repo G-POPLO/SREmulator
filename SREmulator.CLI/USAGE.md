@@ -1,6 +1,6 @@
 ```
 USAGE:
-    sremulator.exe <COMMAND> [OPTIONS]
+    SREmulator.CLI <COMMAND> [OPTIONS]
 
 COMMANDS:
     result-statistics                   统计所有抽取结果
@@ -55,22 +55,14 @@ OPTIONS:
     --attempts <count>                  设置计算抽数或可能性时的尝试次数 
 
 
-    # 已过时 / 已移除
-    --character-event-warp              【已移除】设置卡池类型为角色活动跃迁（UP角色池）
-    --light-cone-event-warp             【已移除】设置卡池类型为光锥活动跃迁（UP光锥池）
-    --stellar-warp                      【已移除】设置卡池类型为群星跃迁（常驻池）
-    --departure-warp                    【已移除】设置卡池类型为始发跃迁（新手池）
-    --target-count5 <count>             【已移除】设置目标5星数量（限定池中表示UP5星角色，普池中表示特定5星角色）
-    --target-count4 <count>             【已移除】设置目标4星数量（限定池中表示特定UP4星角色，普池中表示特定4星角色）
-
 WARP-TYPES:
     角色活动跃迁（UP角色池）：character-event-warp, character
     光锥活动跃迁（UP光锥池）：light-cone-event-warp, light-cone, lightcone
     群星跃迁（常驻池）: stellar-warp, stellar
     始发跃迁（新手池）: departure-warp, departure
 
-WARP-NAMES:
-    （可直接使用对应角色的拼音，无论是角色池还是光锥池）
+WARP-NAMES:  
+（可直接使用对应角色的拼音，无论是角色池还是光锥池）
     希儿池: seele, xier
     景元池: jing-yuan, jingyuan
     银狼池: silver-wolf, silverwolf, yinlang
@@ -100,10 +92,15 @@ WARP-NAMES:
     乱破池: rappa, luanpo
     星期日池: sunday, xingqiri
     忘归人池: fugue, wangguiren
-    参见 https://github.com/Silencersn/SREmulator/blob/master/SREmulator/Localizations/SREventWarpKeys.cs 中的 SRAliasesAttribute
+    
+参见：
+https://github.com/Silencersn/SREmulator/blob/master/SREmulator/Localizations/SREventWarpKeys.cs 中的 SRAliasesAttribute
 
 TARGET-NAMES:
-    （角色与光锥均可直接使用拼音）
-    参见 https://github.com/Silencersn/SREmulator/blob/master/SREmulator/Localizations/SRCharacterKeys.cs 中的 SRAliasesAttribute
-    参见 https://github.com/Silencersn/SREmulator/blob/master/SREmulator/Localizations/SRLightConeKeys.cs 中的 SRAliasesAttribute
-    ```
+（角色与光锥均可直接使用拼音）
+    
+参见：
+https://github.com/Silencersn/SREmulator/blob/master/SREmulator/Localizations/SRCharacterKeys.cs 中的 SRAliasesAttribute
+参见：
+https://github.com/Silencersn/SREmulator/blob/master/SREmulator/Localizations/SRLightConeKeys.cs 中的 SRAliasesAttribute
+```

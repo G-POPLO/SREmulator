@@ -1,11 +1,10 @@
-using SREmulator; // 添加对SREmulator命名空间的引用
 using SREmulator.Attributes;
 using SREmulator.GUI.Model;
 using SREmulator.Localizations;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection; // 添加反射命名空间
+using System.Reflection; 
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -166,6 +165,177 @@ namespace SREmulator.GUI.View
         {
             // 使用正则表达式检查文本是否只包含数字
             return Regex.IsMatch(text, @"^[0-9]+$");
+        }
+
+        /// <summary>
+        /// 计算配置抽取可能性按钮点击事件
+        /// </summary>
+        private async void BtnCalculateChance_Click(object sender, RoutedEventArgs e)
+        {
+            await ExecuteCommandAsync(false);
+        }
+
+        /// <summary>
+        /// 计算所需抽数按钮点击事件
+        /// </summary>
+        private async void BtnCalculate_Click(object sender, RoutedEventArgs e)
+        {
+            await ExecuteCommandAsync(true);
+        }
+
+        /// <summary>
+        /// 导出CSV按钮点击事件
+        /// </summary>
+        private async void BtnExportCSV_Click(object sender, RoutedEventArgs e)
+        {
+            await ExecuteCommandAsync(false, true);
+        }
+
+        /// <summary>
+        /// 执行命令并显示结果
+        /// </summary>
+        private async Task ExecuteCommandAsync(bool isAverageWarps = false, bool isExportCSV = false)
+        {
+            try
+            {
+                // 构建命令参数
+                var commandArgs = new List<string>();
+                
+                // 设置命令类型
+                commandArgs.Add(isAverageWarps ? "achieve-average-warps" : "result-statistics");
+                
+                // 添加warp-name参数
+                if (cmbTarget.SelectedItem != null)
+                {
+                    string targetName = cmbTarget.SelectedItem.ToString() ?? string.Empty;
+                    if (!string.IsNullOrEmpty(targetName))
+                    {
+                        commandArgs.Add("--warp-name");
+                        commandArgs.Add(targetName);
+                    }
+                }
+                
+                // 添加stellar-jade参数
+                int stellarJadeCount;
+                if (int.TryParse(txtStellarJade.Text, out stellarJadeCount))
+                {
+                    commandArgs.Add("--stellar-jade");
+                    commandArgs.Add(stellarJadeCount.ToString());
+                }
+                
+                // 添加star-rail-special-pass参数
+                int starRailPassCount;
+                if (int.TryParse(txtStellarTicket.Text, out starRailPassCount))
+                {
+                    commandArgs.Add("--star-rail-special-pass");
+                    commandArgs.Add(starRailPassCount.ToString());
+                }
+                
+                // 添加warp-version参数
+                if (cmbCardPoolVersion.SelectedItem is WarpVersionInfo selectedVersion)
+                {
+                    commandArgs.Add("--warp-version");
+                    commandArgs.Add(selectedVersion.MajorVersion.ToString());
+                    commandArgs.Add(selectedVersion.MinorVersion.ToString());
+                }
+                
+                // 添加guarantee5参数
+                if (chkguarantee.IsChecked == true)
+                {
+                    commandArgs.Add("--guarantee5");
+                }
+                
+                // 添加output参数（导出CSV）
+                if (isExportCSV)
+                {
+
+                    commandArgs.Add("--output");
+       
+                }
+                
+                // 添加--new-warp参数，指定角色卡池类型
+                commandArgs.Add("--new-warp");
+                commandArgs.Add("character");
+                
+                // 添加--unlimited-resources参数
+                if (chkInfiniteResources.IsChecked == true)
+                {
+                    commandArgs.Add("--unlimited-resources");
+                }
+                
+                // 添加--no-rewards参数
+                if (chknoreward.IsChecked == true)
+                {
+                    commandArgs.Add("--no-rewards");
+                }
+                
+                // CLI可执行文件路径
+                string cliExePath = System.IO.Path.Combine(
+                    AppDomain.CurrentDomain.BaseDirectory,
+                    "SREmulator.CLI.exe");
+                
+                
+                
+                StringBuilder output = new();
+                StringBuilder error = new();
+                
+                // 执行命令
+                var process = new System.Diagnostics.Process
+                {
+                    StartInfo = new System.Diagnostics.ProcessStartInfo
+                    {
+                        FileName = cliExePath,
+                        Arguments = string.Join(" ", commandArgs),
+                        RedirectStandardOutput = true,
+                        RedirectStandardError = true,
+                        UseShellExecute = false,
+                        CreateNoWindow = false,
+                        StandardOutputEncoding = System.Text.Encoding.UTF8,
+                        StandardErrorEncoding = System.Text.Encoding.UTF8
+                    }
+                };
+                
+                // 添加调试信息，显示完整命令
+                string fullCommand = $"{cliExePath} {process.StartInfo.Arguments}";
+                output.AppendLine("执行命令: " + fullCommand);
+                
+                process.OutputDataReceived += (sender, e) =>
+                {
+                    if (!string.IsNullOrEmpty(e.Data))
+                    {
+                        output.AppendLine(e.Data);
+                    }
+                };
+                
+                process.ErrorDataReceived += (sender, e) =>
+                {
+                    if (!string.IsNullOrEmpty(e.Data))
+                    {
+                        error.AppendLine(e.Data);
+                    }
+                };
+                
+                process.Start();
+                process.BeginOutputReadLine();
+                process.BeginErrorReadLine();
+                
+                await process.WaitForExitAsync();
+                
+                // 显示结果
+                string result = output.ToString();
+                if (!string.IsNullOrEmpty(error.ToString()))
+                {
+                    result += "\n\n错误信息:\n" + error.ToString();
+                }
+                
+                // 在页面上显示结果
+                txtResult.Text = result;
+                
+            }
+            catch (Exception ex)
+            {
+                txtResult.Text = "执行命令时发生错误: " + ex.Message;
+            }
         }
     }
 }
