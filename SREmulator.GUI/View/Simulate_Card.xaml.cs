@@ -210,7 +210,11 @@ namespace SREmulator.GUI.View
                 
                 // 设置命令类型
                 commandArgs.Add(isAverageWarps ? "achieve-average-warps" : "result-statistics");
-                
+
+                // 添加--new-warp参数，指定光锥卡池类型
+                commandArgs.Add("--new-warp");
+                commandArgs.Add("light-cone");
+
                 // 添加warp-name参数
                 if (cmbTarget.SelectedItem != null)
                 {
@@ -258,11 +262,7 @@ namespace SREmulator.GUI.View
                     commandArgs.Add("--output");
                    
                 }
-                
-                // 添加--new-warp参数，指定光锥卡池类型
-                commandArgs.Add("--new-warp");
-                commandArgs.Add("light-cone");
-                
+                                
                 // 添加--unlimited-resources参数
                 if (chkInfiniteResources.IsChecked == true)
                 {
