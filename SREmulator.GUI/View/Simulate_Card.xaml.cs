@@ -53,16 +53,15 @@ namespace SREmulator.GUI.View
             // 创建版本信息列表
             var versions = new List<WarpVersionInfo>();
 
-            // 使用反射动态获取SRVersion枚举中所有以"Ver"开头的版本值
+            // 使用反射动态获取SRVersion枚举中所有以"Ver"开头的字段名
             var versionType = typeof(SRVersion);
-            var versionValues = Enum.GetValues(versionType).Cast<SRVersion>()
-                .Where(v => v.ToString().StartsWith("Ver") && v != SRVersion.VersionForWarps)
-                .OrderBy(v => v); // 按枚举值排序
+            var versionNames = Enum.GetNames(versionType)
+                .Where(v => v.StartsWith("Ver") && v != "VersionForWarps")
+                .OrderBy(v => v);
 
             // 为每个版本创建WarpVersionInfo对象
-            foreach (var version in versionValues)
+            foreach (var versionName in versionNames)
             {
-                string versionName = version.ToString();
                 // 从版本名称中提取主版本号和次版本号
                 // 例如: Ver1p0 -> 主版本号: 1, 次版本号: 0
                 string versionNumber = versionName.Substring(3); // 去掉"Ver"前缀
@@ -73,7 +72,7 @@ namespace SREmulator.GUI.View
                     int.TryParse(parts[1], out int minorVersion))
                 {
                     string displayName = $"{majorVersion}.{minorVersion}";
-                    versions.Add(new WarpVersionInfo(displayName, (int)version, majorVersion, minorVersion));
+                    versions.Add(new WarpVersionInfo(displayName, (int)Enum.Parse<SRVersion>(versionName), majorVersion, minorVersion));
                 }
             }
 
