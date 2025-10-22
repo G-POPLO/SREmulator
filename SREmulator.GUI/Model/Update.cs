@@ -1,12 +1,14 @@
 ﻿using Microsoft.Toolkit.Uwp.Notifications;
-using Newtonsoft.Json.Linq;
 using SevenZip;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.IO.Compression;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
+using System.Text.Json;
+using System.Text.Json.Nodes;
 using System.Threading.Tasks;
 using System.Windows;
 using Windows.UI.Notifications;
@@ -27,12 +29,8 @@ namespace SREmulator.GUI.Model
             return $"{bytes:0.##} {sizes[order]}";
         }
 
-        public static JObject release_info;
-        public static string? latestVersion;
-
         public static async Task CheckForUpdatesAsync()
         {
-            var currentVersion = Application.ResourceAssembly.GetName().Version.ToString();
             try
             {
                 using HttpClient client = new();
@@ -50,17 +48,31 @@ namespace SREmulator.GUI.Model
 
                 // 从API获取最新版本信息
                 var response = await client.GetAsync(apiUrl);
+                response.EnsureSuccessStatusCode();
 
-                release_info = JObject.Parse(await response.Content.ReadAsStringAsync());
-                latestVersion = release_info["tag_name"]?.ToString();
+                var releaseInfo = JsonDocument.Parse(await response.Content.ReadAsStringAsync()).RootElement;
+                if (!releaseInfo.TryGetProperty("tag_name", out var tagNameElement))
+                    return;
+                    
+                var latestVersion = tagNameElement.GetString();
+                if (latestVersion is null)
+                    return;
 
-                if (Version.Parse(latestVersion) > Version.Parse(currentVersion))
+                var currentVersion = Application.ResourceAssembly.GetName().Version.ToString();
+
+                if (Version.Parse(latestVersion.TrimStart('v')) > Version.Parse(currentVersion))
                 {
-                    string updateBody = release_info["body"]?.ToString() ?? "无更新内容";
-                    bool? result = await ModernDialog.ShowMarkdownAsync($"发现新版本{latestVersion}\n\n更新内容:\n{updateBody}\n\n是否下载？", "提示");
+                    if (!releaseInfo.TryGetProperty("body", out var bodyElement))
+                        return;
+
+                    var body = bodyElement.GetString();
+                    if (body is null)
+                        return;
+
+                    bool? result = await ModernDialog.ShowMarkdownAsync($"发现新版本【{latestVersion}】\n\n更新内容:\n{body}\n\n是否下载？", "提示");
                     if (result == true)
                     {
-                        await DownloadAndUpdateAsync();
+                        await DownloadAndUpdateAsync(releaseInfo, latestVersion);
                     }
                     else
                     {
@@ -75,18 +87,40 @@ namespace SREmulator.GUI.Model
         }
 
 
-        private static async Task DownloadAndUpdateAsync()
+        private static async Task DownloadAndUpdateAsync(JsonElement releaseInfo, string latestVersion)
         {
             try
             {
-                string? downloadUrl = release_info["assets"]
-                    ?.FirstOrDefault(a => a["name"]?.ToString().EndsWith(".7z") == true)?["browser_download_url"]?.ToString();
-
-                if (!string.IsNullOrEmpty(downloadUrl))
+                if (!releaseInfo.TryGetProperty("assets", out var assetsElement) ||
+                    assetsElement.ValueKind is not JsonValueKind.Array)
                 {
+                    await ModernDialog.ShowErrorAsync($"下载失败，无法从服务器获取下载链接", "提示");
+                    return;
+                }
+
+                string? downloadUrl = null;
+                foreach (var assetElement in assetsElement.EnumerateArray())
+                {
+                    if (assetElement.ValueKind is not JsonValueKind.Object)
+                        continue;
+
+                    if (!assetElement.TryGetProperty("browser_download_url", out var downloadUrlElement))
+                        continue;
+
+                    downloadUrl = downloadUrlElement.GetString();
+                    if (downloadUrl is null)
+                        continue;
+
+                    var name = Path.GetFileName(downloadUrl);
+                    if (name is null)
+                        continue;
+
+                    if (!name.EndsWith(".zip") && !name.EndsWith(".7z"))
+                        continue;
+
                     var downloadDir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "download");
                     Directory.CreateDirectory(downloadDir);
-                    var downloadPath = Path.Combine(downloadDir, $"{latestVersion}.7z");
+                    var downloadPath = Path.Combine(downloadDir, name);
 
                     // 获取文件大小
                     using var client = new HttpClient();
@@ -210,9 +244,16 @@ namespace SREmulator.GUI.Model
                         // 在后台线程执行解压操作，避免阻塞UI线程
                         await Task.Run(() =>
                         {
-                            using (var extractor = new SevenZipExtractor(downloadPath))
+                            if (name.EndsWith(".7z"))
                             {
+                                using var extractor = new SevenZipExtractor(downloadPath);
                                 extractor.ExtractArchive(extractPath);
+                            }
+                            else
+                            {
+                                using var fileStream = File.OpenRead(downloadPath);
+                                var zipArchive = new ZipArchive(fileStream);
+                                zipArchive.ExtractToDirectory(extractPath);
                             }
 
                             // 解压完成后关闭通知
@@ -225,19 +266,15 @@ namespace SREmulator.GUI.Model
                         File.Delete(downloadPath); // 删除压缩包
 
                         // 启动Update.bat并退出程序
-                        var updateBatPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Update.bat");
-                        System.Diagnostics.Process.Start(updateBatPath);
-                        Environment.Exit(0);
+                        //var updateBatPath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Update.bat");
+                        //System.Diagnostics.Process.Start(updateBatPath);
+                        //Environment.Exit(0);
 
                     }
                     catch (Exception ex)
                     {
                         await ModernDialog.ShowErrorAsync($"解压失败：{ex.Message}", "提示");
                     }
-                }
-                else
-                {
-                    await ModernDialog.ShowErrorAsync("下载失败，无法从服务器获取下载链接", "提示");
                 }
             }
             catch (Exception ex)
