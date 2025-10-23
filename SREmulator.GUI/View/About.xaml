@@ -1,0 +1,123 @@
+<UserControl x:Class="SREmulator.GUI.View.About"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:SREmulator.GUI.View"
+      mc:Ignorable="d" 
+      d:DesignHeight="600" d:DesignWidth="800"
+      Loaded="About_Loaded"
+      >
+    
+    <Grid Background="{DynamicResource SystemControlBackgroundChromeHighBrush}">
+        <ScrollViewer VerticalScrollBarVisibility="Auto">
+            <StackPanel Margin="20">
+                <!-- 页面标题 -->
+                <TextBlock Text="关于" 
+                           FontSize="20" 
+                           FontWeight="SemiBold" 
+                           Margin="0,10,0,20"/>
+
+                <!-- 应用信息卡片 -->
+                <Border Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}" 
+                        Padding="20" 
+                        Margin="0,0,0,20"
+                        BorderThickness="1"
+                        BorderBrush="{DynamicResource SystemControlBackgroundChromeMediumBrush}">
+                    <StackPanel>
+                        <TextBlock Text="应用信息" 
+                                   FontSize="17" 
+                                   FontWeight="SemiBold" 
+                                   Margin="0,0,0,15"/>
+
+                        <!-- 应用名称 -->
+                        <StackPanel Orientation="Horizontal" 
+                                    Margin="0,0,0,15"
+                                    VerticalAlignment="Center">
+                            <TextBlock Text="应用名称:" 
+                                       VerticalAlignment="Center" 
+                                       FontSize="15" 
+                                       Width="100"/>
+                            <TextBlock Text="SREmulator.GUI" 
+                                       VerticalAlignment="Center" 
+                                       FontSize="15" 
+                                       Margin="10,0"/>
+                        </StackPanel>
+
+                        <!-- 版本号 -->
+                        <StackPanel Orientation="Horizontal" 
+                                    Margin="0,0,0,15"
+                                    VerticalAlignment="Center">
+                            <TextBlock Text="版本号:" 
+                                       VerticalAlignment="Center" 
+                                       FontSize="15" 
+                                       Width="100"/>
+                            <TextBlock x:Name="txtVersion" 
+                                       VerticalAlignment="Center" 
+                                       FontSize="15" 
+                                       Margin="10,0"
+                                       Text=""/>
+                        </StackPanel>
+
+                        <!-- 官网链接 -->
+                        <StackPanel Orientation="Horizontal" 
+                                    Margin="0,0,0,15"
+                                    VerticalAlignment="Center">
+                            <TextBlock Text="仓库链接:" 
+                                       VerticalAlignment="Center" 
+                                       FontSize="15" 
+                                       Width="100"/>
+                            <TextBlock  Margin="10,0">
+                                <Hyperlink NavigateUri="https://github.com/Silencersn/SREmulator" RequestNavigate="Hyperlink_RequestNavigate">
+                                    https://github.com/Silencersn/SREmulator
+                                </Hyperlink>
+                            </TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+
+                <!-- 开发者信息卡片 -->
+                <Border Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}" 
+                        Padding="20" 
+                        Margin="0,0,0,20"
+                        BorderThickness="1"
+                        BorderBrush="{DynamicResource SystemControlBackgroundChromeMediumBrush}">
+                    <StackPanel>
+                        <TextBlock Text="开发者信息" 
+                                   FontSize="17" 
+                                   FontWeight="SemiBold" 
+                                   Margin="0,0,0,15"/>
+
+                        <!-- 开发者 -->
+                        <StackPanel Orientation="Horizontal" 
+                                    Margin="0,0,0,15"
+                                    VerticalAlignment="Center">
+                            <TextBlock Text="开发者:" 
+                                       VerticalAlignment="Center" 
+                                       FontSize="15" 
+                                       Width="100"/>
+                            <TextBlock Text="SilencerSN" 
+                                       VerticalAlignment="Center" 
+                                       FontSize="15" 
+                                       Margin="10,0"/>
+                        </StackPanel>
+
+                        <!-- 开源许可 -->
+                        <StackPanel Orientation="Horizontal" 
+                                    Margin="0,0,0,15"
+                                    VerticalAlignment="Center">
+                            <TextBlock Text="开源许可:" 
+                                       VerticalAlignment="Center" 
+                                       FontSize="15" 
+                                       Width="100"/>
+                            <TextBlock Text="MIT License" 
+                                       VerticalAlignment="Center" 
+                                       FontSize="15" 
+                                       Margin="10,0"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Border>
+            </StackPanel>
+        </ScrollViewer>
+    </Grid>
+</UserControl>

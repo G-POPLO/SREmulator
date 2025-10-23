@@ -1,34 +1,6 @@
-# SREmulator 崩铁抽卡模拟器
-可通过自定义玩家状态（如星琼数量、星轨专票数量）和卡池状态（如多少抽未出5星、有无大保底）来模拟崩铁抽卡流程
-
-## 功能
-- [x] 模拟所有角色活动跃迁
-- [x] 模拟所有光锥活动跃迁
-- [x] 模拟所有版本的群星跃迁
-- [x] 模拟始发跃迁
-- [x] 自定义跃迁
-- [x] 模拟跃迁完成后的副产物反馈（如星芒）
-- [x] 模拟玩家拥有的角色状态（影响星芒个数）
-- [x] 模拟卡池状态（大小保底，未出5星角色/5星光锥/4星角色/4星光锥的抽数）
-- [x] 模拟日常获取星琼/通票/专票
-- [x] 统计模拟结果
-- [x] 导出模拟结果
-- [x] 计算实现目标所需抽数或可能性
-    - [x] 可同时设置多个任意目标
-    - [x] 可同时设置不同卡池
-- [x] 多语言支持
-    - [x] 简体中文
-    - [x] 英文
-        - [x] 角色名、光锥名
-        - [ ] 文档
-    - [ ] 其它语言
-- [ ] 更多CLI选项 
-- [x] GUI
-
-## CLI
 ```
 USAGE:
-    sremulator.exe <COMMAND> [OPTIONS]
+    SREmulator.CLI <COMMAND> [OPTIONS]
 
 COMMANDS:
     result-statistics                   统计所有抽取结果
@@ -83,22 +55,14 @@ OPTIONS:
     --attempts <count>                  设置计算抽数或可能性时的尝试次数 
 
 
-    # 已过时 / 已移除
-    --character-event-warp              【已移除】设置卡池类型为角色活动跃迁（UP角色池）
-    --light-cone-event-warp             【已移除】设置卡池类型为光锥活动跃迁（UP光锥池）
-    --stellar-warp                      【已移除】设置卡池类型为群星跃迁（常驻池）
-    --departure-warp                    【已移除】设置卡池类型为始发跃迁（新手池）
-    --target-count5 <count>             【已移除】设置目标5星数量（限定池中表示UP5星角色，普池中表示特定5星角色）
-    --target-count4 <count>             【已移除】设置目标4星数量（限定池中表示特定UP4星角色，普池中表示特定4星角色）
-
 WARP-TYPES:
     角色活动跃迁（UP角色池）：character-event-warp, character
     光锥活动跃迁（UP光锥池）：light-cone-event-warp, light-cone, lightcone
     群星跃迁（常驻池）: stellar-warp, stellar
     始发跃迁（新手池）: departure-warp, departure
 
-WARP-NAMES:
-    （可直接使用对应角色的拼音，无论是角色池还是光锥池）
+WARP-NAMES:  
+（可直接使用对应角色的拼音，无论是角色池还是光锥池）
     希儿池: seele, xier
     景元池: jing-yuan, jingyuan
     银狼池: silver-wolf, silverwolf, yinlang
@@ -128,19 +92,15 @@ WARP-NAMES:
     乱破池: rappa, luanpo
     星期日池: sunday, xingqiri
     忘归人池: fugue, wangguiren
-    参见 https://github.com/Silencersn/SREmulator/blob/master/SREmulator/Localizations/SREventWarpKeys.cs 中的 SRAliasesAttribute
+    
+参见：
+https://github.com/Silencersn/SREmulator/blob/master/SREmulator/Localizations/SREventWarpKeys.cs 中的 SRAliasesAttribute
 
 TARGET-NAMES:
-    （角色与光锥均可直接使用拼音）
-    参见 https://github.com/Silencersn/SREmulator/blob/master/SREmulator/Localizations/SRCharacterKeys.cs 中的 SRAliasesAttribute
-    参见 https://github.com/Silencersn/SREmulator/blob/master/SREmulator/Localizations/SRLightConeKeys.cs 中的 SRAliasesAttribute
+（角色与光锥均可直接使用拼音）
+    
+参见：
+https://github.com/Silencersn/SREmulator/blob/master/SREmulator/Localizations/SRCharacterKeys.cs 中的 SRAliasesAttribute
+参见：
+https://github.com/Silencersn/SREmulator/blob/master/SREmulator/Localizations/SRLightConeKeys.cs 中的 SRAliasesAttribute
 ```
-
-### 示例
-> 我想在 v1.0 版本中将希儿从无抽取到2魂（抽 3 只希儿）
-> 我现在 50 抽未出5星角色，有大保底。
-> 我想知道我大概还需要多少抽才能实现目标
-```
-sremulator.cli.exe achieve-average-warps --new-warp character --warp-name seele --warp-version 1 0 --counter5 50 --target seele 3 --guarantee5
-```
-[更多示例](Examples/)

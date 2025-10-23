@@ -23,7 +23,7 @@ namespace SREmulator.CLI
             {
                 Console.WriteLine(e);
             }
-            Console.ReadKey(true);
+            //Console.ReadKey(true);
         }
     }
 }
