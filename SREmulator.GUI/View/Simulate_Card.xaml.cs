@@ -37,6 +37,7 @@ namespace SREmulator.GUI.View
             // 初始化时设置事件处理程序
             chkInfiniteResources.Checked += ChkInfiniteResources_Checked;
             chkInfiniteResources.Unchecked += ChkInfiniteResources_Unchecked;
+            InitializeWarpNames();
             // 初始化卡池版本数据
             InitializeWarpVersions();
             // 初始化角色数据
@@ -82,6 +83,32 @@ namespace SREmulator.GUI.View
         }
 
 
+        private void InitializeWarpNames()
+        {
+            // 创建卡池列表，添加默认选项
+            var warpNames = new List<string>();
+
+            // 使用反射获取SRCharacterKeys类中的所有字符常量
+            var characterKeysType = typeof(SREventWarpKeys);
+            var constFields = characterKeysType.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy)
+                .Where(f => f.IsLiteral && !f.IsInitOnly && f.FieldType == typeof(string));
+
+            // 获取每个字符的别名并添加到列表中
+            foreach (var field in constFields)
+            {
+                // 获取SRAliases属性
+                var aliasesAttr = field.GetCustomAttribute<SRAliasesAttribute>();
+                if (aliasesAttr != null)
+                {
+                    // 使用字段名作为显示文本
+                    warpNames.Add(field.Name);
+                }
+            }
+
+            // 绑定数据到ComboBox
+            cmbWarpName.ItemsSource = warpNames;
+            cmbWarpName.SelectedIndex = 0;
+        }
 
 
         private void ChkInfiniteResources_Checked(object sender, RoutedEventArgs e)
@@ -207,25 +234,24 @@ namespace SREmulator.GUI.View
             {
                 // 构建命令参数
                 var commandArgs = new List<string>();
-                
+
                 // 设置命令类型
-                commandArgs.Add(isAverageWarps ? "achieve-average-warps" : "result-statistics");
+                commandArgs.Add(isAverageWarps ? "achieve-average-warps" : "achieve-chance");
+
 
                 // 添加--new-warp参数，指定光锥卡池类型
                 commandArgs.Add("--new-warp");
                 commandArgs.Add("light-cone");
 
                 // 添加warp-name参数
-                if (cmbTarget.SelectedItem != null)
-                {
-                    string targetName = cmbTarget.SelectedItem.ToString() ?? string.Empty;
-                    if (!string.IsNullOrEmpty(targetName))
-                    {
-                        commandArgs.Add("--warp-name");
-                        commandArgs.Add(targetName);
-                    }
-                }
-                
+                commandArgs.Add("--warp-name");
+                commandArgs.Add((string)cmbWarpName.SelectedItem);
+
+                // 添加target参数
+                commandArgs.Add("--target");
+                commandArgs.Add((string)cmbTarget.SelectedItem);
+                commandArgs.Add(cmbTargetCount.Text);
+
                 // 添加stellar-jade参数
                 int stellarJadeCount;
                 if (int.TryParse(txtStellarJadeCount.Text, out stellarJadeCount))
