@@ -33,135 +33,135 @@ namespace SREmulator.Localizations
         public const string Yanqing = nameof(Yanqing);
 
 
-        [SRCharacter(Acheron, 5, true)]
+        [SRCharacter(Acheron, 5)]
         [SRAliases("acheron", "huangquan")]
         public const string Acheron = nameof(Acheron);
 
-        [SRCharacter(Argenti, 5, true)]
+        [SRCharacter(Argenti, 5)]
         [SRAliases("argenti", "yinzhi")]
         public const string Argenti = nameof(Argenti);
 
-        [SRCharacter(Aventurine, 5, true)]
+        [SRCharacter(Aventurine, 5)]
         [SRAliases("aventurine", "shajin")]
         public const string Aventurine = nameof(Aventurine);
 
-        [SRCharacter(BlackSwan, 5, true)]
+        [SRCharacter(BlackSwan, 5)]
         [SRAliases("black-swan", "blackswan", "heitiane")]
         public const string BlackSwan = nameof(BlackSwan);
 
-        [SRCharacter(Blade, 5, true)]
+        [SRCharacter(Blade, 5)]
         [SRAliases("blase", "ren")]
         public const string Blade = nameof(Blade);
 
-        [SRCharacter(Boothill, 5, true)]
+        [SRCharacter(Boothill, 5)]
         [SRAliases("boothill", "botiou")]
         public const string Boothill = nameof(Boothill);
 
-        [SRCharacter(DanHengImbibitorLunae, 5, true)]
+        [SRCharacter(DanHengImbibitorLunae, 5)]
         [SRAliases("dan-heng-imbibitor-lunae", "imbibitor-lunae", "danhengyinyue", "yinyue")]
         public const string DanHengImbibitorLunae = nameof(DanHengImbibitorLunae);
 
-        [SRCharacter(DrRatio, 5, true)]
+        [SRCharacter(DrRatio, 5)]
         [SRAliases("dr-ratio", "ratio", "zhenliyisheng")]
         public const string DrRatio = nameof(DrRatio);
 
-        [SRCharacter(Feixiao, 5, true)]
+        [SRCharacter(Feixiao, 5)]
         [SRAliases("feixiao")]
         public const string Feixiao = nameof(Feixiao);
 
-        [SRCharacter(Firefly, 5, true)]
+        [SRCharacter(Firefly, 5)]
         [SRAliases("firefly", "liuying")]
         public const string Firefly = nameof(Firefly);
 
-        [SRCharacter(FuXuan, 5, true)]
+        [SRCharacter(FuXuan, 5)]
         [SRAliases("fu-xuan", "fuxuan")]
         public const string FuXuan = nameof(FuXuan);
 
-        [SRCharacter(Huohuo, 5, true)]
+        [SRCharacter(Huohuo, 5)]
         [SRAliases("huohuo")]
         public const string Huohuo = nameof(Huohuo);
 
-        [SRCharacter(Jade, 5, true)]
+        [SRCharacter(Jade, 5)]
         [SRAliases("jade", "feicui")]
         public const string Jade = nameof(Jade);
 
-        [SRCharacter(Jiaoqiu, 5, true)]
+        [SRCharacter(Jiaoqiu, 5)]
         [SRAliases("jiaoqiu")]
         public const string Jiaoqiu = nameof(Jiaoqiu);
 
-        [SRCharacter(JingYuan, 5, true)]
+        [SRCharacter(JingYuan, 5)]
         [SRAliases("jing-yuan", "jingyuan")]
         public const string JingYuan = nameof(JingYuan);
 
-        [SRCharacter(Jingliu, 5, true)]
+        [SRCharacter(Jingliu, 5)]
         [SRAliases("jingliu")]
         public const string Jingliu = nameof(Jingliu);
 
-        [SRCharacter(Kafka, 5, true)]
+        [SRCharacter(Kafka, 5)]
         [SRAliases("kafka", "kafuka")]
         public const string Kafka = nameof(Kafka);
 
-        [SRCharacter(Lingsha, 5, true)]
+        [SRCharacter(Lingsha, 5)]
         [SRAliases("lingsha")]
         public const string Lingsha = nameof(Lingsha);
 
-        [SRCharacter(Luocha, 5, true)]
+        [SRCharacter(Luocha, 5)]
         [SRAliases("luocha")]
         public const string Luocha = nameof(Luocha);
 
-        [SRCharacter(Rappa, 5, true)]
+        [SRCharacter(Rappa, 5)]
         [SRAliases("rappa", "luanpo")]
         public const string Rappa = nameof(Rappa);
 
-        [SRCharacter(Robin, 5, true)]
+        [SRCharacter(Robin, 5)]
         [SRAliases("robin", "zhigengniao")]
         public const string Robin = nameof(Robin);
 
-        [SRCharacter(RuanMei, 5, true)]
+        [SRCharacter(RuanMei, 5)]
         [SRAliases("ruan-mei", "ruanmei")]
         public const string RuanMei = nameof(RuanMei);
 
-        [SRCharacter(Seele, 5, true)]
+        [SRCharacter(Seele, 5)]
         [SRAliases("seele", "xier")]
         public const string Seele = nameof(Seele);
 
-        [SRCharacter(SilverWolf, 5, true)]
+        [SRCharacter(SilverWolf, 5)]
         [SRAliases("silver-wolf", "yinlang")]
         public const string SilverWolf = nameof(SilverWolf);
 
-        [SRCharacter(Sparkle, 5, true)]
+        [SRCharacter(Sparkle, 5)]
         [SRAliases("sparkle", "huahuo")]
         public const string Sparkle = nameof(Sparkle);
 
-        [SRCharacter(TopazNumby, 5, true)]
+        [SRCharacter(TopazNumby, 5)]
         [SRAliases("topaz-numby", "topaz", "tuopa-zhangzhang", "tuopa")]
         public const string TopazNumby = nameof(TopazNumby);
 
-        [SRCharacter(Yunli, 5, true)]
+        [SRCharacter(Yunli, 5)]
         [SRAliases("yunli")]
         public const string Yunli = nameof(Yunli);
 
-        [SRCharacter(Sunday, 5, true)]
+        [SRCharacter(Sunday, 5)]
         [SRAliases("sunday", "xingqiri")]
         public const string Sunday = nameof(Sunday);
 
-        [SRCharacter(Fugue, 5, true)]
+        [SRCharacter(Fugue, 5)]
         [SRAliases("fugue", "wangguiren")]
         public const string Fugue = nameof(Fugue);
 
-        [SRCharacter(TheHerta, 5, true)]
+        [SRCharacter(TheHerta, 5)]
         [SRAliases("the-herta", "daheita")]
         public const string TheHerta = nameof(TheHerta);
 
-        [SRCharacter(Aglaea, 5, true)]
+        [SRCharacter(Aglaea, 5)]
         [SRAliases("aglaea", "agelaiya")]
         public const string Aglaea = nameof(Aglaea);
 
-        [SRCharacter(Tribbie, 5, true)]
+        [SRCharacter(Tribbie, 5)]
         [SRAliases("tribbie", "tibao")]
         public const string Tribbie = nameof(Tribbie);
 
-        [SRCharacter(Mydei, 5, true)]
+        [SRCharacter(Mydei, 5)]
         [SRAliases("mydei", "wandi")]
         public const string Mydei = nameof(Mydei);
 
