@@ -12,17 +12,18 @@ namespace SREmulator.CLI
 
         static CLICommands()
         {
-            List<CLICommand> commands = [];
-            var commandType = typeof(CLICommand);
-            var assembly = commandType.Assembly;
-            foreach (var type in assembly.GetTypes())
+            Commands = [];
+
+            AppendCommand<HelpCommand>();
+            AppendCommand<ResultStatisticsCommand>();
+            AppendCommand<AchieveAverageWarpsCommand>();
+            AppendCommand<AchieveChanceCommand>();
+
+            static void AppendCommand<T>() where T : CLICommand, new()
             {
-                if (!type.IsAbstract && type.IsSubclassOf(commandType))
-                {
-                    commands.Add((CLICommand)Activator.CreateInstance(type)!);
-                }
+                var command = new T();
+                Commands.Add(command.Name, command);
             }
-            Commands = commands.ToDictionary(command => command.Name);
         }
 
         public static void TryExecute(CLIArgs args)

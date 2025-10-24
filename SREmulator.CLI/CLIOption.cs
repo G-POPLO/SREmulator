@@ -9,17 +9,46 @@ namespace SREmulator.CLI
 
         static CLIOptions()
         {
-            List<CLIOption> options = [];
-            var optionType = typeof(CLIOption);
-            var assembly = optionType.Assembly;
-            foreach (var type in assembly.GetTypes())
+            Options = [];
+
+            AppendOption<PauseOption>();
+            AppendOption<SilentOption>();
+            AppendOption<ReturnOption>();
+            AppendOption<ExportOption>();
+            AppendOption<OutputOption>();
+            AppendOption<StarRailPassOption>();
+            AppendOption<StarRailSpecialPassOption>();
+            AppendOption<UndyingStarlightOption>();
+            AppendOption<StellarJadeOption>();
+            AppendOption<OneiricShardOption>();
+            AppendOption<EidolonOption>();
+            AppendOption<UnlimitedResourcesOption>();
+            AppendOption<Counter5Option>();
+            AppendOption<Guarantee5Option>();
+            AppendOption<Counter5CharacterOption>();
+            AppendOption<Counter5LightConeOption>();
+            AppendOption<Counter4Option>();
+            AppendOption<Guarantee4Option>();
+            AppendOption<Counter4CharacterOption>();
+            AppendOption<Counter4LightConeOption>();
+            AppendOption<WarpNameOption>();
+            AppendOption<WarpVersionOption>();
+            AppendOption<TargetOption>();
+            AppendOption<AttemptsOption>();
+            AppendOption<DaysOption>();
+            AppendOption<ExpressSupplyPassOption>();
+            AppendOption<HelpOption>();
+            AppendOption<LanguageOption>();
+            AppendOption<NoRewardsOption>();
+            AppendOption<NewWarpOption>();
+            AppendOption<CustomWarpOption>();
+            AppendOption<EquilibriumLevelOption>();
+
+            static void AppendOption<T>() where T : CLIOption, new()
             {
-                if (!type.IsAbstract && type.IsSubclassOf(optionType))
-                {
-                    options.Add((CLIOption)Activator.CreateInstance(type)!);
-                }
+                var option = new T();
+                Options.Add(option.Name, option);
             }
-            Options = options.ToDictionary(option => option.Name);
         }
 
         public static bool TryApplyOption(string name, CLIArgs args, CLIArgsSource source)
