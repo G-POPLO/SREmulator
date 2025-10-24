@@ -14,8 +14,7 @@
                           IsTabStop="False" 
                           PaneDisplayMode="Top"
                           SelectionChanged="NavigationView_SelectionChanged"
-                            IsSettingsVisible="False"
-    AlwaysShowHeader="True"
+                          IsSettingsVisible="False"  
     IsBackButtonVisible="Collapsed"
     IsBackEnabled="False">
             <ui:NavigationView.MenuItems>
