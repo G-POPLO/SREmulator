@@ -76,7 +76,7 @@ namespace SREmulator.SRWarps
 
         public static ISRWarpResultItem GetCommonStar5(int counter5Character, int counter5LightCone, SRWarpStats warpStats)
         {
-            if (warpStats.WarpType is SRWarpType.CharacterEventWarp)
+            if (warpStats.WarpType is SRWarpType.CharacterEventWarp or SRWarpType.DepartureWarp)
             {
                 return OneOf(warpStats.Common5Characters);
             }
