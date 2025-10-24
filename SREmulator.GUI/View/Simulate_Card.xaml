@@ -6,10 +6,10 @@
       xmlns:local="clr-namespace:SREmulator.GUI.View"
       xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
       mc:Ignorable="d" 
-      d:DesignHeight="800" d:DesignWidth="800"
+      d:DesignHeight="950" d:DesignWidth="800"
       Title="光锥跃迁">
 
-    <Grid Background="{DynamicResource SystemControlBackgroundChromeHighBrush}">
+    <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="20">
                 <!-- 页面标题 -->
@@ -22,7 +22,7 @@
                 <Border Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}" 
                         Padding="20" 
                         Margin="0,0,0,20"
-                        BorderThickness="1"
+                       
                         BorderBrush="{DynamicResource SystemControlBackgroundChromeMediumBrush}">
                     <StackPanel>
                         <TextBlock Text="抽卡配置" 
@@ -133,7 +133,7 @@ SelectedValuePath="VersionKey"/>
                 <Border Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}" 
                         Padding="20" 
                         Margin="0,0,0,20"
-                        BorderThickness="1"
+                        
                         BorderBrush="{DynamicResource SystemControlBackgroundChromeMediumBrush}">
                     <StackPanel>
                         <TextBlock Text="目标配置" 
@@ -183,7 +183,7 @@ SelectedValuePath="VersionKey"/>
                 <Border Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}" 
                         Padding="20" 
                         Margin="0,0,0,20"
-                        BorderThickness="1"
+                       
                         BorderBrush="{DynamicResource SystemControlBackgroundChromeMediumBrush}">
                     <StackPanel>
                         <TextBlock Text="抽卡结果" 
@@ -238,7 +238,7 @@ SelectedValuePath="VersionKey"/>
                         <!-- 结果显示区域 -->
                         <Grid Margin="0,10,0,0">
                             <Border Background="{DynamicResource SystemControlBackgroundChromeHighBrush}" 
-                                    BorderThickness="1" 
+                                    
                                     BorderBrush="{DynamicResource SystemControlForegroundBaseLowBrush}"
                                     CornerRadius="5">
                                 <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="5">
@@ -250,6 +250,7 @@ SelectedValuePath="VersionKey"/>
                                 </ScrollViewer>
                             </Border>
                         </Grid>
+                        
                     </StackPanel>
                 </Border>
             </StackPanel>

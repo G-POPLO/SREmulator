@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using iNKORE.UI.WPF.Modern.Controls;
 using SREmulator.GUI.Properties;
 
 namespace SREmulator.GUI.View
@@ -25,7 +25,7 @@ namespace SREmulator.GUI.View
         {
             InitializeComponent();
             Loaded += Setting_Loaded;
-            btnSave.Click += BtnSave_Click;
+            
         }
 
         private void Setting_Loaded(object sender, RoutedEventArgs e)
@@ -44,7 +44,7 @@ namespace SREmulator.GUI.View
         {
             // 保存UI控件的值到设置文件
             SaveSettings();
-            MessageBox.Show("设置已保存", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
+            iNKORE.UI.WPF.Modern.Controls.MessageBox.Show("设置已保存", "提示", MessageBoxButton.OK, MessageBoxImage.Information);
         }
 
         private void SaveSettings()
@@ -53,5 +53,6 @@ namespace SREmulator.GUI.View
             Settings.Default.DownloadIndex = (byte)cmbUpdateSource.SelectedIndex;                    
             Settings.Default.Save();
         }
+
     }
 }

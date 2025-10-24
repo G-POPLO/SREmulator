@@ -9,7 +9,7 @@
       Loaded="About_Loaded"
       >
     
-    <Grid Background="{DynamicResource SystemControlBackgroundChromeHighBrush}">
+    <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="20">
                 <!-- 页面标题 -->
@@ -22,7 +22,7 @@
                 <Border Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}" 
                         Padding="20" 
                         Margin="0,0,0,20"
-                        BorderThickness="1"
+                       
                         BorderBrush="{DynamicResource SystemControlBackgroundChromeMediumBrush}">
                     <StackPanel>
                         <TextBlock Text="应用信息" 
@@ -80,7 +80,7 @@
                 <Border Background="{DynamicResource SystemControlBackgroundChromeMediumBrush}" 
                         Padding="20" 
                         Margin="0,0,0,20"
-                        BorderThickness="1"
+                       
                         BorderBrush="{DynamicResource SystemControlBackgroundChromeMediumBrush}">
                     <StackPanel>
                         <TextBlock Text="开发者信息" 
