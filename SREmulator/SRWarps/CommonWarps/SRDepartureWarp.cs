@@ -20,18 +20,25 @@ namespace SREmulator.SRWarps.CommonWarps
         public override bool PreWarp(SRPlayer player, int count)
         {
             var stats = new DepartureStats(player);
-            if (stats.Counter >= 50) return false;
-            if (count is not 1 or 10) return false;
+
+            if (stats.Counter >= 50)
+                return false;
+
+            if (count is not (1 or 10))
+                return false;
+
             if (stats.NoCost >= count)
             {
                 stats.NoCost -= (uint)count;
                 return true;
             }
-            if (player.WarpCurrencyStats.TryConsumeStarRailPass(8))
+
+            if ((stats.Counter + stats.NoCost) <= 40 && player.WarpCurrencyStats.TryConsumeStarRailPass(8))
             {
                 stats.NoCost += 10 - (uint)count;
                 return true;
             }
+
             return false;
         }
 
