@@ -24,8 +24,7 @@ namespace SREmulator.GUI.View
         public Setting()
         {
             InitializeComponent();
-            Loaded += Setting_Loaded;
-            
+            Loaded += Setting_Loaded;         
         }
 
         private void Setting_Loaded(object sender, RoutedEventArgs e)
@@ -38,6 +37,7 @@ namespace SREmulator.GUI.View
         {        
             chkAutoUpdate.IsChecked = Settings.Default.AutoUpdate;        
             cmbUpdateSource.SelectedIndex = Settings.Default.DownloadIndex;
+            cmbLanguageSource.SelectedIndex = Settings.Default.LanguageIndex;
         }
 
         private void BtnSave_Click(object sender, RoutedEventArgs e)
@@ -50,7 +50,8 @@ namespace SREmulator.GUI.View
         private void SaveSettings()
         {          
             Settings.Default.AutoUpdate = chkAutoUpdate.IsChecked ?? false;         
-            Settings.Default.DownloadIndex = (byte)cmbUpdateSource.SelectedIndex;                    
+            Settings.Default.DownloadIndex = (byte)cmbUpdateSource.SelectedIndex;  
+            Settings.Default.LanguageIndex = (byte)cmbLanguageSource.SelectedIndex;
             Settings.Default.Save();
         }
 

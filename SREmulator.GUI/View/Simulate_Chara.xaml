@@ -127,6 +127,22 @@
             VerticalContentAlignment="Center" 
             HorizontalAlignment="Left">
                         </CheckBox>
+                        <!-- 导出CSV -->
+                        <CheckBox x:Name="chkExportCSV" 
+Content="结果导出CSV" 
+FontSize="15"
+Margin="0,0,0,15"
+VerticalContentAlignment="Center" 
+HorizontalAlignment="Left">
+                        </CheckBox>
+                        <!-- 计算平均抽数 -->
+                        <CheckBox x:Name="chkCalculateAverage" 
+Content="仅计算平均抽数" 
+FontSize="15"
+Margin="0,0,0,15"
+VerticalContentAlignment="Center" 
+HorizontalAlignment="Left">
+                        </CheckBox>
                     </StackPanel>
                 </Border>
 
@@ -214,28 +230,7 @@
                                     Margin="0,0,10,0" >
                             </Button>
 
-                            <!--<Button x:Name="btnCalculate" 
-                                    Content="计算所需抽数" 
-                                    Width="140" 
-                                    Height="40" 
-                                    FontSize="14"
-                                    Style="{DynamicResource AccentButtonStyle}"
-                                    Click="BtnCalculate_Click"
-                                    HorizontalAlignment="Left"
-                                    FontWeight="SemiBold"
-                                    Margin="0,0,10,0" >
-                            </Button>-->
 
-                            <Button x:Name="btnExportCSV" 
-                                    Content="导出CSV" 
-                                    Width="120" 
-                                    Height="40" 
-                                    FontSize="14"
-                                    Style="{DynamicResource AccentButtonStyle}"
-                                    Click="BtnExportCSV_Click"
-                                    HorizontalAlignment="Left"
-                                    FontWeight="SemiBold"
-                                    Margin="0,0,10,0"/>
                         </StackPanel>
                         
                         <!-- 结果显示区域 -->

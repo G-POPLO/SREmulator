@@ -46,5 +46,17 @@ namespace SREmulator.GUI.Properties {
                 this["DownloadIndex"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        public byte LanguageIndex {
+            get {
+                return ((byte)(this["LanguageIndex"]));
+            }
+            set {
+                this["LanguageIndex"] = value;
+            }
+        }
     }
 }

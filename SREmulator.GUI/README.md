@@ -11,5 +11,4 @@ SREmulator GUI 应用程序项目
 
 - [iNKORE.UI.WPF.Modern](https://github.com/iNKORE-NET/UI.WPF.Modern)
 - [SevenZipSharp](https://github.com/squid-box/SevenZipSharp)
-- [MVVM Toolkit](https://github.com/CommunityToolkit/dotnet)
-- [Newtonsoft.Json](https://www.newtonsoft.com/json)
+- [Microsoft.Toolkit.Uwp.Notifications](https://learn.microsoft.com/zh-cn/windows/apps/develop/notifications/app-notifications/send-local-toast?tabs=desktop-msix)

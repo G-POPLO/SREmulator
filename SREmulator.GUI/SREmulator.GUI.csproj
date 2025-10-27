@@ -18,7 +18,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="CommunityToolkit.Mvvm" Version="8.4.0" />
+    <None Remove="View\2a34b3d4.od4~" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="iNKORE.UI.WPF.Modern" Version="0.10.1" />
     <PackageReference Include="Markdig" Version="0.43.0" />
     <PackageReference Include="Markdig.Wpf" Version="0.5.0.1" />

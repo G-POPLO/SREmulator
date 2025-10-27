@@ -1,6 +1,6 @@
 ## 版本号获取
 
-应用程序的版本号通过[SRVersion.cs](SREmulator\SRVersion.cs)文件获取。
+应用程序的卡池版本通过[SRVersion.cs](SREmulator\SRVersion.cs)文件获取。
 
 页面解析版本号的代码如下：
 ```csharp
@@ -34,4 +34,3 @@
             }
 ```
 
-我不理解为什么要使用16进制存储版本号。不理解。

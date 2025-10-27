@@ -1,7 +1,13 @@
+using SREmulator.Attributes;
 using SREmulator.GUI.Model;
+using SREmulator.Localizations;
+using SREmulator.SRItems;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -10,14 +16,7 @@ using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
-using SREmulator.Localizations;
-using System.Reflection;
-using SREmulator.Attributes;
-using SREmulator.SRItems;
+
 
 namespace SREmulator.GUI.View
 {
@@ -125,8 +124,8 @@ namespace SREmulator.GUI.View
         {
             // 当"拥有无限抽卡资源"选中时，禁用星轨通票和星琼数量输入框
             bool isInfinite = chkInfiniteResources.IsChecked == true;
-            txtStarRailPassCount.IsEnabled = !isInfinite;
-            txtStellarJadeCount.IsEnabled = !isInfinite;
+            txtStarRailPass.IsEnabled = !isInfinite;
+            txtStellarJade.IsEnabled = !isInfinite;
         }
 
         /// <summary>
@@ -206,167 +205,171 @@ namespace SREmulator.GUI.View
         /// </summary>
         private async void BtnCalculateChance_Click(object sender, RoutedEventArgs e)
         {
-            await ExecuteCommandAsync(false);
+            await ExecuteCommandAsync();
         }
 
-        /// <summary>
-        /// 计算所需抽数按钮点击事件
-        /// </summary>
-        private async void BtnCalculate_Click(object sender, RoutedEventArgs e)
-        {
-            await ExecuteCommandAsync(true);
-        }
 
-        /// <summary>
-        /// 导出CSV按钮点击事件
-        /// </summary>
-        private async void BtnExportCSV_Click(object sender, RoutedEventArgs e)
-        {
-            await ExecuteCommandAsync(false, true);
-        }
+
+
+        // 简单地对含空格的参数加引号（仅用于Debug）
+        private static string QuoteArg(string s) => s.Contains(' ') ? $"\"{s}\"" : s;
 
         /// <summary>
         /// 执行命令并显示结果
         /// </summary>
-        private async Task ExecuteCommandAsync(bool isAverageWarps = false, bool isExportCSV = false)
+        private async Task ExecuteCommandAsync()
         {
+            var commandArgs = new List<string>
+            {
+
+                // 卡池类型：光锥
+                "--new-warp",
+                "light-cone"
+            };
+
+
+
+            // 卡池名称
+            AddRequiredArg(commandArgs, "--warp-name", cmbWarpName.SelectedItem as string);
+
+            // 抽取目标
+            if (cmbTarget.SelectedItem != null && !string.IsNullOrWhiteSpace(cmbTargetCount.Text))
+            {
+                commandArgs.Add("--target");
+                commandArgs.Add(cmbTarget.SelectedItem.ToString());
+                commandArgs.Add(cmbTargetCount.Text);
+            }
+
+            // 配置参数
+            AddNumericArg(commandArgs, "--stellar-jade", txtStellarJade.Text);
+            AddNumericArg(commandArgs, "--star-rail-special-pass", txtStarRailPass.Text);
+
+            // 卡池版本
+            if (cmbCardPoolVersion.SelectedItem is WarpVersionInfo ver)
+            {
+                commandArgs.Add("--warp-version");
+                commandArgs.Add(ver.MajorVersion.ToString());
+                commandArgs.Add(ver.MinorVersion.ToString());
+            }
+
+            // checkbox 选项
+            if (chkCalculateAverage.IsChecked == true)
+            {
+                commandArgs.Add("achieve-average-warps");
+            }
+            else
+            {
+                commandArgs.Add("achieve-chance");
+            }
+            AddFlagIfChecked(commandArgs, chkguarantee, "--guarantee5");
+            AddFlagIfChecked(commandArgs, chkInfiniteResources, "--unlimited-resources");
+            AddFlagIfChecked(commandArgs, chknoreward, "--no-rewards");
+
+            // 导出 CSV
+            if ((bool)chkExportCSV.IsChecked)
+            {
+                string outputPath = Path.Combine(
+                    Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments),
+                    $"sr_lightcone_result_{DateTime.Now:yyyyMMddHHmmss}.csv"
+                );
+                commandArgs.Add("--output");
+                commandArgs.Add(outputPath);
+            }
+
+            // CLI 路径
+            string cliExePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "SREmulator.CLI.exe");
+
+            if (!File.Exists(cliExePath))
+            {
+                txtResult.Text = "错误：未找到 SREmulator.CLI.exe，请确认程序文件是否存在。\n路径：" + cliExePath;
+                return;
+            }
+
             try
             {
-                // 构建命令参数
-                var commandArgs = new List<string>();
-
-                // 设置命令类型
-                commandArgs.Add(isAverageWarps ? "achieve-average-warps" : "achieve-chance");
-
-
-                // 添加--new-warp参数，指定光锥卡池类型
-                commandArgs.Add("--new-warp");
-                commandArgs.Add("light-cone");
-
-                // 添加warp-name参数
-                commandArgs.Add("--warp-name");
-                commandArgs.Add((string)cmbWarpName.SelectedItem);
-
-                // 添加target参数
-                commandArgs.Add("--target");
-                commandArgs.Add((string)cmbTarget.SelectedItem);
-                commandArgs.Add(cmbTargetCount.Text);
-
-                // 添加stellar-jade参数
-                int stellarJadeCount;
-                if (int.TryParse(txtStellarJadeCount.Text, out stellarJadeCount))
+                var startInfo = new ProcessStartInfo(cliExePath)
                 {
-                    commandArgs.Add("--stellar-jade");
-                    commandArgs.Add(stellarJadeCount.ToString());
-                }
-                
-                // 添加star-rail-special-pass参数
-                int starRailPassCount;
-                if (int.TryParse(txtStarRailPassCount.Text, out starRailPassCount))
-                {
-                    commandArgs.Add("--star-rail-special-pass");
-                    commandArgs.Add(starRailPassCount.ToString());
-                }
-                
-                // 添加warp-version参数
-                if (cmbCardPoolVersion.SelectedItem is WarpVersionInfo selectedVersion)
-                {
-                    commandArgs.Add("--warp-version");
-                    commandArgs.Add(selectedVersion.MajorVersion.ToString());
-                    commandArgs.Add(selectedVersion.MinorVersion.ToString());
-                }
-                
-                // 添加guarantee5参数
-                if (chkguarantee.IsChecked == true)
-                {
-                    commandArgs.Add("--guarantee5");
-                }
-                
-                // 添加output参数（导出CSV）
-                if (isExportCSV)
-                {
-                    commandArgs.Add("--output");
-                   
-                }
-                                
-                // 添加--unlimited-resources参数
-                if (chkInfiniteResources.IsChecked == true)
-                {
-                    commandArgs.Add("--unlimited-resources");
-                }
-                
-                // 添加--no-rewards参数
-                if (chknoreward.IsChecked == true)
-                {
-                    commandArgs.Add("--no-rewards");
-                }
-
-
-                // CLI可执行文件路径
-                string cliExePath = System.IO.Path.Combine(
-                    AppDomain.CurrentDomain.BaseDirectory,
-                    "SREmulator.CLI.exe");
-
-                StringBuilder output = new();
-                StringBuilder error = new();
-                
-                // 执行命令
-                var process = new System.Diagnostics.Process
-                {
-                    StartInfo = new System.Diagnostics.ProcessStartInfo
-                    {
-                        FileName = cliExePath,
-                        Arguments = string.Join(" ", commandArgs),
-                        RedirectStandardOutput = true,
-                        RedirectStandardError = true,
-                        UseShellExecute = false,
-                        CreateNoWindow = true,
-                        StandardOutputEncoding = System.Text.Encoding.UTF8,
-                        StandardErrorEncoding = System.Text.Encoding.UTF8
-                    }
+                    UseShellExecute = false,
+                    RedirectStandardOutput = true,
+                    RedirectStandardError = true,
+                    CreateNoWindow = true,
                 };
-                
-                // 添加调试信息，显示完整命令
-                string fullCommand = $"{cliExePath} {process.StartInfo.Arguments}";
-                output.AppendLine("执行命令: " + fullCommand);
-                
-                process.OutputDataReceived += (sender, e) =>
+
+                // 添加参数（自动处理空格/引号问题）
+                foreach (var arg in commandArgs)
                 {
-                    if (!string.IsNullOrEmpty(e.Data))
-                    {
+                    startInfo.ArgumentList.Add(arg);
+                }
+
+#if DEBUG
+                string fullCommand = $"{cliExePath} {string.Join(" ", commandArgs.Select(QuoteArg))}";
+                Console.WriteLine("执行命令: " + fullCommand);
+#endif
+
+                using var process = Process.Start(startInfo);
+                var output = new StringBuilder();
+                var error = new StringBuilder();
+
+                process.OutputDataReceived += (_, e) =>
+                {
+                    if (!string.IsNullOrEmpty(e?.Data))
                         output.AppendLine(e.Data);
-                    }
                 };
-                
-                process.ErrorDataReceived += (sender, e) =>
+
+                process.ErrorDataReceived += (_, e) =>
                 {
-                    if (!string.IsNullOrEmpty(e.Data))
-                    {
+                    if (!string.IsNullOrEmpty(e?.Data))
                         error.AppendLine(e.Data);
-                    }
                 };
-                
-                process.Start();
+
                 process.BeginOutputReadLine();
                 process.BeginErrorReadLine();
-                
+
                 await process.WaitForExitAsync();
-                
-                // 显示结果
-                string result = output.ToString();
+
+                string result = output.ToString().Trim();
                 if (!string.IsNullOrEmpty(error.ToString()))
                 {
-                    result += "\n\n错误信息:\n" + error.ToString();
+                    result += "\n\n错误信息:\n" + error.ToString().Trim();
                 }
-                
-                // 在页面上显示结果
+
                 txtResult.Text = result;
-                
+            }
+            catch (FileNotFoundException)
+            {
+                txtResult.Text = "错误：找不到 SREmulator.CLI.exe 文件。";
             }
             catch (Exception ex)
             {
-                txtResult.Text = "执行命令时发生错误: " + ex.Message;
+                txtResult.Text = "执行命令时发生未知错误: " + ex.Message;
             }
         }
+
+
+        private static void AddRequiredArg(List<string> args, string key, string value)
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                args.Add(key);
+                args.Add(value);
+            }
+        }
+
+        private static void AddNumericArg(List<string> args, string key, string value)
+        {
+            if (int.TryParse(value, out _) && !string.IsNullOrWhiteSpace(value))
+            {
+                args.Add(key);
+                args.Add(value);
+            }
+        }
+
+        private static void AddFlagIfChecked(List<string> args, CheckBox checkBox, string flag)
+        {
+            if (checkBox.IsChecked == true)
+                args.Add(flag);
+        }
+
+
     }
 }
