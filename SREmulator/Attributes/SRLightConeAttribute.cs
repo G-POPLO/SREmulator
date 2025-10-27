@@ -5,13 +5,11 @@
     {
         public string Key { get; }
         public int Rarity { get; }
-        public bool Limited { get; }
 
-        public SRLightConeAttribute(string key, int rarity, bool limited = false)
+        public SRLightConeAttribute(string key, int rarity)
         {
             Key = key;
             Rarity = rarity;
-            Limited = limited;
         }
     }
 }

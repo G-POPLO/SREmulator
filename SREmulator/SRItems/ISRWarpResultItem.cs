@@ -4,7 +4,6 @@
     {
         public SRItemRarity Rarity { get; }
         public string Name { get; }
-        public bool Limited { get; }
         public int Id { get; }
 
         bool IEquatable<ISRWarpResultItem>.Equals(ISRWarpResultItem? other)

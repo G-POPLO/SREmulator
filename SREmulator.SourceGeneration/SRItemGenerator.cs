@@ -13,9 +13,11 @@ namespace SREmulator.SourceGeneration
         public override string Attribute => SRAttributes.SRCharacterAttribute;
         public override int Id => SRIds.CharacterID;
 
-        public override string GetClassType(int rarity, bool limited)
+        public override string GetClassType(int rarity)
         {
-            if (rarity is 5) return limited ? "SRLimitedStar5Character" : "SRNonLimitedStar5Character";
+            if (rarity is 5)
+                return "SRStar5Character";
+
             return "SRStar4Character";
         }
     }
@@ -28,10 +30,14 @@ namespace SREmulator.SourceGeneration
         public override string Attribute => SRAttributes.SRLightConeAttribute;
         public override int Id => SRIds.LightConeId;
 
-        public override string GetClassType(int rarity, bool limited)
+        public override string GetClassType(int rarity)
         {
-            if (rarity is 5) return limited ? "SRLimitedStar5LightCone" : "SRNonLimitedStar5LightCone";
-            if (rarity is 4) return "SRStar4LightCone";
+            if (rarity is 5)
+                return "SRStar5LightCone";
+
+            if (rarity is 4)
+                return "SRStar4LightCone";
+
             return "SRStar3LightCone";
         }
     }
@@ -47,12 +53,11 @@ namespace SREmulator.SourceGeneration
         {
             public string Key;
             public int Rarity;
-            public bool Limited;
             public string Type;
             public string[] Names;
         }
 
-        public abstract string GetClassType(int rarity, bool limited);
+        public abstract string GetClassType(int rarity);
 
         public void Initialize(GeneratorInitializationContext context)
         {
@@ -76,8 +81,7 @@ namespace SREmulator.SourceGeneration
                 attributeData = member.GetAttribute(Attribute);
                 attributeData.Deconstruct(0, out item.Key);
                 attributeData.Deconstruct(1, out item.Rarity);
-                attributeData.Deconstruct(2, out item.Limited);
-                item.Type = GetClassType(item.Rarity, item.Limited);
+                item.Type = GetClassType(item.Rarity);
 
                 items.Add(item);
             }
