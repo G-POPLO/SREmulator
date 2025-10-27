@@ -64,7 +64,7 @@ namespace SREmulator.SRWarps
                 >= 17 => 255 + 2550 * (counter4Type - 16)
             };
         }
-        public static int GetLightConeWarpStar5TypeWeight(int counter4Type)
+        public static int GetLightConeWarpStar4TypeWeight(int counter4Type)
         {
             // 原神
             return counter4Type switch
@@ -76,7 +76,7 @@ namespace SREmulator.SRWarps
 
         public static ISRWarpResultItem GetCommonStar5(int counter5Character, int counter5LightCone, SRWarpStats warpStats)
         {
-            if (warpStats.WarpType is SRWarpType.CharacterEventWarp)
+            if (warpStats.WarpType is SRWarpType.CharacterEventWarp or SRWarpType.DepartureWarp)
             {
                 return OneOf(warpStats.Common5Characters);
             }
@@ -107,8 +107,8 @@ namespace SREmulator.SRWarps
             }
             else
             {
-                weightCharacter = GetLightConeWarpStar4Chance(counter4Character);
-                weightLightCone = GetLightConeWarpStar4Chance(counter4LightCone);
+                weightCharacter = GetLightConeWarpStar4TypeWeight(counter4Character);
+                weightLightCone = GetLightConeWarpStar4TypeWeight(counter4LightCone);
             }
             if (NextBool(weightCharacter, weightCharacter + weightLightCone))
             {
