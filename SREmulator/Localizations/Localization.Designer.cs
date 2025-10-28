@@ -19,7 +19,7 @@ namespace SREmulator.Localizations {
     // 类通过类似于 ResGen 或 Visual Studio 的工具自动生成的。
     // 若要添加或移除成员，请编辑 .ResX 文件，然后重新运行 ResGen
     // (以 /str 作为命令选项)，或重新生成 VS 项目。
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "18.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Localization {
@@ -66,6 +66,15 @@ namespace SREmulator.Localizations {
         internal static string Acheron {
             get {
                 return ResourceManager.GetString("Acheron", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 ADreamScentedInWheat 的本地化字符串。
+        /// </summary>
+        internal static string ADreamScentedInWheat {
+            get {
+                return ResourceManager.GetString("ADreamScentedInWheat", resourceCulture);
             }
         }
         
@@ -124,11 +133,29 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 Anaxa 的本地化字符串。
+        /// </summary>
+        internal static string Anaxa {
+            get {
+                return ResourceManager.GetString("Anaxa", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 AnInstantBeforeAGaze 的本地化字符串。
         /// </summary>
         internal static string AnInstantBeforeAGaze {
             get {
                 return ResourceManager.GetString("AnInstantBeforeAGaze", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Archer 的本地化字符串。
+        /// </summary>
+        internal static string Archer {
+            get {
+                return ResourceManager.GetString("Archer", resourceCulture);
             }
         }
         
@@ -178,6 +205,24 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 AThanklessCoronation 的本地化字符串。
+        /// </summary>
+        internal static string AThanklessCoronation {
+            get {
+                return ResourceManager.GetString("AThanklessCoronation", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 ATrailOfBygoneBlood 的本地化字符串。
+        /// </summary>
+        internal static string ATrailOfBygoneBlood {
+            get {
+                return ResourceManager.GetString("ATrailOfBygoneBlood", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Aventurine 的本地化字符串。
         /// </summary>
         internal static string Aventurine {
@@ -210,6 +255,15 @@ namespace SREmulator.Localizations {
         internal static string BeforeDawn {
             get {
                 return ResourceManager.GetString("BeforeDawn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 BeforeTheTutorialMissionStarts 的本地化字符串。
+        /// </summary>
+        internal static string BeforeTheTutorialMissionStarts {
+            get {
+                return ResourceManager.GetString("BeforeTheTutorialMissionStarts", resourceCulture);
             }
         }
         
@@ -277,11 +331,47 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 CarveTheMoonWeaveTheClouds 的本地化字符串。
+        /// </summary>
+        internal static string CarveTheMoonWeaveTheClouds {
+            get {
+                return ResourceManager.GetString("CarveTheMoonWeaveTheClouds", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Castorice 的本地化字符串。
+        /// </summary>
+        internal static string Castorice {
+            get {
+                return ResourceManager.GetString("Castorice", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Cerydra 的本地化字符串。
+        /// </summary>
+        internal static string Cerydra {
+            get {
+                return ResourceManager.GetString("Cerydra", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Chorus 的本地化字符串。
         /// </summary>
         internal static string Chorus {
             get {
                 return ResourceManager.GetString("Chorus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Cipher 的本地化字符串。
+        /// </summary>
+        internal static string Cipher {
+            get {
+                return ResourceManager.GetString("Cipher", resourceCulture);
             }
         }
         
@@ -367,6 +457,15 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 DanHengPermansorTerrae 的本地化字符串。
+        /// </summary>
+        internal static string DanHengPermansorTerrae {
+            get {
+                return ResourceManager.GetString("DanHengPermansorTerrae", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 DartingArrow 的本地化字符串。
         /// </summary>
         internal static string DartingArrow {
@@ -403,11 +502,29 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 DestinysThreadsForewoven 的本地化字符串。
+        /// </summary>
+        internal static string DestinysThreadsForewoven {
+            get {
+                return ResourceManager.GetString("DestinysThreadsForewoven", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 DreamsMontage 的本地化字符串。
         /// </summary>
         internal static string DreamsMontage {
             get {
                 return ResourceManager.GetString("DreamsMontage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 DreamvilleAdventure 的本地化字符串。
+        /// </summary>
+        internal static string DreamvilleAdventure {
+            get {
+                return ResourceManager.GetString("DreamvilleAdventure", resourceCulture);
             }
         }
         
@@ -439,11 +556,29 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 EpochEtchedInGoldenBlood 的本地化字符串。
+        /// </summary>
+        internal static string EpochEtchedInGoldenBlood {
+            get {
+                return ResourceManager.GetString("EpochEtchedInGoldenBlood", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 EternalCalculus 的本地化字符串。
         /// </summary>
         internal static string EternalCalculus {
             get {
                 return ResourceManager.GetString("EternalCalculus", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Evernight 的本地化字符串。
+        /// </summary>
+        internal static string Evernight {
+            get {
+                return ResourceManager.GetString("Evernight", resourceCulture);
             }
         }
         
@@ -466,6 +601,24 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 Fermata 的本地化字符串。
+        /// </summary>
+        internal static string Fermata {
+            get {
+                return ResourceManager.GetString("Fermata", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 FinalVictor 的本地化字符串。
+        /// </summary>
+        internal static string FinalVictor {
+            get {
+                return ResourceManager.GetString("FinalVictor", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 FineFruit 的本地化字符串。
         /// </summary>
         internal static string FineFruit {
@@ -484,11 +637,38 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 FlameOfBloodBlazeMyPath 的本地化字符串。
+        /// </summary>
+        internal static string FlameOfBloodBlazeMyPath {
+            get {
+                return ResourceManager.GetString("FlameOfBloodBlazeMyPath", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 FlamesAfar 的本地化字符串。
+        /// </summary>
+        internal static string FlamesAfar {
+            get {
+                return ResourceManager.GetString("FlamesAfar", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 FlowingNightglow 的本地化字符串。
         /// </summary>
         internal static string FlowingNightglow {
             get {
                 return ResourceManager.GetString("FlowingNightglow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 ForTomorrowsJourney 的本地化字符串。
+        /// </summary>
+        internal static string ForTomorrowsJourney {
+            get {
+                return ResourceManager.GetString("ForTomorrowsJourney", resourceCulture);
             }
         }
         
@@ -583,6 +763,15 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 HeyOverHere 的本地化字符串。
+        /// </summary>
+        internal static string HeyOverHere {
+            get {
+                return ResourceManager.GetString("HeyOverHere", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 HiddenShadow 的本地化字符串。
         /// </summary>
         internal static string HiddenShadow {
@@ -601,6 +790,15 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 HolidayThermaeEscapade 的本地化字符串。
+        /// </summary>
+        internal static string HolidayThermaeEscapade {
+            get {
+                return ResourceManager.GetString("HolidayThermaeEscapade", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Hook 的本地化字符串。
         /// </summary>
         internal static string Hook {
@@ -615,6 +813,33 @@ namespace SREmulator.Localizations {
         internal static string Huohuo {
             get {
                 return ResourceManager.GetString("Huohuo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Hyacine 的本地化字符串。
+        /// </summary>
+        internal static string Hyacine {
+            get {
+                return ResourceManager.GetString("Hyacine", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Hysilens 的本地化字符串。
+        /// </summary>
+        internal static string Hysilens {
+            get {
+                return ResourceManager.GetString("Hysilens", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 IfTimeWereAFlower 的本地化字符串。
+        /// </summary>
+        internal static string IfTimeWereAFlower {
+            get {
+                return ResourceManager.GetString("IfTimeWereAFlower", resourceCulture);
             }
         }
         
@@ -642,6 +867,15 @@ namespace SREmulator.Localizations {
         internal static string InherentlyUnjustDestiny {
             get {
                 return ResourceManager.GetString("InherentlyUnjustDestiny", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 InPursuitOfTheWind 的本地化字符串。
+        /// </summary>
+        internal static string InPursuitOfTheWind {
+            get {
+                return ResourceManager.GetString("InPursuitOfTheWind", resourceCulture);
             }
         }
         
@@ -678,6 +912,15 @@ namespace SREmulator.Localizations {
         internal static string IShallBeMyOwnSword {
             get {
                 return ResourceManager.GetString("IShallBeMyOwnSword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 ItsShowtime 的本地化字符串。
+        /// </summary>
+        internal static string ItsShowtime {
+            get {
+                return ResourceManager.GetString("ItsShowtime", resourceCulture);
             }
         }
         
@@ -727,6 +970,15 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 JourneyForeverPeaceful 的本地化字符串。
+        /// </summary>
+        internal static string JourneyForeverPeaceful {
+            get {
+                return ResourceManager.GetString("JourneyForeverPeaceful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Kafka 的本地化字符串。
         /// </summary>
         internal static string Kafka {
@@ -745,11 +997,38 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 LiesDanceOnTheBreeze 的本地化字符串。
+        /// </summary>
+        internal static string LiesDanceOnTheBreeze {
+            get {
+                return ResourceManager.GetString("LiesDanceOnTheBreeze", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 LifeShouldBeCastToFlames 的本地化字符串。
+        /// </summary>
+        internal static string LifeShouldBeCastToFlames {
+            get {
+                return ResourceManager.GetString("LifeShouldBeCastToFlames", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Lingsha 的本地化字符串。
         /// </summary>
         internal static string Lingsha {
             get {
                 return ResourceManager.GetString("Lingsha", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 LongMayRainbowsAdornTheSky 的本地化字符串。
+        /// </summary>
+        internal static string LongMayRainbowsAdornTheSky {
+            get {
+                return ResourceManager.GetString("LongMayRainbowsAdornTheSky", resourceCulture);
             }
         }
         
@@ -799,6 +1078,15 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 MakeFarewellsMoreBeautiful 的本地化字符串。
+        /// </summary>
+        internal static string MakeFarewellsMoreBeautiful {
+            get {
+                return ResourceManager.GetString("MakeFarewellsMoreBeautiful", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 MakeTheWorldClamor 的本地化字符串。
         /// </summary>
         internal static string MakeTheWorldClamor {
@@ -831,6 +1119,15 @@ namespace SREmulator.Localizations {
         internal static string MemoriesOfThePast {
             get {
                 return ResourceManager.GetString("MemoriesOfThePast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 MemorysCurtainNeverFalls 的本地化字符串。
+        /// </summary>
+        internal static string MemorysCurtainNeverFalls {
+            get {
+                return ResourceManager.GetString("MemorysCurtainNeverFalls", resourceCulture);
             }
         }
         
@@ -925,11 +1222,29 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 NinjaRecordSoundHunt 的本地化字符串。
+        /// </summary>
+        internal static string NinjaRecordSoundHunt {
+            get {
+                return ResourceManager.GetString("NinjaRecordSoundHunt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 NinjutsuInscriptionDazzlingEvilbreaker 的本地化字符串。
         /// </summary>
         internal static string NinjutsuInscriptionDazzlingEvilbreaker {
             get {
                 return ResourceManager.GetString("NinjutsuInscriptionDazzlingEvilbreaker", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 NowhereToRun 的本地化字符串。
+        /// </summary>
+        internal static string NowhereToRun {
+            get {
+                return ResourceManager.GetString("NowhereToRun", resourceCulture);
             }
         }
         
@@ -957,6 +1272,15 @@ namespace SREmulator.Localizations {
         internal static string Passkey {
             get {
                 return ResourceManager.GetString("Passkey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 PastAndFuture 的本地化字符串。
+        /// </summary>
+        internal static string PastAndFuture {
+            get {
+                return ResourceManager.GetString("PastAndFuture", resourceCulture);
             }
         }
         
@@ -993,6 +1317,15 @@ namespace SREmulator.Localizations {
         internal static string PerfectTiming {
             get {
                 return ResourceManager.GetString("PerfectTiming", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Phainon 的本地化字符串。
+        /// </summary>
+        internal static string Phainon {
+            get {
+                return ResourceManager.GetString("Phainon", resourceCulture);
             }
         }
         
@@ -1042,6 +1375,15 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 QuidProQuo 的本地化字符串。
+        /// </summary>
+        internal static string QuidProQuo {
+            get {
+                return ResourceManager.GetString("QuidProQuo", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Rappa 的本地化字符串。
         /// </summary>
         internal static string Rappa {
@@ -1078,6 +1420,24 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 ReturnToDarkness 的本地化字符串。
+        /// </summary>
+        internal static string ReturnToDarkness {
+            get {
+                return ResourceManager.GetString("ReturnToDarkness", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 RiverFlowsInSpring 的本地化字符串。
+        /// </summary>
+        internal static string RiverFlowsInSpring {
+            get {
+                return ResourceManager.GetString("RiverFlowsInSpring", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Robin 的本地化字符串。
         /// </summary>
         internal static string Robin {
@@ -1092,6 +1452,15 @@ namespace SREmulator.Localizations {
         internal static string RuanMei {
             get {
                 return ResourceManager.GetString("RuanMei", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 Saber 的本地化字符串。
+        /// </summary>
+        internal static string Saber {
+            get {
+                return ResourceManager.GetString("Saber", resourceCulture);
             }
         }
         
@@ -1137,6 +1506,15 @@ namespace SREmulator.Localizations {
         internal static string Seele {
             get {
                 return ResourceManager.GetString("Seele", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 SeeYouAtTheEnd 的本地化字符串。
+        /// </summary>
+        internal static string SeeYouAtTheEnd {
+            get {
+                return ResourceManager.GetString("SeeYouAtTheEnd", resourceCulture);
             }
         }
         
@@ -1267,6 +1645,15 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 SweatNowCryLess 的本地化字符串。
+        /// </summary>
+        internal static string SweatNowCryLess {
+            get {
+                return ResourceManager.GetString("SweatNowCryLess", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Swordplay 的本地化字符串。
         /// </summary>
         internal static string Swordplay {
@@ -1294,6 +1681,51 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 TheDayTheCosmosFell 的本地化字符串。
+        /// </summary>
+        internal static string TheDayTheCosmosFell {
+            get {
+                return ResourceManager.GetString("TheDayTheCosmosFell", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 TheFlowerRemembers 的本地化字符串。
+        /// </summary>
+        internal static string TheFlowerRemembers {
+            get {
+                return ResourceManager.GetString("TheFlowerRemembers", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 TheForeverVictual 的本地化字符串。
+        /// </summary>
+        internal static string TheForeverVictual {
+            get {
+                return ResourceManager.GetString("TheForeverVictual", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 TheGreatCosmicEnterprise 的本地化字符串。
+        /// </summary>
+        internal static string TheGreatCosmicEnterprise {
+            get {
+                return ResourceManager.GetString("TheGreatCosmicEnterprise", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 TheHellWhereIdealsBurn 的本地化字符串。
+        /// </summary>
+        internal static string TheHellWhereIdealsBurn {
+            get {
+                return ResourceManager.GetString("TheHellWhereIdealsBurn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 TheHerta 的本地化字符串。
         /// </summary>
         internal static string TheHerta {
@@ -1312,6 +1744,24 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 TheSeriousnessOfBreakfast 的本地化字符串。
+        /// </summary>
+        internal static string TheSeriousnessOfBreakfast {
+            get {
+                return ResourceManager.GetString("TheSeriousnessOfBreakfast", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 TheStorysNextPage 的本地化字符串。
+        /// </summary>
+        internal static string TheStorysNextPage {
+            get {
+                return ResourceManager.GetString("TheStorysNextPage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 TheUnreachableSide 的本地化字符串。
         /// </summary>
         internal static string TheUnreachableSide {
@@ -1321,11 +1771,38 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 ThisIsMe 的本地化字符串。
+        /// </summary>
+        internal static string ThisIsMe {
+            get {
+                return ResourceManager.GetString("ThisIsMe", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 ThoseManySprings 的本地化字符串。
         /// </summary>
         internal static string ThoseManySprings {
             get {
                 return ResourceManager.GetString("ThoseManySprings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 ThoughWorldsApart 的本地化字符串。
+        /// </summary>
+        internal static string ThoughWorldsApart {
+            get {
+                return ResourceManager.GetString("ThoughWorldsApart", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 ThusBurnsTheDawn 的本地化字符串。
+        /// </summary>
+        internal static string ThusBurnsTheDawn {
+            get {
+                return ResourceManager.GetString("ThusBurnsTheDawn", resourceCulture);
             }
         }
         
@@ -1353,6 +1830,24 @@ namespace SREmulator.Localizations {
         internal static string Tingyun {
             get {
                 return ResourceManager.GetString("Tingyun", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 TodayIsAnotherPeacefulDay 的本地化字符串。
+        /// </summary>
+        internal static string TodayIsAnotherPeacefulDay {
+            get {
+                return ResourceManager.GetString("TodayIsAnotherPeacefulDay", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 ToEvernightsStars 的本地化字符串。
+        /// </summary>
+        internal static string ToEvernightsStars {
+            get {
+                return ResourceManager.GetString("ToEvernightsStars", resourceCulture);
             }
         }
         
@@ -1393,11 +1888,47 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 UntoTomorrowsMorrow 的本地化字符串。
+        /// </summary>
+        internal static string UntoTomorrowsMorrow {
+            get {
+                return ResourceManager.GetString("UntoTomorrowsMorrow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 VictoryInABlink 的本地化字符串。
+        /// </summary>
+        internal static string VictoryInABlink {
+            get {
+                return ResourceManager.GetString("VictoryInABlink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 Void 的本地化字符串。
         /// </summary>
         internal static string Void {
             get {
                 return ResourceManager.GetString("Void", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 WarmthShortensColdNights 的本地化字符串。
+        /// </summary>
+        internal static string WarmthShortensColdNights {
+            get {
+                return ResourceManager.GetString("WarmthShortensColdNights", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 WeAreWildfire 的本地化字符串。
+        /// </summary>
+        internal static string WeAreWildfire {
+            get {
+                return ResourceManager.GetString("WeAreWildfire", resourceCulture);
             }
         }
         
@@ -1411,11 +1942,47 @@ namespace SREmulator.Localizations {
         }
         
         /// <summary>
+        ///   查找类似 WeWillMeetAgain 的本地化字符串。
+        /// </summary>
+        internal static string WeWillMeetAgain {
+            get {
+                return ResourceManager.GetString("WeWillMeetAgain", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 WhatIsReal 的本地化字符串。
+        /// </summary>
+        internal static string WhatIsReal {
+            get {
+                return ResourceManager.GetString("WhatIsReal", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 WhereaboutsShouldDreamsRest 的本地化字符串。
         /// </summary>
         internal static string WhereaboutsShouldDreamsRest {
             get {
                 return ResourceManager.GetString("WhereaboutsShouldDreamsRest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 WhyDoesTheOceanSing 的本地化字符串。
+        /// </summary>
+        internal static string WhyDoesTheOceanSing {
+            get {
+                return ResourceManager.GetString("WhyDoesTheOceanSing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 WoofWalkTime 的本地化字符串。
+        /// </summary>
+        internal static string WoofWalkTime {
+            get {
+                return ResourceManager.GetString("WoofWalkTime", resourceCulture);
             }
         }
         
