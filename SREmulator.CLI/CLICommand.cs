@@ -168,24 +168,26 @@ namespace SREmulator.CLI
         {
             int total = args.Attempts;
             ulong warps = 0;
+            int successful = 0;
 
             Parallel.For(0, total, _ =>
             {
                 SRPlayer player = args.Player;
                 player.WarpCurrencyStats.NoWarpRewards = true;
+                player.WarpCurrencyStats.UnlimitedResources = true;
                 var target = args.Targets.Create();
                 ulong counter = 0;
 
                 foreach (var warp in args.Warps)
                 {
-                    while (!target.CanChangeWarp(warp))
+                    while (!target.CanChangeWarp(warp) && warp.TryWarp(player, out var item))
                     {
                         counter++;
-                        var item = warp.OnWarp(player);
                         target.Check(item);
                     }
                 }
 
+                if (target.Achieved) Interlocked.Increment(ref successful);
                 Interlocked.Add(ref warps, counter);
             });
 
@@ -193,6 +195,10 @@ namespace SREmulator.CLI
             {
                 Print(pair.Key, $": {pair.Value}");
             }
+            var resultChance = (double)successful / total;
+            if (resultChance is not 1)
+                Console.WriteLine(resultChance.ToString("0.00%"));
+
             var result = ((double)warps / total).ToString("0.##");
             Console.WriteLine(result);
             if (args.Output) File.WriteAllText(GetFileName(Name, "txt"), result);
