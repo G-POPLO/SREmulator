@@ -1,7 +1,9 @@
 ﻿using SREmulator.SRItems;
 using SREmulator.SRPlayers;
 using SREmulator.SRWarps;
+using System.Collections.Immutable;
 using System.Diagnostics.CodeAnalysis;
+using System.Numerics;
 using System.Text;
 
 namespace SREmulator.CLI
@@ -18,6 +20,7 @@ namespace SREmulator.CLI
             AppendCommand<ResultStatisticsCommand>();
             AppendCommand<AchieveAverageWarpsCommand>();
             AppendCommand<AchieveChanceCommand>();
+            AppendCommand<AchieveDistributionCommand>();
 
             static void AppendCommand<T>() where T : CLICommand, new()
             {
@@ -180,7 +183,7 @@ namespace SREmulator.CLI
 
                 foreach (var warp in args.Warps)
                 {
-                    while (!target.CanChangeWarp(warp) && warp.TryWarp(player, out var item))
+                    while (!target.TryRemoveWarp(warp) && warp.TryWarp(player, out var item))
                     {
                         counter++;
                         target.Check(item);
@@ -191,7 +194,7 @@ namespace SREmulator.CLI
                 Interlocked.Add(ref warps, counter);
             });
 
-            foreach (var pair in args.Targets.Target)
+            foreach (var pair in args.Targets.TargetToCount)
             {
                 Print(pair.Key, $": {pair.Value}");
             }
@@ -221,7 +224,7 @@ namespace SREmulator.CLI
 
                 foreach (var warp in args.Warps)
                 {
-                    while (!target.CanChangeWarp(warp) && warp.TryWarp(player, out var item))
+                    while (!target.TryRemoveWarp(warp) && warp.TryWarp(player, out var item))
                     {
                         target.Check(item);
                     }
@@ -229,7 +232,7 @@ namespace SREmulator.CLI
                 if (target.Achieved) Interlocked.Increment(ref successful);
             });
 
-            foreach (var pair in args.Targets.Target)
+            foreach (var pair in args.Targets.TargetToCount)
             {
                 Print(pair.Key, $": {pair.Value}");
             }
@@ -247,7 +250,7 @@ namespace SREmulator.CLI
         public override void Execute(CLIArgs args)
         {
             int total = args.Attempts;
-            Dictionary<Dictionary<ISRWarpResultItem, int>, int> distribution = new(DictComparer.Instance);
+            Dictionary<IReadOnlyDictionary<ISRWarpResultItem, int>, int> distribution = new(DictComparer.Instance);
 
             Parallel.For(0, total, _ =>
             {
@@ -256,9 +259,9 @@ namespace SREmulator.CLI
 
                 foreach (var warp in args.Warps)
                 {
-                    while (!target.CanChangeWarp(warp) && warp.TryWarp(player, out var item))
+                    while (!target.TryRemoveWarp(warp) && warp.TryWarp(player, out var item))
                     {
-                        target.CheckAllowExcess(item);
+                        target.Check(item);
                     }
                 }
                 lock (_lock)
@@ -268,17 +271,17 @@ namespace SREmulator.CLI
                 }
             });
 
-            var src = args.Targets.Target;
+            var targetToCount = args.Targets.TargetToCount;
             int sum = distribution.Values.Sum();
             StringBuilder builder = args.Output ? new() : null!;
 
             foreach (var result in distribution.OrderByDescending(pair => pair.Value))
             {
-                foreach (var pair in result.Key)
+                foreach (var target in args.Targets.OrderedTargets)
                 {
-                    int count = src[pair.Key] - pair.Value;
-                    Print(pair.Key, $": {count}");
-                    if (args.Output) builder.Append($"\"{pair.Key.Name}\",{count},");
+                    var count = result.Key[target];
+                    Print(target, $": {count}");
+                    if (args.Output) builder.Append($"\"{target.Name}\",{count},");
                 }
                 var ratio = ((double)result.Value / sum).ToString("0.00%");
                 Console.WriteLine(ratio);
@@ -289,11 +292,11 @@ namespace SREmulator.CLI
             if (args.Output) File.WriteAllText(GetFileName(Name, "csv"), builder.ToString());
         }
 
-        private sealed class DictComparer : IEqualityComparer<Dictionary<ISRWarpResultItem, int>>
+        private sealed class DictComparer : IEqualityComparer<IReadOnlyDictionary<ISRWarpResultItem, int>>
         {
-            public static IEqualityComparer<Dictionary<ISRWarpResultItem, int>> Instance { get; } = new DictComparer();
+            public static IEqualityComparer<IReadOnlyDictionary<ISRWarpResultItem, int>> Instance { get; } = new DictComparer();
 
-            bool IEqualityComparer<Dictionary<ISRWarpResultItem, int>>.Equals(Dictionary<ISRWarpResultItem, int>? x, Dictionary<ISRWarpResultItem, int>? y)
+            bool IEqualityComparer<IReadOnlyDictionary<ISRWarpResultItem, int>>.Equals(IReadOnlyDictionary<ISRWarpResultItem, int>? x, IReadOnlyDictionary<ISRWarpResultItem, int>? y)
             {
                 if (x is null) return y is null;
                 if (y is null) return false;
@@ -306,7 +309,7 @@ namespace SREmulator.CLI
                 return true;
             }
 
-            int IEqualityComparer<Dictionary<ISRWarpResultItem, int>>.GetHashCode([DisallowNull] Dictionary<ISRWarpResultItem, int> obj)
+            int IEqualityComparer<IReadOnlyDictionary<ISRWarpResultItem, int>>.GetHashCode([DisallowNull] IReadOnlyDictionary<ISRWarpResultItem, int> obj)
             {
                 int hash = 0;
                 foreach (var pair in obj)
