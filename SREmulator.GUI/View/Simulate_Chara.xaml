@@ -4,16 +4,17 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SREmulator.GUI.View"
+      xmlns:properties="clr-namespace:SREmulator.GUI.Properties.Localization"
       xmlns:ui="http://schemas.inkore.net/lib/ui/wpf/modern"
       mc:Ignorable="d" 
       d:DesignHeight="950" d:DesignWidth="800"
-      Title="角色跃迁">
+      Title="{x:Static properties:Localization.SimulateChara_Title}">
 
     <Grid>
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="20">
                 <!-- 页面标题 -->
-                <TextBlock Text="角色跃迁" 
+                <TextBlock Text="{x:Static properties:Localization.SimulateChara_Title}" 
                            FontSize="20" 
                            FontWeight="SemiBold" 
                            Margin="0,10,0,20"/>
@@ -25,7 +26,7 @@
                        
                         BorderBrush="{DynamicResource SystemControlBackgroundChromeMediumBrush}">
                     <StackPanel>
-                        <TextBlock Text="抽卡配置" 
+                        <TextBlock Text="{x:Static properties:Localization.SimulateChara_Config_Title}" 
                                    FontSize="17" 
                                    FontWeight="SemiBold" 
                                    Margin="0,0,0,15"/>
@@ -33,7 +34,7 @@
                         <StackPanel Orientation="Horizontal" 
                                     Margin="0,0,0,15"
                                     VerticalAlignment="Center">
-                            <TextBlock Text="卡池名称:" 
+                            <TextBlock Text="{x:Static properties:Localization.SimulateChara_WarpName}" 
                                        VerticalAlignment="Center" 
                                        FontSize="15" 
                                        Width="100"/>
@@ -50,7 +51,7 @@
                         <StackPanel Orientation="Horizontal" 
                                     Margin="0,0,0,15"
                                     VerticalAlignment="Center">
-                            <TextBlock Text="卡池版本:" 
+                            <TextBlock Text="{x:Static properties:Localization.SimulateChara_PoolVersion}" 
                            VerticalAlignment="Center" 
                            FontSize="15" 
                            Width="100"/>
@@ -68,7 +69,7 @@
                         <StackPanel Orientation="Horizontal" 
                                     Margin="0,0,0,15"
                                     VerticalAlignment="Center">
-                            <TextBlock Text="星轨专票:" 
+                            <TextBlock Text="{x:Static properties:Localization.SimulateChara_StellarTicket}" 
                                        VerticalAlignment="Center" 
                                        FontSize="15" 
                                        Width="100"/>
@@ -86,7 +87,7 @@
                         <StackPanel Orientation="Horizontal" 
                                     Margin="0,0,0,15"
                                     VerticalAlignment="Center">
-                            <TextBlock Text="星琼数量:" 
+                            <TextBlock Text="{x:Static properties:Localization.SimulateChara_StellarJade}" 
                                        VerticalAlignment="Center" 
                                        FontSize="15" 
                                        Width="100"/>
@@ -102,7 +103,7 @@
 
                         <!-- 无限抽卡资源 -->
                         <CheckBox x:Name="chkInfiniteResources" 
-                                  Content="拥有无限抽卡资源" 
+                                  Content="{x:Static properties:Localization.SimulateChara_InfiniteResources}" 
                                   FontSize="15"
                                   Margin="0,0,0,15"
                                   VerticalContentAlignment="Center" 
@@ -113,7 +114,7 @@
 
                         <!-- 大保底存在 -->
                         <CheckBox x:Name="chkguarantee" 
-                                  Content="存在大保底" 
+                                  Content="{x:Static properties:Localization.SimulateChara_Guarantee}" 
                                   FontSize="15"
                                   Margin="0,0,0,15"
                                   VerticalContentAlignment="Center" 
@@ -121,7 +122,7 @@
                         </CheckBox>
                         <!-- 不计算副产物 -->
                         <CheckBox x:Name="chknoreward" 
-            Content="不计算抽卡副产物" 
+            Content="{x:Static properties:Localization.SimulateChara_NoReward}" 
             FontSize="15"
             Margin="0,0,0,15"
             VerticalContentAlignment="Center" 
@@ -129,7 +130,7 @@
                         </CheckBox>
                         <!-- 导出CSV -->
                         <CheckBox x:Name="chkExportCSV" 
-Content="结果导出CSV" 
+Content="{x:Static properties:Localization.SimulateChara_ExportCSV}" 
 FontSize="15"
 Margin="0,0,0,15"
 VerticalContentAlignment="Center" 
@@ -137,7 +138,7 @@ HorizontalAlignment="Left">
                         </CheckBox>
                         <!-- 计算平均抽数 -->
                         <CheckBox x:Name="chkCalculateAverage" 
-Content="仅计算平均抽数" 
+Content="{x:Static properties:Localization.SimulateChara_CalculateAverage}" 
 FontSize="15"
 Margin="0,0,0,15"
 VerticalContentAlignment="Center" 
@@ -153,7 +154,7 @@ HorizontalAlignment="Left">
                         
                         BorderBrush="{DynamicResource SystemControlBackgroundChromeMediumBrush}">
                     <StackPanel>
-                        <TextBlock Text="目标配置" 
+                        <TextBlock Text="{x:Static properties:Localization.SimulateChara_TargetConfig_Title}" 
                                    FontSize="17" 
                                    FontWeight="SemiBold" 
                                    Margin="0,0,0,15"/>
@@ -162,7 +163,7 @@ HorizontalAlignment="Left">
                         <StackPanel Orientation="Horizontal" 
                                     Margin="0,0,0,15"
                                     VerticalAlignment="Center">
-                            <TextBlock Text="抽取目标:" 
+                            <TextBlock Text="{x:Static properties:Localization.SimulateChara_Target}" 
                                        VerticalAlignment="Center" 
                                        FontSize="15" 
                                        Width="100"/>
@@ -181,7 +182,7 @@ HorizontalAlignment="Left">
                         <StackPanel Orientation="Horizontal" 
                                     Margin="0,0,0,15"
                                     VerticalAlignment="Center">
-                            <TextBlock Text="抽取数量:" 
+                            <TextBlock Text="{x:Static properties:Localization.SimulateChara_TargetCount}" 
                                        VerticalAlignment="Center" 
                                        FontSize="15" 
                                        Width="100"/>
@@ -207,19 +208,19 @@ HorizontalAlignment="Left">
                        
                         BorderBrush="{DynamicResource SystemControlBackgroundChromeMediumBrush}">
                     <StackPanel>
-                        <TextBlock Text="抽卡结果" 
+                        <TextBlock Text="{x:Static properties:Localization.SimulateChara_Result_Title}" 
                                    FontSize="17" 
                                    FontWeight="SemiBold" 
                                    Margin="0,0,0,5"/>
 
-                        <TextBlock Text="所有模拟结果均不准确，仅供参考" 
+                        <TextBlock Text="{x:Static properties:Localization.SimulateChara_Result_Disclaimer}" 
                                    FontSize="12" 
                                    FontWeight="Light"
                                    Margin="0,0,0,5"/>
                         <!-- 操作按钮 -->
                         <StackPanel Orientation="Horizontal" Margin="0,0,0,15">
                             <Button x:Name="btnCalculateChance" 
-                                    Content="计算配置抽取可能性" 
+                                    Content="{x:Static properties:Localization.SimulateChara_CalculateChance}" 
                                     Width="150" 
                                     Height="40" 
                                     FontSize="14"

@@ -31,6 +31,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Properties\Localization\Localization.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Localization.resx</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Settings.Designer.cs">
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <AutoGen>True</AutoGen>
@@ -62,6 +67,12 @@
   <ItemGroup>
     <ProjectReference Include="..\SREmulator\SREmulator.csproj" />
     <ProjectReference Include="..\SREmulator.CLI\SREmulator.CLI.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Localization\Localization.resx">
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>Localization.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
   </ItemGroup>
   
 </Project>

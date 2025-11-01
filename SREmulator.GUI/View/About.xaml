@@ -4,6 +4,7 @@
       xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:SREmulator.GUI.View"
+      xmlns:properties="clr-namespace:SREmulator.GUI.Properties.Localization"
       mc:Ignorable="d" 
       d:DesignHeight="600" d:DesignWidth="800"
       Loaded="About_Loaded"
@@ -13,7 +14,7 @@
         <ScrollViewer VerticalScrollBarVisibility="Auto">
             <StackPanel Margin="20">
                 <!-- 页面标题 -->
-                <TextBlock Text="关于" 
+                <TextBlock Text="{x:Static properties:Localization.About_Title}"
                            FontSize="20" 
                            FontWeight="SemiBold" 
                            Margin="0,10,0,20"/>
@@ -25,7 +26,7 @@
                        
                         BorderBrush="{DynamicResource SystemControlBackgroundChromeMediumBrush}">
                     <StackPanel>
-                        <TextBlock Text="应用信息" 
+                        <TextBlock Text="{x:Static properties:Localization.About_Info}" 
                                    FontSize="17" 
                                    FontWeight="SemiBold" 
                                    Margin="0,0,0,15"/>
@@ -34,7 +35,7 @@
                         <StackPanel Orientation="Horizontal" 
                                     Margin="0,0,0,15"
                                     VerticalAlignment="Center">
-                            <TextBlock Text="应用名称:" 
+                            <TextBlock Text="{x:Static properties:Localization.About_Name}" 
                                        VerticalAlignment="Center" 
                                        FontSize="15" 
                                        Width="100"/>
@@ -48,7 +49,7 @@
                         <StackPanel Orientation="Horizontal" 
                                     Margin="0,0,0,15"
                                     VerticalAlignment="Center">
-                            <TextBlock Text="版本号:" 
+                            <TextBlock Text="{x:Static properties:Localization.About_Version}" 
                                        VerticalAlignment="Center" 
                                        FontSize="15" 
                                        Width="100"/>
@@ -63,7 +64,7 @@
                         <StackPanel Orientation="Horizontal" 
                                     Margin="0,0,0,15"
                                     VerticalAlignment="Center">
-                            <TextBlock Text="仓库链接:" 
+                            <TextBlock Text="{x:Static properties:Localization.About_Url}" 
                                        VerticalAlignment="Center" 
                                        FontSize="15" 
                                        Width="100"/>
@@ -83,7 +84,7 @@
                        
                         BorderBrush="{DynamicResource SystemControlBackgroundChromeMediumBrush}">
                     <StackPanel>
-                        <TextBlock Text="开发者信息" 
+                        <TextBlock Text="{x:Static properties:Localization.About_Developer_Title}" 
                                    FontSize="17" 
                                    FontWeight="SemiBold" 
                                    Margin="0,0,0,15"/>
@@ -92,7 +93,7 @@
                         <StackPanel Orientation="Horizontal" 
                                     Margin="0,0,0,15"
                                     VerticalAlignment="Center">
-                            <TextBlock Text="开发者:" 
+                            <TextBlock Text="{x:Static properties:Localization.About_Developer}" 
                                        VerticalAlignment="Center" 
                                        FontSize="15" 
                                        Width="100"/>
@@ -106,7 +107,7 @@
                         <StackPanel Orientation="Horizontal" 
                                     Margin="0,0,0,15"
                                     VerticalAlignment="Center">
-                            <TextBlock Text="开源许可:" 
+                            <TextBlock Text="{x:Static properties:Localization.About_License}" 
                                        VerticalAlignment="Center" 
                                        FontSize="15" 
                                        Width="100"/>
