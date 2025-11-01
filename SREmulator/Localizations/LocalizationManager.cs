@@ -6,5 +6,10 @@
         {
             Localization.Culture = new System.Globalization.CultureInfo(name);
         }
+
+        public static string GetLocalized(string name)
+        {
+            return Localization.ResourceManager.GetString(name) ?? name;
+        }
     }
 }

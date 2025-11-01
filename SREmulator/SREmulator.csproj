@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Localizations\Localization.en-US.resx">
+    <EmbeddedResource Update="Localizations\Localization.en.resx">
       <Generator></Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Localizations\Localization.resx">

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <root>
   <!-- 
     Microsoft ResX Schema 
@@ -118,663 +118,663 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="Acheron" xml:space="preserve">
-    <value>黄泉</value>
+    <value>Acheron</value>
   </data>
   <data name="Aglaea" xml:space="preserve">
-    <value>阿格莱雅</value>
+    <value>Aglaea</value>
   </data>
   <data name="Anaxa" xml:space="preserve">
-    <value>那刻夏</value>
+    <value>Anaxa</value>
   </data>
   <data name="Archer" xml:space="preserve">
     <value>Archer</value>
   </data>
   <data name="Argenti" xml:space="preserve">
-    <value>银枝</value>
+    <value>Argenti</value>
   </data>
   <data name="Arlan" xml:space="preserve">
-    <value>阿兰</value>
+    <value>Arlan</value>
   </data>
   <data name="Asta" xml:space="preserve">
-    <value>艾丝妲</value>
+    <value>Asta</value>
   </data>
   <data name="Aventurine" xml:space="preserve">
-    <value>砂金</value>
+    <value>Aventurino</value>
   </data>
   <data name="Bailu" xml:space="preserve">
-    <value>白露</value>
+    <value>Bailu</value>
   </data>
   <data name="BlackSwan" xml:space="preserve">
-    <value>黑天鹅</value>
+    <value>Cisne Negro</value>
   </data>
   <data name="Blade" xml:space="preserve">
-    <value>刃</value>
+    <value>Blade</value>
   </data>
   <data name="Boothill" xml:space="preserve">
-    <value>波提欧</value>
+    <value>Boothill</value>
   </data>
   <data name="Bronya" xml:space="preserve">
-    <value>布洛妮娅</value>
+    <value>Bronya</value>
   </data>
   <data name="Castorice" xml:space="preserve">
-    <value>遐蝶</value>
+    <value>Castorice</value>
   </data>
   <data name="Cerydra" xml:space="preserve">
-    <value>刻律德菈</value>
+    <value>Céridra</value>
   </data>
   <data name="Cipher" xml:space="preserve">
-    <value>赛飞儿</value>
+    <value>Cífer</value>
   </data>
   <data name="Clara" xml:space="preserve">
-    <value>克拉拉</value>
+    <value>Clara</value>
   </data>
   <data name="DanHeng" xml:space="preserve">
-    <value>丹恒</value>
+    <value>Dan Heng</value>
   </data>
   <data name="DanHengImbibitorLunae" xml:space="preserve">
-    <value>丹恒•饮月</value>
+    <value>Dan Heng - Imbibitor Lunae</value>
   </data>
   <data name="DanHengPermansorTerrae" xml:space="preserve">
-    <value>丹恒•腾荒</value>
+    <value>Dan Heng - Permansor Terrae</value>
   </data>
   <data name="DrRatio" xml:space="preserve">
-    <value>真理医生</value>
+    <value>Dr. Ratio</value>
   </data>
   <data name="Evernight" xml:space="preserve">
-    <value>长夜月</value>
+    <value>Larganoche</value>
   </data>
   <data name="Feixiao" xml:space="preserve">
-    <value>飞霄</value>
+    <value>Feixiao</value>
   </data>
   <data name="Firefly" xml:space="preserve">
-    <value>流萤</value>
+    <value>Luciérnaga</value>
   </data>
   <data name="FuXuan" xml:space="preserve">
-    <value>符玄</value>
+    <value>Fu Xuan</value>
   </data>
   <data name="Fugue" xml:space="preserve">
-    <value>忘归人</value>
+    <value>Fugue</value>
   </data>
   <data name="Gallagher" xml:space="preserve">
-    <value>加拉赫</value>
+    <value>Gallagher</value>
   </data>
   <data name="Gepard" xml:space="preserve">
-    <value>杰帕德</value>
+    <value>Gepard</value>
   </data>
   <data name="Guinaifen" xml:space="preserve">
-    <value>桂乃芬</value>
+    <value>Guinaifen</value>
   </data>
   <data name="Hanya" xml:space="preserve">
-    <value>寒鸦</value>
+    <value>Hanya</value>
   </data>
   <data name="Herta" xml:space="preserve">
-    <value>黑塔</value>
+    <value>Herta</value>
   </data>
   <data name="Himeko" xml:space="preserve">
-    <value>姬子</value>
+    <value>Himeko</value>
   </data>
   <data name="Hook" xml:space="preserve">
-    <value>虎克</value>
+    <value>Hook</value>
   </data>
   <data name="Huohuo" xml:space="preserve">
-    <value>藿藿</value>
+    <value>Huohuo</value>
   </data>
   <data name="Hyacine" xml:space="preserve">
-    <value>风堇</value>
+    <value>Hyacine</value>
   </data>
   <data name="Hysilens" xml:space="preserve">
-    <value>海瑟音</value>
+    <value>Hysilens</value>
   </data>
   <data name="Jade" xml:space="preserve">
-    <value>翡翠</value>
+    <value>Jade</value>
   </data>
   <data name="Jiaoqiu" xml:space="preserve">
-    <value>椒丘</value>
+    <value>Jiaoqiu</value>
   </data>
   <data name="JingYuan" xml:space="preserve">
-    <value>景元</value>
+    <value>Jing Yuan</value>
   </data>
   <data name="Jingliu" xml:space="preserve">
-    <value>镜流</value>
+    <value>Jingliu</value>
   </data>
   <data name="Kafka" xml:space="preserve">
-    <value>卡芙卡</value>
+    <value>Kafka</value>
   </data>
   <data name="Lingsha" xml:space="preserve">
-    <value>灵砂</value>
+    <value>Lingsha</value>
   </data>
   <data name="Luka" xml:space="preserve">
-    <value>卢卡</value>
+    <value>Luka</value>
   </data>
   <data name="Luocha" xml:space="preserve">
-    <value>罗刹</value>
+    <value>Luocha</value>
   </data>
   <data name="Lynx" xml:space="preserve">
-    <value>玲可</value>
+    <value>Lynx</value>
   </data>
   <data name="March7th" xml:space="preserve">
-    <value>三月七</value>
+    <value>Siete de Marzo</value>
   </data>
   <data name="Misha" xml:space="preserve">
-    <value>米沙</value>
+    <value>Misha</value>
   </data>
   <data name="Moze" xml:space="preserve">
-    <value>貊泽</value>
+    <value>Moze</value>
   </data>
   <data name="Mydei" xml:space="preserve">
-    <value>万敌</value>
+    <value>Midei</value>
   </data>
   <data name="Natasha" xml:space="preserve">
-    <value>娜塔莎</value>
+    <value>Natasha</value>
   </data>
   <data name="Pela" xml:space="preserve">
-    <value>佩拉</value>
+    <value>Pela</value>
   </data>
   <data name="Phainon" xml:space="preserve">
-    <value>白厄</value>
+    <value>Fainón</value>
   </data>
   <data name="Qingque" xml:space="preserve">
-    <value>青雀</value>
+    <value>Qingque</value>
   </data>
   <data name="Rappa" xml:space="preserve">
-    <value>乱破</value>
+    <value>Rappa</value>
   </data>
   <data name="Robin" xml:space="preserve">
-    <value>知更鸟</value>
+    <value>Robin</value>
   </data>
   <data name="RuanMei" xml:space="preserve">
-    <value>阮•梅</value>
+    <value>Ruan Mei</value>
   </data>
   <data name="Saber" xml:space="preserve">
     <value>Saber</value>
   </data>
   <data name="Sampo" xml:space="preserve">
-    <value>桑博</value>
+    <value>Sampo</value>
   </data>
   <data name="Seele" xml:space="preserve">
-    <value>希儿</value>
+    <value>Seele</value>
   </data>
   <data name="Serval" xml:space="preserve">
-    <value>希露瓦</value>
+    <value>Serval</value>
   </data>
   <data name="SilverWolf" xml:space="preserve">
-    <value>银狼</value>
+    <value>Silver Wolf</value>
   </data>
   <data name="Sparkle" xml:space="preserve">
-    <value>花火</value>
+    <value>Sparkle</value>
   </data>
   <data name="Sunday" xml:space="preserve">
-    <value>星期日</value>
+    <value>Sunday</value>
   </data>
   <data name="Sushang" xml:space="preserve">
-    <value>素裳</value>
+    <value>Sushang</value>
   </data>
   <data name="TheHerta" xml:space="preserve">
-    <value>大黑塔</value>
+    <value>Sra. Herta</value>
   </data>
   <data name="Tingyun" xml:space="preserve">
-    <value>停云</value>
+    <value>Tingyun</value>
   </data>
   <data name="TopazNumby" xml:space="preserve">
-    <value>托帕&amp;账账</value>
+    <value>Topaz y Conti</value>
   </data>
   <data name="Tribbie" xml:space="preserve">
-    <value>缇宝</value>
+    <value>Tribbie</value>
   </data>
   <data name="Welt" xml:space="preserve">
-    <value>瓦尔特</value>
+    <value>Welt</value>
   </data>
   <data name="Xueyi" xml:space="preserve">
-    <value>雪衣</value>
+    <value>Xueyi</value>
   </data>
   <data name="Yanqing" xml:space="preserve">
-    <value>彦卿</value>
+    <value>Yanqing</value>
   </data>
   <data name="Yukong" xml:space="preserve">
-    <value>驭空</value>
+    <value>Yukong</value>
   </data>
   <data name="Yunli" xml:space="preserve">
-    <value>云璃</value>
+    <value>Yunli</value>
   </data>
   <data name="ADreamScentedInWheat" xml:space="preserve">
-    <value>氤氲麦香的梦</value>
+    <value>Sueños de trigo fragante</value>
   </data>
   <data name="AGroundedAscent" xml:space="preserve">
-    <value>回到大地的飞行</value>
+    <value>De vuelta a la tierra</value>
   </data>
   <data name="ASecretVow" xml:space="preserve">
-    <value>秘密誓心</value>
+    <value>Juramento secreto</value>
   </data>
   <data name="AThanklessCoronation" xml:space="preserve">
-    <value>没有回报的加冕</value>
+    <value>Coronación sin agradecimiento</value>
   </data>
   <data name="ATrailOfBygoneBlood" xml:space="preserve">
-    <value>一行往日的血</value>
+    <value>Sangre del pasado</value>
   </data>
   <data name="Adversarial" xml:space="preserve">
-    <value>相抗</value>
+    <value>Antagonista</value>
   </data>
   <data name="AfterTheCharmonyFall" xml:space="preserve">
-    <value>谐乐静默之后</value>
+    <value>Tras el silencio de La Armonía</value>
   </data>
   <data name="AlongThePassingShore" xml:space="preserve">
-    <value>行于流逝的岸</value>
+    <value>En las orillas transitorias</value>
   </data>
   <data name="Amber" xml:space="preserve">
-    <value>琥珀</value>
+    <value>Ámbar</value>
   </data>
   <data name="AnInstantBeforeAGaze" xml:space="preserve">
-    <value>片刻，留在眼底</value>
+    <value>Instante grabado a fuego</value>
   </data>
   <data name="Arrows" xml:space="preserve">
-    <value>锋镝</value>
+    <value>Flechas</value>
   </data>
   <data name="BaptismOfPureThought" xml:space="preserve">
-    <value>纯粹思维的洗礼</value>
+    <value>El bautismo del pensamiento puro</value>
   </data>
   <data name="BeforeDawn" xml:space="preserve">
-    <value>拂晓之前</value>
+    <value>Antes del amanecer</value>
   </data>
   <data name="BeforeTheTutorialMissionStarts" xml:space="preserve">
-    <value>新手任务开始前</value>
+    <value>Antes de que comience la misión del tutorial</value>
   </data>
   <data name="BoundlessChoreo" xml:space="preserve">
-    <value>无边曼舞</value>
+    <value>Tango ilimitado</value>
   </data>
   <data name="BrighterThanTheSun" xml:space="preserve">
-    <value>比阳光更明亮的</value>
+    <value>Más brillante que el sol</value>
   </data>
   <data name="ButTheBattleIsntOver" xml:space="preserve">
-    <value>但战斗还未结束</value>
+    <value>La batalla no ha terminado</value>
   </data>
   <data name="CarveTheMoonWeaveTheClouds" xml:space="preserve">
-    <value>镂月裁云之意</value>
+    <value>Esculpir la luna y tejer las nubes</value>
   </data>
   <data name="Chorus" xml:space="preserve">
-    <value>齐颂</value>
+    <value>Coro</value>
   </data>
   <data name="CollapsingSky" xml:space="preserve">
-    <value>天倾</value>
+    <value>Colapso celeste</value>
   </data>
   <data name="ConcertForTwo" xml:space="preserve">
-    <value>两个人的演唱会</value>
+    <value>Concierto para dos</value>
   </data>
   <data name="Cornucopia" xml:space="preserve">
-    <value>物穰</value>
+    <value>Cornucopia</value>
   </data>
   <data name="CruisingInTheStellarSea" xml:space="preserve">
-    <value>星海巡航</value>
+    <value>Crucero estelar</value>
   </data>
   <data name="DanceAtSunset" xml:space="preserve">
-    <value>落日时起舞</value>
+    <value>Danza crepuscular</value>
   </data>
   <data name="DanceDanceDance" xml:space="preserve">
-    <value>舞！舞！舞！</value>
+    <value>¡A bailar!</value>
   </data>
   <data name="DartingArrow" xml:space="preserve">
-    <value>离弦</value>
+    <value>Flecha voladora</value>
   </data>
   <data name="DataBank" xml:space="preserve">
-    <value>智库</value>
+    <value>Archivos</value>
   </data>
   <data name="DayOneOfMyNewLife" xml:space="preserve">
-    <value>余生的第一天</value>
+    <value>El primer día del resto de mi vida</value>
   </data>
   <data name="Defense" xml:space="preserve">
-    <value>戍御</value>
+    <value>Blindaje</value>
   </data>
   <data name="DestinysThreadsForewoven" xml:space="preserve">
-    <value>织造命运之线</value>
+    <value>Los hilos del destino</value>
   </data>
   <data name="DreamsMontage" xml:space="preserve">
-    <value>梦的蒙太奇</value>
+    <value>Montaje de sueños</value>
   </data>
   <data name="DreamvilleAdventure" xml:space="preserve">
-    <value>美梦小镇大冒险</value>
+    <value>Aventuras en Villa Ensueño</value>
   </data>
   <data name="EarthlyEscapade" xml:space="preserve">
-    <value>游戏尘寰</value>
+    <value>Mundo de juegos</value>
   </data>
   <data name="EchoesOfTheCoffin" xml:space="preserve">
-    <value>棺的回响</value>
+    <value>Ecos del ataúd</value>
   </data>
   <data name="EpochEtchedInGoldenBlood" xml:space="preserve">
-    <value>金血铭刻的时代</value>
+    <value>Era grabada en sangre dorada</value>
   </data>
   <data name="EternalCalculus" xml:space="preserve">
-    <value>不息的演算</value>
+    <value>Cálculo interminable</value>
   </data>
   <data name="EyesOfThePrey" xml:space="preserve">
-    <value>猎物的视线</value>
+    <value>Visión de presa</value>
   </data>
   <data name="Fermata" xml:space="preserve">
-    <value>延长记号</value>
+    <value>Calderón</value>
   </data>
   <data name="FinalVictor" xml:space="preserve">
-    <value>最后的赢家</value>
+    <value>Ganador final</value>
   </data>
   <data name="FineFruit" xml:space="preserve">
-    <value>嘉果</value>
+    <value>Fruto excelente</value>
   </data>
   <data name="FlameOfBloodBlazeMyPath" xml:space="preserve">
-    <value>血火啊，燃烧前路</value>
+    <value>Sangre y fuego, abran camino</value>
   </data>
   <data name="FlamesAfar" xml:space="preserve">
-    <value>在火的远处</value>
+    <value>Lejos del fuego</value>
   </data>
   <data name="FlowingNightglow" xml:space="preserve">
-    <value>夜色流光溢彩</value>
+    <value>Luces de la noche</value>
   </data>
   <data name="ForTomorrowsJourney" xml:space="preserve">
-    <value>为了明日的旅途</value>
+    <value>Para el viaje de mañana</value>
   </data>
   <data name="GeniusesGreetings" xml:space="preserve">
-    <value>天才们的问候</value>
+    <value>Saludo entre genios</value>
   </data>
   <data name="GeniusesRepose" xml:space="preserve">
-    <value>天才们的休憩</value>
+    <value>El reposo de los genios</value>
   </data>
   <data name="GoodNightAndSleepWell" xml:space="preserve">
-    <value>晚安与睡颜</value>
+    <value>Buenas noches, que duermas bien</value>
   </data>
   <data name="HeyOverHere" xml:space="preserve">
-    <value>嘿，我在这儿</value>
+    <value>Ey, estoy aquí</value>
   </data>
   <data name="HiddenShadow" xml:space="preserve">
-    <value>匿影</value>
+    <value>Sombra oculta</value>
   </data>
   <data name="HolidayThermaeEscapade" xml:space="preserve">
-    <value>假日浴场大冒险</value>
+    <value>Vacaciones en las termas</value>
   </data>
   <data name="IShallBeMyOwnSword" xml:space="preserve">
-    <value>此身为剑</value>
+    <value>Yo seré mi propia espada</value>
   </data>
   <data name="IVentureForthToHunt" xml:space="preserve">
-    <value>我将，巡征追猎</value>
+    <value>Me voy de caza</value>
   </data>
   <data name="IfTimeWereAFlower" xml:space="preserve">
-    <value>如果时间是一朵花</value>
+    <value>Si el tiempo fuera una flor</value>
   </data>
   <data name="InPursuitOfTheWind" xml:space="preserve">
-    <value>追逐风的时候</value>
+    <value>Al perseguir el viento</value>
   </data>
   <data name="InTheNameOfTheWorld" xml:space="preserve">
-    <value>以世界之名</value>
+    <value>En nombre del mundo</value>
   </data>
   <data name="InTheNight" xml:space="preserve">
-    <value>于夜色中</value>
+    <value>En la noche</value>
   </data>
   <data name="IncessantRain" xml:space="preserve">
-    <value>雨一直下</value>
+    <value>Lluvia incesante</value>
   </data>
   <data name="IndeliblePromise" xml:space="preserve">
-    <value>铭记于心的约定</value>
+    <value>Promesa grabada</value>
   </data>
   <data name="InherentlyUnjustDestiny" xml:space="preserve">
-    <value>命运从未公平</value>
+    <value>El destino nunca es justo</value>
   </data>
   <data name="IntoTheUnreachableVeil" xml:space="preserve">
-    <value>向着不可追问处</value>
+    <value>Hacia lo inescrutable</value>
   </data>
   <data name="ItsShowtime" xml:space="preserve">
-    <value>好戏开演</value>
+    <value>Arriba el telón</value>
   </data>
   <data name="JourneyForeverPeaceful" xml:space="preserve">
-    <value>愿旅途永远坦然</value>
+    <value>Que tu viaje sea siempre pacífico</value>
   </data>
   <data name="LandausChoice" xml:space="preserve">
-    <value>朗道的选择</value>
+    <value>La elección de Landau</value>
   </data>
   <data name="LiesDanceOnTheBreeze" xml:space="preserve">
-    <value>谎言在风中飘扬</value>
+    <value>Mentiras que vuelan en el viento</value>
   </data>
   <data name="LifeShouldBeCastToFlames" xml:space="preserve">
-    <value>生命当付之一炬</value>
+    <value>La vida en llamas</value>
   </data>
   <data name="LongMayRainbowsAdornTheSky" xml:space="preserve">
-    <value>愿虹光永驻天空</value>
+    <value>Que el arcoíris siempre esté en el cielo</value>
   </data>
   <data name="LongRoadLeadsHome" xml:space="preserve">
-    <value>长路终有归途</value>
+    <value>El largo camino a casa</value>
   </data>
   <data name="Loop" xml:space="preserve">
-    <value>渊环</value>
+    <value>Bucle</value>
   </data>
   <data name="MakeFarewellsMoreBeautiful" xml:space="preserve">
-    <value>让告别，更美一些</value>
+    <value>Despedidas más bellas</value>
   </data>
   <data name="MakeTheWorldClamor" xml:space="preserve">
-    <value>别让世界静下来</value>
+    <value>Que el mundo clame</value>
   </data>
   <data name="Mediation" xml:space="preserve">
-    <value>调和</value>
+    <value>Mediación</value>
   </data>
   <data name="MemoriesOfThePast" xml:space="preserve">
-    <value>记忆中的模样</value>
+    <value>Imagen en el recuerdo</value>
   </data>
   <data name="MemorysCurtainNeverFalls" xml:space="preserve">
-    <value>记忆永不落幕</value>
+    <value>Sobre los recuerdos nunca cae el telón</value>
   </data>
   <data name="MeshingCogs" xml:space="preserve">
-    <value>轮契</value>
+    <value>Rueda mecánica</value>
   </data>
   <data name="MomentOfVictory" xml:space="preserve">
-    <value>制胜的瞬间</value>
+    <value>El momento de la victoria</value>
   </data>
   <data name="Multiplication" xml:space="preserve">
-    <value>蕃息</value>
+    <value>Multiplicación</value>
   </data>
   <data name="MutualDemise" xml:space="preserve">
-    <value>俱殁</value>
+    <value>Final mutuo</value>
   </data>
   <data name="NightOfFright" xml:space="preserve">
-    <value>惊魂夜</value>
+    <value>Noche terrorífica</value>
   </data>
   <data name="NightOnTheMilkyWay" xml:space="preserve">
-    <value>银河铁道之夜</value>
+    <value>Noche en la Vía Láctea</value>
   </data>
   <data name="NinjaRecordSoundHunt" xml:space="preserve">
-    <value>忍事录•音律狩猎</value>
+    <value>Grabación ninja: Cacería del Sonido</value>
   </data>
   <data name="NinjutsuInscriptionDazzlingEvilbreaker" xml:space="preserve">
-    <value>忍法帖•缭乱破魔</value>
+    <value>Pergamino ninja: Azote deslumbrante del mal</value>
   </data>
   <data name="NowhereToRun" xml:space="preserve">
-    <value>无处可逃</value>
+    <value>Sin escapatoria</value>
   </data>
   <data name="OnTheFallOfAnAeon" xml:space="preserve">
-    <value>记一位星神的陨落</value>
+    <value>Sobre la caída de un Eón</value>
   </data>
   <data name="OnlySilenceRemains" xml:space="preserve">
-    <value>唯有沉默</value>
+    <value>Solo queda silencio</value>
   </data>
   <data name="Passkey" xml:space="preserve">
-    <value>灵钥</value>
+    <value>Llave maestra</value>
   </data>
   <data name="PastAndFuture" xml:space="preserve">
-    <value>过往未来</value>
+    <value>El pasado y el futuro</value>
   </data>
   <data name="PastSelfInMirror" xml:space="preserve">
-    <value>镜中故我</value>
+    <value>Mi pasado en el espejo</value>
   </data>
   <data name="PatienceIsAllYouNeed" xml:space="preserve">
-    <value>只需等待</value>
+    <value>Solo hay que esperar</value>
   </data>
   <data name="PerfectTiming" xml:space="preserve">
-    <value>此时恰好</value>
+    <value>El momento oportuno</value>
   </data>
   <data name="Pioneering" xml:space="preserve">
-    <value>开疆</value>
+    <value>Colonización</value>
   </data>
   <data name="PlanetaryRendezvous" xml:space="preserve">
-    <value>与行星相会</value>
+    <value>Encuentro planetario</value>
   </data>
   <data name="PoisedToBloom" xml:space="preserve">
-    <value>芳华待灼</value>
+    <value>Juventud por florecer</value>
   </data>
   <data name="PostOpConversation" xml:space="preserve">
-    <value>一场术后对话</value>
+    <value>Conversación en el postoperatorio</value>
   </data>
   <data name="QuidProQuo" xml:space="preserve">
-    <value>等价交换</value>
+    <value>Intercambio equivalente</value>
   </data>
   <data name="ReforgedRemembrance" xml:space="preserve">
-    <value>重塑时光之忆</value>
+    <value>Recuerdos reconstruidos</value>
   </data>
   <data name="Reminiscence" xml:space="preserve">
-    <value>溯忆</value>
+    <value>Retrospección</value>
   </data>
   <data name="ResolutionShinesAsPearlsOfSweat" xml:space="preserve">
-    <value>决心如汗珠般闪耀</value>
+    <value>Determinación reluciente</value>
   </data>
   <data name="ReturnToDarkness" xml:space="preserve">
-    <value>重返幽冥</value>
+    <value>Regreso a la oscuridad</value>
   </data>
   <data name="RiverFlowsInSpring" xml:space="preserve">
-    <value>春水初生</value>
+    <value>El río nace en primavera</value>
   </data>
   <data name="Sagacity" xml:space="preserve">
-    <value>睿见</value>
+    <value>Sagacidad</value>
   </data>
   <data name="SailingTowardsASecondLife" xml:space="preserve">
-    <value>驶向第二次生命</value>
+    <value>Hacia una segunda vida</value>
   </data>
   <data name="ScentAloneStaysTrue" xml:space="preserve">
-    <value>唯有香如故</value>
+    <value>Solo la fragancia perdura</value>
   </data>
   <data name="SeeYouAtTheEnd" xml:space="preserve">
-    <value>于那终点再见</value>
+    <value>Nos vemos al final</value>
   </data>
   <data name="Shadowburn" xml:space="preserve">
-    <value>焚影</value>
+    <value>Imágenes quemadas</value>
   </data>
   <data name="ShadowedByNight" xml:space="preserve">
-    <value>黑夜如影随行</value>
+    <value>La sombra de la noche</value>
   </data>
   <data name="SharedFeeling" xml:space="preserve">
-    <value>同一种心情</value>
+    <value>Sentimiento compartido</value>
   </data>
   <data name="ShatteredHome" xml:space="preserve">
-    <value>乐圮</value>
+    <value>Hogar destrozado</value>
   </data>
   <data name="SheAlreadyShutHerEyes" xml:space="preserve">
-    <value>她已闭上双眼</value>
+    <value>Ya ha cerrado los ojos</value>
   </data>
   <data name="SleepLikeTheDead" xml:space="preserve">
-    <value>如泥酣眠</value>
+    <value>Dormir como un tronco</value>
   </data>
   <data name="SolitaryHealing" xml:space="preserve">
-    <value>孤独的疗愈</value>
+    <value>Sanación solitaria</value>
   </data>
   <data name="SomethingIrreplaceable" xml:space="preserve">
-    <value>无可取代的东西</value>
+    <value>Algo insustituible</value>
   </data>
   <data name="SubscribeForMore" xml:space="preserve">
-    <value>点个关注吧！</value>
+    <value>¡Suscríbanse a mi canal!</value>
   </data>
   <data name="SweatNowCryLess" xml:space="preserve">
-    <value>多流汗，少流泪</value>
+    <value>Más sudor y menos lágrimas</value>
   </data>
   <data name="Swordplay" xml:space="preserve">
-    <value>论剑</value>
+    <value>Juego de espadas</value>
   </data>
   <data name="TextureOfMemories" xml:space="preserve">
-    <value>记忆的质料</value>
+    <value>La textura de los recuerdos</value>
   </data>
   <data name="TheBirthOfTheSelf" xml:space="preserve">
-    <value>「我」的诞生</value>
+    <value>El nacimiento del yo</value>
   </data>
   <data name="TheDayTheCosmosFell" xml:space="preserve">
-    <value>银河沦陷日</value>
+    <value>Día del colapso cósmico</value>
   </data>
   <data name="TheFlowerRemembers" xml:space="preserve">
-    <value>花儿不会忘记</value>
+    <value>Las flores nunca olvidan</value>
   </data>
   <data name="TheForeverVictual" xml:space="preserve">
-    <value>永远的迷境饭</value>
+    <value>Viandas sin fin</value>
   </data>
   <data name="TheGreatCosmicEnterprise" xml:space="preserve">
-    <value>宇宙大生意</value>
+    <value>El gran negocio cósmico</value>
   </data>
   <data name="TheHellWhereIdealsBurn" xml:space="preserve">
-    <value>理想燃烧的地狱</value>
+    <value>Infierno donde arden los ideales</value>
   </data>
   <data name="TheMolesWelcomeYou" xml:space="preserve">
-    <value>鼹鼠党欢迎你</value>
+    <value>Los Topos te dan la bienvenida</value>
   </data>
   <data name="TheSeriousnessOfBreakfast" xml:space="preserve">
-    <value>早餐的仪式感</value>
+    <value>La solemnidad del desayuno</value>
   </data>
   <data name="TheStorysNextPage" xml:space="preserve">
-    <value>故事的下一页</value>
+    <value>La siguiente página de la historia</value>
   </data>
   <data name="TheUnreachableSide" xml:space="preserve">
-    <value>到不了的彼岸</value>
+    <value>Orilla inalcanzable</value>
   </data>
   <data name="ThisIsMe" xml:space="preserve">
-    <value>这就是我啦！</value>
+    <value>¡Así soy yo!</value>
   </data>
   <data name="ThoseManySprings" xml:space="preserve">
-    <value>那无数个春天</value>
+    <value>Esas incontables primaveras</value>
   </data>
   <data name="ThoughWorldsApart" xml:space="preserve">
-    <value>纵然山河万程</value>
+    <value>A través de montañas y ríos</value>
   </data>
   <data name="ThusBurnsTheDawn" xml:space="preserve">
-    <value>黎明恰如此燃烧</value>
+    <value>Que arda el alba</value>
   </data>
   <data name="TimeWaitsForNoOne" xml:space="preserve">
-    <value>时节不居</value>
+    <value>El tiempo no espera</value>
   </data>
   <data name="TimeWovenIntoGold" xml:space="preserve">
-    <value>将光阴织成黄金</value>
+    <value>Tiempo urdido en oro</value>
   </data>
   <data name="ToEvernightsStars" xml:space="preserve">
-    <value>致长夜的星光</value>
+    <value>A la estrella de la larga noche</value>
   </data>
   <data name="TodayIsAnotherPeacefulDay" xml:space="preserve">
-    <value>今日亦是和平的一日</value>
+    <value>Hoy es otro día tranquilo</value>
   </data>
   <data name="TrendOfTheUniversalMarket" xml:space="preserve">
-    <value>宇宙市场趋势</value>
+    <value>Tendencias del mercado universal</value>
   </data>
   <data name="UnderTheBlueSky" xml:space="preserve">
-    <value>在蓝天下</value>
+    <value>Bajo el cielo azul</value>
   </data>
   <data name="UntoTomorrowsMorrow" xml:space="preserve">
-    <value>直到明天的明天</value>
+    <value>Hasta pasado mañana</value>
   </data>
   <data name="VictoryInABlink" xml:space="preserve">
-    <value>胜利只在朝夕间</value>
+    <value>Victoria disputada</value>
   </data>
   <data name="Void" xml:space="preserve">
-    <value>幽邃</value>
+    <value>Vacío</value>
   </data>
   <data name="WarmthShortensColdNights" xml:space="preserve">
-    <value>暖夜不会漫长</value>
+    <value>Las noches cálidas no duran</value>
   </data>
   <data name="WeAreWildfire" xml:space="preserve">
-    <value>我们是地火</value>
+    <value>Somos Llamarada</value>
   </data>
   <data name="WeWillMeetAgain" xml:space="preserve">
-    <value>后会有期</value>
+    <value>Volveremos a encontrarnos</value>
   </data>
   <data name="WhatIsReal" xml:space="preserve">
-    <value>何物为真</value>
+    <value>Cuestión de verdad</value>
   </data>
   <data name="WhereaboutsShouldDreamsRest" xml:space="preserve">
-    <value>梦应归于何处</value>
+    <value>A donde regresan los sueños</value>
   </data>
   <data name="WhyDoesTheOceanSing" xml:space="preserve">
-    <value>海洋为何而歌</value>
+    <value>Por qué canta el océano</value>
   </data>
   <data name="WoofWalkTime" xml:space="preserve">
-    <value>汪！散步时间！</value>
+    <value>¡Guau! ¡Hora de pasear!</value>
   </data>
   <data name="WorrisomeBlissful" xml:space="preserve">
-    <value>烦恼着，幸福着</value>
+    <value>Preocupaciones y felicidad</value>
   </data>
   <data name="YetHopeIsPriceless" xml:space="preserve">
-    <value>偏偏希望无价</value>
+    <value>La esperanza no tiene precio</value>
   </data>
 </root>

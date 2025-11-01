@@ -5,13 +5,11 @@
     {
         public string Key { get; }
         public int Rarity { get; }
-        public bool Limited { get; }
 
-        public SRCharacterAttribute(string key, int rarity, bool limited = false)
+        public SRCharacterAttribute(string key, int rarity)
         {
             Key = key;
             Rarity = rarity;
-            Limited = limited;
         }
     }
 }

@@ -40,7 +40,7 @@ namespace SREmulator.GUI.View
             // 初始化卡池版本数据
             InitializeWarpVersions();
             // 初始化角色数据
-            InitializeCharacters();
+            InitializeLightCones();
             // 初始化状态
             UpdateResourceInputState();
         }
@@ -84,28 +84,7 @@ namespace SREmulator.GUI.View
 
         private void InitializeWarpNames()
         {
-            // 创建卡池列表，添加默认选项
-            var warpNames = new List<string>();
-
-            // 使用反射获取SRCharacterKeys类中的所有字符常量
-            var characterKeysType = typeof(SREventWarpKeys);
-            var constFields = characterKeysType.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy)
-                .Where(f => f.IsLiteral && !f.IsInitOnly && f.FieldType == typeof(string));
-
-            // 获取每个字符的别名并添加到列表中
-            foreach (var field in constFields)
-            {
-                // 获取SRAliases属性
-                var aliasesAttr = field.GetCustomAttribute<SRAliasesAttribute>();
-                if (aliasesAttr != null)
-                {
-                    // 使用字段名作为显示文本
-                    warpNames.Add(field.Name);
-                }
-            }
-
-            // 绑定数据到ComboBox
-            cmbWarpName.ItemsSource = warpNames;
+            cmbWarpName.ItemsSource = Utils.CreateStringValuePairFromSRKeys(typeof(SREventWarpKeys));
             cmbWarpName.SelectedIndex = 0;
         }
 
@@ -168,36 +147,10 @@ namespace SREmulator.GUI.View
         /// <summary>
         /// 初始化光锥数据
         /// </summary>
-        private void InitializeCharacters()
+        private void InitializeLightCones()
         {
-            // 创建光锥列表
-            var lightConeItems = new List<string>();
-
-            // 使用反射获取SRLightConeKeys类中的所有光锥常量
-            var lightConeKeysType = typeof(SRLightConeKeys);
-            var constFields = lightConeKeysType.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy)
-                .Where(f => f.IsLiteral && !f.IsInitOnly && f.FieldType == typeof(string));
-
-            // 获取每个光锥的别名并添加到列表中
-            foreach (var field in constFields)
-            {
-                // 获取SRAliases属性
-                var aliasesAttr = field.GetCustomAttribute<SRAliasesAttribute>();
-                if (aliasesAttr != null)
-                {
-                    // 使用字段名作为显示文本
-                    string lightConeName = field.Name;
-                    lightConeItems.Add(lightConeName);
-                }
-            }
-
-            // 绑定数据到ComboBox
-            cmbTarget.ItemsSource = lightConeItems;
-            // 只有当列表不为空时才设置选中索引
-            if (lightConeItems.Count > 0)
-            {
-                cmbTarget.SelectedIndex = 0;
-            }
+            cmbTarget.ItemsSource = Utils.CreateStringValuePairFromSRKeys(typeof(SRLightConeKeys));
+            cmbTarget.SelectedIndex = 0;
         }
 
         /// <summary>

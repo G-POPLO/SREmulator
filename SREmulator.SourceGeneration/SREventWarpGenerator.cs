@@ -99,7 +99,7 @@ namespace SREmulator.SourceGeneration
             builder.AppendLine(1, "{");
             foreach (var warp in warpsDatas.SelectMany(warpsData => warpsData.WarpDatas))
             {
-                builder.AppendLine(2, $"private static SR{Type}EventWarp _{warp.WarpName} = null;");
+                builder.AppendLine(2, $"private static SR{Type}EventWarp? _{warp.WarpName} = null;");
                 builder.AppendLine(2, $"public static SR{Type}EventWarp {warp.WarpName} => _{warp.WarpName} ??= new {GetClassName(warp)}();");
             }
             builder.AppendLine(2, $"public static partial SR{Type}EventWarp? GetWarpByNameAndVersion(string? name, SRVersion version)");

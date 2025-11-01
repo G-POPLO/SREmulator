@@ -33,147 +33,147 @@ namespace SREmulator.Localizations
         public const string TimeWaitsForNoOne = nameof(TimeWaitsForNoOne);
 
 
-        [SRLightCone(AGroundedAscent, 5, true)]
+        [SRLightCone(AGroundedAscent, 5)]
         [SRAliases("a-grounded-ascent", "huidaodadidefeixing")]
         public const string AGroundedAscent = nameof(AGroundedAscent);
 
-        [SRLightCone(AlongThePassingShore, 5, true)]
+        [SRLightCone(AlongThePassingShore, 5)]
         [SRAliases("along-the-passing-shore", "xingyuliushidean")]
         public const string AlongThePassingShore = nameof(AlongThePassingShore);
 
-        [SRLightCone(AnInstantBeforeAGaze, 5, true)]
+        [SRLightCone(AnInstantBeforeAGaze, 5)]
         [SRAliases("an-instant-before-a-gaze", "piankeliuzaiyandi")]
         public const string AnInstantBeforeAGaze = nameof(AnInstantBeforeAGaze);
 
-        [SRLightCone(BaptismOfPureThought, 5, true)]
+        [SRLightCone(BaptismOfPureThought, 5)]
         [SRAliases("baptism-of-pure-thought", "chuncuisiweidexili")]
         public const string BaptismOfPureThought = nameof(BaptismOfPureThought);
 
-        [SRLightCone(BeforeDawn, 5, true)]
+        [SRLightCone(BeforeDawn, 5)]
         [SRAliases("before-dawn", "fuxiaozhiqian")]
         public const string BeforeDawn = nameof(BeforeDawn);
 
-        [SRLightCone(BrighterThanTheSun, 5, true)]
+        [SRLightCone(BrighterThanTheSun, 5)]
         [SRAliases("brighter-than-the-sun", "biyangguanggengmingliaode")]
         public const string BrighterThanTheSun = nameof(BrighterThanTheSun);
 
-        [SRLightCone(CruisingInTheStellarSea, 5, true)]
+        [SRLightCone(CruisingInTheStellarSea, 5)]
         [SRAliases("cruising-in-the-stellar-sea", "xinghaixunhang")]
         public const string CruisingInTheStellarSea = nameof(CruisingInTheStellarSea);
 
-        [SRLightCone(DanceAtSunset, 5, true)]
+        [SRLightCone(DanceAtSunset, 5)]
         [SRAliases("dance-at-sunset", "luorishiqiwu")]
         public const string DanceAtSunset = nameof(DanceAtSunset);
 
-        [SRLightCone(EarthlyEscapade, 5, true)]
+        [SRLightCone(EarthlyEscapade, 5)]
         [SRAliases("earthly-escapade", "youxihuanchen")]
         public const string EarthlyEscapade = nameof(EarthlyEscapade);
 
-        [SRLightCone(EchoesOfTheCoffin, 5, true)]
+        [SRLightCone(EchoesOfTheCoffin, 5)]
         [SRAliases("echoes-of-the-coffin", "guandehuixiang")]
         public const string EchoesOfTheCoffin = nameof(EchoesOfTheCoffin);
 
-        [SRLightCone(EternalCalculus, 5, true)]
+        [SRLightCone(EternalCalculus, 5)]
         [SRAliases("eternal-calculus", "buxideyansuan")]
         public const string EternalCalculus = nameof(EternalCalculus);
 
-        [SRLightCone(FlowingNightglow, 5, true)]
+        [SRLightCone(FlowingNightglow, 5)]
         [SRAliases("flowing-nightglow", "yeseliuguangyicai")]
         public const string FlowingNightglow = nameof(FlowingNightglow);
 
-        [SRLightCone(IShallBeMyOwnSword, 5, true)]
+        [SRLightCone(IShallBeMyOwnSword, 5)]
         [SRAliases("i-shall-be-my-own-sword", "cishenweijian")]
         public const string IShallBeMyOwnSword = nameof(IShallBeMyOwnSword);
 
-        [SRLightCone(IVentureForthToHunt, 5, true)]
+        [SRLightCone(IVentureForthToHunt, 5)]
         [SRAliases("i-venture-forth-to-hunt", "wojiangxunzhengzhuilie")]
         public const string IVentureForthToHunt = nameof(IVentureForthToHunt);
 
-        [SRLightCone(InTheNight, 5, true)]
+        [SRLightCone(InTheNight, 5)]
         [SRAliases("in-the-night", "yuyesezhong")]
         public const string InTheNight = nameof(InTheNight);
 
-        [SRLightCone(IncessantRain, 5, true)]
+        [SRLightCone(IncessantRain, 5)]
         [SRAliases("incessant-rain", "yuyizhixia")]
         public const string IncessantRain = nameof(IncessantRain);
 
-        [SRLightCone(InherentlyUnjustDestiny, 5, true)]
+        [SRLightCone(InherentlyUnjustDestiny, 5)]
         [SRAliases("inherently-unjust-destiny", "mingyuncongweigongping")]
         public const string InherentlyUnjustDestiny = nameof(InherentlyUnjustDestiny);
 
-        [SRLightCone(LongRoadLeadsHome, 5, true)]
+        [SRLightCone(LongRoadLeadsHome, 5)]
         [SRAliases("long-road-leads-home", "changluzhongyouguitu")]
         public const string LongRoadLeadsHome = nameof(LongRoadLeadsHome);
 
-        [SRLightCone(NightOfFright, 5, true)]
+        [SRLightCone(NightOfFright, 5)]
         [SRAliases("night-of-fright", "jinghunye")]
         public const string NightOfFright = nameof(NightOfFright);
 
-        [SRLightCone(NinjutsuInscriptionDazzlingEvilbreaker, 5, true)]
+        [SRLightCone(NinjutsuInscriptionDazzlingEvilbreaker, 5)]
         [SRAliases("ninjutsu-inscription-dazzling-evilbreaker", "renfatieliaoluanpomo")]
         public const string NinjutsuInscriptionDazzlingEvilbreaker = nameof(NinjutsuInscriptionDazzlingEvilbreaker);
 
-        [SRLightCone(OnTheFallOfAnAeon, 5, true)]
+        [SRLightCone(OnTheFallOfAnAeon, 5)]
         [SRAliases("on-the-fall-of-an-aeon", "jiyiweixingshendeyunluo")]
         public const string OnTheFallOfAnAeon = nameof(OnTheFallOfAnAeon);
 
-        [SRLightCone(PastSelfInMirror, 5, true)]
+        [SRLightCone(PastSelfInMirror, 5)]
         [SRAliases("past-self-in-mirror", "jingzhongguwo")]
         public const string PastSelfInMirror = nameof(PastSelfInMirror);
 
-        [SRLightCone(PatienceIsAllYouNeed, 5, true)]
+        [SRLightCone(PatienceIsAllYouNeed, 5)]
         [SRAliases("patience-is-all-you-need", "zhixudengdai")]
         public const string PatienceIsAllYouNeed = nameof(PatienceIsAllYouNeed);
 
-        [SRLightCone(ReforgedRemembrance, 5, true)]
+        [SRLightCone(ReforgedRemembrance, 5)]
         [SRAliases("reforged-remembrance", "chongsushiguangzhiyi")]
         public const string ReforgedRemembrance = nameof(ReforgedRemembrance);
 
-        [SRLightCone(SailingTowardsASecondLife, 5, true)]
+        [SRLightCone(SailingTowardsASecondLife, 5)]
         [SRAliases("sailing-towards-a-second-life", "shixiangdiercishengming")]
         public const string SailingTowardsASecondLife = nameof(SailingTowardsASecondLife);
 
-        [SRLightCone(ScentAloneStaysTrue, 5, true)]
+        [SRLightCone(ScentAloneStaysTrue, 5)]
         [SRAliases("scent-alone-stays-true", "weiyouxiangrugu")]
         public const string ScentAloneStaysTrue = nameof(ScentAloneStaysTrue);
 
-        [SRLightCone(SheAlreadyShutHerEyes, 5, true)]
+        [SRLightCone(SheAlreadyShutHerEyes, 5)]
         [SRAliases("she-already-shut-her-eyes", "tayibishangshuangyan")]
         public const string SheAlreadyShutHerEyes = nameof(SheAlreadyShutHerEyes);
 
-        [SRLightCone(SolitaryHealing, 5, true)]
+        [SRLightCone(SolitaryHealing, 5)]
         [SRAliases("solitary-healing", "gududeliaoyu")]
         public const string SolitaryHealing = nameof(SolitaryHealing);
 
-        [SRLightCone(TextureOfMemories, 5, true)]
+        [SRLightCone(TextureOfMemories, 5)]
         [SRAliases("texture-of-memories", "jiyidezhiliao")]
         public const string TextureOfMemories = nameof(TextureOfMemories);
 
-        [SRLightCone(TheUnreachableSide, 5, true)]
+        [SRLightCone(TheUnreachableSide, 5)]
         [SRAliases("the-unreachable-side", "daobuliaodebian")]
         public const string TheUnreachableSide = nameof(TheUnreachableSide);
 
-        [SRLightCone(ThoseManySprings, 5, true)]
+        [SRLightCone(ThoseManySprings, 5)]
         [SRAliases("those-many-springs", "nawushugechuntian")]
         public const string ThoseManySprings = nameof(ThoseManySprings);
 
-        [SRLightCone(WhereaboutsShouldDreamsRest, 5, true)]
+        [SRLightCone(WhereaboutsShouldDreamsRest, 5)]
         [SRAliases("whereabouts-should-dreams-rest", "mengyingguiyuhechu")]
         public const string WhereaboutsShouldDreamsRest = nameof(WhereaboutsShouldDreamsRest);
 
-        [SRLightCone(WorrisomeBlissful, 5, true)]
+        [SRLightCone(WorrisomeBlissful, 5)]
         [SRAliases("worrisome-blissful", "fannaozhexingfuzhe")]
         public const string WorrisomeBlissful = nameof(WorrisomeBlissful);
 
-        [SRLightCone(YetHopeIsPriceless, 5, true)]
+        [SRLightCone(YetHopeIsPriceless, 5)]
         [SRAliases("yet-hope-is-priceless", "pianpianxiwangwujia")]
         public const string YetHopeIsPriceless = nameof(YetHopeIsPriceless);
 
-        [SRLightCone(IntoTheUnreachableVeil, 5, true)]
+        [SRLightCone(IntoTheUnreachableVeil, 5)]
         [SRAliases("into-the-unreachable-veil", "xiangzhebukezhuiwenchu")]
         public const string IntoTheUnreachableVeil = nameof(IntoTheUnreachableVeil);
 
-        [SRLightCone(TimeWovenIntoGold, 5, true)]
+        [SRLightCone(TimeWovenIntoGold, 5)]
         [SRAliases("time-woven-into-gold", "jiangguangyinzhichenghuangjin")]
         public const string TimeWovenIntoGold = nameof(TimeWovenIntoGold);
 

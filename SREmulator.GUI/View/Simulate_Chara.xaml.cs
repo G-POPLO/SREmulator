@@ -90,56 +90,13 @@ namespace SREmulator.GUI.View
         /// </summary>
         private void InitializeCharacters()
         {
-            // 创建角色列表，添加默认选项
-            var characterItems = new List<string> ();
-
-            // 使用反射获取SRCharacterKeys类中的所有字符常量
-            var characterKeysType = typeof(SRCharacterKeys);
-            var constFields = characterKeysType.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy)
-                .Where(f => f.IsLiteral && !f.IsInitOnly && f.FieldType == typeof(string));
-
-            // 获取每个字符的别名并添加到列表中
-            foreach (var field in constFields)
-            {
-                // 获取SRAliases属性
-                var aliasesAttr = field.GetCustomAttribute<SRAliasesAttribute>();
-                if (aliasesAttr != null)
-                {
-                    // 使用字段名作为显示文本
-                    string characterName = field.Name;
-                    characterItems.Add(characterName);
-                }
-            }
-
-            // 绑定数据到ComboBox
-            cmbTarget.ItemsSource = characterItems;
+            cmbTarget.ItemsSource = Utils.CreateStringValuePairFromSRKeys(typeof(SRCharacterKeys));
             cmbTarget.SelectedIndex = 0;
         }
 
         private void InitializeWarpNames()
-        {            
-            // 创建卡池列表，添加默认选项
-            var warpNames = new List<string>();
-
-            // 使用反射获取SRCharacterKeys类中的所有字符常量
-            var characterKeysType = typeof(SREventWarpKeys);
-            var constFields = characterKeysType.GetFields(BindingFlags.Public | BindingFlags.Static | BindingFlags.FlattenHierarchy)
-                .Where(f => f.IsLiteral && !f.IsInitOnly && f.FieldType == typeof(string));
-
-            // 获取每个字符的别名并添加到列表中
-            foreach (var field in constFields)
-            {
-                // 获取SRAliases属性
-                var aliasesAttr = field.GetCustomAttribute<SRAliasesAttribute>();
-                if (aliasesAttr != null)
-                {
-                    // 使用字段名作为显示文本
-                    warpNames.Add(field.Name);
-                }
-            }
-
-            // 绑定数据到ComboBox
-            cmbWarpName.ItemsSource = warpNames;
+        {
+            cmbWarpName.ItemsSource = Utils.CreateStringValuePairFromSRKeys(typeof(SREventWarpKeys));
             cmbWarpName.SelectedIndex = 0;
         }
 
