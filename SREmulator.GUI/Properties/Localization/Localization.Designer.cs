@@ -151,24 +151,6 @@ namespace SREmulator.GUI.Properties.Localization {
         }
         
         /// <summary>
-        ///   查找类似 简体中文 的本地化字符串。
-        /// </summary>
-        public static string Setting_Language_Chinese {
-            get {
-                return ResourceManager.GetString("Setting_Language_Chinese", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 English 的本地化字符串。
-        /// </summary>
-        public static string Setting_Language_English {
-            get {
-                return ResourceManager.GetString("Setting_Language_English", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   查找类似 保存设置 的本地化字符串。
         /// </summary>
         public static string Setting_Save {
@@ -201,24 +183,6 @@ namespace SREmulator.GUI.Properties.Localization {
         public static string Setting_UpdateSource {
             get {
                 return ResourceManager.GetString("Setting_UpdateSource", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Gitcode 的本地化字符串。
-        /// </summary>
-        public static string Setting_UpdateSource_Gitcode {
-            get {
-                return ResourceManager.GetString("Setting_UpdateSource_Gitcode", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   查找类似 Github 的本地化字符串。
-        /// </summary>
-        public static string Setting_UpdateSource_Github {
-            get {
-                return ResourceManager.GetString("Setting_UpdateSource_Github", resourceCulture);
             }
         }
         
