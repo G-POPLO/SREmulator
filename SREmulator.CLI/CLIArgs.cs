@@ -282,7 +282,7 @@ namespace SREmulator.CLI
             {
                 source.Warning("未选择任何卡池，请使用 --new-warp 指定卡池");
             }
-            if (result.Command is "achieve-average-warps" or "achieve-chance" && result.Targets.Target.Count is 0)
+            if (result.Command is "achieve-average-warps" or "achieve-chance" && result.Targets.TargetToCount.Count is 0)
             {
                 source.Warning("未设置任何目标，请使用 --target 设置目标");
             }

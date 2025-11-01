@@ -121,6 +121,18 @@
     <value>Acheron</value>
     <comment>Characters</comment>
   </data>
+  <data name="Aglaea" xml:space="preserve">
+    <value>Aglaea</value>
+    <comment>Characters</comment>
+  </data>
+  <data name="Anaxa" xml:space="preserve">
+    <value>Anaxa</value>
+    <comment>Characters</comment>
+  </data>
+  <data name="Archer" xml:space="preserve">
+    <value>Archer</value>
+    <comment>Characters</comment>
+  </data>
   <data name="Argenti" xml:space="preserve">
     <value>Argenti</value>
     <comment>Characters</comment>
@@ -157,6 +169,18 @@
     <value>Bronya</value>
     <comment>Characters</comment>
   </data>
+  <data name="Castorice" xml:space="preserve">
+    <value>Castorice</value>
+    <comment>Characters</comment>
+  </data>
+  <data name="Cerydra" xml:space="preserve">
+    <value>Cerydra</value>
+    <comment>Characters</comment>
+  </data>
+  <data name="Cipher" xml:space="preserve">
+    <value>Cipher</value>
+    <comment>Characters</comment>
+  </data>
   <data name="Clara" xml:space="preserve">
     <value>Clara</value>
     <comment>Characters</comment>
@@ -169,8 +193,16 @@
     <value>DanHengImbibitorLunae</value>
     <comment>Characters</comment>
   </data>
+  <data name="DanHengPermansorTerrae" xml:space="preserve">
+    <value>DanHengPermansorTerrae</value>
+    <comment>Characters</comment>
+  </data>
   <data name="DrRatio" xml:space="preserve">
     <value>DrRatio</value>
+    <comment>Characters</comment>
+  </data>
+  <data name="Evernight" xml:space="preserve">
+    <value>Evernight</value>
     <comment>Characters</comment>
   </data>
   <data name="Feixiao" xml:space="preserve">
@@ -183,6 +215,10 @@
   </data>
   <data name="FuXuan" xml:space="preserve">
     <value>FuXuan</value>
+    <comment>Characters</comment>
+  </data>
+  <data name="Fugue" xml:space="preserve">
+    <value>Fugue</value>
     <comment>Characters</comment>
   </data>
   <data name="Gallagher" xml:space="preserve">
@@ -217,6 +253,14 @@
     <value>Huohuo</value>
     <comment>Characters</comment>
   </data>
+  <data name="Hyacine" xml:space="preserve">
+    <value>Hyacine</value>
+    <comment>Characters</comment>
+  </data>
+  <data name="Hysilens" xml:space="preserve">
+    <value>Hysilens</value>
+    <comment>Characters</comment>
+  </data>
   <data name="Jade" xml:space="preserve">
     <value>Jade</value>
     <comment>Characters</comment>
@@ -225,12 +269,12 @@
     <value>Jiaoqiu</value>
     <comment>Characters</comment>
   </data>
-  <data name="Jingliu" xml:space="preserve">
-    <value>Jingliu</value>
-    <comment>Characters</comment>
-  </data>
   <data name="JingYuan" xml:space="preserve">
     <value>JingYuan</value>
+    <comment>Characters</comment>
+  </data>
+  <data name="Jingliu" xml:space="preserve">
+    <value>Jingliu</value>
     <comment>Characters</comment>
   </data>
   <data name="Kafka" xml:space="preserve">
@@ -265,12 +309,20 @@
     <value>Moze</value>
     <comment>Characters</comment>
   </data>
+  <data name="Mydei" xml:space="preserve">
+    <value>Mydei</value>
+    <comment>Characters</comment>
+  </data>
   <data name="Natasha" xml:space="preserve">
     <value>Natasha</value>
     <comment>Characters</comment>
   </data>
   <data name="Pela" xml:space="preserve">
     <value>Pela</value>
+    <comment>Characters</comment>
+  </data>
+  <data name="Phainon" xml:space="preserve">
+    <value>Phainon</value>
     <comment>Characters</comment>
   </data>
   <data name="Qingque" xml:space="preserve">
@@ -287,6 +339,10 @@
   </data>
   <data name="RuanMei" xml:space="preserve">
     <value>RuanMei</value>
+    <comment>Characters</comment>
+  </data>
+  <data name="Saber" xml:space="preserve">
+    <value>Saber</value>
     <comment>Characters</comment>
   </data>
   <data name="Sampo" xml:space="preserve">
@@ -309,8 +365,16 @@
     <value>Sparkle</value>
     <comment>Characters</comment>
   </data>
+  <data name="Sunday" xml:space="preserve">
+    <value>Sunday</value>
+    <comment>Characters</comment>
+  </data>
   <data name="Sushang" xml:space="preserve">
     <value>Sushang</value>
+    <comment>Characters</comment>
+  </data>
+  <data name="TheHerta" xml:space="preserve">
+    <value>TheHerta</value>
     <comment>Characters</comment>
   </data>
   <data name="Tingyun" xml:space="preserve">
@@ -319,6 +383,10 @@
   </data>
   <data name="TopazNumby" xml:space="preserve">
     <value>TopazNumby</value>
+    <comment>Characters</comment>
+  </data>
+  <data name="Tribbie" xml:space="preserve">
+    <value>Tribbie</value>
     <comment>Characters</comment>
   </data>
   <data name="Welt" xml:space="preserve">
@@ -341,236 +409,48 @@
     <value>Yunli</value>
     <comment>Characters</comment>
   </data>
-  <data name="BoundlessChoreo" xml:space="preserve">
-    <value>BoundlessChoreo</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="DayOneOfMyNewLife" xml:space="preserve">
-    <value>DayOneOfMyNewLife</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="MakeTheWorldClamor" xml:space="preserve">
-    <value>MakeTheWorldClamor</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="Swordplay" xml:space="preserve">
-    <value>Swordplay</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="MemoriesOfThePast" xml:space="preserve">
-    <value>MemoriesOfThePast</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="AfterTheCharmonyFall" xml:space="preserve">
-    <value>AfterTheCharmonyFall</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="ShadowedByNight" xml:space="preserve">
-    <value>ShadowedByNight</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="OnlySilenceRemains" xml:space="preserve">
-    <value>OnlySilenceRemains</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="TheMolesWelcomeYou" xml:space="preserve">
-    <value>TheMolesWelcomeYou</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="PostOpConversation" xml:space="preserve">
-    <value>PostOpConversation</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="ASecretVow" xml:space="preserve">
-    <value>ASecretVow</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="DanceDanceDance" xml:space="preserve">
-    <value>DanceDanceDance</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="ConcertForTwo" xml:space="preserve">
-    <value>ConcertForTwo</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="SharedFeeling" xml:space="preserve">
-    <value>SharedFeeling</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="EyesOfThePrey" xml:space="preserve">
-    <value>EyesOfThePrey</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="ResolutionShinesAsPearlsOfSweat" xml:space="preserve">
-    <value>ResolutionShinesAsPearlsOfSweat</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="TrendOfTheUniversalMarket" xml:space="preserve">
-    <value>TrendOfTheUniversalMarket</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="TheBirthOfTheSelf" xml:space="preserve">
-    <value>TheBirthOfTheSelf</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="LandausChoice" xml:space="preserve">
-    <value>LandausChoice</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="PerfectTiming" xml:space="preserve">
-    <value>PerfectTiming</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="UnderTheBlueSky" xml:space="preserve">
-    <value>UnderTheBlueSky</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="GoodNightAndSleepWell" xml:space="preserve">
-    <value>GoodNightAndSleepWell</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="PlanetaryRendezvous" xml:space="preserve">
-    <value>PlanetaryRendezvous</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="SubscribeForMore" xml:space="preserve">
-    <value>SubscribeForMore</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="IndeliblePromise" xml:space="preserve">
-    <value>IndeliblePromise</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="PoisedToBloom" xml:space="preserve">
-    <value>PoisedToBloom</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="GeniusesRepose" xml:space="preserve">
-    <value>GeniusesRepose</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="DreamsMontage" xml:space="preserve">
-    <value>DreamsMontage</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="DartingArrow" xml:space="preserve">
-    <value>DartingArrow</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="DataBank" xml:space="preserve">
-    <value>DataBank</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="Defense" xml:space="preserve">
-    <value>Defense</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="FineFruit" xml:space="preserve">
-    <value>FineFruit</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="HiddenShadow" xml:space="preserve">
-    <value>HiddenShadow</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="Loop" xml:space="preserve">
-    <value>Loop</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="Mediation" xml:space="preserve">
-    <value>Mediation</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="MeshingCogs" xml:space="preserve">
-    <value>MeshingCogs</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="Multiplication" xml:space="preserve">
-    <value>Multiplication</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="MutualDemise" xml:space="preserve">
-    <value>MutualDemise</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="Passkey" xml:space="preserve">
-    <value>Passkey</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="Pioneering" xml:space="preserve">
-    <value>Pioneering</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="Sagacity" xml:space="preserve">
-    <value>Sagacity</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="ShatteredHome" xml:space="preserve">
-    <value>ShatteredHome</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="Void" xml:space="preserve">
-    <value>Void</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="Adversarial" xml:space="preserve">
-    <value>Adversarial</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="Amber" xml:space="preserve">
-    <value>Amber</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="Arrows" xml:space="preserve">
-    <value>Arrows</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="Chorus" xml:space="preserve">
-    <value>Chorus</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="CollapsingSky" xml:space="preserve">
-    <value>CollapsingSky</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="Cornucopia" xml:space="preserve">
-    <value>Cornucopia</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="SomethingIrreplaceable" xml:space="preserve">
-    <value>SomethingIrreplaceable</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="ButTheBattleIsntOver" xml:space="preserve">
-    <value>ButTheBattleIsntOver</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="SleepLikeTheDead" xml:space="preserve">
-    <value>SleepLikeTheDead</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="InTheNameOfTheWorld" xml:space="preserve">
-    <value>InTheNameOfTheWorld</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="NightOnTheMilkyWay" xml:space="preserve">
-    <value>NightOnTheMilkyWay</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="TimeWaitsForNoOne" xml:space="preserve">
-    <value>TimeWaitsForNoOne</value>
+  <data name="ADreamScentedInWheat" xml:space="preserve">
+    <value>ADreamScentedInWheat</value>
     <comment>LightCones</comment>
   </data>
   <data name="AGroundedAscent" xml:space="preserve">
     <value>AGroundedAscent</value>
     <comment>LightCones</comment>
   </data>
+  <data name="ASecretVow" xml:space="preserve">
+    <value>ASecretVow</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="AThanklessCoronation" xml:space="preserve">
+    <value>AThanklessCoronation</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="ATrailOfBygoneBlood" xml:space="preserve">
+    <value>ATrailOfBygoneBlood</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="Adversarial" xml:space="preserve">
+    <value>Adversarial</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="AfterTheCharmonyFall" xml:space="preserve">
+    <value>AfterTheCharmonyFall</value>
+    <comment>LightCones</comment>
+  </data>
   <data name="AlongThePassingShore" xml:space="preserve">
     <value>AlongThePassingShore</value>
     <comment>LightCones</comment>
   </data>
+  <data name="Amber" xml:space="preserve">
+    <value>Amber</value>
+    <comment>LightCones</comment>
+  </data>
   <data name="AnInstantBeforeAGaze" xml:space="preserve">
     <value>AnInstantBeforeAGaze</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="Arrows" xml:space="preserve">
+    <value>Arrows</value>
     <comment>LightCones</comment>
   </data>
   <data name="BaptismOfPureThought" xml:space="preserve">
@@ -581,8 +461,40 @@
     <value>BeforeDawn</value>
     <comment>LightCones</comment>
   </data>
+  <data name="BeforeTheTutorialMissionStarts" xml:space="preserve">
+    <value>BeforeTheTutorialMissionStarts</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="BoundlessChoreo" xml:space="preserve">
+    <value>BoundlessChoreo</value>
+    <comment>LightCones</comment>
+  </data>
   <data name="BrighterThanTheSun" xml:space="preserve">
     <value>BrighterThanTheSun</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="ButTheBattleIsntOver" xml:space="preserve">
+    <value>ButTheBattleIsntOver</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="CarveTheMoonWeaveTheClouds" xml:space="preserve">
+    <value>CarveTheMoonWeaveTheClouds</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="Chorus" xml:space="preserve">
+    <value>Chorus</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="CollapsingSky" xml:space="preserve">
+    <value>CollapsingSky</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="ConcertForTwo" xml:space="preserve">
+    <value>ConcertForTwo</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="Cornucopia" xml:space="preserve">
+    <value>Cornucopia</value>
     <comment>LightCones</comment>
   </data>
   <data name="CruisingInTheStellarSea" xml:space="preserve">
@@ -593,6 +505,38 @@
     <value>DanceAtSunset</value>
     <comment>LightCones</comment>
   </data>
+  <data name="DanceDanceDance" xml:space="preserve">
+    <value>DanceDanceDance</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="DartingArrow" xml:space="preserve">
+    <value>DartingArrow</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="DataBank" xml:space="preserve">
+    <value>DataBank</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="DayOneOfMyNewLife" xml:space="preserve">
+    <value>DayOneOfMyNewLife</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="Defense" xml:space="preserve">
+    <value>Defense</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="DestinysThreadsForewoven" xml:space="preserve">
+    <value>DestinysThreadsForewoven</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="DreamsMontage" xml:space="preserve">
+    <value>DreamsMontage</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="DreamvilleAdventure" xml:space="preserve">
+    <value>DreamvilleAdventure</value>
+    <comment>LightCones</comment>
+  </data>
   <data name="EarthlyEscapade" xml:space="preserve">
     <value>EarthlyEscapade</value>
     <comment>LightCones</comment>
@@ -601,12 +545,68 @@
     <value>EchoesOfTheCoffin</value>
     <comment>LightCones</comment>
   </data>
+  <data name="EpochEtchedInGoldenBlood" xml:space="preserve">
+    <value>EpochEtchedInGoldenBlood</value>
+    <comment>LightCones</comment>
+  </data>
   <data name="EternalCalculus" xml:space="preserve">
     <value>EternalCalculus</value>
     <comment>LightCones</comment>
   </data>
+  <data name="EyesOfThePrey" xml:space="preserve">
+    <value>EyesOfThePrey</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="Fermata" xml:space="preserve">
+    <value>Fermata</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="FinalVictor" xml:space="preserve">
+    <value>FinalVictor</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="FineFruit" xml:space="preserve">
+    <value>FineFruit</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="FlameOfBloodBlazeMyPath" xml:space="preserve">
+    <value>FlameOfBloodBlazeMyPath</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="FlamesAfar" xml:space="preserve">
+    <value>FlamesAfar</value>
+    <comment>LightCones</comment>
+  </data>
   <data name="FlowingNightglow" xml:space="preserve">
     <value>FlowingNightglow</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="ForTomorrowsJourney" xml:space="preserve">
+    <value>ForTomorrowsJourney</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="GeniusesGreetings" xml:space="preserve">
+    <value>GeniusesGreetings</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="GeniusesRepose" xml:space="preserve">
+    <value>GeniusesRepose</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="GoodNightAndSleepWell" xml:space="preserve">
+    <value>GoodNightAndSleepWell</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="HeyOverHere" xml:space="preserve">
+    <value>HeyOverHere</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="HiddenShadow" xml:space="preserve">
+    <value>HiddenShadow</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="HolidayThermaeEscapade" xml:space="preserve">
+    <value>HolidayThermaeEscapade</value>
     <comment>LightCones</comment>
   </data>
   <data name="IShallBeMyOwnSword" xml:space="preserve">
@@ -617,6 +617,18 @@
     <value>IVentureForthToHunt</value>
     <comment>LightCones</comment>
   </data>
+  <data name="IfTimeWereAFlower" xml:space="preserve">
+    <value>IfTimeWereAFlower</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="InPursuitOfTheWind" xml:space="preserve">
+    <value>InPursuitOfTheWind</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="InTheNameOfTheWorld" xml:space="preserve">
+    <value>InTheNameOfTheWorld</value>
+    <comment>LightCones</comment>
+  </data>
   <data name="InTheNight" xml:space="preserve">
     <value>InTheNight</value>
     <comment>LightCones</comment>
@@ -625,28 +637,120 @@
     <value>IncessantRain</value>
     <comment>LightCones</comment>
   </data>
+  <data name="IndeliblePromise" xml:space="preserve">
+    <value>IndeliblePromise</value>
+    <comment>LightCones</comment>
+  </data>
   <data name="InherentlyUnjustDestiny" xml:space="preserve">
     <value>InherentlyUnjustDestiny</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="IntoTheUnreachableVeil" xml:space="preserve">
+    <value>IntoTheUnreachableVeil</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="ItsShowtime" xml:space="preserve">
+    <value>ItsShowtime</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="JourneyForeverPeaceful" xml:space="preserve">
+    <value>JourneyForeverPeaceful</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="LandausChoice" xml:space="preserve">
+    <value>LandausChoice</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="LiesDanceOnTheBreeze" xml:space="preserve">
+    <value>LiesDanceOnTheBreeze</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="LifeShouldBeCastToFlames" xml:space="preserve">
+    <value>LifeShouldBeCastToFlames</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="LongMayRainbowsAdornTheSky" xml:space="preserve">
+    <value>LongMayRainbowsAdornTheSky</value>
     <comment>LightCones</comment>
   </data>
   <data name="LongRoadLeadsHome" xml:space="preserve">
     <value>LongRoadLeadsHome</value>
     <comment>LightCones</comment>
   </data>
+  <data name="Loop" xml:space="preserve">
+    <value>Loop</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="MakeFarewellsMoreBeautiful" xml:space="preserve">
+    <value>MakeFarewellsMoreBeautiful</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="MakeTheWorldClamor" xml:space="preserve">
+    <value>MakeTheWorldClamor</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="Mediation" xml:space="preserve">
+    <value>Mediation</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="MemoriesOfThePast" xml:space="preserve">
+    <value>MemoriesOfThePast</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="MemorysCurtainNeverFalls" xml:space="preserve">
+    <value>MemorysCurtainNeverFalls</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="MeshingCogs" xml:space="preserve">
+    <value>MeshingCogs</value>
+    <comment>LightCones</comment>
+  </data>
   <data name="MomentOfVictory" xml:space="preserve">
     <value>MomentOfVictory</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="Multiplication" xml:space="preserve">
+    <value>Multiplication</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="MutualDemise" xml:space="preserve">
+    <value>MutualDemise</value>
     <comment>LightCones</comment>
   </data>
   <data name="NightOfFright" xml:space="preserve">
     <value>NightOfFright</value>
     <comment>LightCones</comment>
   </data>
+  <data name="NightOnTheMilkyWay" xml:space="preserve">
+    <value>NightOnTheMilkyWay</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="NinjaRecordSoundHunt" xml:space="preserve">
+    <value>NinjaRecordSoundHunt</value>
+    <comment>LightCones</comment>
+  </data>
   <data name="NinjutsuInscriptionDazzlingEvilbreaker" xml:space="preserve">
     <value>NinjutsuInscriptionDazzlingEvilbreaker</value>
     <comment>LightCones</comment>
   </data>
+  <data name="NowhereToRun" xml:space="preserve">
+    <value>NowhereToRun</value>
+    <comment>LightCones</comment>
+  </data>
   <data name="OnTheFallOfAnAeon" xml:space="preserve">
     <value>OnTheFallOfAnAeon</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="OnlySilenceRemains" xml:space="preserve">
+    <value>OnlySilenceRemains</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="Passkey" xml:space="preserve">
+    <value>Passkey</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="PastAndFuture" xml:space="preserve">
+    <value>PastAndFuture</value>
     <comment>LightCones</comment>
   </data>
   <data name="PastSelfInMirror" xml:space="preserve">
@@ -657,8 +761,52 @@
     <value>PatienceIsAllYouNeed</value>
     <comment>LightCones</comment>
   </data>
+  <data name="PerfectTiming" xml:space="preserve">
+    <value>PerfectTiming</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="Pioneering" xml:space="preserve">
+    <value>Pioneering</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="PlanetaryRendezvous" xml:space="preserve">
+    <value>PlanetaryRendezvous</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="PoisedToBloom" xml:space="preserve">
+    <value>PoisedToBloom</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="PostOpConversation" xml:space="preserve">
+    <value>PostOpConversation</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="QuidProQuo" xml:space="preserve">
+    <value>QuidProQuo</value>
+    <comment>LightCones</comment>
+  </data>
   <data name="ReforgedRemembrance" xml:space="preserve">
     <value>ReforgedRemembrance</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="Reminiscence" xml:space="preserve">
+    <value>Reminiscence</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="ResolutionShinesAsPearlsOfSweat" xml:space="preserve">
+    <value>ResolutionShinesAsPearlsOfSweat</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="ReturnToDarkness" xml:space="preserve">
+    <value>ReturnToDarkness</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="RiverFlowsInSpring" xml:space="preserve">
+    <value>RiverFlowsInSpring</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="Sagacity" xml:space="preserve">
+    <value>Sagacity</value>
     <comment>LightCones</comment>
   </data>
   <data name="SailingTowardsASecondLife" xml:space="preserve">
@@ -669,28 +817,176 @@
     <value>ScentAloneStaysTrue</value>
     <comment>LightCones</comment>
   </data>
+  <data name="SeeYouAtTheEnd" xml:space="preserve">
+    <value>SeeYouAtTheEnd</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="Shadowburn" xml:space="preserve">
+    <value>Shadowburn</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="ShadowedByNight" xml:space="preserve">
+    <value>ShadowedByNight</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="SharedFeeling" xml:space="preserve">
+    <value>SharedFeeling</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="ShatteredHome" xml:space="preserve">
+    <value>ShatteredHome</value>
+    <comment>LightCones</comment>
+  </data>
   <data name="SheAlreadyShutHerEyes" xml:space="preserve">
     <value>SheAlreadyShutHerEyes</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="SleepLikeTheDead" xml:space="preserve">
+    <value>SleepLikeTheDead</value>
     <comment>LightCones</comment>
   </data>
   <data name="SolitaryHealing" xml:space="preserve">
     <value>SolitaryHealing</value>
     <comment>LightCones</comment>
   </data>
+  <data name="SomethingIrreplaceable" xml:space="preserve">
+    <value>SomethingIrreplaceable</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="SubscribeForMore" xml:space="preserve">
+    <value>SubscribeForMore</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="SweatNowCryLess" xml:space="preserve">
+    <value>SweatNowCryLess</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="Swordplay" xml:space="preserve">
+    <value>Swordplay</value>
+    <comment>LightCones</comment>
+  </data>
   <data name="TextureOfMemories" xml:space="preserve">
     <value>TextureOfMemories</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="TheBirthOfTheSelf" xml:space="preserve">
+    <value>TheBirthOfTheSelf</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="TheDayTheCosmosFell" xml:space="preserve">
+    <value>TheDayTheCosmosFell</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="TheFlowerRemembers" xml:space="preserve">
+    <value>TheFlowerRemembers</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="TheForeverVictual" xml:space="preserve">
+    <value>TheForeverVictual</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="TheGreatCosmicEnterprise" xml:space="preserve">
+    <value>TheGreatCosmicEnterprise</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="TheHellWhereIdealsBurn" xml:space="preserve">
+    <value>TheHellWhereIdealsBurn</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="TheMolesWelcomeYou" xml:space="preserve">
+    <value>TheMolesWelcomeYou</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="TheSeriousnessOfBreakfast" xml:space="preserve">
+    <value>TheSeriousnessOfBreakfast</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="TheStorysNextPage" xml:space="preserve">
+    <value>TheStorysNextPage</value>
     <comment>LightCones</comment>
   </data>
   <data name="TheUnreachableSide" xml:space="preserve">
     <value>TheUnreachableSide</value>
     <comment>LightCones</comment>
   </data>
+  <data name="ThisIsMe" xml:space="preserve">
+    <value>ThisIsMe</value>
+    <comment>LightCones</comment>
+  </data>
   <data name="ThoseManySprings" xml:space="preserve">
     <value>ThoseManySprings</value>
     <comment>LightCones</comment>
   </data>
+  <data name="ThoughWorldsApart" xml:space="preserve">
+    <value>ThoughWorldsApart</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="ThusBurnsTheDawn" xml:space="preserve">
+    <value>ThusBurnsTheDawn</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="TimeWaitsForNoOne" xml:space="preserve">
+    <value>TimeWaitsForNoOne</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="TimeWovenIntoGold" xml:space="preserve">
+    <value>TimeWovenIntoGold</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="ToEvernightsStars" xml:space="preserve">
+    <value>ToEvernightsStars</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="TodayIsAnotherPeacefulDay" xml:space="preserve">
+    <value>TodayIsAnotherPeacefulDay</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="TrendOfTheUniversalMarket" xml:space="preserve">
+    <value>TrendOfTheUniversalMarket</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="UnderTheBlueSky" xml:space="preserve">
+    <value>UnderTheBlueSky</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="UntoTomorrowsMorrow" xml:space="preserve">
+    <value>UntoTomorrowsMorrow</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="VictoryInABlink" xml:space="preserve">
+    <value>VictoryInABlink</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="Void" xml:space="preserve">
+    <value>Void</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="WarmthShortensColdNights" xml:space="preserve">
+    <value>WarmthShortensColdNights</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="WeAreWildfire" xml:space="preserve">
+    <value>WeAreWildfire</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="WeWillMeetAgain" xml:space="preserve">
+    <value>WeWillMeetAgain</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="WhatIsReal" xml:space="preserve">
+    <value>WhatIsReal</value>
+    <comment>LightCones</comment>
+  </data>
   <data name="WhereaboutsShouldDreamsRest" xml:space="preserve">
     <value>WhereaboutsShouldDreamsRest</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="WhyDoesTheOceanSing" xml:space="preserve">
+    <value>WhyDoesTheOceanSing</value>
+    <comment>LightCones</comment>
+  </data>
+  <data name="WoofWalkTime" xml:space="preserve">
+    <value>WoofWalkTime</value>
     <comment>LightCones</comment>
   </data>
   <data name="WorrisomeBlissful" xml:space="preserve">
@@ -699,50 +995,6 @@
   </data>
   <data name="YetHopeIsPriceless" xml:space="preserve">
     <value>YetHopeIsPriceless</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="Aglaea" xml:space="preserve">
-    <value>Aglaea</value>
-    <comment>Characters</comment>
-  </data>
-  <data name="Fugue" xml:space="preserve">
-    <value>Fugue</value>
-    <comment>Characters</comment>
-  </data>
-  <data name="Sunday" xml:space="preserve">
-    <value>Sunday</value>
-    <comment>Characters</comment>
-  </data>
-  <data name="TheHerta" xml:space="preserve">
-    <value>TheHerta</value>
-    <comment>Characters</comment>
-  </data>
-  <data name="Tribbie" xml:space="preserve">
-    <value>Tribbie</value>
-    <comment>Characters</comment>
-  </data>
-  <data name="Mydei" xml:space="preserve">
-    <value>Mydei</value>
-    <comment>Characters</comment>
-  </data>
-  <data name="IntoTheUnreachableVeil" xml:space="preserve">
-    <value>IntoTheUnreachableVeil</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="TimeWovenIntoGold" xml:space="preserve">
-    <value>TimeWovenIntoGold</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="GeniusesGreetings" xml:space="preserve">
-    <value>GeniusesGreetings</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="Shadowburn" xml:space="preserve">
-    <value>Shadowburn</value>
-    <comment>LightCones</comment>
-  </data>
-  <data name="Reminiscence" xml:space="preserve">
-    <value>Reminiscence</value>
     <comment>LightCones</comment>
   </data>
 </root>

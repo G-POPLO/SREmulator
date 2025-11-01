@@ -4,6 +4,56 @@ namespace SREmulator.SRWarps
 {
     public static class SRWarpItemPoolFactory
     {
+        internal static int VersionToCelestialInvitationCharacterCount(SRVersion version)
+        {
+            return (version & SRVersion.VersionForWarps) switch
+            {
+                SRVersion.Ver1p0 or
+                SRVersion.Ver1p1 or
+                SRVersion.Ver1p2 or
+                SRVersion.Ver1p3 or
+                SRVersion.Ver1p4 or
+                SRVersion.Ver1p5 or
+                SRVersion.Ver1p6 or
+                SRVersion.Ver2p0 or
+                SRVersion.Ver2p1 or
+                SRVersion.Ver2p2 or
+                SRVersion.Ver2p3 or
+                SRVersion.Ver2p4 or
+                SRVersion.Ver2p5 or
+                SRVersion.Ver2p6 or
+                SRVersion.Ver2p7 or
+                SRVersion.Ver3p0 or
+                SRVersion.Ver3p1 => 7,
+                SRVersion.Ver3p2 or
+                SRVersion.Ver3p3 or
+                SRVersion.Ver3p4 or
+                SRVersion.Ver3p5 or
+                SRVersion.Ver3p6 => 10,
+
+                _ => throw new ArgumentOutOfRangeException(nameof(version)),
+            };
+        }
+        internal static readonly SRStar5Character[] InvitationCharactersOrderedByVersion = [
+            // 1.0
+            SRCharacters.Bailu,
+            SRCharacters.Bronya,
+            SRCharacters.Clara,
+            SRCharacters.Gepard,
+            SRCharacters.Himeko,
+            SRCharacters.Welt,
+            SRCharacters.Yanqing,
+
+            // 3.2
+            SRCharacters.Seele,
+            SRCharacters.Blade,
+            SRCharacters.FuXuan,
+            ];
+        public static SRStar5Character[] CreateCelestialInvitationCharacters(SRVersion version)
+        {
+            return InvitationCharactersOrderedByVersion.Take(VersionToCelestialInvitationCharacterCount(version)).ToArray();
+        }
+
         internal static int VersionToStar5CharacterCount(SRVersion version)
         {
             return (version & SRVersion.VersionForWarps) switch
